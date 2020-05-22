@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/2018-02-22-Hexo-%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>吃饭啦</title>
+    <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
+    <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
+<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
+<p>🐟🐟🐟🐟清烤多春鱼</p>
+<blockquote>
+<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
+
+
+
+<p>🍆清蒸茄子</p>
+<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
+
+<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
+<p>🌲另一个菜叫什么呢？</p>
+<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
+<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
+<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
+<blockquote>
+<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
+</blockquote>
+<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>HTTP 的一点儿小知识</title>
+    <url>/2019/11/01/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="一、超文本传输协议-超文本传输协议-Hypertext-Transfer-Protocol"><a href="#一、超文本传输协议-超文本传输协议-Hypertext-Transfer-Protocol" class="headerlink" title="一、超文本传输协议 超文本传输协议(Hypertext Transfer Protocol)"></a>一、超文本传输协议 超文本传输协议(Hypertext Transfer Protocol)</h3><blockquote>
+<p>http协议规定了客户端和服务器之间的数据传输格式。</p>
+<p>http协议是在网络开发中最常用的协议，不管是移动客户端还是PC端,访问网络资源经常使用http协议。</p>
+</blockquote>
+<p>​        <a id="more"></a></p>
+<p>http优点:</p>
+<ul>
+<li><strong>简单快速</strong>：http协议简单,通信速度很快.</li>
+<li><strong>灵活</strong>：http协议允许传输任意类型的数据.</li>
+<li>http协议是<strong>短连接</strong>(非持续性连接) (TCP/IP  UDP/IP)：http协议限制每次连接只处理一个请求，服务器对客户端的请求作出响应后，马上断开连接，这种方式可以节省传输时间。</li>
+</ul>
+<h3 id="二、-http协议的使用"><a href="#二、-http协议的使用" class="headerlink" title="二、 http协议的使用"></a>二、 http协议的使用</h3><ol>
+<li><strong>请求</strong>：客户端向服务器索要数据。</li>
+</ol>
+<p>​        http协议规定：一个完整的http请求包含<code>请求行、请求头、请求体</code>三个部分。</p>
+<ul>
+<li>请求行 : 包含了请求方法，请求资源路径，http协议版本。</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/resources/images/</span> HTTP/1.1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>请求头：包含了对客户端的环境描述，客户端请求的主机地址等信息。</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">:</span><br><span class="line"><span class="attribute">Accept</span>: text/html // 客户端所能接收的数据类型</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-cn // 客户端的语言环境</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip // 客户端支持的数据压缩格式</span><br><span class="line"><span class="attribute">Host</span>: m.baidu.com // 客户端想访问的服务器主机地址</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:37.0) Gecko/20100101 Firefox/37.0// 客户端的类型,客户端的软件环境</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>请求体：客户端发给服务器的具体数据，比如文件/图片等。 </li>
+</ul>
+<ol start="2">
+<li><strong>响应</strong>：服务器返回客户端想要的数据。</li>
+</ol>
+<p>​        http协议规定：一个完整的http响应包含 <code>状态行、响应头、实体内容</code> 三个部分。</p>
+<ul>
+<li>状态行：包含了http协议版本,状态吗,状态英文名称。</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>响应头：包含了对服务器的描述,对返回数据的描述。    </li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">:</span><br><span class="line"><span class="attribute">Content-Encoding</span>: gzip // 服务器支持的数据压缩格式</span><br><span class="line"><span class="attribute">Content-Length</span>:  1528 // 返回数据的长度</span><br><span class="line"><span class="attribute">Content-Type</span>:  application/xhtml+xml;charset=utf-8// 返回数据的类型</span><br><span class="line"><span class="attribute">Date</span>: Mon, 15 Jun 201509:06:46 GMT // 响应的时间</span><br><span class="line"><span class="attribute">Server</span>: apache  // 服务器类型</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>实体内容：服务器返回给客户端的具体数据(图片/html/文件…)。  </li>
+</ul>
+<ol start="3">
+<li>发送http请求</li>
+</ol>
+<p>​        在iOS开发中,发送http请求的方案有很多，常见的有如下几种：</p>
+<ul>
+<li>苹果原生:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSURLConnection: 用法简单,古老经典的一种方案.</span><br><span class="line">NSURLSession: iOS7以后推出的技术,功能比NSURLConnection更加强大.</span><br><span class="line">CFNetWork: NSURL 的底层,纯C语言,一般不用.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第三方框架:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ASIHttpRequest: http终结者,功能很强大,可惜作者已停止更新.</span><br><span class="line">AFNetWorking: 简单易用,提供了基本够用的常用功能,维护和使用者多.</span><br><span class="line">MKNetWorkKit: 简单易用,产自印度,维护和使用者少.</span><br></pre></td></tr></table></figure>
+
+<p>​      </p>
+<h3 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h3><h4 id="1-http方法"><a href="#1-http方法" class="headerlink" title="1. http方法"></a>1. http方法</h4><p>​    http协议定义了很多方法对应不同的资源操作,其中最常用的是GET 和 POST 方法.</p>
+<blockquote>
+<p>GET、POST、OPTIONS、HEAD、PUT、DELETE、TRACE、CONNECT、PATCH</p>
+<p>增:PUT</p>
+<p> 删:DELETE</p>
+<p>改:POST</p>
+<p>查:GET    </p>
+</blockquote>
+<ul>
+<li>OPTIONS</li>
+</ul>
+<p>返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送’*’的请求来测试服务器的功能性。</p>
+<ul>
+<li>HEAD</li>
+</ul>
+<p>向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。</p>
+<ul>
+<li>GET</li>
+</ul>
+<p>向特定的资源发出请求。注意：GET方法不应当被用于产生“副作用”的操作中。</p>
+<ul>
+<li>POST</li>
+</ul>
+<p>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</p>
+<ul>
+<li>PUT</li>
+</ul>
+<p>向指定资源位置上传其最新内容。</p>
+<ul>
+<li>DELETE</li>
+</ul>
+<p>请求服务器删除Request-URI所标识的资源。</p>
+<ul>
+<li>TRACE</li>
+</ul>
+<p>回显服务器收到的请求，主要用于测试或诊断。</p>
+<ul>
+<li>CONNECT</li>
+</ul>
+<p>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</p>
+<p>​       </p>
+<h4 id="2-参数"><a href="#2-参数" class="headerlink" title="2. 参数"></a>2. 参数</h4><p>因为 GET 和 POST 可以实现上述所有操作，所以，在现实开发中，我们只要会用GET 和 POST 方法就可以了。在与服务器交互时，有时候需要给服务器发送一些数据，比如登录时需要发送用户名和密码。</p>
+<p><strong>参数</strong>:就是指传递给服务器的具体数据.</p>
+<h4 id="3-GET-和-POST-的主要区别表现在参数的传递上"><a href="#3-GET-和-POST-的主要区别表现在参数的传递上" class="headerlink" title="3. GET 和 POST 的主要区别表现在参数的传递上"></a>3. GET 和 POST 的主要区别表现在参数的传递上</h4><h6 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h6><p>​    GET的本质是从服务器得到数据，效率更高，并且GET请求可以被缓存。</p>
+<p>​    注意：网络缓存数据，保存在SQLite的数据库中(路径：NSHomeDirectory())。</p>
+<p>​        查看缓存数据命令行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 文件目录   (打开文件目录)</span><br><span class="line">ls   查看当前文件下目录</span><br><span class="line">sqlite3 Cache.db   打开数据库</span><br><span class="line">.tables    查看数据库中的表单</span><br><span class="line">select * from cfurl_cache_response;   查看服务器响应缓存</span><br><span class="line">select * from cfurl_cache_receiver_data;   查看服务器返回的数据缓存</span><br></pre></td></tr></table></figure>
+
+<p>​    在请求 URL 后面以 ? 的形式跟上发给服务器的参数，参数以 “参数名”=”参数值” 的形式拼接，多个参数之间用 &amp; 分隔。</p>
+<p>​    注意：GET的长度是有限制的，不同的浏览器有不同的长度限制，一般在2~8K之间。         </p>
+<h6 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h6><p>​    POST的本质是向服务器发送数据，也可以获得服务器处理之后的结果，效率不如GET。POST请求不可以被缓存，每次刷新之后都需要重新提交表单。发送给服务器的参数全部放在 <code>请求体</code> 中，理论上，POST传递的数据量没有限制。</p>
+<p>​    注意：所有涉及到用户隐私的数据(密码/银行卡号等…)都要用POST的方式传递。    </p>
+<h4 id="4-注意-URL中不能出现空格以及中文等特殊符号"><a href="#4-注意-URL中不能出现空格以及中文等特殊符号" class="headerlink" title="4. 注意:URL中不能出现空格以及中文等特殊符号"></a>4. 注意:URL中不能出现空格以及中文等特殊符号</h4><ul>
+<li><p>URL中,所有的字符都必须是 ASCII 码</p>
+</li>
+<li><p>URL中不能出现中文和特殊符号(如空格)</p>
+</li>
+</ul>
+<p>​    所以，如果 URL 中出现了中文，需要添加百分号转义。    </p>
+<h2 id="URL-中-井号（锚点）的用法"><a href="#URL-中-井号（锚点）的用法" class="headerlink" title="URL 中 # 井号（锚点）的用法"></a>URL 中 # 井号（锚点）的用法</h2><p>​       我们经常使用URL 定位，传递参数等应用，最经常使用的是？ 问号，一般作为参数传递，而我们在接触到单页开发模式的时候会接触到url 中大量# 井号的使用，有时候会对这三个常见符号有些分不清，搞不懂具体含义。 </p>
+<h3 id="涵义"><a href="#涵义" class="headerlink" title="# 涵义"></a># 涵义</h3><p> 在url 中使用# 例如  index.html#product  含义一般是定位到本页面的product位置，所以# 在url 中一般是作为页面定位使用，那么product 到底是用什么定位 </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"product"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"product"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这两种方式都可以把滚动条定位到页面的响应位置 </p>
+<blockquote>
+<p>Twitter 在改版的时候把 改版前的用户主页网址为<a href="http://twitter.com/username改版后，就变成了http://twitter.com/#!/username" target="_blank" rel="noopener">http://twitter.com/username改版后，就变成了http://twitter.com/#!/username</a> 这是主流网站第一次将”#”大规模用于重要URL中。这表明井号（Hash）的作用正在被重新认识 </p>
+</blockquote>
+<h3 id="特性1：HTTP-请求中的作用"><a href="#特性1：HTTP-请求中的作用" class="headerlink" title="特性1：HTTP 请求中的作用"></a>特性1：HTTP 请求中的作用</h3><p>​    是用来指导浏览器动作的，对服务器端完全无用。所以，HTTP请求中不包括#。</p>
+<p>​    比如，访问下面的网址，<a href="http://www.example.com/index.html#print，浏览器实际发出的请求是这样的：" target="_blank" rel="noopener">http://www.example.com/index.html#print，浏览器实际发出的请求是这样的：</a></p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">GET /index.html HTTP/1.1 </span><br><span class="line"><span class="attribute">Host</span>: www.example.com</span><br></pre></td></tr></table></figure>
+
+<pre><code>在第一个#后面出现的任何字符，都会被浏览器解读为位置标识符。这意味着，这些字符都不会被发送到服务器端。</code></pre><p>​    比如，下面URL的原意是指定一个颜色值：<a href="http://www.example.com/?color=#fff，但是，浏览器实际发出的请求是：" target="_blank" rel="noopener">http://www.example.com/?color=#fff，但是，浏览器实际发出的请求是：</a></p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">GET /?color= HTTP/1.1 </span><br><span class="line"><span class="attribute">Host</span>: www.example.com</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="特性2：改版-不会导致网页重载"><a href="#特性2：改版-不会导致网页重载" class="headerlink" title="特性2：改版#不会导致网页重载"></a>特性2：改版#不会导致网页重载</h3><p>​    单单改变#后的部分，浏览器只会滚动到相应位置，不会重新加载网页。</p>
+<p>​    比如，从<a href="http://www.example.com/index.html#location1改成http://www.example.com/index.html#location2，浏览器不会重新向服务器请求index.html。" target="_blank" rel="noopener">http://www.example.com/index.html#location1改成http://www.example.com/index.html#location2，浏览器不会重新向服务器请求index.html。</a></p>
+<h3 id="特性3：改版-后对history-范围历史的影响"><a href="#特性3：改版-后对history-范围历史的影响" class="headerlink" title="特性3：改版# 后对history 范围历史的影响"></a>特性3：改版# 后对history 范围历史的影响</h3><p>​    每一次改变#后的部分，都会在浏览器的访问历史中增加一个记录，使用”后退”按钮，就可以回到上一个位置。这对于ajax应用程序特别有用，可以用不同的#值，表示不同的访问状态，然后向用户给出可以访问某个状态的链接。值得注意的是，上述规则对IE 6和IE 7不成立，它们不会因为#的改变而增加历史记录。</p>
+<p>​    鉴于特性2、3 实现了在单页下view 的路由和历史回退，目前h5手机开发所采用的单页模式的基础。</p>
+<h3 id="特性4：window-location-hash读取-值"><a href="#特性4：window-location-hash读取-值" class="headerlink" title="特性4：window.location.hash读取#值"></a>特性4：window.location.hash读取#值</h3><pre><code>window.location.hash 这个属性可读可写。读取时，可以用来判断网页状态是否改变；写入时，则会在不重载网页的前提下，创造一条访问历史记录。</code></pre><h3 id="特性5：onhashchange事件-H5新增"><a href="#特性5：onhashchange事件-H5新增" class="headerlink" title="特性5：onhashchange事件 H5新增"></a>特性5：onhashchange事件 H5新增</h3><p>​    这是一个HTML 5新增的事件，当#值发生变化时，就会触发这个事件。IE8+、Firefox 3.6+、Chrome 5+、Safari 4.0+支持该事件。</p>
+<p>　　它的使用方法有三种：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">window.onhashchange = func; </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onhashchange</span>=<span class="string">"func();"</span>&gt;</span> </span><br><span class="line">window.addEventListener("hashchange"， func, false);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于不支持onhashchange的浏览器，可以用setInterval监控location.hash的变化。</p>
+<h3 id="特性6：Google抓取-的机制"><a href="#特性6：Google抓取-的机制" class="headerlink" title="特性6：Google抓取#的机制"></a>特性6：Google抓取#的机制</h3><p>​    默认情况下，Google的网络蜘蛛忽视URL的#部分。但是，Google还规定，如果你希望Ajax生成的内容被浏览引擎读取，那么URL中可以使用”#!”，Google会自动将其后面的内容转成查询字符串escaped_fragment的值。</p>
+<p>　　比如，Google发现新版Twitter的URL：<a href="http://twitter.com/#!/username" target="_blank" rel="noopener">http://twitter.com/#!/username</a></p>
+<p>　　就会自动抓取另一个URL：<a href="http://twitter.com/?escaped_fragment=/username" target="_blank" rel="noopener">http://twitter.com/?escaped_fragment=/username</a> </p>
+<p>　　通过这种机制，Google就可以索引动态的Ajax内容。</p>
+<p>群讨论：</p>
+<p>URL中的#只是作为一个分解符，#后面的内容，服务器不会处理，但是浏览器页面能获取到，但是拿到这个值干啥用，就看怎么处理了，比如现在H5做的SPA，就是靠#后面的内容作为参数，来处理前端路由。</p>
+<h2 id="网络相应的常见状态"><a href="#网络相应的常见状态" class="headerlink" title="网络相应的常见状态"></a>网络相应的常见状态</h2><h3 id="1xx消息"><a href="#1xx消息" class="headerlink" title="1xx消息"></a>1xx消息</h3><p>​    这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。由于HTTP/1.0协议中没有定义任何1xx状态码，所以除非在某些试验条件下，服务器禁止向此类客户端发送1xx响应。这些状态码代表的响应都是信息性的，标示客户应该采取的其他行动。</p>
+<h4 id="100-Continue"><a href="#100-Continue" class="headerlink" title="100 Continue"></a>100 Continue</h4><p>​    客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
+<h4 id="101-Switching-Protocols"><a href="#101-Switching-Protocols" class="headerlink" title="101 Switching Protocols"></a>101 Switching Protocols</h4><p>​    服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade消息头中定义的那些协议。: 只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</p>
+<h4 id="102-Processing"><a href="#102-Processing" class="headerlink" title="102 Processing"></a>102 Processing</h4><p>​    由WebDAV（RFC 2518）扩展的状态码，代表处理将被继续执行。</p>
+<h3 id="2xx成功"><a href="#2xx成功" class="headerlink" title="2xx成功"></a>2xx成功</h3><p>​    这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。</p>
+<h4 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h4><p>​    请求已成功，请求所希望的响应头或数据体将随此响应返回。</p>
+<h4 id="201-Created"><a href="#201-Created" class="headerlink" title="201 Created"></a>201 Created</h4><p>​    请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回。假如需要的资源无法及时创建的话，应当返回’202 Accepted’。</p>
+<h4 id="202-Accepted"><a href="#202-Accepted" class="headerlink" title="202 Accepted"></a>202 Accepted</h4><p>​    服务器已接受请求，但尚未处理。正如它可能被拒绝一样，最终该请求可能会也可能不会被执行。在异步操作的场合下，没有比发送这个状态码更方便的做法了。:返回202状态码的响应的目的是允许服务器接受其他过程的请求（例如某个每天只执行一次的基于批处理的操作），而不必让客户端一直保持与服务器的连接直到批处理操作全部完成。在接受请求处理并返回202状态码的响应应当在返回的实体中包含一些指示处理当前状态的信息，以及指向处理状态监视器或状态预测的指针，以便用户能够估计操作是否已经完成。</p>
+<h4 id="203-Non-Authoritative-Information"><a href="#203-Non-Authoritative-Information" class="headerlink" title="203 Non-Authoritative Information"></a>203 Non-Authoritative Information</h4><p>​    服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超 集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。</p>
+<h4 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h4><p>​    服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。</p>
+<p>​    如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。</p>
+<p>​    由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。</p>
+<h4 id="205-Reset-Content"><a href="#205-Reset-Content" class="headerlink" title="205 Reset Content"></a>205 Reset Content</h4><p>​    服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。</p>
+<pre><code>与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。</code></pre><h4 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h4><p>​    服务器已经成功处理了部分GET请求。类似于FlashGet或者迅雷这类的HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。</p>
+<p>​    该请求必须包含Range头信息来指示客户端希望得到的内容范围，并且可能包含If-Range来作为请求条件。</p>
+<p>​    响应必须包含如下的头部域：</p>
+<blockquote>
+<p>Content-Range用以指示本次响应中返回的内容的范围；如果是Content-Type为multipart/byteranges的多段下载，则每一multipart段中都应包含Content-Range域用以指示本段的内容范围。假如响应中包含Content-Length，那么它的数值必须匹配它返回的内容范围的真实字节数。</p>
+<p>Date</p>
+<p>ETag和／或Content-Location，假如同样的请求本应该返回200响应。</p>
+<p>Expires, Cache-Control，和／或Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。</p>
+</blockquote>
+<p>​    假如本响应请求使用了If-Range强缓存验证，那么本次响应不应该包含其他实体头；假如本响应的请求使用了If-Range弱缓存验证，那么本次响应禁止包含其他实体头；这避免了缓存的实体内容和更新了的实体头信息之间的不一致。否则，本响应就应当包含所有本应该返回200响应中应当返回的所有实体头部域。</p>
+<p>​    假如ETag或Last-Modified头部不能精确匹配的话，则客户端缓存应禁止将206响应返回的内容与之前任何缓存过的内容组合在一起。</p>
+<p>​    任何不支持Range以及Content-Range头的缓存都禁止缓存206响应返回的内容。</p>
+<p>207 Multi-Status</p>
+<p>​    由WebDAV(RFC 2518)扩展的状态码，代表之后的消息体将是一个XML消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。</p>
+<h3 id="3xx重定向"><a href="#3xx重定向" class="headerlink" title="3xx重定向"></a>3xx重定向</h3><p>​    这类状态码代表需要客户端采取进一步的操作才能完成请求。通常，这些状态码用来重定向，后续的请求地址（重定向目标）在本次响应的Location域中指明。</p>
+<p>​    当且仅当后续的请求所使用的方法是GET或者HEAD时，用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。客户端应当自动监测无限循环重定向（例如：A→B→C→……→A或A→A），因为这会导致服务器和客户端大量不必要的资源消耗。按照HTTP/1.0版规范的建议，浏览器不应自动访问超过5次的重定向。</p>
+<h4 id="300-Multiple-Choices"><a href="#300-Multiple-Choices" class="headerlink" title="300 Multiple Choices"></a>300 Multiple Choices</h4><p>​    被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。</p>
+<p>​    除非这是一个HEAD请求，否则该响应应当包括一个资源特性及地址的列表的实体，以便用户或浏览器从中选择最合适的重定向地址。这个实体的格式由Content-Type定义的格式所决定。浏览器可能根据响应的格式以及浏览器自身能力，自动作出最合适的选择。当然，RFC 2616规范并没有规定这样的自动选择该如何进行。</p>
+<p>​    如果服务器本身已经有了首选的回馈选择，那么在Location中应当指明这个回馈的URI；浏览器可能会将这个Location值作为自动重定向的地址。此外，除非额外指定，否则这个响应也是可缓存的。</p>
+<h4 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h4><p>​    被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。除非额外指定，否则这个响应也是可缓存的。</p>
+<p>​    新的永久性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>​    如果这不是一个GET或者HEAD请求，因此浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</p>
+<p>​    注意：对于某些使用HTTP/1.0协议的浏览器，当它们发送的POST请求得到了一个301响应的话，接下来的重定向请求将会变成GET方式。</p>
+<h4 id="302-Found"><a href="#302-Found" class="headerlink" title="302 Found"></a>302 Found</h4><p>​    请求的资源现在临时从不同的URI响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。</p>
+<p>​    新的临时性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>​    如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</p>
+<p>​    注意：虽然RFC 1945和RFC 2068规范不允许客户端在重定向时改变请求的方法，但是很多现存的浏览器将302响应视作为303响应，并且使用GET方式访问在Location中规定的URI，而无视原先请求的方法。状态码303和307被添加了进来，用以明确服务器期待客户端进行何种反应。</p>
+<h4 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h4><p>​    对应当前请求的响应可以在另一个URI上被找到，而且客户端应当采用GET的方式访问那个资源。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的URI不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。</p>
+<p>​    新的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>​    注意：许多HTTP/1.1版以前的浏览器不能正确理解303状态。如果需要考虑与这些浏览器之间的互动，302状态码应该可以胜任，因为大多数的浏览器处理302响应时的方式恰恰就是上述规范要求客户端处理303响应时应当做的。</p>
+<h4 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h4><p>​    如果客户端发送了一个带条件的GET请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。304响应禁止包含消息体，因此始终以消息头后的第一个空行结尾。</p>
+<p>​    该响应必须包含以下的头信息：</p>
+<blockquote>
+<p>Date，除非这个服务器没有时钟。假如没有时钟的服务器也遵守这些规则，那么代理服务器以及客户端可以自行将Date字段添加到接收到的响应头中去（正如RFC 2068中规定的一样），缓存机制将会正常工作。</p>
+<p>ETag和／或Content-Location，假如同样的请求本应返回200响应。</p>
+<p>Expires, Cache-Control，和／或Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。</p>
+</blockquote>
+<p>​    假如本响应请求使用了强缓存验证，那么本次响应不应该包含其他实体头；否则（例如，某个带条件的GET请求使用了弱缓存验证），本次响应禁止包含其他实体头；这避免了缓存了的实体内容和更新了的实体头信息之间的不一致。</p>
+<p>​    假如某个304响应指明了当前某个实体没有缓存，那么缓存系统必须忽视这个响应，并且重复发送不包含限制条件的请求。</p>
+<p>​    假如接收到一个要求更新某个缓存条目的304响应，那么缓存系统必须更新整个条目以反映所有在响应中被更新的字段的值。</p>
+<h4 id="305-Use-Proxy"><a href="#305-Use-Proxy" class="headerlink" title="305 Use Proxy"></a>305 Use Proxy</h4><p>​    被请求的资源必须通过指定的代理才能被访问。Location域中将给出指定的代理所在的URI信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问相应资源。只有原始服务器才能创建305响应。</p>
+<p>​    注意：RFC 2068中没有明确305响应是为了重定向一个单独的请求，而且只能被原始服务器创建。忽视这些限制可能导致严重的安全后果。</p>
+<h4 id="306-Switch-Proxy"><a href="#306-Switch-Proxy" class="headerlink" title="306 Switch Proxy"></a>306 Switch Proxy</h4><p>​    在最新版的规范中，306状态码已经不再被使用。</p>
+<h4 id="307-Temporary-Redirect"><a href="#307-Temporary-Redirect" class="headerlink" title="307 Temporary Redirect"></a>307 Temporary Redirect</h4><p>​    请求的资源现在临时从不同的URI响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。</p>
+<p>​    新的临时性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。因为部分浏览器不能识别307响应，因此需要添加上述必要信息以便用户能够理解并向新的URI发出访问请求。</p>
+<p>​    如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</p>
+<h3 id="4xx客户端错误"><a href="#4xx客户端错误" class="headerlink" title="4xx客户端错误"></a>4xx客户端错误</h3><p>​    这类的状态码代表了客户端看起来可能发生了错误，妨碍了服务器的处理。除非响应的是一个HEAD请求，否则服务器就应该返回一个解释当前错误状况的实体，以及这是临时的还是永久性的状况。这些状态码适用于任何请求方法。浏览器应当向用户显示任何包含在此类错误响应中的实体内容。</p>
+<p>​    如果错误发生时客户端正在传送数据，那么使用TCP的服务器实现应当仔细确保在关闭客户端与服务器之间的连接之前，客户端已经收到了包含错误信息的数据包。如果客户端在收到错误信息后继续向服务器发送数据，服务器的TCP栈将向客户端发送一个重置数据包，以清除该客户端所有还未识别的输入缓冲，以免这些数据被服务器上的应用程序读取并干扰后者。</p>
+<h4 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h4><p>​    由于包含语法错误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。</p>
+<h4 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h4><p>​    当前请求需要用户验证。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。客户端可以重复提交一个包含恰当的Authorization头信息的请求。如果当前请求已经包含了Authorization证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。参见RFC 2617。</p>
+<h4 id="402-Payment-Required"><a href="#402-Payment-Required" class="headerlink" title="402 Payment Required"></a>402 Payment Required</h4><p>​    该状态码是为了将来可能的需求而预留的。</p>
+<h4 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h4><p>​    服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个HEAD请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个404响应，假如它不希望让客户端获得任何信息。</p>
+<h4 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h4><p>​    请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。</p>
+<h4 id="405-Method-Not-Allowed"><a href="#405-Method-Not-Allowed" class="headerlink" title="405 Method Not Allowed"></a>405 Method Not Allowed</h4><p>​    请求行中指定的请求方法不能被用于请求相应的资源。该响应必须返回一个Allow头信息用以表示出当前资源能够接受的请求方法的列表。</p>
+<p>​    鉴于PUT，DELETE方法会对服务器上的资源进行写操作，因而绝大部分的网页服务器都不支持或者在默认配置下不允许上述请求方法，对于此类请求均会返回405错误。</p>
+<h4 id="406-Not-Acceptable"><a href="#406-Not-Acceptable" class="headerlink" title="406 Not Acceptable"></a>406 Not Acceptable</h4><p>​    请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体。</p>
+<p>​    除非这是一个HEAD请求，否则该响应就应当返回一个包含可以让用户或者浏览器从中选择最合适的实体特性以及地址列表的实体。实体的格式由Content-Type头中定义的媒体类型决定。浏览器可以根据格式及自身能力自行作出最佳选择。但是，规范中并没有定义任何作出此类自动选择的标准。</p>
+<h4 id="407-Proxy-Authentication-Required"><a href="#407-Proxy-Authentication-Required" class="headerlink" title="407 Proxy Authentication Required"></a>407 Proxy Authentication Required</h4><p>​    与401响应类似，只不过客户端必须在代理服务器上进行身份验证。代理服务器必须返回一个Proxy-Authenticate用以进行身份询问。客户端可以返回一个Proxy-Authorization信息头用以验证。参见RFC 2617。</p>
+<h4 id="408-Request-Timeout"><a href="#408-Request-Timeout" class="headerlink" title="408 Request Timeout"></a>408 Request Timeout</h4><p>​    请求超时。客户端没有在服务器预备等待的时间内完成一个请求的发送。客户端可以随时再次提交这一请求而无需进行任何更改。</p>
+<h4 id="409-Conflict"><a href="#409-Conflict" class="headerlink" title="409 Conflict"></a>409 Conflict</h4><p>​    由于和被请求的资源的当前状态之间存在冲突，请求无法完成。这个代码只允许用在这样的情况下才能被使用：用户被认为能够解决冲突，并且会重新提交新的请求。该响应应当包含足够的信息以便用户发现冲突的源头。</p>
+<p>​    冲突通常发生于对PUT请求的处理中。例如，在采用版本检查的环境下，某次PUT提交的对特定资源的修改请求所附带的版本信息与之前的某个（第三方）请求向冲突，那么此时服务器就应该返回一个409错误，告知用户请求无法完成。此时，响应实体中很可能会包含两个冲突版本之间的差异比较，以便用户重新提交归并以后的新版本。</p>
+<h4 id="410-Gone"><a href="#410-Gone" class="headerlink" title="410 Gone"></a>410 Gone</h4><p>​    被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址。这样的状况应当被认为是永久性的。如果可能，拥有链接编辑功能的客户端应当在获得用户许可后删除所有指向这个地址的引用。如果服务器不知道或者无法确定这个状况是否是永久的，那么就应该使用404状态码。除非额外说明，否则这个响应是可缓存的。</p>
+<p>​    410响应的目的主要是帮助网站管理员维护网站，通知用户该资源已经不再可用，并且服务器拥有者希望所有指向这个资源的远端连接也被删除。这类事件在限时、增值服务中很普遍。同样，410响应也被用于通知客户端在当前服务器站点上，原本属于某个个人的资源已经不再可用。当然，是否需要把所有永久不可用的资源标记为’410 Gone’，以及是否需要保持此标记多长时间，完全取决于服务器拥有者。</p>
+<h4 id="411-Length-Required"><a href="#411-Length-Required" class="headerlink" title="411 Length Required"></a>411 Length Required</h4><p>​    服务器拒绝在没有定义Content-Length头的情况下接受请求。在添加了表明请求消息体长度的有效Content-Length头之后，客户端可以再次提交该请求。</p>
+<h4 id="412-Precondition-Failed"><a href="#412-Precondition-Failed" class="headerlink" title="412 Precondition Failed"></a>412 Precondition Failed</h4><p>​    服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。</p>
+<h4 id="413-Request-Entity-Too-Large"><a href="#413-Request-Entity-Too-Large" class="headerlink" title="413 Request Entity Too Large"></a>413 Request Entity Too Large</h4><p>​    服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围。此种情况下，服务器可以关闭连接以免客户端继续发送此请求。</p>
+<p>​    如果这个状况是临时的，服务器应当返回一个Retry-After的响应头，以告知客户端可以在多少时间以后重新尝试。</p>
+<h4 id="414-Request-URI-Too-Long"><a href="#414-Request-URI-Too-Long" class="headerlink" title="414 Request-URI Too Long"></a>414 Request-URI Too Long</h4><p>​    请求的URI长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。这比较少见，通常的情况包括：</p>
+<p>​        本应使用POST方法的表单提交变成了GET方法，导致查询字符串（Query String）过长。</p>
+<p>​        重定向URI“黑洞”，例如每次重定向把旧的URI作为新的URI的一部分，导致在若干次重定向后URI超长。</p>
+<p>​        客户端正在尝试利用某些服务器中存在的安全漏洞攻击服务器。这类服务器使用固定长度的缓冲读取或操作请求的URI，当GET后的参数超过某个数值后，可能会产生缓冲区溢出，导致任意代码被执行[1]。没有此类漏洞的服务器，应当返回414状态码。</p>
+<h4 id="415-Unsupported-Media-Type"><a href="#415-Unsupported-Media-Type" class="headerlink" title="415 Unsupported Media Type"></a>415 Unsupported Media Type</h4><p>​    对于当前请求的方法和所请求的资源，请求中提交的实体并不是服务器中所支持的格式，因此请求被拒绝。</p>
+<p>416 Requested Range Not Satisfiable</p>
+<p>​    如果请求中包含了Range请求头，并且Range中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义If-Range请求头，那么服务器就应当返回416状态码。</p>
+<p>​    假如Range使用的是字节范围，那么这种情况就是指请求指定的所有数据范围的首字节位置都超过了当前资源的长度。服务器也应当在返回416状态码的同时，包含一个Content-Range实体头，用以指明当前资源的长度。这个响应也被禁止使用multipart/byteranges作为其Content-Type。</p>
+<h4 id="417-Expectation-Failed"><a href="#417-Expectation-Failed" class="headerlink" title="417 Expectation Failed"></a>417 Expectation Failed</h4><p>​    在请求头Expect中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服务器，它有明显的证据证明在当前路由的下一个节点上，Expect的内容无法被满足。</p>
+<h4 id="418-I’m-a-teapot"><a href="#418-I’m-a-teapot" class="headerlink" title="418 I’m a teapot"></a>418 I’m a teapot</h4><p>​    本操作码是在1998年作为IETF的传统愚人节笑话, 在RFC 2324超文本咖啡壶控制协议中定义的，并不需要在真实的HTTP服务器中定义。</p>
+<h4 id="421-There-are-too-many-connections-from-your-internet-address"><a href="#421-There-are-too-many-connections-from-your-internet-address" class="headerlink" title="421 There are too many connections from your internet address"></a>421 There are too many connections from your internet address</h4><p>​    从当前客户端所在的IP地址到服务器的连接数超过了服务器许可的最大范围。通常，这里的IP地址指的是从服务器上看到的客户端地址（比如用户的网关或者代理服务器地址）。在这种情况下，连接数的计算可能涉及到不止一个终端用户。</p>
+<h4 id="422-Unprocessable-Entity"><a href="#422-Unprocessable-Entity" class="headerlink" title="422 Unprocessable Entity"></a>422 Unprocessable Entity</h4><p>​    请求格式正确，但是由于含有语义错误，无法响应。（RFC 4918 WebDAV）</p>
+<h4 id="423-Locked"><a href="#423-Locked" class="headerlink" title="423 Locked"></a>423 Locked</h4><p>​    当前资源被锁定。（RFC 4918 WebDAV）</p>
+<h4 id="424-Failed-Dependency"><a href="#424-Failed-Dependency" class="headerlink" title="424 Failed Dependency"></a>424 Failed Dependency</h4><p>​    由于之前的某个请求发生的错误，导致当前请求失败，例如PROPPATCH。（RFC 4918 WebDAV）</p>
+<h4 id="425-Unordered-Collection"><a href="#425-Unordered-Collection" class="headerlink" title="425 Unordered Collection"></a>425 Unordered Collection</h4><p>​    在WebDav Advanced Collections草案中定义，但是未出现在《WebDAV顺序集协议》（RFC 3658）中。</p>
+<h4 id="426-Upgrade-Required"><a href="#426-Upgrade-Required" class="headerlink" title="426 Upgrade Required"></a>426 Upgrade Required</h4><p>​    客户端应当切换到TLS/1.0。（RFC 2817）</p>
+<h4 id="449-Retry-With"><a href="#449-Retry-With" class="headerlink" title="449 Retry With"></a>449 Retry With</h4><p>​    由微软扩展，代表请求应当在执行完适当的操作后进行重试。</p>
+<h3 id="5xx服务器错误"><a href="#5xx服务器错误" class="headerlink" title="5xx服务器错误"></a>5xx服务器错误</h3><p>​    这类状态码代表了服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器意识到以当前的软硬件资源无法完成对请求的处理。除非这是一个HEAD请求，否则服务器应当包含一个解释当前错误状态以及这个状况是临时的还是永久的解释信息实体。浏览器应当向用户展示任何在当前响应中被包含的实体。</p>
+<p>​    这些状态码适用于任何响应方法。</p>
+<h4 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h4><p>​    服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。</p>
+<h4 id="501-Not-Implemented"><a href="#501-Not-Implemented" class="headerlink" title="501 Not Implemented"></a>501 Not Implemented</h4><p>​    服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。</p>
+<h4 id="502-Bad-Gateway"><a href="#502-Bad-Gateway" class="headerlink" title="502 Bad Gateway"></a>502 Bad Gateway</h4><p>​    作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。</p>
+<h4 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h4><p>​    由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个Retry-After头用以标明这个延迟时间。如果没有给出这个Retry-After信息，那么客户端应当以处理500响应的方式处理它。</p>
+<h4 id="504-Gateway-Timeout"><a href="#504-Gateway-Timeout" class="headerlink" title="504 Gateway Timeout"></a>504 Gateway Timeout</h4><p>​    作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。</p>
+<p>​    注意：某些代理服务器在DNS查询超时时会返回400或者500错误</p>
+<h4 id="505-HTTP-Version-Not-Supported"><a href="#505-HTTP-Version-Not-Supported" class="headerlink" title="505 HTTP Version Not Supported"></a>505 HTTP Version Not Supported</h4><p>​    服务器不支持，或者拒绝支持在请求中使用的HTTP版本。这暗示着服务器不能或不愿使用与客户端相同的版本。响应中应当包含一个描述了为何版本不被支持以及服务器支持哪些协议的实体。</p>
+<h4 id="506-Variant-Also-Negotiates"><a href="#506-Variant-Also-Negotiates" class="headerlink" title="506 Variant Also Negotiates"></a>506 Variant Also Negotiates</h4><p>​    由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误：被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。</p>
+<h4 id="507-Insufficient-Storage"><a href="#507-Insufficient-Storage" class="headerlink" title="507 Insufficient Storage"></a>507 Insufficient Storage</h4><p>​    服务器无法存储完成请求所必须的内容。这个状况被认为是临时的。WebDAV（RFC 4918）</p>
+<h4 id="509-Bandwidth-Limit-Exceeded"><a href="#509-Bandwidth-Limit-Exceeded" class="headerlink" title="509 Bandwidth Limit Exceeded"></a>509 Bandwidth Limit Exceeded</h4><p>​    服务器达到带宽限制。这不是一个官方的状态码，但是仍被广泛使用。</p>
+<h4 id="510-Not-Extended"><a href="#510-Not-Extended" class="headerlink" title="510 Not Extended"></a>510 Not Extended</h4><p>​    获取资源所需要的策略并没有没满足。</p>
+]]></content>
+  </entry>
+</search>
