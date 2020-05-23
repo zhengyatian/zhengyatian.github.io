@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    吃饭啦 |
+    Hexo + GitHub Pages 404 |
     
     我不是法王吗</title>
   
@@ -29,7 +29,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-吃饭啦" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-GitHub Pages 404" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
         
@@ -37,7 +37,7 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      吃饭啦
+      Hexo + GitHub Pages 404
     </h1>
   
   
@@ -50,8 +50,8 @@
 
                 
                     <div class="article-meta">
-                        <a href="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" class="article-date">
-  <time datetime="2020-05-22T12:58:34.000Z" itemprop="datePublished">2020-05-22</time>
+                        <a href="/2017/10/02/GitHub%20Pages%20404/" class="article-date">
+  <time datetime="2017-10-02T03:58:34.000Z" itemprop="datePublished">2017-10-02</time>
 </a>
                             
                     </div>
@@ -59,6 +59,8 @@
 
                         
                             
+    <div class="tocbot"></div>
+
 
 
 
@@ -72,37 +74,23 @@
                                             
 
                                                 
-                                                                    <p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
-<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
-<p>🐟🐟🐟🐟清烤多春鱼</p>
-<blockquote>
-<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
-</blockquote>
-<a id="more"></a>
+                                                                    <p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 zhengyatian.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
 
-
-
-<p>🍆清蒸茄子</p>
-<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
-
-<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
-<p>🌲另一个菜叫什么呢？</p>
-<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
-<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
-<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
-<blockquote>
-<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
-</blockquote>
-<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
 
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" data-id="ckaj3b8ko0001dqkuczuc4wyw" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2017/10/02/GitHub%20Pages%20404/" data-id="ckaj3b8ki0000dqkuhyss4k72" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -114,11 +102,15 @@
         
   <nav class="article-nav">
     
-    
-      <a href="/2019/11/01/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
-        <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">HTTP 的一点儿小知识</div>
+      <a href="/2018/02/22/2018-02-22-Hexo-%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Hexo 文字中如何插入图片
+          
+        </div>
       </a>
+    
     
   </nav>
 
