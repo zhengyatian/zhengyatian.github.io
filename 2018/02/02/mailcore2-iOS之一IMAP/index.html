@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    mailcore 2  iOS  之一 IMAP |
+    
+    我不是法王吗</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-mailcore2-iOS之一IMAP" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      mailcore 2  iOS  之一 IMAP
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/" class="article-date">
+  <time datetime="2018-02-02T05:50:22.000Z" itemprop="datePublished">2018-02-02</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>公司开发oa中的邮箱，资源限制，最后iOS开发采用的mailcore2-ios框架。研究的不深，只当做个分享，口条不好，凑合看吧。</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我直接用的cocoapods，非常方便，只是资源包大了一点，耐心等待就好了，其他方式没试过。<br><code>pod &#39;mailcore2-ios&#39;</code></p>
+<p><a href="https://github.com/MailCore/mailcore2" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2</a> 官方，有问题提issue，开发者会很热心回答的。</p>
+<a id="more"></a>
+
+<h5 id="更新-纠错日志"><a href="#更新-纠错日志" class="headerlink" title="更新/纠错日志"></a>更新/纠错日志</h5><ul>
+<li>2018-12-11 纠错：IMAP-4.单封邮件获取和处理.根据uid获取单封邮件 有误，<code>range的范围应该是（uid, 0），而不是(uid, 1)，这样获取到的是两封</code>，脑子秀逗了。</li>
+<li>2018-12-11 更新：创建草稿邮件</li>
+<li>2018-12-12 更新：SMTP协议</li>
+</ul>
+<h5 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h5><p>个人比较喜欢imap协议，功能比较丰富，不过用mailcore搞起来似乎费劲了一点，我也只是实现了一些基本功能，高级的还在研究。</p>
+<p>计划分享一下下面几项🤗🤗🤗🤗🤗</p>
+<ul>
+<li>IMAP<ul>
+<li>登录</li>
+<li>文件夹列表、命名空间</li>
+<li>邮件列表拉取</li>
+<li>邮件列表中单封邮件内容获取和处理</li>
+<li>邮件的各种标记添加</li>
+<li>删除邮件</li>
+<li>附件和html内容解析</li>
+<li>草稿箱邮件创建</li>
+</ul>
+</li>
+<li>POP</li>
+<li>SMTP<ul>
+<li>见<a href="http://zhengyatian.github.io/2018/12/12/2018-12-12-mailcore-2-iOS-%E4%B9%8B%E4%BA%8C-SMTP/">mailcore2-ios  之二 SMTP</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h5><h6 id="1-登录"><a href="#1-登录" class="headerlink" title="1.登录"></a>1.登录</h6><p>首先设置账号信息，也就是创建session；然后校验；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.imapSession.hostname &#x3D; session.imapHost; &#x2F;&#x2F;imap.xxx.com.cn</span><br><span class="line">self.imapSession.username &#x3D; session.username; &#x2F;&#x2F;littlecat@xxx.com.cn</span><br><span class="line">self.imapSession.password &#x3D; session.password; &#x2F;&#x2F;password</span><br><span class="line">self.imapSession.port     &#x3D; (unsigned int)session.imapPort;&#x2F;&#x2F;143、993</span><br><span class="line">self.imapSession.connectionType &#x3D; session.imapIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;&#x2F;&#x2F;取决于你的邮件服务器是不是SSL的；</span><br></pre></td></tr></table></figure>
+
+<p>校验信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MCOIMAPOperation *checkOp &#x3D; [session checkAccountOperation];&#x2F;&#x2F;这里的session就是配置帐号信息的session</span><br><span class="line">[checkOp start:^(NSError *error) &#123;</span><br><span class="line">     NSLog(@&quot;finished checking account.&quot;);</span><br><span class="line">     if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">         complete(nil);</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">         err(error);</span><br><span class="line">         NSLog(@&quot;error loading account: %@&quot;, [error userInfo][@&quot;NSLocalizedDescription&quot;]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h6 id="2-获取文件夹目录"><a href="#2-获取文件夹目录" class="headerlink" title="2.获取文件夹目录"></a>2.获取文件夹目录</h6><p>命名空间：它这里有个namespace，对于<code>中文名称</code>的📂名称，需要通过<code>命名空间</code>来解析，<code>不然很可能是👇这种乱码</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;这是当时解析网易邮箱的乱码，找原因找了好久😭😭😭，在一篇博客上看到的解决办法。</span><br><span class="line">INBOX</span><br><span class="line">&amp;g0l6P3ux-</span><br><span class="line">&amp;XfJT0ZAB-</span><br><span class="line">&amp;XfJSIJZk-</span><br><span class="line">&amp;V4NXPpCuTvY-</span><br><span class="line">&amp;dcVr0mWHTvZZOQ-</span><br><span class="line">&amp;Xn9USpCuTvY-</span><br><span class="line">&amp;i6KWBZCuTvY-</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+<p>先把正确的放出来，找回点走下去的信心💔💔💗💖…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INBOX</span><br><span class="line">草稿箱</span><br><span class="line">已发送</span><br><span class="line">已删除</span><br><span class="line">垃圾邮件</span><br><span class="line">病毒文件夹</span><br><span class="line">广告邮件</span><br><span class="line">订阅邮件</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+<p>因为<code>某些邮箱的session莫名其妙没有自带默认的命名空间</code>，我采取的笨办法是先去获取一下namespace，不过嘛，，，居然获取到的也时有时无😱😱😱😱😱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MCOIMAPSession *session &#x3D; [MMIMAPTool getSession];</span><br><span class="line">MCOIMAPFetchNamespaceOperation * op &#x3D; [session fetchNamespaceOperation];</span><br><span class="line">[op start:^(NSError * __nullable error, NSDictionary * namespaces) &#123;</span><br><span class="line">     MCOIMAPNamespace * namespace &#x3D; (session.defaultNamespace !&#x3D; nil) ? session.defaultNamespace : [namespaces objectForKey:MCOIMAPNamespacePersonal];</span><br><span class="line">    if (!namespace) &#123;</span><br><span class="line">        &#x2F;&#x2F;没有命名空间，很可能文件夹的名字解析出来是乱码，这个看个人怎么处理吧；</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;如果拿到了namespace，可以安心获取folderlist了</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>关键的一句：<code>NSString *folername = [namespace componentsFromPath:f.path][0];</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MCOIMAPFetchFoldersOperation * ops &#x3D; [session fetchAllFoldersOperation];</span><br><span class="line">[ops start:^(NSError * error,NSArray *folders) &#123;</span><br><span class="line">   if (error) &#123;</span><br><span class="line">      return ;</span><br><span class="line">   &#125;</span><br><span class="line">   NSMutableDictionary *dic &#x3D; [NSMutableDictionary dictionary];</span><br><span class="line">   for (MCOIMAPFolder *f in folders) &#123;</span><br><span class="line">      NSString *folername &#x3D; [namespace componentsFromPath:f.path][0];</span><br><span class="line">      [dic setValue:f.path forKey:folername];</span><br><span class="line">   &#125;</span><br><span class="line">  &#x2F;&#x2F;继续其他处理；</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>获取某个文件夹的mail数目等信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MCOIMAPFolderInfoOperation *folderInfo &#x3D; [session folderInfoOperation:foldername];</span><br><span class="line"></span><br><span class="line">[folderInfo start:^(NSError *error, MCOIMAPFolderInfo *info) &#123;</span><br><span class="line">    if (error) &#123;    </span><br><span class="line">        return ;</span><br><span class="line">     &#125;</span><br><span class="line">    complete(info.messageCount);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-拉取某个文件夹邮件列表"><a href="#3-拉取某个文件夹邮件列表" class="headerlink" title="3.拉取某个文件夹邮件列表"></a>3.拉取某个文件夹邮件列表</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;这里的kind我觉得是需要拉取的内容们，我是几乎大部分都down了，可以看情况自己选择；</span><br><span class="line">&#x2F;&#x2F;拉取范围，（0，UINT64_MAX）就是都拉取了，我是10条10条的来的。</span><br><span class="line">MCOIMAPMessagesRequestKind requestKind &#x3D; (MCOIMAPMessagesRequestKind)</span><br><span class="line">(MCOIMAPMessagesRequestKindHeaders |</span><br><span class="line"> MCOIMAPMessagesRequestKindStructure |</span><br><span class="line"> MCOIMAPMessagesRequestKindInternalDate|</span><br><span class="line"> MCOIMAPMessagesRequestKindHeaderSubject |</span><br><span class="line"> MCOIMAPMessagesRequestKindFlags);</span><br><span class="line"></span><br><span class="line">MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];&#x2F;&#x2F;range控制拉取的邮件的范围，UINT64_MAX</span><br><span class="line">MCOIMAPFetchMessagesOperation *op &#x3D; [session fetchMessagesOperationWithFolder:foldername requestKind:requestKind uids:uids];</span><br><span class="line">[op start:^(NSError * _Nullable error, NSArray * _Nullable messages, MCOIndexSet * _Nullable vanishedMessages) &#123;</span><br><span class="line">     NSMutableArray *listArr &#x3D; [NSMutableArray array];</span><br><span class="line">     NSInteger count &#x3D; messages.count;</span><br><span class="line">     for (int i &#x3D; 0; i &lt; count; i ++) &#123;</span><br><span class="line">            MCOIMAPMessage *msg &#x3D; messages[i];</span><br><span class="line">            &#x2F;&#x2F;一堆属性，自己摘取吧，大多是header里的，为了显示邮件列表，邮件内容是另外单独获取的，存储也只是存储了列表；</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;又拍了一次顺序，好像有点蠢🙄🙄🙄🙄🙄。。。我是根据uid排序的，目前还没发现乱序什么的</span><br><span class="line">    NSSortDescriptor *sortDescriptor &#x3D; [NSSortDescriptor sortDescriptorWithKey:@&quot;uid&quot; ascending:NO];</span><br><span class="line">    [listArr sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>还有另外一个方法，但是实在没太搞懂里面的number参数，文档里说sequence number不能排序用，所以我没选择这个方法，主要是没懂👺👺👺👺👺👺👺</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Returns an operation to fetch messages by (sequence) number.</span><br><span class="line">- (MCOIMAPFetchMessagesOperation *) fetchMessagesByNumberOperationWithFolder:(NSString *)folder</span><br><span class="line">                                                                 requestKind:(MCOIMAPMessagesRequestKind)requestKind</span><br><span class="line">                                                                     numbers:(MCOIndexSet *)numbers;</span><br></pre></td></tr></table></figure>
+<h6 id="4-单封邮件获取和处理"><a href="#4-单封邮件获取和处理" class="headerlink" title="4.单封邮件获取和处理"></a>4.单封邮件获取和处理</h6><ul>
+<li><p>根据uid获取单封邮件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;和获取邮件列表一样，不过range的长度是0；</span><br><span class="line">MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 0)];</span><br><span class="line">&#x2F;&#x2F;之前写错了，range长度应该是0，而不是1；</span><br><span class="line">&#x2F;&#x2F;MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 1)];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取邮件纯文本内容（不包括html样式等）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &#x2F;&#x2F;这里是在上一步获取单个邮件的回调内进行的</span><br><span class="line">     &#x2F;&#x2F;这个方法是自动把文本中的空行之类的去掉了，也有不去掉和可选是否去掉的方法</span><br><span class="line">        MCOIMAPMessage *msg &#x3D; [&#x2F;&#x2F;上一步的message];</span><br><span class="line">        MCOIMAPMessageRenderingOperation *  messageRenderingOperation &#x3D; [session plainTextBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">        [messageRenderingOperation start:^(NSString * plainTextBodyString,NSError * error) &#123;</span><br><span class="line">            if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">                complete(plainTextBodyString, msg);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                NSLog(@&quot;fetch plain text error:%@&quot;,error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">文档里注释的不能再清楚了，自己查阅吧😈😈😈😈😈</span><br><span class="line">&#x2F;&#x2F;Returns an operation to render the plain text version of a message.</span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextRenderingOperationWithMessage:(MCOIMAPMessage *)message</span><br><span class="line">                                                                       folder:(NSString *)folder;</span><br><span class="line">&#x2F;&#x2F; All end of line will be removed and white spaces cleaned up if requested.</span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextBodyRenderingOperationWithMessage:(MCOIMAPMessage *)message</span><br><span class="line">                                                                           folder:(NSString *)folder</span><br><span class="line">                                                                  stripWhitespace:(BOOL)stripWhitespace;</span><br></pre></td></tr></table></figure></li>
+<li><p>获取html内容，放在一个webview中显示基本内容应该没问题了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MCOIMAPMessage *msg &#x3D; [同样是上一步的message];</span><br><span class="line">MCOIMAPMessageRenderingOperation *  messageRenderingOperation &#x3D; [session htmlBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">[messageRenderingOperation start:^(NSString * _Nullable htmlString, NSError * _Nullable error) &#123;</span><br><span class="line">     if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">         complete(htmlString, msg);</span><br><span class="line">     &#125;else&#123;</span><br><span class="line">         NSLog(@&quot;fetch plain text error:%@&quot;,error);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h6 id="5-添加各种标记"><a href="#5-添加各种标记" class="headerlink" title="5.添加各种标记"></a>5.添加各种标记</h6><p>已读未读，小红旗标记等等。需要注意的是，<code>“kind”区分是添加标记还是移除标记</code>，例如已读“MCOMessageFlagSeen”标记，移除就成了未读，<code>没有“unseen”之类的。。。</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- (void)setFlagged:(BOOL)flagged message:(NSInteger)uid folder:(NSString *)folder &#123;</span><br><span class="line">    MCOIMAPSession *session &#x3D; &#x2F;&#x2F;imap session；</span><br><span class="line">    MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithIndex:uid];</span><br><span class="line">    MCOIMAPOperation *op &#x3D; [session storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                             uids:uids</span><br><span class="line">                                                             kind:(flagged ? MCOIMAPStoreFlagsRequestKindSet : MCOIMAPStoreFlagsRequestKindRemove)</span><br><span class="line">                                                            flags:MCOMessageFlagFlagged];</span><br><span class="line">    [op start:^(NSError * _Nullable error) &#123;</span><br><span class="line">        NSLog(@&quot;store star flag &#39;s error: %@&quot;,error);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;如果要批量设置标记，uids可以通过range来创建</span><br><span class="line">    MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];</span><br></pre></td></tr></table></figure>
+<h6 id="6-删除邮件"><a href="#6-删除邮件" class="headerlink" title="6.删除邮件"></a>6.删除邮件</h6><p>为什么先说的标记那部分，因为删除邮件也是添加“delete”标记。这里需要做一个区分，<code>要删除的邮件是不是在 “已删除/草稿箱” 这两个文件夹</code>。</p>
+<p>主要操作有三个：</p>
+<ul>
+<li>1、copy一份到“已删除”</li>
+<li>2、设置删除标记</li>
+<li>3、执行擦除expunge操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;**如果是不在已删除，草稿箱，执行1、2、3</span><br><span class="line">&#x2F;&#x2F;**如果在，只执行2、3</span><br><span class="line">    if (![folder isEqualToString:deleteFolder] &amp;&amp; ![folder isEqualToString:draftFolder]) &#123;</span><br><span class="line">        &#x2F;&#x2F;copy 一份到已删除</span><br><span class="line">        MCOIMAPCopyMessagesOperation *op &#x3D; [imapSession copyMessagesOperationWithFolder:folder</span><br><span class="line">                                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                              destFolder:deleteFolder];</span><br><span class="line">        [op start:^(NSError *error, NSDictionary *uidMapping) &#123;</span><br><span class="line">            NSLog(@&quot;Error copy message to folder:%@&quot;, error);</span><br><span class="line">            [self unturnedDelete:uid folder:folder];</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        [self unturnedDelete:uid folder:folder];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">- (void)unturnedDelete:(NSInteger)uid folder:(NSString *)folder </span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;先添加删除flags</span><br><span class="line">    MCOIMAPOperation * op2 &#x3D; [imapSession storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                    kind:MCOIMAPStoreFlagsRequestKindSet</span><br><span class="line">                                                                                   flags:MCOMessageFlagDeleted];</span><br><span class="line">    [op2 start:^(NSError * error) &#123;</span><br><span class="line">        &#x2F;&#x2F;添加成功之后对当前文件夹进行expunge操作</span><br><span class="line">        MCOIMAPOperation *deleteOp &#x3D; [imapSession expungeOperation:folder];</span><br><span class="line">        [deleteOp start:^(NSError *error) &#123;</span><br><span class="line">            if(error) &#123;</span><br><span class="line">                NSLog(@&quot;Error expunging folder:%@&quot;, error);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                NSLog(@&quot;Successfully expunged folder&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="7-附件处理和html内容解析"><a href="#7-附件处理和html内容解析" class="headerlink" title="7.附件处理和html内容解析"></a>7.附件处理和html内容解析</h6><ul>
+<li><p>官方demo<br><a href="https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test</a><br>github上他们有写一个demo，我直接用了里面两个类，messageView又自己加了些乱七八糟的逻辑。protocol方便解析的，具体讲解后续更新。<br><img src="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/1.png" alt></p>
+</li>
+<li><p>MCOHTMLRendererIMAPDelegate<br>这个协议里面，提供了可以自主解析附件、图片、html内容，以及简单给定html展示样式的方法。先贴出header、正文、附件，我自己写的一个简单展示模板吧，内容处理这块东西太多了，整理一下再继续更新。<br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForAttachment.html</a><br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMessage.html</a><br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMainHeader.html</a></p>
+</li>
+</ul>
+<h6 id="8-创建草稿箱邮件"><a href="#8-创建草稿箱邮件" class="headerlink" title="8.创建草稿箱邮件"></a>8.创建草稿箱邮件</h6><p>​     “append” 拼接的概念，往一个文件夹内添加邮件；</p>
+<ul>
+<li>1、新建一封新邮件(SMTP中讲创建邮件)</li>
+<li>2、获取你的草稿箱文件夹名称</li>
+<li>3、执行append操作<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;这里的data就是新建的邮件；</span><br><span class="line">- (void)createDraft:(NSData *)data block:(void(^)(bool success, uint32_t uid, NSString *folder))block</span><br><span class="line">&#123;</span><br><span class="line">    if (!imapSession ) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    NSString *folder &#x3D; @&quot;Drafts&quot; &#x2F;&#x2F;草稿箱 ,或者是你邮箱服务器解析到的草稿箱文件夹名称；</span><br><span class="line"></span><br><span class="line">    MCOIMAPAppendMessageOperation *op &#x3D; [imapSession appendMessageOperationWithFolder:folder messageData:data flags:MCOMessageFlagDraft];</span><br><span class="line">    [op start:^(NSError *error, uint32_t createdUID) &#123;</span><br><span class="line">        &#x2F;&#x2F;do your operation;</span><br><span class="line">        NSLog(@&quot;create Draft message :%@&quot;,@(createdUID));</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://zhengyatian.github.io/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/" data-id="ckaj4n4fx0008u1kuexx93z13" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Hexo 文字中如何插入图片
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">HTTP 的一点儿小知识</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 我不是法王吗</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="我不是法王吗"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>

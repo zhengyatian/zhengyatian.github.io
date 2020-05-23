@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    mailcore 2 iOS  之二 SMTP |
+    
+    我不是法王吗</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-mailcore2-iOS之二SMTP" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      mailcore 2 iOS  之二 SMTP
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-date">
+  <time datetime="2018-12-12T01:50:22.000Z" itemprop="datePublished">2018-12-12</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+<p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，希望对你们有帮助，也做个沟通交流。</p>
+<ul>
+<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+</li>
+<li><p>SMTP</p>
+  <a id="more"></a>
+
+<ul>
+<li>登录/用户验证</li>
+<li>创建邮件体</li>
+<li>附件添加</li>
+<li>发送</li>
+<li>发送成功后<code>手动</code>添加到<code>“已发送”</code>文件夹</li>
+</ul>
+</li>
+</ul>
+<h5 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h5><h6 id="1、登录-用户验证"><a href="#1、登录-用户验证" class="headerlink" title="1、登录/用户验证"></a>1、登录/用户验证</h6><p>​    不论哪种协议，都需要先验证邮箱地址/服务器、密码、端口等，SMTP也一样，你也可以不验证，大不了就是发不出去邮件。。。🤓🤓🤓🤓🤓</p>
+<p>创建session，都类似的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.smtpSession.hostname &#x3D; session.smtpHost;&#x2F;&#x2F;smtp.***.com</span><br><span class="line">self.smtpSession.username &#x3D; session.username;&#x2F;&#x2F;littlecat@xxx.com.cn</span><br><span class="line">self.smtpSession.password &#x3D; session.password;&#x2F;&#x2F;password</span><br><span class="line">self.smtpSession.port     &#x3D; (unsigned int)session.smtpPort;&#x2F;&#x2F;25、465、587？</span><br><span class="line">self.smtpSession.connectionType &#x3D; session.smtpIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;&#x2F;&#x2F;取决于你的邮件服务器是不是SSL的；</span><br><span class="line">self.smtpSession.authType &#x3D; MCOAuthTypeSASLLogin;&#x2F;&#x2F;session校验的类型，这里选的登录，其他还没搞明白(没看。。)😌</span><br></pre></td></tr></table></figure>
+
+<p>校验邮箱信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MCOSMTPOperation *smtpOperation &#x3D; [smtpSession loginOperation];</span><br><span class="line">[smtpOperation start:^(NSError * error) &#123;</span><br><span class="line">    NSLog(@&quot;finished checking SMTP account.&quot;);</span><br><span class="line">    if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">        &#x2F;&#x2F;now ,you can send email.</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        NSLog(@&quot;error check smtp account: %@&quot;, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h6 id="2、创建邮件"><a href="#2、创建邮件" class="headerlink" title="2、创建邮件"></a>2、创建邮件</h6><ul>
+<li>create message builder;</li>
+<li>set sender(from)、receiver（to）、cc and bcc;</li>
+<li>set body (html body  or  plain text body);</li>
+</ul>
+<p>懒得正经打字了，bite me！🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">- (void)messageBuildFrom:(NSString *)displayName &#x2F;&#x2F; 发件人昵称，可以不设置；</span><br><span class="line">                 mailBox:(NSString *)mail  &#x2F;&#x2F;发件人邮箱地址；</span><br><span class="line">                      to:(NSArray *)to  &#x2F;&#x2F;收件人（邮箱地址字符串格式，下同）；</span><br><span class="line">                      cc:(NSArray *)cc  &#x2F;&#x2F;抄送人；</span><br><span class="line">                     bcc:(NSArray *)bcc  &#x2F;&#x2F;密送人；</span><br><span class="line">                 subject:(NSString *)subject  &#x2F;&#x2F;邮件主题；</span><br><span class="line">                textBody:(NSString *)body  &#x2F;&#x2F;邮件正文，我这里是带标签的html文本；</span><br><span class="line">                 attachs:(NSDictionary *)attachs  &#x2F;&#x2F;附件s（文件名称和NSData格式数据）；</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser  &#x2F;&#x2F;转发时的原邮件；</span><br><span class="line">         completeHandler:(void(^)())complete</span><br><span class="line">                   error:(void(^)(NSError *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder &#x3D; [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;header;</span><br><span class="line">    if (displayName !&#x3D; nil) &#123;</span><br><span class="line">        msgBuilder.header.from &#x3D; [MCOAddress addressWithDisplayName:displayName mailbox:mail];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        msgBuilder.header.from &#x3D; [MCOAddress addressWithMailbox:mail];</span><br><span class="line">    &#125;</span><br><span class="line">    msgBuilder.header.to      &#x3D; [self mailStringToMCOAddress:to];&#x2F;&#x2F;字符串格式的邮箱地址，要转成address类；</span><br><span class="line">    msgBuilder.header.cc      &#x3D; [self mailStringToMCOAddress:cc];</span><br><span class="line">    msgBuilder.header.bcc     &#x3D; [self mailStringToMCOAddress:bcc];</span><br><span class="line">    msgBuilder.header.subject &#x3D; subject;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;body</span><br><span class="line">    [msgBuilder setHTMLBody:body];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;------见下</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSArray *)mailStringToMCOAddress:(NSArray *)arr</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableArray *temp &#x3D; [NSMutableArray array];</span><br><span class="line">    for (NSString *str in arr) &#123;</span><br><span class="line">        MCOAddress *add &#x3D; [MCOAddress addressWithMailbox:str];</span><br><span class="line">        [temp addObject:add];</span><br><span class="line">    &#125;</span><br><span class="line">    return temp.copy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3、附件处理"><a href="#3、附件处理" class="headerlink" title="3、附件处理"></a>3、附件处理</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">- (void)messageBuildFrom:(NSString *)displayName</span><br><span class="line">                 mailBox:(NSString *)mail</span><br><span class="line">                      to:(NSArray *)to</span><br><span class="line">                      cc:(NSArray *)cc</span><br><span class="line">                     bcc:(NSArray *)bcc</span><br><span class="line">                 subject:(NSString *)subject</span><br><span class="line">                textBody:(NSString *)body</span><br><span class="line">                 attachs:(NSDictionary *)attachs</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser</span><br><span class="line">         completeHandler:(void(^)())complete</span><br><span class="line">                   error:(void(^)(NSError *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder &#x3D; [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; -------见上 。。。 ------&#x2F;&#x2F;</span><br><span class="line">    if (msgParser !&#x3D; nil) &#123;</span><br><span class="line">        &#x2F;&#x2F;附加资源，</span><br><span class="line">        NSArray *inAttach &#x3D; msgParser.htmlInlineAttachments;</span><br><span class="line">        for (MCOAttachment *attach in inAttach) &#123;</span><br><span class="line">            NSString * path &#x3D; [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@&quot;%@_%@&quot;,msgParser.header.messageID,attach.filename]];</span><br><span class="line">            NSData *data &#x3D; [NSData dataWithContentsOfFile:path];</span><br><span class="line">            if (data) &#123;</span><br><span class="line">                MCOAttachment *temp &#x3D; [MCOAttachment attachmentWithData:data filename:attach.filename];</span><br><span class="line">                temp.inlineAttachment &#x3D; YES;</span><br><span class="line">                [msgBuilder addRelatedAttachment:temp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;看接口文档的意思，上面是把转发的邮件中的附件添加上，</span><br><span class="line">    &#x2F;&#x2F;可是并不起作用。。。采取的方法是，下面循环再添加一次。。。。🤧🤧🤧🤧🤧</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;附件</span><br><span class="line">    if (attachs) &#123;</span><br><span class="line">        for (NSString *name in attachs.allKeys) &#123;</span><br><span class="line">            MCOAttachment *attach &#x3D; [MCOAttachment attachmentWithData:[attachs objectForKey:name] filename:name];</span><br><span class="line">            [msgBuilder addAttachment:attach];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;send</span><br><span class="line">    &#x2F;&#x2F;--------见下</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4、发送邮件"><a href="#4、发送邮件" class="headerlink" title="4、发送邮件"></a>4、发送邮件</h6><p>邮件也创建了，附件添加完，终于要发送了，但是要注意的是<code>发送操作成功完成后，对方确实可以成功收到，但是在发送方的“已发送”是没有的，需要手动append一份过去</code>。<br>执行append操作，需要用<code>imapSession</code>的，不要搞错了。😅<br> “已发送”文件夹的filepath，可能是 <code>Sent、Sent Messages</code>等等，具体看你解析的邮箱服务器，不一定都是Sent 哦。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;send</span><br><span class="line">NSData *rfc822 &#x3D; [msgBuilder data];</span><br><span class="line">MCOSMTPSendOperation *send &#x3D; [smtpSession sendOperationWithData:rfc822];</span><br><span class="line">[send start:^(NSError * _Nullable error) &#123;</span><br><span class="line">    if (error) &#123;</span><br><span class="line">        fail(error);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        &#x2F;&#x2F;发送成功后，手动添加到“已发送”；</span><br><span class="line">        MCOIMAPAppendMessageOperation *op &#x3D; [imapSession appendMessageOperationWithFolder:[MMIMAPTool getVirtualNameFor:@&quot;Sent&quot;] messageData:rfc822 flags:MCOMessageFlagMDNSent];</span><br><span class="line">        [op start:^(NSError *error, uint32_t createdUID) &#123;</span><br><span class="line">            NSLog(@&quot;create sent message :%@\nerror:%@&quot;, @(createdUID), error);</span><br><span class="line">        &#125;];</span><br><span class="line">        complete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
+<h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://zhengyatian.github.io/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" data-id="ckaj4n4fk0005u1ku6dlz3sd9" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            去掉UIWebView底部的黑条
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">Hexo 文字中如何插入图片</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 我不是法王吗</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="我不是法王吗"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>

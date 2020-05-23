@@ -13,8 +13,118 @@
 <p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
 <h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
 
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。</p>
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
 <p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### Command</span><br><span class="line"></span><br><span class="line">&#x2F;Users&#x2F;我&#x2F;.rvm&#x2F;gems&#x2F;ruby-2.4.0&#x2F;bin&#x2F;pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>mailcore 2 iOS  之二 SMTP</title>
+    <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
+    <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+<p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，希望对你们有帮助，也做个沟通交流。</p>
+<ul>
+<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+</li>
+<li><p>SMTP</p>
+  <a id="more"></a>
+
+<ul>
+<li>登录/用户验证</li>
+<li>创建邮件体</li>
+<li>附件添加</li>
+<li>发送</li>
+<li>发送成功后<code>手动</code>添加到<code>“已发送”</code>文件夹</li>
+</ul>
+</li>
+</ul>
+<h5 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h5><h6 id="1、登录-用户验证"><a href="#1、登录-用户验证" class="headerlink" title="1、登录/用户验证"></a>1、登录/用户验证</h6><p>​    不论哪种协议，都需要先验证邮箱地址/服务器、密码、端口等，SMTP也一样，你也可以不验证，大不了就是发不出去邮件。。。🤓🤓🤓🤓🤓</p>
+<p>创建session，都类似的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">self.smtpSession.hostname &#x3D; session.smtpHost;&#x2F;&#x2F;smtp.***.com</span><br><span class="line">self.smtpSession.username &#x3D; session.username;&#x2F;&#x2F;littlecat@xxx.com.cn</span><br><span class="line">self.smtpSession.password &#x3D; session.password;&#x2F;&#x2F;password</span><br><span class="line">self.smtpSession.port     &#x3D; (unsigned int)session.smtpPort;&#x2F;&#x2F;25、465、587？</span><br><span class="line">self.smtpSession.connectionType &#x3D; session.smtpIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;&#x2F;&#x2F;取决于你的邮件服务器是不是SSL的；</span><br><span class="line">self.smtpSession.authType &#x3D; MCOAuthTypeSASLLogin;&#x2F;&#x2F;session校验的类型，这里选的登录，其他还没搞明白(没看。。)😌</span><br></pre></td></tr></table></figure>
+
+<p>校验邮箱信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOSMTPOperation *smtpOperation &#x3D; [smtpSession loginOperation];</span><br><span class="line">[smtpOperation start:^(NSError * error) &#123;</span><br><span class="line">    NSLog(@&quot;finished checking SMTP account.&quot;);</span><br><span class="line">    if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">        &#x2F;&#x2F;now ,you can send email.</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        NSLog(@&quot;error check smtp account: %@&quot;, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h6 id="2、创建邮件"><a href="#2、创建邮件" class="headerlink" title="2、创建邮件"></a>2、创建邮件</h6><ul>
+<li>create message builder;</li>
+<li>set sender(from)、receiver（to）、cc and bcc;</li>
+<li>set body (html body  or  plain text body);</li>
+</ul>
+<p>懒得正经打字了，bite me！🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)messageBuildFrom:(NSString *)displayName &#x2F;&#x2F; 发件人昵称，可以不设置；</span><br><span class="line">                 mailBox:(NSString *)mail  &#x2F;&#x2F;发件人邮箱地址；</span><br><span class="line">                      to:(NSArray *)to  &#x2F;&#x2F;收件人（邮箱地址字符串格式，下同）；</span><br><span class="line">                      cc:(NSArray *)cc  &#x2F;&#x2F;抄送人；</span><br><span class="line">                     bcc:(NSArray *)bcc  &#x2F;&#x2F;密送人；</span><br><span class="line">                 subject:(NSString *)subject  &#x2F;&#x2F;邮件主题；</span><br><span class="line">                textBody:(NSString *)body  &#x2F;&#x2F;邮件正文，我这里是带标签的html文本；</span><br><span class="line">                 attachs:(NSDictionary *)attachs  &#x2F;&#x2F;附件s（文件名称和NSData格式数据）；</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser  &#x2F;&#x2F;转发时的原邮件；</span><br><span class="line">         completeHandler:(void(^)())complete</span><br><span class="line">                   error:(void(^)(NSError *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder &#x3D; [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;header;</span><br><span class="line">    if (displayName !&#x3D; nil) &#123;</span><br><span class="line">        msgBuilder.header.from &#x3D; [MCOAddress addressWithDisplayName:displayName mailbox:mail];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        msgBuilder.header.from &#x3D; [MCOAddress addressWithMailbox:mail];</span><br><span class="line">    &#125;</span><br><span class="line">    msgBuilder.header.to      &#x3D; [self mailStringToMCOAddress:to];&#x2F;&#x2F;字符串格式的邮箱地址，要转成address类；</span><br><span class="line">    msgBuilder.header.cc      &#x3D; [self mailStringToMCOAddress:cc];</span><br><span class="line">    msgBuilder.header.bcc     &#x3D; [self mailStringToMCOAddress:bcc];</span><br><span class="line">    msgBuilder.header.subject &#x3D; subject;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;body</span><br><span class="line">    [msgBuilder setHTMLBody:body];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;------见下</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSArray *)mailStringToMCOAddress:(NSArray *)arr</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableArray *temp &#x3D; [NSMutableArray array];</span><br><span class="line">    for (NSString *str in arr) &#123;</span><br><span class="line">        MCOAddress *add &#x3D; [MCOAddress addressWithMailbox:str];</span><br><span class="line">        [temp addObject:add];</span><br><span class="line">    &#125;</span><br><span class="line">    return temp.copy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3、附件处理"><a href="#3、附件处理" class="headerlink" title="3、附件处理"></a>3、附件处理</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)messageBuildFrom:(NSString *)displayName</span><br><span class="line">                 mailBox:(NSString *)mail</span><br><span class="line">                      to:(NSArray *)to</span><br><span class="line">                      cc:(NSArray *)cc</span><br><span class="line">                     bcc:(NSArray *)bcc</span><br><span class="line">                 subject:(NSString *)subject</span><br><span class="line">                textBody:(NSString *)body</span><br><span class="line">                 attachs:(NSDictionary *)attachs</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser</span><br><span class="line">         completeHandler:(void(^)())complete</span><br><span class="line">                   error:(void(^)(NSError *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder &#x3D; [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; -------见上 。。。 ------&#x2F;&#x2F;</span><br><span class="line">    if (msgParser !&#x3D; nil) &#123;</span><br><span class="line">        &#x2F;&#x2F;附加资源，</span><br><span class="line">        NSArray *inAttach &#x3D; msgParser.htmlInlineAttachments;</span><br><span class="line">        for (MCOAttachment *attach in inAttach) &#123;</span><br><span class="line">            NSString * path &#x3D; [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@&quot;%@_%@&quot;,msgParser.header.messageID,attach.filename]];</span><br><span class="line">            NSData *data &#x3D; [NSData dataWithContentsOfFile:path];</span><br><span class="line">            if (data) &#123;</span><br><span class="line">                MCOAttachment *temp &#x3D; [MCOAttachment attachmentWithData:data filename:attach.filename];</span><br><span class="line">                temp.inlineAttachment &#x3D; YES;</span><br><span class="line">                [msgBuilder addRelatedAttachment:temp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;看接口文档的意思，上面是把转发的邮件中的附件添加上，</span><br><span class="line">    &#x2F;&#x2F;可是并不起作用。。。采取的方法是，下面循环再添加一次。。。。🤧🤧🤧🤧🤧</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;附件</span><br><span class="line">    if (attachs) &#123;</span><br><span class="line">        for (NSString *name in attachs.allKeys) &#123;</span><br><span class="line">            MCOAttachment *attach &#x3D; [MCOAttachment attachmentWithData:[attachs objectForKey:name] filename:name];</span><br><span class="line">            [msgBuilder addAttachment:attach];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;send</span><br><span class="line">    &#x2F;&#x2F;--------见下</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4、发送邮件"><a href="#4、发送邮件" class="headerlink" title="4、发送邮件"></a>4、发送邮件</h6><p>邮件也创建了，附件添加完，终于要发送了，但是要注意的是<code>发送操作成功完成后，对方确实可以成功收到，但是在发送方的“已发送”是没有的，需要手动append一份过去</code>。<br>执行append操作，需要用<code>imapSession</code>的，不要搞错了。😅<br> “已发送”文件夹的filepath，可能是 <code>Sent、Sent Messages</code>等等，具体看你解析的邮箱服务器，不一定都是Sent 哦。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;send</span><br><span class="line">NSData *rfc822 &#x3D; [msgBuilder data];</span><br><span class="line">MCOSMTPSendOperation *send &#x3D; [smtpSession sendOperationWithData:rfc822];</span><br><span class="line">[send start:^(NSError * _Nullable error) &#123;</span><br><span class="line">    if (error) &#123;</span><br><span class="line">        fail(error);</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        &#x2F;&#x2F;发送成功后，手动添加到“已发送”；</span><br><span class="line">        MCOIMAPAppendMessageOperation *op &#x3D; [imapSession appendMessageOperationWithFolder:[MMIMAPTool getVirtualNameFor:@&quot;Sent&quot;] messageData:rfc822 flags:MCOMessageFlagMDNSent];</span><br><span class="line">        [op start:^(NSError *error, uint32_t createdUID) &#123;</span><br><span class="line">            NSLog(@&quot;create sent message :%@\nerror:%@&quot;, @(createdUID), error);</span><br><span class="line">        &#125;];</span><br><span class="line">        complete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
+<h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
+  </entry>
+  <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@property(nonatomic,getter&#x3D;isOpaque) BOOL  opaque;                     </span><br><span class="line">&#x2F;&#x2F; default is YES. opaque views must fill their entire bounds or the results are undefined. </span><br><span class="line">&#x2F;&#x2F;the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -49,31 +159,100 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/2018-02-22-Hexo-%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+    <title>mailcore 2  iOS  之一 IMAP</title>
+    <url>/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/</url>
+    <content><![CDATA[<p>公司开发oa中的邮箱，资源限制，最后iOS开发采用的mailcore2-ios框架。研究的不深，只当做个分享，口条不好，凑合看吧。</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我直接用的cocoapods，非常方便，只是资源包大了一点，耐心等待就好了，其他方式没试过。<br><code>pod &#39;mailcore2-ios&#39;</code></p>
+<p><a href="https://github.com/MailCore/mailcore2" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2</a> 官方，有问题提issue，开发者会很热心回答的。</p>
 <a id="more"></a>
 
+<h5 id="更新-纠错日志"><a href="#更新-纠错日志" class="headerlink" title="更新/纠错日志"></a>更新/纠错日志</h5><ul>
+<li>2018-12-11 纠错：IMAP-4.单封邮件获取和处理.根据uid获取单封邮件 有误，<code>range的范围应该是（uid, 0），而不是(uid, 1)，这样获取到的是两封</code>，脑子秀逗了。</li>
+<li>2018-12-11 更新：创建草稿邮件</li>
+<li>2018-12-12 更新：SMTP协议</li>
+</ul>
+<h5 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h5><p>个人比较喜欢imap协议，功能比较丰富，不过用mailcore搞起来似乎费劲了一点，我也只是实现了一些基本功能，高级的还在研究。</p>
+<p>计划分享一下下面几项🤗🤗🤗🤗🤗</p>
 <ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+<li>IMAP<ul>
+<li>登录</li>
+<li>文件夹列表、命名空间</li>
+<li>邮件列表拉取</li>
+<li>邮件列表中单封邮件内容获取和处理</li>
+<li>邮件的各种标记添加</li>
+<li>删除邮件</li>
+<li>附件和html内容解析</li>
+<li>草稿箱邮件创建</li>
+</ul>
 </li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+<li>POP</li>
+<li>SMTP<ul>
+<li>见<a href="http://zhengyatian.github.io/2018/12/12/2018-12-12-mailcore-2-iOS-%E4%B9%8B%E4%BA%8C-SMTP/">mailcore2-ios  之二 SMTP</a></li>
+</ul>
 </li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</ul>
+<h5 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h5><h6 id="1-登录"><a href="#1-登录" class="headerlink" title="1.登录"></a>1.登录</h6><p>首先设置账号信息，也就是创建session；然后校验；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">self.imapSession.hostname &#x3D; session.imapHost; &#x2F;&#x2F;imap.xxx.com.cn</span><br><span class="line">self.imapSession.username &#x3D; session.username; &#x2F;&#x2F;littlecat@xxx.com.cn</span><br><span class="line">self.imapSession.password &#x3D; session.password; &#x2F;&#x2F;password</span><br><span class="line">self.imapSession.port     &#x3D; (unsigned int)session.imapPort;&#x2F;&#x2F;143、993</span><br><span class="line">self.imapSession.connectionType &#x3D; session.imapIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;&#x2F;&#x2F;取决于你的邮件服务器是不是SSL的；</span><br></pre></td></tr></table></figure>
+
+<p>校验信息：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOIMAPOperation *checkOp &#x3D; [session checkAccountOperation];&#x2F;&#x2F;这里的session就是配置帐号信息的session</span><br><span class="line">[checkOp start:^(NSError *error) &#123;</span><br><span class="line">     NSLog(@&quot;finished checking account.&quot;);</span><br><span class="line">     if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">         complete(nil);</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">         err(error);</span><br><span class="line">         NSLog(@&quot;error loading account: %@&quot;, [error userInfo][@&quot;NSLocalizedDescription&quot;]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h6 id="2-获取文件夹目录"><a href="#2-获取文件夹目录" class="headerlink" title="2.获取文件夹目录"></a>2.获取文件夹目录</h6><p>命名空间：它这里有个namespace，对于<code>中文名称</code>的📂名称，需要通过<code>命名空间</code>来解析，<code>不然很可能是👇这种乱码</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;这是当时解析网易邮箱的乱码，找原因找了好久😭😭😭，在一篇博客上看到的解决办法。</span><br><span class="line">INBOX</span><br><span class="line">&amp;g0l6P3ux-</span><br><span class="line">&amp;XfJT0ZAB-</span><br><span class="line">&amp;XfJSIJZk-</span><br><span class="line">&amp;V4NXPpCuTvY-</span><br><span class="line">&amp;dcVr0mWHTvZZOQ-</span><br><span class="line">&amp;Xn9USpCuTvY-</span><br><span class="line">&amp;i6KWBZCuTvY-</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+<p>先把正确的放出来，找回点走下去的信心💔💔💗💖…</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INBOX</span><br><span class="line">草稿箱</span><br><span class="line">已发送</span><br><span class="line">已删除</span><br><span class="line">垃圾邮件</span><br><span class="line">病毒文件夹</span><br><span class="line">广告邮件</span><br><span class="line">订阅邮件</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+<p>因为<code>某些邮箱的session莫名其妙没有自带默认的命名空间</code>，我采取的笨办法是先去获取一下namespace，不过嘛，，，居然获取到的也时有时无😱😱😱😱😱</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOIMAPSession *session &#x3D; [MMIMAPTool getSession];</span><br><span class="line">MCOIMAPFetchNamespaceOperation * op &#x3D; [session fetchNamespaceOperation];</span><br><span class="line">[op start:^(NSError * __nullable error, NSDictionary * namespaces) &#123;</span><br><span class="line">     MCOIMAPNamespace * namespace &#x3D; (session.defaultNamespace !&#x3D; nil) ? session.defaultNamespace : [namespaces objectForKey:MCOIMAPNamespacePersonal];</span><br><span class="line">    if (!namespace) &#123;</span><br><span class="line">        &#x2F;&#x2F;没有命名空间，很可能文件夹的名字解析出来是乱码，这个看个人怎么处理吧；</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;如果拿到了namespace，可以安心获取folderlist了</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>关键的一句：<code>NSString *folername = [namespace componentsFromPath:f.path][0];</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOIMAPFetchFoldersOperation * ops &#x3D; [session fetchAllFoldersOperation];</span><br><span class="line">[ops start:^(NSError * error,NSArray *folders) &#123;</span><br><span class="line">   if (error) &#123;</span><br><span class="line">      return ;</span><br><span class="line">   &#125;</span><br><span class="line">   NSMutableDictionary *dic &#x3D; [NSMutableDictionary dictionary];</span><br><span class="line">   for (MCOIMAPFolder *f in folders) &#123;</span><br><span class="line">      NSString *folername &#x3D; [namespace componentsFromPath:f.path][0];</span><br><span class="line">      [dic setValue:f.path forKey:folername];</span><br><span class="line">   &#125;</span><br><span class="line">  &#x2F;&#x2F;继续其他处理；</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>获取某个文件夹的mail数目等信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOIMAPFolderInfoOperation *folderInfo &#x3D; [session folderInfoOperation:foldername];</span><br><span class="line"></span><br><span class="line">[folderInfo start:^(NSError *error, MCOIMAPFolderInfo *info) &#123;</span><br><span class="line">    if (error) &#123;    </span><br><span class="line">        return ;</span><br><span class="line">     &#125;</span><br><span class="line">    complete(info.messageCount);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-拉取某个文件夹邮件列表"><a href="#3-拉取某个文件夹邮件列表" class="headerlink" title="3.拉取某个文件夹邮件列表"></a>3.拉取某个文件夹邮件列表</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;这里的kind我觉得是需要拉取的内容们，我是几乎大部分都down了，可以看情况自己选择；</span><br><span class="line">&#x2F;&#x2F;拉取范围，（0，UINT64_MAX）就是都拉取了，我是10条10条的来的。</span><br><span class="line">MCOIMAPMessagesRequestKind requestKind &#x3D; (MCOIMAPMessagesRequestKind)</span><br><span class="line">(MCOIMAPMessagesRequestKindHeaders |</span><br><span class="line"> MCOIMAPMessagesRequestKindStructure |</span><br><span class="line"> MCOIMAPMessagesRequestKindInternalDate|</span><br><span class="line"> MCOIMAPMessagesRequestKindHeaderSubject |</span><br><span class="line"> MCOIMAPMessagesRequestKindFlags);</span><br><span class="line"></span><br><span class="line">MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];&#x2F;&#x2F;range控制拉取的邮件的范围，UINT64_MAX</span><br><span class="line">MCOIMAPFetchMessagesOperation *op &#x3D; [session fetchMessagesOperationWithFolder:foldername requestKind:requestKind uids:uids];</span><br><span class="line">[op start:^(NSError * _Nullable error, NSArray * _Nullable messages, MCOIndexSet * _Nullable vanishedMessages) &#123;</span><br><span class="line">     NSMutableArray *listArr &#x3D; [NSMutableArray array];</span><br><span class="line">     NSInteger count &#x3D; messages.count;</span><br><span class="line">     for (int i &#x3D; 0; i &lt; count; i ++) &#123;</span><br><span class="line">            MCOIMAPMessage *msg &#x3D; messages[i];</span><br><span class="line">            &#x2F;&#x2F;一堆属性，自己摘取吧，大多是header里的，为了显示邮件列表，邮件内容是另外单独获取的，存储也只是存储了列表；</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;又拍了一次顺序，好像有点蠢🙄🙄🙄🙄🙄。。。我是根据uid排序的，目前还没发现乱序什么的</span><br><span class="line">    NSSortDescriptor *sortDescriptor &#x3D; [NSSortDescriptor sortDescriptorWithKey:@&quot;uid&quot; ascending:NO];</span><br><span class="line">    [listArr sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>还有另外一个方法，但是实在没太搞懂里面的number参数，文档里说sequence number不能排序用，所以我没选择这个方法，主要是没懂👺👺👺👺👺👺👺</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;Returns an operation to fetch messages by (sequence) number.</span><br><span class="line">- (MCOIMAPFetchMessagesOperation *) fetchMessagesByNumberOperationWithFolder:(NSString *)folder</span><br><span class="line">                                                                 requestKind:(MCOIMAPMessagesRequestKind)requestKind</span><br><span class="line">                                                                     numbers:(MCOIndexSet *)numbers;</span><br></pre></td></tr></table></figure>
+<h6 id="4-单封邮件获取和处理"><a href="#4-单封邮件获取和处理" class="headerlink" title="4.单封邮件获取和处理"></a>4.单封邮件获取和处理</h6><ul>
+<li><p>根据uid获取单封邮件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;和获取邮件列表一样，不过range的长度是0；</span><br><span class="line">MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 0)];</span><br><span class="line">&#x2F;&#x2F;之前写错了，range长度应该是0，而不是1；</span><br><span class="line">&#x2F;&#x2F;MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 1)];</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+<li><p>获取邮件纯文本内容（不包括html样式等）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &#x2F;&#x2F;这里是在上一步获取单个邮件的回调内进行的</span><br><span class="line">     &#x2F;&#x2F;这个方法是自动把文本中的空行之类的去掉了，也有不去掉和可选是否去掉的方法</span><br><span class="line">        MCOIMAPMessage *msg &#x3D; [&#x2F;&#x2F;上一步的message];</span><br><span class="line">        MCOIMAPMessageRenderingOperation *  messageRenderingOperation &#x3D; [session plainTextBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">        [messageRenderingOperation start:^(NSString * plainTextBodyString,NSError * error) &#123;</span><br><span class="line">            if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">                complete(plainTextBodyString, msg);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                NSLog(@&quot;fetch plain text error:%@&quot;,error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">文档里注释的不能再清楚了，自己查阅吧😈😈😈😈😈</span><br><span class="line">&#x2F;&#x2F;Returns an operation to render the plain text version of a message.</span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextRenderingOperationWithMessage:(MCOIMAPMessage *)message</span><br><span class="line">                                                                       folder:(NSString *)folder;</span><br><span class="line">&#x2F;&#x2F; All end of line will be removed and white spaces cleaned up if requested.</span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextBodyRenderingOperationWithMessage:(MCOIMAPMessage *)message</span><br><span class="line">                                                                           folder:(NSString *)folder</span><br><span class="line">                                                                  stripWhitespace:(BOOL)stripWhitespace;</span><br></pre></td></tr></table></figure></li>
+<li><p>获取html内容，放在一个webview中显示基本内容应该没问题了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MCOIMAPMessage *msg &#x3D; [同样是上一步的message];</span><br><span class="line">MCOIMAPMessageRenderingOperation *  messageRenderingOperation &#x3D; [session htmlBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">[messageRenderingOperation start:^(NSString * _Nullable htmlString, NSError * _Nullable error) &#123;</span><br><span class="line">     if (error &#x3D;&#x3D; nil) &#123;</span><br><span class="line">         complete(htmlString, msg);</span><br><span class="line">     &#125;else&#123;</span><br><span class="line">         NSLog(@&quot;fetch plain text error:%@&quot;,error);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h6 id="5-添加各种标记"><a href="#5-添加各种标记" class="headerlink" title="5.添加各种标记"></a>5.添加各种标记</h6><p>已读未读，小红旗标记等等。需要注意的是，<code>“kind”区分是添加标记还是移除标记</code>，例如已读“MCOMessageFlagSeen”标记，移除就成了未读，<code>没有“unseen”之类的。。。</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)setFlagged:(BOOL)flagged message:(NSInteger)uid folder:(NSString *)folder &#123;</span><br><span class="line">    MCOIMAPSession *session &#x3D; &#x2F;&#x2F;imap session；</span><br><span class="line">    MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithIndex:uid];</span><br><span class="line">    MCOIMAPOperation *op &#x3D; [session storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                             uids:uids</span><br><span class="line">                                                             kind:(flagged ? MCOIMAPStoreFlagsRequestKindSet : MCOIMAPStoreFlagsRequestKindRemove)</span><br><span class="line">                                                            flags:MCOMessageFlagFlagged];</span><br><span class="line">    [op start:^(NSError * _Nullable error) &#123;</span><br><span class="line">        NSLog(@&quot;store star flag &#39;s error: %@&quot;,error);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;如果要批量设置标记，uids可以通过range来创建</span><br><span class="line">    MCOIndexSet *uids &#x3D; [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];</span><br></pre></td></tr></table></figure>
+<h6 id="6-删除邮件"><a href="#6-删除邮件" class="headerlink" title="6.删除邮件"></a>6.删除邮件</h6><p>为什么先说的标记那部分，因为删除邮件也是添加“delete”标记。这里需要做一个区分，<code>要删除的邮件是不是在 “已删除/草稿箱” 这两个文件夹</code>。</p>
+<p>主要操作有三个：</p>
+<ul>
+<li>1、copy一份到“已删除”</li>
+<li>2、设置删除标记</li>
+<li>3、执行擦除expunge操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;**如果是不在已删除，草稿箱，执行1、2、3</span><br><span class="line">&#x2F;&#x2F;**如果在，只执行2、3</span><br><span class="line">    if (![folder isEqualToString:deleteFolder] &amp;&amp; ![folder isEqualToString:draftFolder]) &#123;</span><br><span class="line">        &#x2F;&#x2F;copy 一份到已删除</span><br><span class="line">        MCOIMAPCopyMessagesOperation *op &#x3D; [imapSession copyMessagesOperationWithFolder:folder</span><br><span class="line">                                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                              destFolder:deleteFolder];</span><br><span class="line">        [op start:^(NSError *error, NSDictionary *uidMapping) &#123;</span><br><span class="line">            NSLog(@&quot;Error copy message to folder:%@&quot;, error);</span><br><span class="line">            [self unturnedDelete:uid folder:folder];</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        [self unturnedDelete:uid folder:folder];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">- (void)unturnedDelete:(NSInteger)uid folder:(NSString *)folder </span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;先添加删除flags</span><br><span class="line">    MCOIMAPOperation * op2 &#x3D; [imapSession storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                    kind:MCOIMAPStoreFlagsRequestKindSet</span><br><span class="line">                                                                                   flags:MCOMessageFlagDeleted];</span><br><span class="line">    [op2 start:^(NSError * error) &#123;</span><br><span class="line">        &#x2F;&#x2F;添加成功之后对当前文件夹进行expunge操作</span><br><span class="line">        MCOIMAPOperation *deleteOp &#x3D; [imapSession expungeOperation:folder];</span><br><span class="line">        [deleteOp start:^(NSError *error) &#123;</span><br><span class="line">            if(error) &#123;</span><br><span class="line">                NSLog(@&quot;Error expunging folder:%@&quot;, error);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                NSLog(@&quot;Successfully expunged folder&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="7-附件处理和html内容解析"><a href="#7-附件处理和html内容解析" class="headerlink" title="7.附件处理和html内容解析"></a>7.附件处理和html内容解析</h6><ul>
+<li><p>官方demo<br><a href="https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test</a><br>github上他们有写一个demo，我直接用了里面两个类，messageView又自己加了些乱七八糟的逻辑。protocol方便解析的，具体讲解后续更新。<br><img src="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/1.png" alt></p>
+</li>
+<li><p>MCOHTMLRendererIMAPDelegate<br>这个协议里面，提供了可以自主解析附件、图片、html内容，以及简单给定html展示样式的方法。先贴出header、正文、附件，我自己写的一个简单展示模板吧，内容处理这块东西太多了，整理一下再继续更新。<br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForAttachment.html</a><br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMessage.html</a><br><a href="https://github.com/zhengyatian/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMainHeader.html</a></p>
+</li>
+</ul>
+<h6 id="8-创建草稿箱邮件"><a href="#8-创建草稿箱邮件" class="headerlink" title="8.创建草稿箱邮件"></a>8.创建草稿箱邮件</h6><p>​     “append” 拼接的概念，往一个文件夹内添加邮件；</p>
+<ul>
+<li>1、新建一封新邮件(SMTP中讲创建邮件)</li>
+<li>2、获取你的草稿箱文件夹名称</li>
+<li>3、执行append操作<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;这里的data就是新建的邮件；</span><br><span class="line">- (void)createDraft:(NSData *)data block:(void(^)(bool success, uint32_t uid, NSString *folder))block</span><br><span class="line">&#123;</span><br><span class="line">    if (!imapSession ) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    NSString *folder &#x3D; @&quot;Drafts&quot; &#x2F;&#x2F;草稿箱 ,或者是你邮箱服务器解析到的草稿箱文件夹名称；</span><br><span class="line"></span><br><span class="line">    MCOIMAPAppendMessageOperation *op &#x3D; [imapSession appendMessageOperationWithFolder:folder messageData:data flags:MCOMessageFlagDraft];</span><br><span class="line">    [op start:^(NSError *error, uint32_t createdUID) &#123;</span><br><span class="line">        &#x2F;&#x2F;do your operation;</span><br><span class="line">        NSLog(@&quot;create Draft message :%@&quot;,@(createdUID));</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 ]]></content>
   </entry>
   <entry>
     <title>HTTP 的一点儿小知识</title>
-    <url>/2019/11/01/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/</url>
+    <url>/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="一、超文本传输协议-超文本传输协议-Hypertext-Transfer-Protocol"><a href="#一、超文本传输协议-超文本传输协议-Hypertext-Transfer-Protocol" class="headerlink" title="一、超文本传输协议 超文本传输协议(Hypertext Transfer Protocol)"></a>一、超文本传输协议 超文本传输协议(Hypertext Transfer Protocol)</h3><blockquote>
 <p>http协议规定了客户端和服务器之间的数据传输格式。</p>
 <p>http协议是在网络开发中最常用的协议，不管是移动客户端还是PC端,访问网络资源经常使用http协议。</p>
