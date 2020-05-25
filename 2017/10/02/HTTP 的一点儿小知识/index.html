@@ -341,7 +341,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckam8zgzk000998ku1hsl208z" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckam9648n0009cgku92ad9mjr" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -376,6 +376,32 @@
                 
                     
                         
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'YYBlogGitTalk',
+      owner: 'zhengyatian',
+      admin: ['zhengyatian'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
                             
 
 </article>
