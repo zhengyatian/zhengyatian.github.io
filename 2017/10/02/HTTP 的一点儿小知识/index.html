@@ -92,12 +92,12 @@
 <ul>
 <li>请求行 : 包含了请求方法，请求资源路径，http协议版本。</li>
 </ul>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/resources/images/</span> HTTP/1.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/resources/images/</span> HTTP/1.1<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>请求头：包含了对客户端的环境描述，客户端请求的主机地址等信息。</li>
 </ul>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:</span><br><span class="line"><span class="attribute">Accept</span>: text/html // 客户端所能接收的数据类型</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-cn // 客户端的语言环境</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip // 客户端支持的数据压缩格式</span><br><span class="line"><span class="attribute">Host</span>: m.baidu.com // 客户端想访问的服务器主机地址</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:37.0) Gecko/20100101 Firefox/37.0// 客户端的类型,客户端的软件环境</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http">:<br><span class="hljs-attribute">Accept</span>: text/html // 客户端所能接收的数据类型<br><span class="hljs-attribute">Accept-Language</span>: zh-cn // 客户端的语言环境<br><span class="hljs-attribute">Accept-Encoding</span>: gzip // 客户端支持的数据压缩格式<br><span class="hljs-attribute">Host</span>: m.baidu.com // 客户端想访问的服务器主机地址<br><span class="hljs-attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:37.0) Gecko/20100101 Firefox/37.0// 客户端的类型,客户端的软件环境<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>请求体：客户端发给服务器的具体数据，比如文件/图片等。 </li>
@@ -109,12 +109,12 @@
 <ul>
 <li>状态行：包含了http协议版本,状态吗,状态英文名称。</li>
 </ul>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http">HTTP/1.1 <span class="hljs-number">200</span> OK<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>响应头：包含了对服务器的描述,对返回数据的描述。    </li>
 </ul>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:</span><br><span class="line"><span class="attribute">Content-Encoding</span>: gzip // 服务器支持的数据压缩格式</span><br><span class="line"><span class="attribute">Content-Length</span>:  1528 // 返回数据的长度</span><br><span class="line"><span class="attribute">Content-Type</span>:  application/xhtml+xml;charset=utf-8// 返回数据的类型</span><br><span class="line"><span class="attribute">Date</span>: Mon, 15 Jun 201509:06:46 GMT // 响应的时间</span><br><span class="line"><span class="attribute">Server</span>: apache  // 服务器类型</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs http">:<br><span class="hljs-attribute">Content-Encoding</span>: gzip // 服务器支持的数据压缩格式<br><span class="hljs-attribute">Content-Length</span>:  1528 // 返回数据的长度<br><span class="hljs-attribute">Content-Type</span>:  application/xhtml+xml;charset=utf-8// 返回数据的类型<br><span class="hljs-attribute">Date</span>: Mon, 15 Jun 201509:06:46 GMT // 响应的时间<br><span class="hljs-attribute">Server</span>: apache  // 服务器类型<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>实体内容：服务器返回给客户端的具体数据(图片/html/文件…)。  </li>
@@ -126,12 +126,12 @@
 <ul>
 <li>苹果原生:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSURLConnection: 用法简单,古老经典的一种方案.</span><br><span class="line">NSURLSession: iOS7以后推出的技术,功能比NSURLConnection更加强大.</span><br><span class="line">CFNetWork: NSURL 的底层,纯C语言,一般不用.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs objective-c">NSURLConnection: 用法简单,古老经典的一种方案.<br>NSURLSession: iOS7以后推出的技术,功能比NSURLConnection更加强大.<br>CFNetWork: NSURL 的底层,纯C语言,一般不用.<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>第三方框架:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ASIHttpRequest: http终结者,功能很强大,可惜作者已停止更新.</span><br><span class="line">AFNetWorking: 简单易用,提供了基本够用的常用功能,维护和使用者多.</span><br><span class="line">MKNetWorkKit: 简单易用,产自印度,维护和使用者少.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs objective-c">ASIHttpRequest: http终结者,功能很强大,可惜作者已停止更新.<br>AFNetWorking: 简单易用,提供了基本够用的常用功能,维护和使用者多.<br>MKNetWorkKit: 简单易用,产自印度,维护和使用者少.<br></code></pre></td></tr></table></figure>
 
 <p>​      </p>
 <h3 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h3><h4 id="1-http方法"><a href="#1-http方法" class="headerlink" title="1. http方法"></a>1. http方法</h4><p>​    http协议定义了很多方法对应不同的资源操作,其中最常用的是GET 和 POST 方法.</p>
@@ -180,7 +180,7 @@
 <h4 id="3-GET-和-POST-的主要区别表现在参数的传递上"><a href="#3-GET-和-POST-的主要区别表现在参数的传递上" class="headerlink" title="3. GET 和 POST 的主要区别表现在参数的传递上"></a>3. GET 和 POST 的主要区别表现在参数的传递上</h4><h6 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h6><p>​    GET的本质是从服务器得到数据，效率更高，并且GET请求可以被缓存。</p>
 <p>​    注意：网络缓存数据，保存在SQLite的数据库中(路径：NSHomeDirectory())。</p>
 <p>​        查看缓存数据命令行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd 文件目录   (打开文件目录)</span><br><span class="line">ls   查看当前文件下目录</span><br><span class="line">sqlite3 Cache.db   打开数据库</span><br><span class="line">.tables    查看数据库中的表单</span><br><span class="line">select * from cfurl_cache_response;   查看服务器响应缓存</span><br><span class="line">select * from cfurl_cache_receiver_data;   查看服务器返回的数据缓存</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">cd 文件目录   (打开文件目录)<br>ls   查看当前文件下目录<br>sqlite3 Cache.db   打开数据库<br>.tables    查看数据库中的表单<br>select * from cfurl_cache_response;   查看服务器响应缓存<br>select * from cfurl_cache_receiver_data;   查看服务器返回的数据缓存<br></code></pre></td></tr></table></figure>
 
 <p>​    在请求 URL 后面以 ? 的形式跟上发给服务器的参数，参数以 “参数名”=”参数值” 的形式拼接，多个参数之间用 &amp; 分隔。</p>
 <p>​    注意：GET的长度是有限制的，不同的浏览器有不同的长度限制，一般在2~8K之间。         </p>
@@ -195,7 +195,7 @@
 <p>​    所以，如果 URL 中出现了中文，需要添加百分号转义。    </p>
 <h2 id="URL-中-井号（锚点）的用法"><a href="#URL-中-井号（锚点）的用法" class="headerlink" title="URL 中 # 井号（锚点）的用法"></a>URL 中 # 井号（锚点）的用法</h2><p>​       我们经常使用URL 定位，传递参数等应用，最经常使用的是？ 问号，一般作为参数传递，而我们在接触到单页开发模式的时候会接触到url 中大量# 井号的使用，有时候会对这三个常见符号有些分不清，搞不懂具体含义。 </p>
 <h3 id="涵义"><a href="#涵义" class="headerlink" title="# 涵义"></a># 涵义</h3><p> 在url 中使用# 例如  index.html#product  含义一般是定位到本页面的product位置，所以# 在url 中一般是作为页面定位使用，那么product 到底是用什么定位 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"product"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"product"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"product"</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"product"</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>这两种方式都可以把滚动条定位到页面的响应位置 </p>
 <blockquote>
@@ -203,10 +203,10 @@
 </blockquote>
 <h3 id="特性1：HTTP-请求中的作用"><a href="#特性1：HTTP-请求中的作用" class="headerlink" title="特性1：HTTP 请求中的作用"></a>特性1：HTTP 请求中的作用</h3><p>​    是用来指导浏览器动作的，对服务器端完全无用。所以，HTTP请求中不包括#。</p>
 <p>​    比如，访问下面的网址，<a href="http://www.example.com/index.html#print，浏览器实际发出的请求是这样的：" target="_blank" rel="noopener">http://www.example.com/index.html#print，浏览器实际发出的请求是这样的：</a></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/1.1 </span><br><span class="line"><span class="attribute">Host</span>: www.example.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http">GET /index.html HTTP/1.1 <br><span class="hljs-attribute">Host</span>: www.example.com<br></code></pre></td></tr></table></figure>
 
 <pre><code>在第一个#后面出现的任何字符，都会被浏览器解读为位置标识符。这意味着，这些字符都不会被发送到服务器端。</code></pre><p>​    比如，下面URL的原意是指定一个颜色值：<a href="http://www.example.com/?color=#fff，但是，浏览器实际发出的请求是：" target="_blank" rel="noopener">http://www.example.com/?color=#fff，但是，浏览器实际发出的请求是：</a></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /?color= HTTP/1.1 </span><br><span class="line"><span class="attribute">Host</span>: www.example.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http">GET /?color= HTTP/1.1 <br><span class="hljs-attribute">Host</span>: www.example.com<br></code></pre></td></tr></table></figure>
 
 
 
@@ -216,7 +216,7 @@
 <p>​    鉴于特性2、3 实现了在单页下view 的路由和历史回退，目前h5手机开发所采用的单页模式的基础。</p>
 <h3 id="特性4：window-location-hash读取-值"><a href="#特性4：window-location-hash读取-值" class="headerlink" title="特性4：window.location.hash读取#值"></a>特性4：window.location.hash读取#值</h3><pre><code>window.location.hash 这个属性可读可写。读取时，可以用来判断网页状态是否改变；写入时，则会在不重载网页的前提下，创造一条访问历史记录。</code></pre><h3 id="特性5：onhashchange事件-H5新增"><a href="#特性5：onhashchange事件-H5新增" class="headerlink" title="特性5：onhashchange事件 H5新增"></a>特性5：onhashchange事件 H5新增</h3><p>​    这是一个HTML 5新增的事件，当#值发生变化时，就会触发这个事件。IE8+、Firefox 3.6+、Chrome 5+、Safari 4.0+支持该事件。</p>
 <p>　　它的使用方法有三种：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = func; </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onhashchange</span>=<span class="string">"func();"</span>&gt;</span> </span><br><span class="line">window.addEventListener("hashchange"， func, false);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">window.onhashchange = func; <br><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onhashchange</span>=<span class="hljs-string">"func();"</span>&gt;</span> <br>window.addEventListener("hashchange"， func, false);<br></code></pre></td></tr></table></figure>
 
 
 
@@ -341,7 +341,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckaj4n4gk0009u1ku17id3qjy" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckam87lqq0009wskuddnod4nu" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -376,6 +376,32 @@
                 
                     
                         
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'c0fd3fecc668416852dc',
+      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+      repo: 'zhengyatian.github.io',
+      owner: 'zhengyatian',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
                             
 
 </article>

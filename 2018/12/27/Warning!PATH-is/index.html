@@ -80,7 +80,7 @@
 <p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
 </blockquote>
 <p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Command</span><br><span class="line"></span><br><span class="line">&#x2F;Users&#x2F;我&#x2F;.rvm&#x2F;gems&#x2F;ruby-2.4.0&#x2F;bin&#x2F;pod install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">### Command<br><br>&#x2F;Users&#x2F;我&#x2F;.rvm&#x2F;gems&#x2F;ruby-2.4.0&#x2F;bin&#x2F;pod install<br></code></pre></td></tr></table></figure>
 
 <p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
 <p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
@@ -93,7 +93,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2018/12/27/Warning!PATH-is/" data-id="ckaj4n4fj0004u1ku8h0rbwl9" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2018/12/27/Warning!PATH-is/" data-id="ckam87lph0004wskublg6085x" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -128,6 +128,32 @@
                 
                     
                         
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'c0fd3fecc668416852dc',
+      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+      repo: 'zhengyatian.github.io',
+      owner: 'zhengyatian',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
                             
 
 </article>
