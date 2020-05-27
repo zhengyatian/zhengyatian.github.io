@@ -76,18 +76,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">@property(nonatomic,getter&#x3D;isOpaque) BOOL  opaque;                     <br>&#x2F;&#x2F; default is YES. opaque views must fill their entire bounds or the results are undefined. <br>&#x2F;&#x2F;the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels<br></code></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
     <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
@@ -126,6 +114,18 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&#x2F;&#x2F;send<br>NSData *rfc822 &#x3D; [msgBuilder data];<br>MCOSMTPSendOperation *send &#x3D; [smtpSession sendOperationWithData:rfc822];<br>[send start:^(NSError * _Nullable error) &#123;<br>    if (error) &#123;<br>        fail(error);<br>    &#125;else &#123;<br>        &#x2F;&#x2F;发送成功后，手动添加到“已发送”；<br>        MCOIMAPAppendMessageOperation *op &#x3D; [imapSession appendMessageOperationWithFolder:[MMIMAPTool getVirtualNameFor:@&quot;Sent&quot;] messageData:rfc822 flags:MCOMessageFlagMDNSent];<br>        [op start:^(NSError *error, uint32_t createdUID) &#123;<br>            NSLog(@&quot;create sent message :%@\nerror:%@&quot;, @(createdUID), error);<br>        &#125;];<br>        complete();<br>    &#125;<br>&#125;];<br></code></pre></td></tr></table></figure>
 <p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
+  </entry>
+  <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">@property(nonatomic,getter&#x3D;isOpaque) BOOL  opaque;                     <br>&#x2F;&#x2F; default is YES. opaque views must fill their entire bounds or the results are undefined. <br>&#x2F;&#x2F;the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels<br></code></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>吃饭啦</title>
