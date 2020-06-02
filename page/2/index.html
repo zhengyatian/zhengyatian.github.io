@@ -7,7 +7,6 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Hexo 文字中如何插入图片 |
     
     我不是法王吗</title>
   
@@ -28,17 +27,51 @@
 
 <body>
 <main class="content">
+  <section class="jumbotron">
+  <div class="video">
+    
+      <div class="video-frame">
+        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+      </div>
+    
+    <div class="video-media">
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
+             poster="/images/ocean/ocean.png" x5-video-player-type="h5">
+        <source src="/images/ocean/ocean.mp4" type="video/mp4">
+        <source src="/images/ocean/ocean.ogv" type="video/ogg">
+        <source src="/images/ocean/ocean.webm" type="video/webm">
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">我不是法王吗</a></h1>
+      <p>制造bug需要理由吗？不需要吗？需要吗？不需要吗？</p>
+      <div><img src="/images/mini-icon.jpg" class="brand" alt="我不是法王吗"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+
+<div id="landingpage">
   <section class="outer">
-  <article id="post-Hexo文字中如何插入图片" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+    <article class="articles">
+      
+      <h1 class="page-type-title"></h1>
+      
+        
+          <article id="post-GCD（Grand Central Dispatch）" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
         
             <header class="article-header">
                 
   
-    <h1 class="article-title" itemprop="name">
-      Hexo 文字中如何插入图片
-    </h1>
+    <h2 itemprop="name">
+      <a class="article-title" href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a>
+    </h2>
   
   
 
@@ -50,20 +83,14 @@
 
                 
                     <div class="article-meta">
-                        <a href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-date">
-  <time datetime="2018-02-22T02:58:34.000Z" itemprop="datePublished">2018-02-22</time>
+                        <a href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" class="article-date">
+  <time datetime="2016-01-13T14:20:34.000Z" itemprop="datePublished">2016-01-13</time>
 </a>
                             
                     </div>
                     
 
                         
-                            
-
-
-
-
-                                
 
                                     <div class="article-entry" itemprop="articleBody">
                                         
@@ -72,101 +99,52 @@
                                             
 
                                                 
-                                                                    <p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
-
-                                                                        
+                                                    <p>转载自 <a href="https://github.com/ming1016" target="_blank" rel="noopener">戴铭老师</a></p>
+<p>文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。 </p>
+<p>文中的Demo在这里 <a href="https://github.com/ming1016/GCDDemo" target="_blank" rel="noopener">https://github.com/ming1016/GCDDemo</a> 对着文章试着来调demo体会更深哦，细细嚼消化好🤓</p>
+                                                        
+                                                            <a class="article-more-link" href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">
+                                                                查看全文...
+                                                            </a>
+                                                            
+                                                                
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" data-id="ckaxp1cdc0001h3kuahmd6l45" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" data-id="ckaxp1cfa000dh3kugdu0cv1x" class="article-share-link">
                                             分享
                                         </a>
                                         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
                                     </footer>
 
     </div>
 
     
-        
-  <nav class="article-nav">
-    
-      <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            mailcore 2 iOS  之二 SMTP
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/" class="article-nav-link">
-        <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">mailcore 2  iOS  之一 IMAP</div>
-      </a>
-    
-  </nav>
-
-
-            
 
                 
-                    
-                        
-  <div class="gitalk" id="gitalk-container"></div>
-  
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-  
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-  
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: 'c0fd3fecc668416852dc',
-      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-      repo: 'YYBlogGitTalk',
-      owner: 'zhengyatian',
-      admin: ['zhengyatian'],
-      // id: location.pathname,      // Ensure uniqueness and length less than 50
-      id: md5(location.pathname),
-      distractionFreeMode: false,  // Facebook-like distraction free mode
-      pagerDirection: 'last'
-    })
-
-  gitalk.render('gitalk-container')
-  </script>
-
-                            
 
 </article>
-</section>
+        
+    </article>
+    
+  
+    
+      <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      </nav>
+    
+  </section>
+</div>
+
   <footer class="footer">
   <div class="outer">
     <div class="float-right">
       <ul class="list-inline">
   
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+    <li><i class="fe fe-bar-chart"></i> <span id="busuanzi_value_site_pv"></span></li>
   
-    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
   
 </ul>
     </div>
@@ -254,23 +232,6 @@
 
 
 
-
-  
-<script src="/js/tocbot.min.js"></script>
-
-  <script>
-    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-    tocbot.init({
-      tocSelector: '.tocbot',
-      contentSelector: '.article-entry',
-      headingSelector: 'h1, h2, h3, h4, h5, h6',
-      hasInnerContainers: true,
-      scrollSmooth: true,
-      positionFixedSelector: '.tocbot',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  </script>
 
 
 

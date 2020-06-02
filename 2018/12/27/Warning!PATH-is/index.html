@@ -80,7 +80,7 @@
 <p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
 </blockquote>
 <p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">### Command<br><br>&#x2F;Users&#x2F;我&#x2F;.rvm&#x2F;gems&#x2F;ruby-2.4.0&#x2F;bin&#x2F;pod install<br></code></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
 
 <p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
 <p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
@@ -93,7 +93,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2018/12/27/Warning!PATH-is/" data-id="ckap74ezb0003mwku173326jj" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2018/12/27/Warning!PATH-is/" data-id="ckaxp1cdf0003h3kufzb1fcpm" class="article-share-link">
                                             分享
                                         </a>
                                         
