@@ -76,6 +76,32 @@
 ]]></content>
   </entry>
   <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
     <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
@@ -118,73 +144,6 @@
 
 <p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
-  </entry>
-  <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>吃饭啦</title>
-    <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
-    <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
-<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
-<p>🐟🐟🐟🐟清烤多春鱼</p>
-<blockquote>
-<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
-
-
-
-<p>🍆清蒸茄子</p>
-<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
-
-<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
-<p>🌲另一个菜叫什么呢？</p>
-<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
-<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
-<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
-<blockquote>
-<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
-</blockquote>
-<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>mailcore 2  iOS  之一 IMAP</title>
@@ -289,6 +248,49 @@
 
 </li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>吃饭啦</title>
+    <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
+    <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
+<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
+<p>🐟🐟🐟🐟清烤多春鱼</p>
+<blockquote>
+<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
+
+
+
+<p>🍆清蒸茄子</p>
+<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
+
+<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
+<p>🌲另一个菜叫什么呢？</p>
+<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
+<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
+<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
+<blockquote>
+<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
+</blockquote>
+<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
 ]]></content>
   </entry>
   <entry>
