@@ -76,29 +76,39 @@
 ]]></content>
   </entry>
   <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
+    <title>iOS编码规范总结</title>
+    <url>/2020/06/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
 <a id="more"></a>
 
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
+<p>为了避免博客风格影响视觉，直接上图片吧。其实我不知道是不是有这样明确的编码规范，我只是看苹果的怎么写，我就怎么写，下面也只是举一些简单的例子。</p>
+<p><img src="/2020/06/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/1.png" alt></p>
+<h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
+<p>看完文档就会知道，真的好方便。。。</p>
+<ul>
+<li>初始化就不多说了，看自己需要</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Initialize a NSURLComponents with all components undefined. Designated initializer.</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithString:(<span class="built_in">NSString</span> *)URLString;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithString:(<span class="built_in">NSString</span> *)URLString;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取URL里的内容，简直不要太方便哦，URLEncode之后的参数都准备好了</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *scheme; <span class="comment">// Attempting to set the scheme with an invalid scheme string will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *user;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *password;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *host;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSNumber</span> *port; <span class="comment">// Attempting to set a negative port number will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *path;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *query;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *fragment;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedFragment;</span><br><span class="line"></span><br><span class="line"><span class="comment">//begin ios 9.0</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfScheme;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPort;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfFragment;</span><br></pre></td></tr></table></figure>
+
+<p>当然关于 NSRange 的获取，是从ios 9.0 开始有的，适配低版本的话，需要注意一哈。</p>
+<ul>
+<li>参数的集合，<code>NSURLQueryItem</code> 类呢就是通过 key 、value 来取参数们了</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *queryItems;</span><br><span class="line"><span class="comment">// API_AVAILABLE(macosx(10.13), ios(11.0), watchos(4.0), tvos(11.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *percentEncodedQueryItems;</span><br></pre></td></tr></table></figure>
+
+<p>我之前不是特别理解，参数要用数组＋Item的方式，直到遇到了那位给我传的URL里，有两个同名参数不同值的仁兄，我才更加体会到了苹果开发者的严谨。。。</p>
 ]]></content>
       <tags>
-        <tag>瞎扯</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -144,6 +154,32 @@
 
 <p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
+  </entry>
+  <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
   </entry>
   <entry>
     <title>去掉UIWebView底部的黑条</title>
