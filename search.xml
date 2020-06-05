@@ -1,20 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 zhengyatian.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+    <title>DeviceCheck</title>
+    <url>/2020/06/05/DeviceCheck/</url>
+    <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
+<p>最近才注意iOS 中一个新的小框架，于是简单学习了一下，已经有前辈写的很详细了，所以~~<a href="https://www.sunyazhou.com/2017/09/30/20170930DeviceCheck/" target="_blank" rel="noopener">参考自</a></p>
+<a id="more"></a>
 
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>iOS11 苹果改动了一个比较引开发者关注的亮点</p>
+<p><strong>UDID之类的写到系统 keychain 的唯一标识会随着 app 删除而删除</strong></p>
+<p>这个问题在微博上已经争论好几天：iOS11新的设备唯一标识 DCDevice</p>
+<h4 id="介绍-API"><a href="#介绍-API" class="headerlink" title="介绍 API"></a>介绍 API</h4><p>我们首先看看<code>DCDevice</code>类都有啥</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;DeviceCheck/DeviceCheck.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NS_ASSUME_NONNULL_BEGIN</span></span><br><span class="line"></span><br><span class="line">API_AVAILABLE(ios(<span class="number">11.0</span>), tvos(<span class="number">11.0</span>)) API_UNAVAILABLE(watchos, macos)</span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DCDevice</span> : <span class="title">NSObject</span></span></span><br><span class="line"><span class="comment">// The current device. </span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">class</span>, <span class="keyword">readonly</span>) DCDevice *currentDevice;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Check if this API is supported on the current device.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">getter</span>=isSupported, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> supported;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Generate a new device token that can be used to get/set the persistent bits for this device.This call generates a new value every time.</span></span><br><span class="line">- (<span class="keyword">void</span>)generateTokenWithCompletionHandler:(<span class="keyword">void</span>(^)(<span class="built_in">NSData</span> * _Nullable token, <span class="built_in">NSError</span> * _Nullable error))completion;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NS_ASSUME_NONNULL_END</span></span><br></pre></td></tr></table></figure>
 
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+<p>接口简直不能再简单了 <strong>创建实例调方法</strong></p>
+<h4 id="使用-API"><a href="#使用-API" class="headerlink" title="使用 API"></a>使用 API</h4><p>下面我们来看下如何使用<code>DCDevice</code></p>
+<p>导入头文件</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;DeviceCheck/DeviceCheck.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>check 是否支持 如果支持 的话会在回调以后返回 <code>token</code>(NSData)</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    <span class="comment">// Do any additional setup after loading the view.</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([DCDevice.currentDevice isSupported]) &#123;</span><br><span class="line">        [DCDevice.currentDevice generateTokenWithCompletionHandler:^(<span class="built_in">NSData</span> * _Nullable token, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">            <span class="keyword">if</span> (error) &#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, error.description);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// upload token to APP server</span></span><br><span class="line">                <span class="built_in">NSString</span> *deviceToken = [token base64EncodedStringWithOptions:<span class="built_in">NSDataBase64EncodingEndLineWithLineFeed</span>];</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"%lu %@"</span>, token.length, deviceToken);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>token 是个 2188字节(2k 多点)的二进制流,很小</p>
+<h4 id="删除-重装App-如何处理"><a href="#删除-重装App-如何处理" class="headerlink" title="删除/重装App 如何处理"></a>删除/重装App 如何处理</h4><blockquote>
+<p>DeviceCheck 允许你通过你的服务器与 Apple 服务器通讯，并为单个设备设置2k左右 的数据。 在设备上用 DeviceCheck API 生成一个 2字节的 token (00, 01,10,11)，然后将这个 token 发给自己的服务器，再由自己的服务器与 Apple 的 API 进行通讯，来更新或者查询该设备的值。这两字节 的数据用来追踪用户。比如。借助两个自己的数据，你可以得知用户究竟使用了该 App 多久。 该 API 可以成为：反欺诈领域： 试用7天 Uber、滴滴司机被封号后，防止重新注册账号接单 该用户是否已经领取过首次注册红包 APP防多开 因为传输的是 flag 级别的数据，并不会定位到该设备的使用者，所以相对安全。</p>
+</blockquote>
+<blockquote>
+<p>但是对于购买了二手手机的使用场景，可能会出现一些边界情况，这个在业务中也需要考虑进去。</p>
+</blockquote>
+<p>引自<a href="https://github.com/ChenYilong/iOS11AdaptationTips/issues/22" target="_blank" rel="noopener">iOS11开发新特性之实用小tips</a></p>
+<p>首先要明白我们 的 token 需要发给谁</p>
+<ol>
+<li>token 需要发送给我们自己公司的<code>server</code>做记录</li>
+<li>我们公司自己的<code>server</code>去<code>Apple</code>的<code>server</code>查询<code>token</code>是否有效,从而来更新或者查询该设备值.</li>
+<li>这<code>2k 左右的 token</code>不会因为设备删除 app 而删除 会一直存在苹果的 server(其实我觉得就是苹果自己去获取的设备唯一标识).</li>
+</ol>
+<p>那么 怎么查询和更新呢</p>
+<h5 id="查询接口"><a href="#查询接口" class="headerlink" title="查询接口"></a>查询接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/query_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/query_two_bits</a></strong></p>
+<p>可以用终端自己模拟一下 就当作你自己是自己的服务器访问Apple 的服务器</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidQueryRequest.json \ </span><br><span class="line">https://api.development.devicecheck.apple.com/v1/query_two_bits</span><br></pre></td></tr></table></figure>
+
+<p>json 的定义如下:</p>
+<table>
+<thead>
+<tr>
+<th align="center">字段 key</th>
+<th align="center">类型</th>
+<th align="center">说明</th>
+<th align="center">必须</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">device_token</td>
+<td align="center">String</td>
+<td align="center">设备唯一标识 token</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">transaction_id</td>
+<td align="center">String</td>
+<td align="center">服务器产生的一个ID</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">Long</td>
+<td align="center">服务器生成的UTC时间戳</td>
+<td align="center">是</td>
+</tr>
+</tbody></table>
+<p>它会 返回 如下格式</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="更新接口"><a href="#更新接口" class="headerlink" title="更新接口"></a>更新接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/update_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/update_two_bits</a></strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidUpdateRequest.json \</span><br><span class="line">https://api.development.devicecheck.apple.com/v1/update_two_bits</span><br></pre></td></tr></table></figure>
+
+<p>json 的定义如下:</p>
+<table>
+<thead>
+<tr>
+<th align="center">字段 key</th>
+<th align="center">类型</th>
+<th align="center">说明</th>
+<th align="center">必须</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">device_token</td>
+<td align="center">String</td>
+<td align="center">设备唯一标识 token</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">transaction_id</td>
+<td align="center">String</td>
+<td align="center">服务器产生的一个ID</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">Long</td>
+<td align="center">服务器生成的UTC时间戳</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">bit0</td>
+<td align="center">Boolean</td>
+<td align="center">新的布尔值1</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">bit1</td>
+<td align="center">Boolean</td>
+<td align="center">新的布尔值2</td>
+<td align="center">否</td>
+</tr>
+</tbody></table>
+<p>json 的示例:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span>,</span><br><span class="line">   <span class="attr">"bit0"</span> : <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"bit1"</span> : <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终的方案"><a href="#最终的方案" class="headerlink" title="最终的方案"></a>最终的方案</h3><ol>
+<li>iOS11以前版本暂且才用 UUID 等 keychian 方式</li>
+<li>iOS11尽量才用新的 api 来适配解决</li>
+</ol>
+<p>对于 server 来讲可以 把 token 搞成新的附属字段 比如一个账号下登录多少个设备</p>
+<p>那么 一个 UID 下面 就要附属 iOS 版本+ token</p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
 ]]></content>
   </entry>
   <entry>
@@ -41,16 +167,20 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 zhengyatian.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
 ]]></content>
   </entry>
   <entry>
@@ -106,7 +236,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *queryItems;</span><br><span class="line"><span class="comment">// API_AVAILABLE(macosx(10.13), ios(11.0), watchos(4.0), tvos(11.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *percentEncodedQueryItems;</span><br></pre></td></tr></table></figure>
 
 <p>我之前不是特别理解，参数要用数组＋Item的方式，直到遇到了那位给我传的URL里，有两个同名参数不同值的仁兄，我才更加体会到了苹果开发者的严谨。。。</p>
-<h3 id="四、还没写"><a href="#四、还没写" class="headerlink" title="四、还没写"></a>四、还没写</h3><p>还没想起来~~</p>
+<h3 id="四、"><a href="#四、" class="headerlink" title="四、"></a>四、</h3><h3 id="还没写"><a href="#还没写" class="headerlink" title="还没写"></a>还没写</h3><p>还没想起来~~</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
