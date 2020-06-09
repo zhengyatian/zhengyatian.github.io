@@ -38,7 +38,7 @@
 <p>那么 怎么查询和更新呢</p>
 <h5 id="查询接口"><a href="#查询接口" class="headerlink" title="查询接口"></a>查询接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/query_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/query_two_bits</a></strong></p>
 <p>可以用终端自己模拟一下 就当作你自己是自己的服务器访问Apple 的服务器</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidQueryRequest.json \ </span><br><span class="line">https://api.development.devicecheck.apple.com/v1/query_two_bits</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H <span class="string">"Authorization: Bearer &lt;GeneratedJWT&gt;"</span> \</span><br><span class="line">-X POST --data-binary @ValidQueryRequest.json \ </span><br><span class="line">https://api.development.devicecheck.apple.com/v1/query_two_bits</span><br></pre></td></tr></table></figure>
 
 <p>json 的定义如下:</p>
 <table>
@@ -184,6 +184,28 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>iOS编码规范总结</title>
     <url>/2020/06/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
@@ -219,28 +241,6 @@
       <tags>
         <tag>iOS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
   </entry>
   <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>

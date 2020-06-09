@@ -109,7 +109,7 @@
 <p>那么 怎么查询和更新呢</p>
 <h5 id="查询接口"><a href="#查询接口" class="headerlink" title="查询接口"></a>查询接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/query_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/query_two_bits</a></strong></p>
 <p>可以用终端自己模拟一下 就当作你自己是自己的服务器访问Apple 的服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidQueryRequest.json \ </span><br><span class="line">https://api.development.devicecheck.apple.com/v1/query_two_bits</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -i --verbose -H <span class="string">"Authorization: Bearer &lt;GeneratedJWT&gt;"</span> \</span><br><span class="line">-X POST --data-binary @ValidQueryRequest.json \ </span><br><span class="line">https://api.development.devicecheck.apple.com/v1/query_two_bits</span><br></pre></td></tr></table></figure>
 
 <p>json 的定义如下:</p>
 <table>
@@ -200,7 +200,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2020/06/05/DeviceCheck/" data-id="ckb7acvzs0000l1kubple5qg2" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2020/06/05/DeviceCheck/" data-id="ckb7ahd7k0000n7ku8dc8fwl6" class="article-share-link">
                                             分享
                                         </a>
                                         
