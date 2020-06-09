@@ -141,10 +141,10 @@
 </tr>
 </tbody></table>
 <p>它会 返回 如下格式</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span>,</span><br><span class="line">   <span class="attr">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="更新接口"><a href="#更新接口" class="headerlink" title="更新接口"></a>更新接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/update_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/update_two_bits</a></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidUpdateRequest.json \</span><br><span class="line">https://api.development.devicecheck.apple.com/v1/update_two_bits</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -i --verbose -H <span class="string">"Authorization: Bearer &lt;GeneratedJWT&gt;"</span> \</span><br><span class="line">-X POST --data-binary @ValidUpdateRequest.json \</span><br><span class="line">https://api.development.devicecheck.apple.com/v1/update_two_bits</span><br></pre></td></tr></table></figure>
 
 <p>json 的定义如下:</p>
 <table>
@@ -188,7 +188,7 @@
 </tr>
 </tbody></table>
 <p>json 的示例:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span>,</span><br><span class="line">   <span class="attr">"bit0"</span> : <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"bit1"</span> : <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span>,</span><br><span class="line">   <span class="attr">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span>,</span><br><span class="line">   <span class="attr">"bit0"</span> : <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"bit1"</span> : <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="最终的方案"><a href="#最终的方案" class="headerlink" title="最终的方案"></a>最终的方案</h3><ol>
 <li>iOS11以前版本暂且才用 UUID 等 keychian 方式</li>
@@ -200,7 +200,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2020/06/05/DeviceCheck/" data-id="ckb1ydsp20000lwku8k9zgg87" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2020/06/05/DeviceCheck/" data-id="ckb7acvzs0000l1kubple5qg2" class="article-share-link">
                                             分享
                                         </a>
                                         

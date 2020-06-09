@@ -70,10 +70,10 @@
 </tr>
 </tbody></table>
 <p>它会 返回 如下格式</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span>,</span><br><span class="line">   <span class="attr">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="更新接口"><a href="#更新接口" class="headerlink" title="更新接口"></a>更新接口</h5><p><strong><a href="https://api.development.devicecheck.apple.com/v1/update_two_bits" target="_blank" rel="noopener">https://api.development.devicecheck.apple.com/v1/update_two_bits</a></strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H "Authorization: Bearer &lt;GeneratedJWT&gt;" \</span><br><span class="line">-X POST --data-binary @ValidUpdateRequest.json \</span><br><span class="line">https://api.development.devicecheck.apple.com/v1/update_two_bits</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -i --verbose -H <span class="string">"Authorization: Bearer &lt;GeneratedJWT&gt;"</span> \</span><br><span class="line">-X POST --data-binary @ValidUpdateRequest.json \</span><br><span class="line">https://api.development.devicecheck.apple.com/v1/update_two_bits</span><br></pre></td></tr></table></figure>
 
 <p>json 的定义如下:</p>
 <table>
@@ -117,7 +117,7 @@
 </tr>
 </tbody></table>
 <p>json 的示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span></span><br><span class="line">   <span class="string">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span>,</span><br><span class="line">   <span class="attr">"bit0"</span> : <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"bit1"</span> : <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"device_token"</span> : <span class="string">"wlkCDA2Hy/CfrMqVAShs1BAR/0sAiuRIUm5jQg0a..."</span>,</span><br><span class="line">   <span class="attr">"transaction_id"</span> : <span class="string">"5b737ca6-a4c7-488e-b928-8452960c4be9"</span>,</span><br><span class="line">   <span class="attr">"timestamp"</span> : <span class="number">1487716472000</span>,</span><br><span class="line">   <span class="attr">"bit0"</span> : <span class="literal">true</span>,</span><br><span class="line">   <span class="attr">"bit1"</span> : <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="最终的方案"><a href="#最终的方案" class="headerlink" title="最终的方案"></a>最终的方案</h3><ol>
 <li>iOS11以前版本暂且才用 UUID 等 keychian 方式</li>
@@ -129,6 +129,23 @@
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 zhengyatian.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
   </entry>
   <entry>
     <title>Hexo 文字中如何插入图片</title>
@@ -154,23 +171,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 zhengyatian.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Mac 下 IDEA 无法启动的问题</title>
     <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
@@ -181,28 +181,6 @@
 
 <p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
 <p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
 ]]></content>
   </entry>
   <entry>
@@ -241,6 +219,28 @@
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
   </entry>
   <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
