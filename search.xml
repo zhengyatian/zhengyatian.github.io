@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li>灯台之下最黑暗。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -206,43 +222,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>iOS编码规范总结</title>
-    <url>/2020/06/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
-<a id="more"></a>
-
-<p>为了避免博客风格影响视觉，直接上图片吧。其实我不知道是不是有这样明确的编码规范，我只是看苹果的怎么写，我就怎么写，下面也只是举一些简单的例子。</p>
-<p><img src="/2020/06/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/1.png" alt></p>
-<h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
-<h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
-<p>看完文档就会知道，真的好方便。。。</p>
-<ul>
-<li>初始化就不多说了，看自己需要</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Initialize a NSURLComponents with all components undefined. Designated initializer.</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithString:(<span class="built_in">NSString</span> *)URLString;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithString:(<span class="built_in">NSString</span> *)URLString;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取URL里的内容，简直不要太方便哦，URLEncode之后的参数都准备好了</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *scheme; <span class="comment">// Attempting to set the scheme with an invalid scheme string will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *user;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *password;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *host;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSNumber</span> *port; <span class="comment">// Attempting to set a negative port number will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *path;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *query;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *fragment;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedFragment;</span><br><span class="line"></span><br><span class="line"><span class="comment">//begin ios 9.0</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfScheme;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPort;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfFragment;</span><br></pre></td></tr></table></figure>
-
-<p>当然关于 NSRange 的获取，是从ios 9.0 开始有的，适配低版本的话，需要注意一哈。</p>
-<ul>
-<li>参数的集合，<code>NSURLQueryItem</code> 类呢就是通过 key 、value 来取参数们了</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *queryItems;</span><br><span class="line"><span class="comment">// API_AVAILABLE(macosx(10.13), ios(11.0), watchos(4.0), tvos(11.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *percentEncodedQueryItems;</span><br></pre></td></tr></table></figure>
-
-<p>我之前不是特别理解，参数要用数组＋Item的方式，直到遇到了那位给我传的URL里，有两个同名参数不同值的仁兄，我才更加体会到了苹果开发者的严谨。。。</p>
-<h3 id="四、"><a href="#四、" class="headerlink" title="四、"></a>四、</h3><h3 id="还没写"><a href="#还没写" class="headerlink" title="还没写"></a>还没写</h3><p>还没想起来~~</p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
     <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
@@ -287,6 +266,18 @@
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
   </entry>
   <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>乌龙 之 我吐了</title>
     <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
     <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
@@ -313,47 +304,63 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+    <title>iOS编码规范总结</title>
+    <url>/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
 <a id="more"></a>
 
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+<p>为了避免博客风格影响视觉，直接上图片吧。其实我不知道是不是有这样明确的编码规范，我只是看苹果的怎么写，我就怎么写，下面也只是举一些简单的例子。</p>
+<p><img src="/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/1.png" alt></p>
+<h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
+<p>看完文档就会知道，真的好方便。。。</p>
+<ul>
+<li>初始化就不多说了，看自己需要</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Initialize a NSURLComponents with all components undefined. Designated initializer.</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithURL:(<span class="built_in">NSURL</span> *)url resolvingAgainstBaseURL:(<span class="built_in">BOOL</span>)resolve;</span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)initWithString:(<span class="built_in">NSString</span> *)URLString;</span><br><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)componentsWithString:(<span class="built_in">NSString</span> *)URLString;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取URL里的内容，简直不要太方便哦，URLEncode之后的参数都准备好了</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *scheme; <span class="comment">// Attempting to set the scheme with an invalid scheme string will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *user;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *password;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *host;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSNumber</span> *port; <span class="comment">// Attempting to set a negative port number will cause an exception.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *path;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *query;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *fragment;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *percentEncodedFragment;</span><br><span class="line"></span><br><span class="line"><span class="comment">//begin ios 9.0</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfScheme;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfUser;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPassword;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfHost;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPort;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfPath;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfQuery;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">NSRange</span> rangeOfFragment;</span><br></pre></td></tr></table></figure>
+
+<p>当然关于 NSRange 的获取，是从ios 9.0 开始有的，适配低版本的话，需要注意一哈。</p>
+<ul>
+<li>参数的集合，<code>NSURLQueryItem</code> 类呢就是通过 key 、value 来取参数们了</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *queryItems;</span><br><span class="line"><span class="comment">// API_AVAILABLE(macosx(10.13), ios(11.0), watchos(4.0), tvos(11.0))</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSURLQueryItem</span> *&gt; *percentEncodedQueryItems;</span><br></pre></td></tr></table></figure>
+
+<p>我之前不是特别理解，参数要用数组＋Item的方式，直到遇到了那位给我传的URL里，有两个同名参数不同值的仁兄，我才更加体会到了苹果开发者的严谨。。。</p>
+<h3 id="四、-枚举"><a href="#四、-枚举" class="headerlink" title="四、 枚举"></a>四、 枚举</h3><p>举一个简单的场景：聊天软件，会区分 单聊、群聊、聊天室、服务号等等等等 不同类型的会话，开发时在做页面间传值的时候，往往需要把类型传递下去来做不同的事情，怎么明确的传呢？如果这个项目是多人负责，每个人负责不同的模块，像下面这样写代码，时间久了谁也看不懂：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//0单聊,1群聊</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">assign</span>)<span class="built_in">NSInteger</span> type;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">vc.type = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>不要笑，你肯定也写过这样的代码，模块多了、时间久了，type  是什么意思？Who JB Know 啊。</p>
+<p><strong>枚举就在这个时候发挥作用了：增加代码可读性。</strong></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, ConversationType) &#123;</span><br><span class="line">    <span class="comment">//单聊</span></span><br><span class="line">    ConversationTypePRIVATE = <span class="number">1</span>,</span><br><span class="line">    <span class="comment">//群组</span></span><br><span class="line">    ConversationTypeGROUP = <span class="number">2</span>,</span><br><span class="line">    <span class="comment">//聊天室</span></span><br><span class="line">    ConversationTypeCHATROOM = <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这样一来比起单薄的数字，是不是更见名知意了呢？而且 OC 中枚举定义值的时候，都是 枚举名 + 具体分类，例如我们写的这个枚举中单聊的定义就是  <code>ConversationType</code> + <code>PRIVATE</code> = <code>ConversationTypePRIVATE</code>。敲出来的时候好敲，哈哈。</p>
+<p>有的同学可能会问了，应对类型是整型的 type 这个枚举是够用了，那用字符串来分类的呢？没错，这是个问题，尤其是和服务端对接久了，你会发现，他们使用 字符串 多过 数值类型。不急，我们来小探一下 OC 中枚举都怎么用的：</p>
+<h4 id="普通枚举"><a href="#普通枚举" class="headerlink" title="普通枚举"></a>普通枚举</h4><h5 id="1、C-语言的枚举写法-enum"><a href="#1、C-语言的枚举写法-enum" class="headerlink" title="1、C 语言的枚举写法 enum"></a>1、C 语言的枚举写法 enum</h5><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span>&#123;</span><br><span class="line">    ConversationTypePRIVATE = <span class="number">1</span>,</span><br><span class="line">    ConversationTypeGROUP = <span class="number">2</span>,</span><br><span class="line">    ConversationTypeCHATROOM = <span class="number">3</span>,</span><br><span class="line">&#125; ConversationType;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、OC-整型枚举"><a href="#2、OC-整型枚举" class="headerlink" title="2、OC 整型枚举"></a>2、OC 整型枚举</h5><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, ConversationType) &#123;</span><br><span class="line">    <span class="comment">//单聊</span></span><br><span class="line">    ConversationTypePRIVATE = <span class="number">1</span>,</span><br><span class="line">    <span class="comment">//群组</span></span><br><span class="line">    ConversationTypeGROUP = <span class="number">2</span>,</span><br><span class="line">    <span class="comment">//聊天室</span></span><br><span class="line">    ConversationTypeCHATROOM = <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、字符串枚举实现方案"><a href="#3、字符串枚举实现方案" class="headerlink" title="3、字符串枚举实现方案"></a>3、字符串枚举实现方案</h5><h6 id="1、基于普通枚举，C-语言实现"><a href="#1、基于普通枚举，C-语言实现" class="headerlink" title="1、基于普通枚举，C 语言实现"></a>1、基于普通枚举，C 语言实现</h6><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//先定义一个普通的整型枚举</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, ConversationType) &#123;</span><br><span class="line">    <span class="comment">//单聊</span></span><br><span class="line">    ConversationTypePRIVATE = <span class="number">1</span>,</span><br><span class="line">    <span class="comment">//群组</span></span><br><span class="line">    ConversationTypeGROUP = <span class="number">2</span>,</span><br><span class="line">    <span class="comment">//聊天室</span></span><br><span class="line">    ConversationTypeCHATROOM = <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现一个方法，实现里做 整型 和 字符串 的匹配</span></span><br><span class="line"><span class="built_in">NSString</span> *ConversationTypeString(ConversationType status) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (status) &#123;</span><br><span class="line">        <span class="keyword">case</span> ConversationTypePRIVATE:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"private"</span>;</span><br><span class="line">        <span class="keyword">case</span> ConversationTypeGROUP:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"group"</span>;</span><br><span class="line">        <span class="keyword">case</span> ConversationTypeCHATROOM:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"chatroom"</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者使用 一个 NSString * 类型的数组</span></span><br><span class="line"><span class="built_in">NSString</span> *ConversationTypeStringMap[] = &#123;</span><br><span class="line">    [ConversationTypePRIVATE] = <span class="string">@"private"</span>,</span><br><span class="line">    [ConversationTypeGROUP] = <span class="string">@"group"</span>,</span><br><span class="line">    [ConversationTypeCHATROOM] = <span class="string">@"chatroom"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>但这两种方式有一个弊端，就是不能像枚举类型一样直接作为一个类型 限定传参的类型。</strong></p>
+<h6 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h6><p>初期我使用宏定义比较多，每个类型值定义一个宏。。。这里不举例了。。。</p>
+<h6 id="3、苹果官方的做法"><a href="#3、苹果官方的做法" class="headerlink" title="3、苹果官方的做法"></a>3、苹果官方的做法</h6><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//.h 中 </span></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">NSString</span> *ConversationTypeKey <span class="built_in">NS_STRING_ENUM</span>;</span><br><span class="line"></span><br><span class="line">FOUNDATION_EXPORT ConversationTypeKey <span class="keyword">const</span> ConversationTypeKeyPRIVATE;</span><br><span class="line">FOUNDATION_EXPORT ConversationTypeKey <span class="keyword">const</span> ConversationTypeKeyGROUP;</span><br><span class="line">FOUNDATION_EXPORT ConversationTypeKey <span class="keyword">const</span> ConversationTypeKeyCHATROOM;</span><br><span class="line"></span><br><span class="line"><span class="comment">//.m 中 </span></span><br><span class="line"><span class="built_in">NSString</span> * <span class="keyword">const</span> ConversationTypeKeyPRIVATE = <span class="string">@"private"</span>;</span><br><span class="line"><span class="built_in">NSString</span> * <span class="keyword">const</span> ConversationTypeKeyGROUP = <span class="string">@"group"</span>;</span><br><span class="line"><span class="built_in">NSString</span> * <span class="keyword">const</span> ConversationTypeKeyCHATROOM = <span class="string">@"chatroom"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>相比会产生过多二进制文件的宏定义方式, 建议用FOUNDATION_EXPORT</strong></p>
+<h4 id="位移枚举"><a href="#位移枚举" class="headerlink" title="位移枚举"></a>位移枚举</h4><p>==</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>吃饭啦</title>
-    <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
-    <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
-<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
-<p>🐟🐟🐟🐟清烤多春鱼</p>
-<blockquote>
-<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
-
-
-
-<p>🍆清蒸茄子</p>
-<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
-
-<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
-<p>🌲另一个菜叫什么呢？</p>
-<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
-<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
-<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
-<blockquote>
-<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
-</blockquote>
-<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
-]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>mailcore 2  iOS  之一 IMAP</title>
@@ -458,6 +465,37 @@
 
 </li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>吃饭啦</title>
+    <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
+    <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
+<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
+<p>🐟🐟🐟🐟清烤多春鱼</p>
+<blockquote>
+<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
+
+
+
+<p>🍆清蒸茄子</p>
+<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
+
+<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
+<p>🌲另一个菜叫什么呢？</p>
+<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
+<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
+<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
+<blockquote>
+<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
+</blockquote>
+<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
 ]]></content>
   </entry>
   <entry>
