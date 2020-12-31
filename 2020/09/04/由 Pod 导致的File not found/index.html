@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    去掉UIWebView底部的黑条 |
+    由 Pod 导致的 File not found |
     
     迷</title>
   
@@ -29,7 +29,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-去掉UIWebView底部的黑条" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-由 Pod 导致的File not found" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
         
@@ -37,7 +37,7 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      去掉UIWebView底部的黑条
+      由 Pod 导致的 File not found
     </h1>
   
   
@@ -50,8 +50,8 @@
 
                 
                     <div class="article-meta">
-                        <a href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" class="article-date">
-  <time datetime="2018-12-13T09:24:43.000Z" itemprop="datePublished">2018-12-13</time>
+                        <a href="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/" class="article-date">
+  <time datetime="2020-09-04T07:33:35.000Z" itemprop="datePublished">2020-09-04</time>
 </a>
                             
                     </div>
@@ -59,6 +59,8 @@
 
                         
                             
+    <div class="tocbot"></div>
+
 
 
 
@@ -72,21 +74,19 @@
                                             
 
                                                 
-                                                                    <p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-
+                                                                    <p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="ckjcmy0xn000h4vku7az92yei" class="article-share-link">
+                                        <a data-url="http://zhengyatian.github.io/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/" data-id="ckjcmy0xo000i4vku8gf25otq" class="article-share-link">
                                             分享
                                         </a>
                                         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
                                     </footer>
 
     </div>
@@ -95,19 +95,19 @@
         
   <nav class="article-nav">
     
-      <a href="/2018/12/27/Warning!PATH-is/" class="article-nav-link">
+      <a href="/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF~/" class="article-nav-link">
         <strong class="article-nav-caption">前一篇</strong>
         <div class="article-nav-title">
           
-            Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.
+            WKWebView 小结儿~
           
         </div>
       </a>
     
     
-      <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-nav-link">
+      <a href="/2020/06/05/DeviceCheck/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">mailcore 2 iOS  之二 SMTP</div>
+        <div class="article-nav-title">DeviceCheck</div>
       </a>
     
   </nav>
