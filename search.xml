@@ -205,6 +205,88 @@
 ]]></content>
   </entry>
   <entry>
+    <title>WKWebView 小结儿~</title>
+    <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF~/</url>
+    <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
+<p>换他丫的！</p>
+<p>说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓</p>
+<a id="more"></a>
+
+<h3 id="一、WKWebView-初始化"><a href="#一、WKWebView-初始化" class="headerlink" title="一、WKWebView 初始化"></a>一、WKWebView 初始化</h3><p>一个简单用于展示的 WebView 可以是这样的：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">WKWebViewConfiguration</span> *configuration = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</span><br><span class="line"><span class="built_in">WKWebView</span> *webView = (&#123;</span><br><span class="line">    webView = [[<span class="built_in">WKWebView</span> alloc] initWithFrame:<span class="keyword">self</span>.view.bounds configuration:configuration];</span><br><span class="line">    webView.scrollView.bounces = <span class="literal">NO</span>;</span><br><span class="line">    webView.backgroundColor = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line">    webView;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br><span class="line">[<span class="keyword">self</span>.view addSubview:webView];</span><br><span class="line">[webView loadRequest:[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://baidu.com"</span>]]];</span><br></pre></td></tr></table></figure>
+
+<p>这样一个单纯用于展示网页、没有任何配置项的 WebView 就算完成了。相较于 <code>UIWebView</code> ，我们看到多了一个 </p>
+<p><code>configuration</code>配置类型，那我们就来 Read the fucking source code……</p>
+<h3 id="二、WKWebViewConfiguration"><a href="#二、WKWebViewConfiguration" class="headerlink" title="二、WKWebViewConfiguration"></a>二、WKWebViewConfiguration</h3><p>官方文档是这样描述这个类型的：</p>
+<blockquote>
+<p>A <code>WKWebViewConfiguration</code> object is a collection of properties with which to initialize a web view.</p>
+<p>一个用于初始化 web view 属性的集合。</p>
+</blockquote>
+<p>我们可以用它做什么呢？</p>
+<blockquote>
+<ul>
+<li>设置用于网站的初始cookie</li>
+<li>处理自定义的 URL schemes</li>
+<li>设置如何处理媒体内容</li>
+<li>管理网页中选中的信息</li>
+<li>自定义注入网页的脚本</li>
+<li>自定义内容的展示规则</li>
+<li>……</li>
+</ul>
+</blockquote>
+<p>我们可以通过创建一个 <code>WKWebViewConfiguration</code> 对象来设置网页的属性，并且在 WebView 初始化的时候传递给它。注意的是只能在初始化的时候配置 <code>configuration</code>  中的属性，后面是没办法动态再去修改这些配置的。</p>
+<p>我们通过这个类看看 WebKit 里面有哪些主要的内容：</p>
+<h4 id="WKProcessPool"><a href="#WKProcessPool" class="headerlink" title="WKProcessPool"></a>WKProcessPool</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The process pool from which to obtain the view's web content</span></span><br><span class="line"><span class="comment"> process.</span></span><br><span class="line"><span class="comment"> @discussion When a web view is initialized, a new web content process</span></span><br><span class="line"><span class="comment"> will be created for it from the specified pool, or an existing process in</span></span><br><span class="line"><span class="comment"> that pool will be used.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKProcessPool</span> *processPool;</span><br></pre></td></tr></table></figure>
+
+<p>官方文档解释为 一个可以在单个进程中运行多个 web 视图的不可见 token ？令牌？。进程池。</p>
+<p>对于 WK，和我们的 App 不再是同一个进程，而是开辟了独立的进程来管理，放在进程池中。这也是与<code>UIWebView</code> 最大不同的一点：<code>NSHTTPCookieStorage</code> 中的 cookie ，<code>UIWebView</code> 是可以自动携带使用的，但 <code>WKWebView</code> 无法获取 Storage 中的 cookie。</p>
+<p>诶，那是不是放在同一个进程池中的 web view 就可以共享 cookie 了呢？带着这个问题，稍后我们会提到 cookie 有关的处理。</p>
+<h4 id="WKPreferences"><a href="#WKPreferences" class="headerlink" title="WKPreferences"></a>WKPreferences</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The preference settings to be used by the web view.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKPreferences</span> *preferences;</span><br></pre></td></tr></table></figure>
+
+<p>针对 web 视图的偏好设置，如果是针对 web 内容的设置还是使用  <code>WKWebViewConfiguration</code> ，感觉这个类还在完善、扩充中，内容很少。比较值得注意的是与 JavaScript 有关的两个属性。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//字体</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span> minimumFontSize;</span><br><span class="line"><span class="comment">//是否允许在没有用户交互的情况下，JavaScript可以打开windows</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> javaScriptCanOpenWindowsAutomatically;</span><br><span class="line"><span class="comment">//是否启用javaScript，14.0 以后就废弃了，有对应替换的 API</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> javaScriptEnabled;<span class="comment">//ios(8.0, 14.0)</span></span><br><span class="line"><span class="comment">//是否提醒 如网络钓鱼或恶意软件 等可疑的欺诈内容</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> fraudulentWebsiteWarningEnabled;<span class="comment">//ios(13.0)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="WKUserContentController"><a href="#WKUserContentController" class="headerlink" title="WKUserContentController"></a>WKUserContentController</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The user content controller to associate with the web view.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKUserContentController</span> *userContentController;</span><br></pre></td></tr></table></figure>
+
+<p>这个类提供了一个 JavaScript 向 web view 发送消息的途径，可以增删用户脚本。</p>
+<p>JavaScript 与 原生做交互，比较多的一个场景是需要调用原生的某些能力。在 <code>UIWebView</code> 中简单的方式是拦截请求，根据特定的 scheme 或者 参数来区分，那在 <code>WKWebView</code> 中则是通过 <code>WKUserContentController</code> 添加消息处理器。例如打开相机功能：</p>
+<ul>
+<li>添加脚本处理器</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">WKUserContentController</span> *userContentController = [[<span class="built_in">WKUserContentController</span> alloc] init];</span><br><span class="line">[userContentController addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"OpenCamera"</span>];</span><br><span class="line"><span class="built_in">WKWebViewConfiguration</span> *configuration = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</span><br><span class="line">configuration.userContentController = userContentController;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>实现 WKScriptMessageHandler 代理的方法</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark - WKScriptMessageHandler</span></span><br><span class="line">- (<span class="keyword">void</span>)userContentController:(<span class="built_in">WKUserContentController</span> *)userContentController didReceiveScriptMessage:(<span class="built_in">WKScriptMessage</span> *)message &#123;</span><br><span class="line">    <span class="keyword">if</span> ([message.name caseInsensitiveCompare:<span class="string">@"OpenCamera"</span>] == <span class="built_in">NSOrderedSame</span>) &#123;</span><br><span class="line">        <span class="comment">//Call your open camera action.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们看到接收 JavaScript 的消息是通过一个 <code>WKScriptMessage</code> 类型，我们再来简单看下这个类</p>
+<h4 id="WKScriptMessage"><a href="#WKScriptMessage" class="headerlink" title="WKScriptMessage"></a>WKScriptMessage</h4><blockquote>
+<p>A WKScriptMessage object contains information about a message sent from a webpage.</p>
+</blockquote>
+<p>他的注释就很简单了：一个包含网页发来的消息内容的对象。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 消息体、参数。允许的类型 NSNumber, NSString, NSDate, NSArray, NSDictionary, and NSNull.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="keyword">id</span> body;</span><br><span class="line"><span class="comment">// 发送消息的 web view。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">weak</span>) <span class="built_in">WKWebView</span> *webView;</span><br><span class="line"><span class="comment">// 前端中发送消息的 frame。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">WKFrameInfo</span> *frameInfo;</span><br><span class="line"><span class="comment">// 用于接收前端消息的处理器的名字。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"><span class="comment">// The content world from which the message was sent. ？我也还没用过不清楚是干嘛的。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">WKContentWorld</span> *world API_AVAILABLE(macos(<span class="number">11.0</span>), ios(<span class="number">14.0</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="WKWebsiteDataStore"><a href="#WKWebsiteDataStore" class="headerlink" title="WKWebsiteDataStore"></a>WKWebsiteDataStore</h4><p>这个类貌似包含了一个 web view 的所有数据，我看完这个类的介绍，第一感觉是，哇，我可以窥探一切了。然而，除了cookie，一毛钱都拿不到……不讲了，有兴趣自己试吧~~</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">(</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeDiskCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeOfflineWebApplicationCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeMemoryCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeLocalStorage</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeFetchCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeCookies</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeSessionStorage</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeIndexedDBDatabases</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeWebSQLDatabases</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeServiceWorkerRegistrations</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="WKHTTPCookieStore"><a href="#WKHTTPCookieStore" class="headerlink" title="WKHTTPCookieStore"></a>WKHTTPCookieStore</h4><blockquote>
+<p> A WKHTTPCookieStore object allows managing the HTTP cookies associated with a particular WKWebsiteDataStore.</p>
+</blockquote>
+<p>用来管理与特定 <code>WKWebsiteDataStore</code> 相关联的 HTTP cookie。API 看上去很简单…获取 cookie 是异步操作，与<code>NSHTTPCookieStorage</code> 的同步操作不同，处理起来可能要注意下。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getAllCookies:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSHTTPCookie</span> *&gt; *))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)setCookie:(<span class="built_in">NSHTTPCookie</span> *)cookie completionHandler:(<span class="keyword">nullable</span> <span class="keyword">void</span> (^)(<span class="keyword">void</span>))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)deleteCookie:(<span class="built_in">NSHTTPCookie</span> *)cookie completionHandler:(<span class="keyword">nullable</span> <span class="keyword">void</span> (^)(<span class="keyword">void</span>))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)addObserver:(<span class="keyword">id</span>&lt;<span class="built_in">WKHTTPCookieStoreObserver</span>&gt;)observer;</span><br><span class="line">- (<span class="keyword">void</span>)removeObserver:(<span class="keyword">id</span>&lt;<span class="built_in">WKHTTPCookieStoreObserver</span>&gt;)observer;</span><br></pre></td></tr></table></figure>
+
+<p>对应观察者的协议方法：</p>
+<p>在 cookie 发生变化时，可以异步通知，但经测试是有一点延迟的，有兴趣可以测一测？</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">WKHTTPCookieStoreObserver</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)cookiesDidChangeInCookieStore:(<span class="built_in">WKHTTPCookieStore</span> *)cookieStore;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+<p>还没写完<del>~</del></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
     <url>/2018/12/27/Warning!PATH-is/</url>
     <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
@@ -290,85 +372,29 @@
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
   </entry>
   <entry>
-    <title>WKWebView 小结儿~</title>
-    <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF~/</url>
-    <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
-<p>换他丫的！</p>
-<p>说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓</p>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
 <a id="more"></a>
 
-<h3 id="一、WKWebView-初始化"><a href="#一、WKWebView-初始化" class="headerlink" title="一、WKWebView 初始化"></a>一、WKWebView 初始化</h3><p>一个简单用于展示的 WebView 可以是这样的：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">WKWebViewConfiguration</span> *configuration = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</span><br><span class="line"><span class="built_in">WKWebView</span> *webView = (&#123;</span><br><span class="line">    webView = [[<span class="built_in">WKWebView</span> alloc] initWithFrame:<span class="keyword">self</span>.view.bounds configuration:configuration];</span><br><span class="line">    webView.scrollView.bounces = <span class="literal">NO</span>;</span><br><span class="line">    webView.backgroundColor = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line">    webView;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br><span class="line">[<span class="keyword">self</span>.view addSubview:webView];</span><br><span class="line">[webView loadRequest:[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://baidu.com"</span>]]];</span><br></pre></td></tr></table></figure>
-
-<p>这样一个单纯用于展示网页、没有任何配置项的 WebView 就算完成了。相较于 <code>UIWebView</code> ，我们看到多了一个 </p>
-<p><code>configuration</code>配置类型，那我们就来 Read the fucking source code……</p>
-<h3 id="二、WKWebViewConfiguration"><a href="#二、WKWebViewConfiguration" class="headerlink" title="二、WKWebViewConfiguration"></a>二、WKWebViewConfiguration</h3><p>官方文档是这样描述这个类型的：</p>
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
 <blockquote>
-<p>A <code>WKWebViewConfiguration</code> object is a collection of properties with which to initialize a web view.</p>
-<p>一个用于初始化 web view 属性的集合。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>我们可以用它做什么呢？</p>
-<blockquote>
-<ul>
-<li>设置用于网站的初始cookie</li>
-<li>处理自定义的 URL schemes</li>
-<li>设置如何处理媒体内容</li>
-<li>管理网页中选中的信息</li>
-<li>自定义注入网页的脚本</li>
-<li>自定义内容的展示规则</li>
-<li>……</li>
-</ul>
-</blockquote>
-<p>我们可以通过创建一个 <code>WKWebViewConfiguration</code> 对象来设置网页的属性，并且在 WebView 初始化的时候传递给它。注意的是只能在初始化的时候配置 <code>configuration</code>  中的属性，后面是没办法动态再去修改这些配置的。</p>
-<p>我们通过这个类看看 WebKit 里面有哪些主要的内容：</p>
-<h4 id="WKProcessPool"><a href="#WKProcessPool" class="headerlink" title="WKProcessPool"></a>WKProcessPool</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The process pool from which to obtain the view's web content</span></span><br><span class="line"><span class="comment"> process.</span></span><br><span class="line"><span class="comment"> @discussion When a web view is initialized, a new web content process</span></span><br><span class="line"><span class="comment"> will be created for it from the specified pool, or an existing process in</span></span><br><span class="line"><span class="comment"> that pool will be used.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKProcessPool</span> *processPool;</span><br></pre></td></tr></table></figure>
-
-<p>官方文档解释为 一个可以在单个进程中运行多个 web 视图的不可见 token ？令牌？。进程池。</p>
-<p>对于 WK，和我们的 App 不再是同一个进程，而是开辟了独立的进程来管理，放在进程池中。这也是与<code>UIWebView</code> 最大不同的一点：<code>NSHTTPCookieStorage</code> 中的 cookie ，<code>UIWebView</code> 是可以自动携带使用的，但 <code>WKWebView</code> 无法获取 Storage 中的 cookie。</p>
-<p>诶，那是不是放在同一个进程池中的 web view 就可以共享 cookie 了呢？带着这个问题，稍后我们会提到 cookie 有关的处理。</p>
-<h4 id="WKPreferences"><a href="#WKPreferences" class="headerlink" title="WKPreferences"></a>WKPreferences</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The preference settings to be used by the web view.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKPreferences</span> *preferences;</span><br></pre></td></tr></table></figure>
-
-<p>针对 web 视图的偏好设置，如果是针对 web 内容的设置还是使用  <code>WKWebViewConfiguration</code> ，感觉这个类还在完善、扩充中，内容很少。比较值得注意的是与 JavaScript 有关的两个属性。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//字体</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span> minimumFontSize;</span><br><span class="line"><span class="comment">//是否允许在没有用户交互的情况下，JavaScript可以打开windows</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> javaScriptCanOpenWindowsAutomatically;</span><br><span class="line"><span class="comment">//是否启用javaScript，14.0 以后就废弃了，有对应替换的 API</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> javaScriptEnabled;<span class="comment">//ios(8.0, 14.0)</span></span><br><span class="line"><span class="comment">//是否提醒 如网络钓鱼或恶意软件 等可疑的欺诈内容</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> fraudulentWebsiteWarningEnabled;<span class="comment">//ios(13.0)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="WKUserContentController"><a href="#WKUserContentController" class="headerlink" title="WKUserContentController"></a>WKUserContentController</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*! @abstract The user content controller to associate with the web view.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">WKUserContentController</span> *userContentController;</span><br></pre></td></tr></table></figure>
-
-<p>这个类提供了一个 JavaScript 向 web view 发送消息的途径，可以增删用户脚本。</p>
-<p>JavaScript 与 原生做交互，比较多的一个场景是需要调用原生的某些能力。在 <code>UIWebView</code> 中简单的方式是拦截请求，根据特定的 scheme 或者 参数来区分，那在 <code>WKWebView</code> 中则是通过 <code>WKUserContentController</code> 添加消息处理器。例如打开相机功能：</p>
-<ul>
-<li>添加脚本处理器</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">WKUserContentController</span> *userContentController = [[<span class="built_in">WKUserContentController</span> alloc] init];</span><br><span class="line">[userContentController addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"OpenCamera"</span>];</span><br><span class="line"><span class="built_in">WKWebViewConfiguration</span> *configuration = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</span><br><span class="line">configuration.userContentController = userContentController;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>实现 WKScriptMessageHandler 代理的方法</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark - WKScriptMessageHandler</span></span><br><span class="line">- (<span class="keyword">void</span>)userContentController:(<span class="built_in">WKUserContentController</span> *)userContentController didReceiveScriptMessage:(<span class="built_in">WKScriptMessage</span> *)message &#123;</span><br><span class="line">    <span class="keyword">if</span> ([message.name caseInsensitiveCompare:<span class="string">@"OpenCamera"</span>] == <span class="built_in">NSOrderedSame</span>) &#123;</span><br><span class="line">        <span class="comment">//Call your open camera action.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们看到接收 JavaScript 的消息是通过一个 <code>WKScriptMessage</code> 类型，我们再来简单看下这个类</p>
-<h4 id="WKScriptMessage"><a href="#WKScriptMessage" class="headerlink" title="WKScriptMessage"></a>WKScriptMessage</h4><blockquote>
-<p>A WKScriptMessage object contains information about a message sent from a webpage.</p>
-</blockquote>
-<p>他的注释就很简单了：一个包含网页发来的消息内容的对象。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 消息体、参数。允许的类型 NSNumber, NSString, NSDate, NSArray, NSDictionary, and NSNull.</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="keyword">id</span> body;</span><br><span class="line"><span class="comment">// 发送消息的 web view。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">weak</span>) <span class="built_in">WKWebView</span> *webView;</span><br><span class="line"><span class="comment">// 前端中发送消息的 frame。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">WKFrameInfo</span> *frameInfo;</span><br><span class="line"><span class="comment">// 用于接收前端消息的处理器的名字。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"><span class="comment">// The content world from which the message was sent. ？我也还没用过不清楚是干嘛的。</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">WKContentWorld</span> *world API_AVAILABLE(macos(<span class="number">11.0</span>), ios(<span class="number">14.0</span>));</span><br></pre></td></tr></table></figure>
-
-<h4 id="WKWebsiteDataStore"><a href="#WKWebsiteDataStore" class="headerlink" title="WKWebsiteDataStore"></a>WKWebsiteDataStore</h4><p>这个类貌似包含了一个 web view 的所有数据，我看完这个类的介绍，第一感觉是，哇，我可以窥探一切了。然而，除了cookie，一毛钱都拿不到……不讲了，有兴趣自己试吧~~</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">(</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeDiskCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeOfflineWebApplicationCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeMemoryCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeLocalStorage</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeFetchCache</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeCookies</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeSessionStorage</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeIndexedDBDatabases</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeWebSQLDatabases</span>,</span><br><span class="line">    <span class="built_in">WKWebsiteDataTypeServiceWorkerRegistrations</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h4 id="WKHTTPCookieStore"><a href="#WKHTTPCookieStore" class="headerlink" title="WKHTTPCookieStore"></a>WKHTTPCookieStore</h4><blockquote>
-<p> A WKHTTPCookieStore object allows managing the HTTP cookies associated with a particular WKWebsiteDataStore.</p>
-</blockquote>
-<p>用来管理与特定 <code>WKWebsiteDataStore</code> 相关联的 HTTP cookie。API 看上去很简单…获取 cookie 是异步操作，与<code>NSHTTPCookieStorage</code> 的同步操作不同，处理起来可能要注意下。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getAllCookies:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSHTTPCookie</span> *&gt; *))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)setCookie:(<span class="built_in">NSHTTPCookie</span> *)cookie completionHandler:(<span class="keyword">nullable</span> <span class="keyword">void</span> (^)(<span class="keyword">void</span>))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)deleteCookie:(<span class="built_in">NSHTTPCookie</span> *)cookie completionHandler:(<span class="keyword">nullable</span> <span class="keyword">void</span> (^)(<span class="keyword">void</span>))completionHandler;</span><br><span class="line">- (<span class="keyword">void</span>)addObserver:(<span class="keyword">id</span>&lt;<span class="built_in">WKHTTPCookieStoreObserver</span>&gt;)observer;</span><br><span class="line">- (<span class="keyword">void</span>)removeObserver:(<span class="keyword">id</span>&lt;<span class="built_in">WKHTTPCookieStoreObserver</span>&gt;)observer;</span><br></pre></td></tr></table></figure>
-
-<p>对应观察者的协议方法：</p>
-<p>在 cookie 发生变化时，可以异步通知，但经测试是有一点延迟的，有兴趣可以测一测？</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">WKHTTPCookieStoreObserver</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)cookiesDidChangeInCookieStore:(<span class="built_in">WKHTTPCookieStore</span> *)cookieStore;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-<p>还没写完<del>~</del></p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
 ]]></content>
       <tags>
-        <tag>iOS</tag>
+        <tag>瞎扯</tag>
       </tags>
   </entry>
   <entry>
@@ -413,32 +439,6 @@
 <p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
-      </tags>
   </entry>
   <entry>
     <title>由 Pod 导致的 File not found</title>
