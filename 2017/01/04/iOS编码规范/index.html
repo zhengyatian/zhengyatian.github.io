@@ -82,7 +82,7 @@
 <h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener">GCD (Grand Central Dispatch)</a> 。</p>
 <h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
 <p>看完文档就会知道，真的好方便。。。</p>
 <ul>
@@ -129,7 +129,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://zhengyatian.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" data-id="ckjco513v000quzkugsoh1tdl" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" data-id="ckjkvd63d000su7ku4aeh3lon" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -208,7 +208,7 @@
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2020 迷</li>
+      <li>&copy; 2021 迷</li>
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
       <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>

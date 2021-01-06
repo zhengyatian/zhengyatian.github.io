@@ -22,23 +22,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 zhengyatian.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -167,6 +150,23 @@
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 zhengyatian.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zhengyatian/zhengyatian.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
   </entry>
   <entry>
     <title>Hexo 文字中如何插入图片</title>
@@ -310,7 +310,7 @@
   </entry>
   <entry>
     <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS%2013%20%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
 <h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField</p>
 <p>​        <a id="more"></a></p>
@@ -355,11 +355,11 @@
   <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
-    <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+    <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
 <p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，</p>
 <p>希望对你们有帮助，也做个沟通交流。</p>
 <ul>
-<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/">mailcore2-ios  之一 IMAP</a></p>
+<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
 </li>
 <li><p>SMTP</p>
   <a id="more"></a>
@@ -477,6 +477,19 @@
       </tags>
   </entry>
   <entry>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>一份美好的爱，在今天结束。</p>
+<p>一份隐忍的爱，在今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS编码规范总结</title>
     <url>/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
@@ -487,7 +500,7 @@
 <h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://zhengyatian.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener">GCD (Grand Central Dispatch)</a> 。</p>
 <h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
 <p>看完文档就会知道，真的好方便。。。</p>
 <ul>
@@ -564,7 +577,7 @@
 </li>
 <li>POP</li>
 <li>SMTP<ul>
-<li>见<a href="https://zhengyatian.github.io/2018/12/12/mailcore2-iOS之二SMTP/">mailcore2-ios  之二 SMTP</a></li>
+<li>见<a href="https://zhengyatian.github.io/2018/12/12/mailcore2-iOS之二SMTP/" target="_blank" rel="noopener">mailcore2-ios  之二 SMTP</a></li>
 </ul>
 </li>
 </ul>
