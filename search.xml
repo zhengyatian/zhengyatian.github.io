@@ -287,6 +287,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>iOS13 适配注意点</title>
     <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
@@ -310,28 +332,6 @@
       <tags>
         <tag>iOS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
   </entry>
   <entry>
     <title>iTerm 2 分屏切换</title>
@@ -474,6 +474,19 @@
 <h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>一份美好的爱，在今天结束。</p>
+<p>一份隐忍的爱，在今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
       </tags>
   </entry>
   <entry>
@@ -639,19 +652,6 @@
 </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>隐忍</title>
-    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
-    <content><![CDATA[<p>124 VS 3565</p>
-<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
-<p>一份美好的爱，在今天结束。</p>
-<p>一份隐忍的爱，在今天开始。</p>
-<p>希望你幸福，爱笑的汤先生。</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
   </entry>
   <entry>
     <title>HTTP 的一点儿小知识</title>
