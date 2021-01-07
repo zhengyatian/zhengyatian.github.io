@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -152,6 +131,27 @@
       </tags>
   </entry>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo + GitHub Pages 404</title>
     <url>/2017/10/02/GitHub%20Pages%20404/</url>
     <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
@@ -167,6 +167,35 @@
 <p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
 <p>需要联系的，去 “关于(About)” 中找到我吧。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
+    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
+    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
+<p>​        <a id="more"></a></p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
+</center>
+
+<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
+<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
+</center>
+
+<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
+<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
+<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
+<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo 文字中如何插入图片</title>
@@ -203,35 +232,6 @@
 <p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
 <p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
-    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
-    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
-<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
-<p>​        <a id="more"></a></p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
-</center>
-
-<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
-<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
-</center>
-
-<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
-<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
-<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
-<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
   </entry>
   <entry>
     <title>WKWebView 小结儿</title>
@@ -452,18 +452,6 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -492,6 +480,21 @@
 <p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
 </blockquote>
 <p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
