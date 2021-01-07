@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    吃饭啦 |
+    Inferred (Constraints) 和 Autoresizing Mask |
     
     迷</title>
   
@@ -29,7 +29,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-吃饭啦" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-Inferred-Constraints-和-Autoresizing-Mask" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
         
@@ -37,7 +37,7 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      吃饭啦
+      Inferred (Constraints) 和 Autoresizing Mask
     </h1>
   
   
@@ -50,8 +50,8 @@
 
                 
                     <div class="article-meta">
-                        <a href="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" class="article-date">
-  <time datetime="2020-05-22T12:58:34.000Z" itemprop="datePublished">2020-05-22</time>
+                        <a href="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" class="article-date">
+  <time datetime="2021-01-07T02:37:31.000Z" itemprop="datePublished">2021-01-07</time>
 </a>
                             
                     </div>
@@ -72,40 +72,33 @@
                                             
 
                                                 
-                                                                    <p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
-<p>就算一个人在家次饭，也要元气满满的哦，介绍一下这个小菜单吧，哈哈：</p>
-<p>🐟🐟🐟🐟清烤多春鱼</p>
-<blockquote>
-<p>京都多春雨，回首多春光。公子多春情，绿草多春芳。八载多春伤，橙子多春鱼。</p>
-</blockquote>
-<a id="more"></a>
+                                                                    <p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+<p>可用与不可用：</p>
+<p>​        <a id="more"></a></p>
+<center class="half">
+<img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" width="300"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" width="300">
+</center>
 
-<p>​    多春鱼的名字起得可以说非常贴切，四季多子，满腹鱼子，吃起来Q弹又有营养。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">拔掉鱼鳃和内脏</span><br><span class="line">加一些料酒呀、生姜呀、胡椒粉 腌10分钟就可以喽</span><br><span class="line">烤箱上下220预热5分钟，烘烤时间设置为15分钟</span><br><span class="line">预热期间可以准备刷油了，轻轻刷一点就好了，因为我们是清烤嘛，嘻嘻~~</span><br></pre></td></tr></table></figure>
+<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
+<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
+<center class="half">
+<img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" width="300"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" width="300">
+</center>
 
-
-
-<p>🍆清蒸茄子</p>
-<p>清蒸茄子是我夏天最喜欢吃的一道菜，爽口又没有热量😳</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">茄子洗净切片，上锅蒸</span><br><span class="line">准备蒜和香油，蒜切末备用，看自己喜好放多少吧</span><br><span class="line">茄子整好以后，放在容器中，加入盐、蒜末、香油几滴</span><br><span class="line">可以开动了，香喷喷美滋滋呀</span><br></pre></td></tr></table></figure>
-
-<p>PS：我个人很喜欢在菜里放大蒜，因为吃大蒜可以让人快乐。哈哈。</p>
-<p>🌲另一个菜叫什么呢？</p>
-<p>其实我也不知道，哈哈，土豆、青椒、洋葱大杂烩，切成小片，一起翻炒，喜欢吃肉可以放点肉粒，我不喜欢，所以是素炒的。</p>
-<p>🍚最后配上一碗白米饭，可以开动啦<del>~</del></p>
-<p>单身狗们看完会不会觉得很麻烦呢，一个人做这么多要多久呀，好烦。呐，时间管理大师说过(不是罗志祥🙅‍♂️)，所有的任务要区分好，并行和串行！拿我们这次的午餐举例：</p>
-<blockquote>
-<p>蒸🍚 -&gt; 处理🍆 -&gt; 上锅蒸 -&gt; 处理🐟 + 切土豆等等 -&gt; 🐟进烤箱 -&gt; 🍆出锅 -&gt; 炒大杂烩 = 吃饭啦<del>~</del></p>
-</blockquote>
-<p>为什么分享美食呢，其实我就是试一下图片为什么加不进去了，现在好了<del>~</del>QTQ</p>
+<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
+<p>有兴趣可以看看这两个讨论：</p>
+<p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
+<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
 
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" data-id="ckjma454h000meukug6djdvqs" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckjma45460005eukuc3w4ck18" class="article-share-link">
                                             分享
                                         </a>
                                         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
                                     </footer>
 
     </div>
@@ -114,19 +107,10 @@
         
   <nav class="article-nav">
     
-      <a href="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            乌龙 之 我吐了
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/" class="article-nav-link">
+      <a href="/2021/01/06/%E9%9A%90%E5%BF%8D/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">1Q84中的哲学</div>
+        <div class="article-nav-title">隐忍</div>
       </a>
     
   </nav>
