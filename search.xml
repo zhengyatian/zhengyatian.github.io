@@ -192,48 +192,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
-    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
-    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
-<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
-<p>​        <a id="more"></a></p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
-</center>
-
-<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
-<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
-</center>
-
-<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
-<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
-<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
-<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-  </entry>
-  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -316,6 +274,70 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
+    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
+    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
+<p>​        <a id="more"></a></p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
+</center>
+
+<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
+<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
+</center>
+
+<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
+<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
+<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
+<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>iOS13 适配注意点</title>
     <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
@@ -357,54 +379,6 @@
 ]]></content>
       <tags>
         <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
       </tags>
   </entry>
   <entry>
@@ -452,6 +426,44 @@
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
   </entry>
   <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -486,16 +498,33 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绿豆儿没了</title>
+    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
+    <content><![CDATA[<center>
+  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
+</center>
 
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+
+
+<p>我的绿豆儿死了。</p>
+<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
+<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
+<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
 ]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
   </entry>
   <entry>
     <title>隐忍</title>
@@ -511,17 +540,6 @@
 ]]></content>
       <tags>
         <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
