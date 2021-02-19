@@ -192,19 +192,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Inferred (Constraints) 和 Autoresizing Mask</title>
     <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
     <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
@@ -228,6 +215,45 @@
 <h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>iOS13 适配注意点</title>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
+<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
+ <a id="more"></a>
+
+<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
+<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
+<p>​    检查图片选择器？</p>
+<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
+
+<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
+
+<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
+<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
+<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
+
+<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -338,26 +364,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField</p>
-<p>​        <a id="more"></a></p>
-<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
-<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
-<p>​    检查图片选择器？</p>
-<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
-
-<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
-
-<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
-<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
-<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
-]]></content>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
@@ -452,18 +461,6 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -498,6 +495,18 @@
       </tags>
   </entry>
   <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>由 Pod 导致的 File not found</title>
     <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
     <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
@@ -506,21 +515,6 @@
 <h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐忍</title>
-    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
-    <content><![CDATA[<p>124 VS 3565</p>
-<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
-<p>隐忍，从今天开始。</p>
-<p>希望你幸福，爱笑的汤先生。</p>
-<a id="more"></a>
-
-<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
-]]></content>
-      <tags>
-        <tag>我</tag>
       </tags>
   </entry>
   <entry>
@@ -536,6 +530,21 @@
 <p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
 <p>终究是我没照顾好她。希望她去了她想去的地方。</p>
 <p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>隐忍，从今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+<a id="more"></a>
+
+<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
 ]]></content>
       <tags>
         <tag>我</tag>
