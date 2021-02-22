@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -148,27 +169,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -221,26 +221,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
+    <title>Server-Sent Events / EventSource</title>
+    <url>/2021/02/19/Server-Sent%20Events/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Mac 下 IDEA 无法启动的问题</title>
@@ -256,14 +242,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Server-Sent Events / EventSource</title>
-    <url>/2021/02/19/Server-Sent%20Events/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS 动态修改状态栏风格</title>
     <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
     <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
@@ -275,7 +253,7 @@
 <a id="more"></a>
 
 <h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> `<span class="keyword">default</span>` = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
@@ -385,6 +363,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+</ul>
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS13 适配注意点</title>
     <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
@@ -408,25 +427,6 @@
 ]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
-</ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -512,24 +512,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>绿豆儿没了</title>
-    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
-    <content><![CDATA[<center>
-  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
-</center>
-
-
-
-<p>我的绿豆儿死了。</p>
-<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
-<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
-<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -572,6 +554,24 @@
 <h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绿豆儿没了</title>
+    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
+    <content><![CDATA[<center>
+  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
+</center>
+
+
+
+<p>我的绿豆儿死了。</p>
+<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
+<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
+<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
       </tags>
   </entry>
   <entry>
