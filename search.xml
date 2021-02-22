@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -169,6 +148,27 @@
 ]]></content>
   </entry>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -221,6 +221,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Mac 下 IDEA 无法启动的问题</title>
     <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
@@ -234,26 +256,47 @@
 ]]></content>
   </entry>
   <entry>
-    <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
- <a id="more"></a>
+    <title>Server-Sent Events / EventSource</title>
+    <url>/2021/02/19/Server-Sent%20Events/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
 
-<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
-<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
-<p>​    检查图片选择器？</p>
-<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> `<span class="keyword">default</span>` = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
 
-<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
-<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
-<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -342,31 +385,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
+    <title>iOS13 适配注意点</title>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
+<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
+ <a id="more"></a>
 
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
+<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
+<p>​    检查图片选择器？</p>
+<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
 
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
+
+<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
+<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
+<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
+
+<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>iOS 动态修改状态栏风格</title>
-    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
-    <content><![CDATA[]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
@@ -461,6 +500,36 @@
       </tags>
   </entry>
   <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>绿豆儿没了</title>
+    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
+    <content><![CDATA[<center>
+  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
+</center>
+
+
+
+<p>我的绿豆儿死了。</p>
+<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
+<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
+<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -495,18 +564,6 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>由 Pod 导致的 File not found</title>
     <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
     <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
@@ -515,24 +572,6 @@
 <h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绿豆儿没了</title>
-    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
-    <content><![CDATA[<center>
-  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
-</center>
-
-
-
-<p>我的绿豆儿死了。</p>
-<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
-<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
-<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
       </tags>
   </entry>
   <entry>

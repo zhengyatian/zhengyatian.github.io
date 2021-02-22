@@ -59,6 +59,8 @@
 
                         
                             
+    <div class="tocbot"></div>
+
 
 
 
@@ -72,11 +74,42 @@
                                             
 
                                                 
-                                                                    
+                                                                    <p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> `<span class="keyword">default</span>` = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
+
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/" data-id="cklc2nctp000hn3ku4dv3bkkp" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/" data-id="cklg2yh8a000e8rkugug31gdh" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -89,6 +122,15 @@
     
         
   <nav class="article-nav">
+    
+      <a href="/2021/02/19/Server-Sent%20Events/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Server-Sent Events / EventSource
+          
+        </div>
+      </a>
     
     
       <a href="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" class="article-nav-link">
