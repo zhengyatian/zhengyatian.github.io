@@ -234,6 +234,101 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Server-Sent Events / EventSource</title>
+    <url>/2021/02/19/Server-Sent%20Events/</url>
+    <content><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
+<p>​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？</p>
+<a id="more"></a>
+
+<p>​    提到服务端数据推送，可能一下子容易想到 WebSocket。WebSocket 是一种全新的协议，随着 HTML5 草案的不断完善，越来越多的现代浏览器开始全面支持 WebSocket 技术了，它将 TCP 的 Socket（套接字）应用在了web page 上，从而使通信双方建立起一个保持在活动状态连接通道。它是一种全双工通信，而我们前面提到的获取待办数目的场景，App 发送一次请求就可以，server 拿到各个业务的数据后再分别实时返回给 App ，更像是一种单向通信，使用 WebSocket 岂不是杀鸡用牛刀？那轮询呢？耗费 server 资源不说，不一定达到实时的效果。(PS：这里吐槽下客户，待办数有的 999 多，也不处理，居然只会嫌弃我们数据获取的不及时🤓)……</p>
+<p>​    好巧不巧，看到了另一个轻量级的方案：Server-Sent Events。</p>
+<h3 id="Server-Sent-Events"><a href="#Server-Sent-Events" class="headerlink" title="Server-Sent Events"></a>Server-Sent Events</h3><p>HTML5 中有一个轻量的替代 WebSocket的方案：Server-Sent Events，以下简称 SSE。</p>
+<h4 id="SSE-本质"><a href="#SSE-本质" class="headerlink" title="SSE 本质"></a>SSE 本质</h4><p>​    严格地说，HTTP 协议无法做到服务器主动推送信息。但是，有一种变通方法，就是服务器向客户端声明，接下来要发送的是流信息（streaming）。也就是说，发送的不是一次性的数据包，而是一个数据流，会连续不断地发送过来。这时，客户端不会关闭连接，会一直等着服务器发过来的新的数据流，视频播放就是这样的例子。本质上，这种通信就是以流信息的方式，完成一次用时很长的下载。SSE 就是利用这种机制，使用流信息向浏览器推送信息。</p>
+<h4 id="SSE-特点"><a href="#SSE-特点" class="headerlink" title="SSE 特点"></a>SSE 特点</h4><p><img src="/2021/02/19/Server-Sent%20Events/SSE.jpg" alt></p>
+<p>WebSocket 和 SSE 都是传统请求-响应 Web 架构的替代方案，但它们不是完全冲突的技术。</p>
+<ul>
+<li>SSE 使用 HTTP 协议，现有的服务器软件都支持。WebSocket 是一个独立协议。</li>
+<li>SSE 属于轻量级，使用简单；WebSocket 协议相对复杂。</li>
+<li>SSE 默认支持断线重连，WebSocket 需要自己实现。</li>
+<li>SSE 一般只用来传送文本，二进制数据需要编码后传送，WebSocket 默认支持传送二进制数据。</li>
+<li>SSE 支持自定义发送的消息类型。</li>
+</ul>
+<p>显然，我们上面提到的 待办数目 场景，很适合使用 SSE。</p>
+<h3 id="EventSource"><a href="#EventSource" class="headerlink" title="EventSource"></a>EventSource</h3><p>EventSource 是 SSE 对应的客户端 API，大部分浏览器都是默认支持的。网上的很多资料也都是从浏览器的角度来讲的。那这里我们就从 HTTP 协议的角度讲一下交互过程吧。🙄，毕竟我不懂 web 前端。</p>
+<blockquote>
+<p>API 介绍：<a href="https://developer.mozilla.org/zh-CN/docs/Server-sent_events/EventSource" target="_blank" rel="noopener"><strong>EventSource</strong></a></p>
+</blockquote>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><ul>
+<li>首先 Client 发送一个普普通通的 GET 请求到 SSE-Server。</li>
+<li>SSE-Server 无论需要返回几次数据，数据格式必须是 UTF-8 编码的文本，HTTP 头部信息需要类似如下设置：</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Content-Type</span>: text/event-stream</span><br><span class="line"><span class="attribute">Cache-Control</span>: no-cache</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br></pre></td></tr></table></figure>
+
+<p>上面三行之中，第一行的 <code>Content-Type</code> 必须指定 MIME 类型为 <code>event-steam</code> 。</p>
+<ul>
+<li>SSE-Server 每一次发送的信息，由若干个 <code>message</code>组成，每个 <code>message</code> 之间用 <code>\n\n</code> 分隔。每个 <code>message</code> 内部由若干行组成，每一行都是如下格式：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[field]: value\n</span><br></pre></td></tr></table></figure>
+
+<p>上面的 <code>field</code> 可以取四个值：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">data</span><br><span class="line">event</span><br><span class="line">id</span><br><span class="line">retry</span><br></pre></td></tr></table></figure>
+
+<p>此外，还可以有冒号开头的行，表示注释。通常，服务器每隔一段时间就会向浏览器发送一个注释，保持连接不中断。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">: This is a comment</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个例子。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">: this is a test stream\n\n</span><br><span class="line"></span><br><span class="line">data: some text\n\n</span><br><span class="line"></span><br><span class="line">data: another message\n</span><br><span class="line">data: with two lines \n\n</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Client 拿到 message 以后自己解析。</li>
+</ul>
+<h4 id="message"><a href="#message" class="headerlink" title="message"></a>message</h4><p>前面提到的  <code>field</code>  有四个值，可以分别用作不同的用途。</p>
+<h5 id="data-数据内容"><a href="#data-数据内容" class="headerlink" title="data 数据内容"></a>data 数据内容</h5><p>如果数据很长，可以分成多行，最后一行用 <code>\n\n</code> 结尾，前面行都用 <code>\n</code> 结尾。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">data:  message\n\n</span><br><span class="line"></span><br><span class="line">data: begin message\n</span><br><span class="line">data: continue message\n\n</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送json</span></span><br><span class="line">data: &#123;\n</span><br><span class="line">data: "foo": "bar",\n</span><br><span class="line">data: "baz", 555\n</span><br><span class="line">data: &#125;\n\n</span><br></pre></td></tr></table></figure>
+
+<h5 id="id-数据标识"><a href="#id-数据标识" class="headerlink" title="id 数据标识"></a>id 数据标识</h5><p>相当于每条数据的编号。</p>
+<p>浏览器用 <code>lastEventId</code> 属性读取这个值。一旦连接断线，浏览器会发送一个 HTTP 头，里面包含一个特殊的 <code>Last-Event-ID</code> 头信息，将这个值发送回去，用来帮助服务器端重建连接。因此，这个头信息可以被视为一种同步机制。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">id: msg1\n</span><br><span class="line">data: message\n\n</span><br></pre></td></tr></table></figure>
+
+<h5 id="event-自定义的事件类型"><a href="#event-自定义的事件类型" class="headerlink" title="event 自定义的事件类型"></a>event 自定义的事件类型</h5><p>默认是<code>message</code>事件。浏览器可以用<code>addEventListener()</code>监听该事件。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: foo\n</span><br><span class="line">data: a foo event\n\n</span><br><span class="line"></span><br><span class="line">data: an unnamed event\n\n</span><br><span class="line"></span><br><span class="line">event: bar\n</span><br><span class="line">data: a bar event\n\n</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码创造了三条信息。第一条的名字是 <code>foo</code> ，触发浏览器的 <code>foo</code> 事件；第二条未取名，表示默认类型，触发浏览器的 <code>message</code> 事件；第三条是 <code>bar</code> ，触发浏览器的 <code>bar</code> 事件。</p>
+<p>下面是另一个例子。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: userconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:33:48"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:11", "text": "Hi everyone."&#125;</span><br><span class="line"></span><br><span class="line">event: userdisconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:23"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "sean", "time": "02:34:36", "text": "Bye, bobby."&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="retry-重连间隔"><a href="#retry-重连间隔" class="headerlink" title="retry 重连间隔"></a>retry 重连间隔</h5><p>服务器可以用 <code>retry</code> 字段，指定浏览器重新发起连接的时间间隔。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">retry: 10000\n</span><br></pre></td></tr></table></figure>
+
+<p>两种情况会导致浏览器重新发起连接：一种是时间间隔到期，二是由于网络错误等原因，导致连接出错。</p>
+<h3 id="iOS-实现"><a href="#iOS-实现" class="headerlink" title="iOS 实现"></a>iOS 实现</h3><p>从上面的内容我们可以知道，既然 EventSource 客户端与 server 建立连接是基于标准的 HTTP 协议，那我们想要实现一套自己的 EventSource API ，只需要按规则解析 message 即可。</p>
+<p>大致的思路：</p>
+<ul>
+<li>使用 <code>NSURLSession</code> 来发起请求以及处理服务器的响应。</li>
+<li>在 <code>NSURLSession</code>  的代理方法中解析得到的文本信息，使用自定义的 <code>Event</code> 对象接收。</li>
+<li>通过回调将 <code>Event</code> 传递给调用者。</li>
+</ul>
+<p>代码是在下面这份上做的改动，添加了一些线程安全的处理，以及 session 的释放，不然会造成内存泄漏。</p>
+<blockquote>
+<p>引用的OC代码 <a href="https://github.com/neilco/EventSource" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<p>改动后的源码：<a href="https://github.com/ATang1011/YYEventSource" target="_blank" rel="noopener">ATang1011/YYEventSource</a></p>
+<h3 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h3><p>启动服务</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node sse-server.js</span><br></pre></td></tr></table></figure>
+
+<p>会在本机 <code>http://127.0.0.1:8844/stream</code> 启动一个 SSE 服务。</p>
+<p>使用浏览器或者 OC 代码访问这个地址就会看到信息输出了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"EventSource.h"</span></span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *url = <span class="string">@"http://127.0.0.1:8844/stream"</span>;</span><br><span class="line">EventSource *eventSource = [EventSource eventSourceWithURL:[<span class="built_in">NSURL</span> URLWithString:url]];</span><br><span class="line"></span><br><span class="line">[eventSource onMessage:^(Event *e) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, e);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[eventSource onError:^(Event *event) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>, event.error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -338,95 +433,26 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Server-Sent Events / EventSource</title>
-    <url>/2021/02/19/Server-Sent%20Events/</url>
-    <content><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
-<p>​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？</p>
-<a id="more"></a>
+    <title>iOS13 适配注意点</title>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
+<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
+ <a id="more"></a>
 
-<p>​    提到服务端数据推送，可能一下子容易想到 WebSocket。WebSocket 是一种全新的协议，随着 HTML5 草案的不断完善，越来越多的现代浏览器开始全面支持 WebSocket 技术了，它将 TCP 的 Socket（套接字）应用在了web page 上，从而使通信双方建立起一个保持在活动状态连接通道。它是一种全双工通信，而我们前面提到的获取待办数目的场景，App 发送一次请求就可以，server 拿到各个业务的数据后再分别实时返回给 App ，更像是一种单向通信，使用 WebSocket 岂不是杀鸡用牛刀？那轮询呢？耗费 server 资源不说，不一定达到实时的效果。(PS：这里吐槽下客户，待办数有的 999 多，也不处理，居然只会嫌弃我们数据获取的不及时🤓)……</p>
-<p>​    好巧不巧，看到了另一个轻量级的方案：Server-Sent Events。</p>
-<h3 id="Server-Sent-Events"><a href="#Server-Sent-Events" class="headerlink" title="Server-Sent Events"></a>Server-Sent Events</h3><p>HTML5 中有一个轻量的替代 WebSocket的方案：Server-Sent Events，以下简称 SSE。</p>
-<h4 id="SSE-本质"><a href="#SSE-本质" class="headerlink" title="SSE 本质"></a>SSE 本质</h4><p>​    严格地说，HTTP 协议无法做到服务器主动推送信息。但是，有一种变通方法，就是服务器向客户端声明，接下来要发送的是流信息（streaming）。也就是说，发送的不是一次性的数据包，而是一个数据流，会连续不断地发送过来。这时，客户端不会关闭连接，会一直等着服务器发过来的新的数据流，视频播放就是这样的例子。本质上，这种通信就是以流信息的方式，完成一次用时很长的下载。SSE 就是利用这种机制，使用流信息向浏览器推送信息。</p>
-<h4 id="SSE-特点"><a href="#SSE-特点" class="headerlink" title="SSE 特点"></a>SSE 特点</h4><p><img src="/2021/02/19/Server-Sent%20Events/SSE.jpg" alt></p>
-<p>WebSocket 和 SSE 都是传统请求-响应 Web 架构的替代方案，但它们不是完全冲突的技术。</p>
-<ul>
-<li>SSE 使用 HTTP 协议，现有的服务器软件都支持。WebSocket 是一个独立协议。</li>
-<li>SSE 属于轻量级，使用简单；WebSocket 协议相对复杂。</li>
-<li>SSE 默认支持断线重连，WebSocket 需要自己实现。</li>
-<li>SSE 一般只用来传送文本，二进制数据需要编码后传送，WebSocket 默认支持传送二进制数据。</li>
-<li>SSE 支持自定义发送的消息类型。</li>
-</ul>
-<p>显然，我们上面提到的 待办数目 场景，很适合使用 SSE。</p>
-<h3 id="EventSource"><a href="#EventSource" class="headerlink" title="EventSource"></a>EventSource</h3><p>EventSource 是 SSE 对应的客户端 API，大部分浏览器都是默认支持的。网上的很多资料也都是从浏览器的角度来讲的。那这里我们就从 HTTP 协议的角度讲一下交互过程吧。🙄，毕竟我不懂 web 前端。</p>
-<blockquote>
-<p>API 介绍：<a href="https://developer.mozilla.org/zh-CN/docs/Server-sent_events/EventSource" target="_blank" rel="noopener"><strong>EventSource</strong></a></p>
-</blockquote>
-<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><ul>
-<li>首先 Client 发送一个普普通通的 GET 请求到 SSE-Server。</li>
-<li>SSE-Server 无论需要返回几次数据，数据格式必须是 UTF-8 编码的文本，HTTP 头部信息需要类似如下设置：</li>
-</ul>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Content-Type</span>: text/event-stream</span><br><span class="line"><span class="attribute">Cache-Control</span>: no-cache</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br></pre></td></tr></table></figure>
+<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
+<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
+<p>​    检查图片选择器？</p>
+<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
 
-<p>上面三行之中，第一行的 <code>Content-Type</code> 必须指定 MIME 类型为 <code>event-steam</code> 。</p>
-<ul>
-<li>SSE-Server 每一次发送的信息，由若干个 <code>message</code>组成，每个 <code>message</code> 之间用 <code>\n\n</code> 分隔。每个 <code>message</code> 内部由若干行组成，每一行都是如下格式：</li>
-</ul>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[field]: value\n</span><br></pre></td></tr></table></figure>
+<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
 
-<p>上面的 <code>field</code> 可以取四个值：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">data</span><br><span class="line">event</span><br><span class="line">id</span><br><span class="line">retry</span><br></pre></td></tr></table></figure>
+<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
+<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
+<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
 
-<p>此外，还可以有冒号开头的行，表示注释。通常，服务器每隔一段时间就会向浏览器发送一个注释，保持连接不中断。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">: This is a comment</span><br></pre></td></tr></table></figure>
-
-<p>下面是一个例子。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">: this is a test stream\n\n</span><br><span class="line"></span><br><span class="line">data: some text\n\n</span><br><span class="line"></span><br><span class="line">data: another message\n</span><br><span class="line">data: with two lines \n\n</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Client 拿到 message 以后自己解析。</li>
-</ul>
-<h4 id="message"><a href="#message" class="headerlink" title="message"></a>message</h4><p>前面提到的  <code>field</code>  有四个值，可以分别用作不同的用途。</p>
-<h5 id="data-数据内容"><a href="#data-数据内容" class="headerlink" title="data 数据内容"></a>data 数据内容</h5><p>如果数据很长，可以分成多行，最后一行用 <code>\n\n</code> 结尾，前面行都用 <code>\n</code> 结尾。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">data:  message\n\n</span><br><span class="line"></span><br><span class="line">data: begin message\n</span><br><span class="line">data: continue message\n\n</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送json</span></span><br><span class="line">data: &#123;\n</span><br><span class="line">data: "foo": "bar",\n</span><br><span class="line">data: "baz", 555\n</span><br><span class="line">data: &#125;\n\n</span><br></pre></td></tr></table></figure>
-
-<h5 id="id-数据标识"><a href="#id-数据标识" class="headerlink" title="id 数据标识"></a>id 数据标识</h5><p>相当于每条数据的编号。</p>
-<p>浏览器用 <code>lastEventId</code> 属性读取这个值。一旦连接断线，浏览器会发送一个 HTTP 头，里面包含一个特殊的 <code>Last-Event-ID</code> 头信息，将这个值发送回去，用来帮助服务器端重建连接。因此，这个头信息可以被视为一种同步机制。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">id: msg1\n</span><br><span class="line">data: message\n\n</span><br></pre></td></tr></table></figure>
-
-<h5 id="event-自定义的事件类型"><a href="#event-自定义的事件类型" class="headerlink" title="event 自定义的事件类型"></a>event 自定义的事件类型</h5><p>默认是<code>message</code>事件。浏览器可以用<code>addEventListener()</code>监听该事件。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: foo\n</span><br><span class="line">data: a foo event\n\n</span><br><span class="line"></span><br><span class="line">data: an unnamed event\n\n</span><br><span class="line"></span><br><span class="line">event: bar\n</span><br><span class="line">data: a bar event\n\n</span><br></pre></td></tr></table></figure>
-
-<p>上面的代码创造了三条信息。第一条的名字是 <code>foo</code> ，触发浏览器的 <code>foo</code> 事件；第二条未取名，表示默认类型，触发浏览器的 <code>message</code> 事件；第三条是 <code>bar</code> ，触发浏览器的 <code>bar</code> 事件。</p>
-<p>下面是另一个例子。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: userconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:33:48"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:11", "text": "Hi everyone."&#125;</span><br><span class="line"></span><br><span class="line">event: userdisconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:23"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "sean", "time": "02:34:36", "text": "Bye, bobby."&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="retry-重连间隔"><a href="#retry-重连间隔" class="headerlink" title="retry 重连间隔"></a>retry 重连间隔</h5><p>服务器可以用 <code>retry</code> 字段，指定浏览器重新发起连接的时间间隔。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">retry: 10000\n</span><br></pre></td></tr></table></figure>
-
-<p>两种情况会导致浏览器重新发起连接：一种是时间间隔到期，二是由于网络错误等原因，导致连接出错。</p>
-<h3 id="iOS-实现"><a href="#iOS-实现" class="headerlink" title="iOS 实现"></a>iOS 实现</h3><p>从上面的内容我们可以知道，既然 EventSource 客户端与 server 建立连接是基于标准的 HTTP 协议，那我们想要实现一套自己的 EventSource API ，只需要按规则解析 message 即可。</p>
-<p>大致的思路：</p>
-<ul>
-<li>使用 <code>NSURLSession</code> 来发起请求以及处理服务器的响应。</li>
-<li>在 <code>NSURLSession</code>  的代理方法中解析得到的文本信息，使用自定义的 <code>Event</code> 对象接收。</li>
-<li>通过回调将 <code>Event</code> 传递给调用者。</li>
-</ul>
-<p>代码是在下面这份上做的改动，添加了一些线程安全的处理，以及 session 的释放，不然会造成内存泄漏。</p>
-<blockquote>
-<p>引用的OC代码 <a href="https://github.com/neilco/EventSource" target="_blank" rel="noopener">Github</a></p>
-</blockquote>
-<p>改动后的源码：<a href="https://github.com/ATang1011/YYEventSource" target="_blank" rel="noopener">ATang1011/YYEventSource</a></p>
-<h3 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h3><p>启动服务</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node sse-server.js</span><br></pre></td></tr></table></figure>
-
-<p>会在本机 <code>http://127.0.0.1:8844/stream</code> 启动一个 SSE 服务。</p>
-<p>使用浏览器或者 OC 代码访问这个地址就会看到信息输出了。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"EventSource.h"</span></span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *url = <span class="string">@"http://127.0.0.1:8844/stream"</span>;</span><br><span class="line">EventSource *eventSource = [EventSource eventSourceWithURL:[<span class="built_in">NSURL</span> URLWithString:url]];</span><br><span class="line"></span><br><span class="line">[eventSource onMessage:^(Event *e) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, e);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[eventSource onError:^(Event *event) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>, event.error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h4><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
+<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -466,32 +492,6 @@
 
 
 
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
- <a id="more"></a>
-
-<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
-<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
-<p>​    检查图片选择器？</p>
-<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
-
-<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
-
-<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
-<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
-<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -587,6 +587,18 @@
       </tags>
   </entry>
   <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -619,18 +631,6 @@
       <tags>
         <tag>我</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>由 Pod 导致的 File not found</title>
