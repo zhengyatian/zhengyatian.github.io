@@ -125,11 +125,44 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data:  message\n\n</span><br><span class="line"></span><br><span class="line">data: begin message\n</span><br><span class="line">data: continue message\n\n</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送json</span></span><br><span class="line">data: &#123;\n</span><br><span class="line">data: "foo": "bar",\n</span><br><span class="line">data: "baz", 555\n</span><br><span class="line">data: &#125;\n\n</span><br></pre></td></tr></table></figure>
 
 <h5 id="id-数据标识"><a href="#id-数据标识" class="headerlink" title="id 数据标识"></a>id 数据标识</h5><p>相当于每条数据的编号。</p>
+<p>浏览器用 <code>lastEventId</code> 属性读取这个值。一旦连接断线，浏览器会发送一个 HTTP 头，里面包含一个特殊的 <code>Last-Event-ID</code> 头信息，将这个值发送回去，用来帮助服务器端重建连接。因此，这个头信息可以被视为一种同步机制。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id: msg1\n</span><br><span class="line">data: message\n\n</span><br></pre></td></tr></table></figure>
+
+<h5 id="event-自定义的事件类型"><a href="#event-自定义的事件类型" class="headerlink" title="event 自定义的事件类型"></a>event 自定义的事件类型</h5><p>默认是<code>message</code>事件。浏览器可以用<code>addEventListener()</code>监听该事件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">event: foo\n</span><br><span class="line">data: a foo event\n\n</span><br><span class="line"></span><br><span class="line">data: an unnamed event\n\n</span><br><span class="line"></span><br><span class="line">event: bar\n</span><br><span class="line">data: a bar event\n\n</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码创造了三条信息。第一条的名字是 <code>foo</code> ，触发浏览器的 <code>foo</code> 事件；第二条未取名，表示默认类型，触发浏览器的 <code>message</code> 事件；第三条是 <code>bar</code> ，触发浏览器的 <code>bar</code> 事件。</p>
+<p>下面是另一个例子。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">event: userconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:33:48"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:11", "text": "Hi everyone."&#125;</span><br><span class="line"></span><br><span class="line">event: userdisconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:23"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "sean", "time": "02:34:36", "text": "Bye, bobby."&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="retry-重连间隔"><a href="#retry-重连间隔" class="headerlink" title="retry 重连间隔"></a>retry 重连间隔</h5><p>服务器可以用 <code>retry</code> 字段，指定浏览器重新发起连接的时间间隔。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">retry: 10000\n</span><br></pre></td></tr></table></figure>
+
+<p>两种情况会导致浏览器重新发起连接：一种是时间间隔到期，二是由于网络错误等原因，导致连接出错。</p>
+<h3 id="iOS-实现"><a href="#iOS-实现" class="headerlink" title="iOS 实现"></a>iOS 实现</h3><p>从上面的内容我们可以知道，既然 EventSource 客户端与 server 建立连接是基于标准的 HTTP 协议，那我们想要实现一套自己的 EventSource API ，只需要按规则解析 message 即可。</p>
+<p>大致的思路：</p>
+<ul>
+<li>使用 <code>NSURLSession</code> 来发起请求以及处理服务器的响应。</li>
+<li>在 <code>NSURLSession</code>  的代理方法中解析得到的文本信息，使用自定义的 <code>Event</code> 对象接收。</li>
+<li>通过回调将 <code>Event</code> 传递给调用者。</li>
+</ul>
+<p>代码是在下面这份上做的改动，添加了一些线程安全的处理，以及 session 的释放，不然会造成内存泄漏。</p>
+<blockquote>
+<p>引用的OC代码 <a href="https://github.com/neilco/EventSource" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<p>改动后的源码：<a href="https://github.com/ATang1011/YYEventSource" target="_blank" rel="noopener">ATang1011/YYEventSource</a></p>
+<h3 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h3><p>启动服务</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node sse-server.js</span><br></pre></td></tr></table></figure>
+
+<p>会在本机 <code>http://127.0.0.1:8844/stream</code> 启动一个 SSE 服务。</p>
+<p>使用浏览器或者 OC 代码访问这个地址就会看到信息输出了。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"EventSource.h"</span></span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *url = <span class="string">@"http://127.0.0.1:8844/stream"</span>;</span><br><span class="line">EventSource *eventSource = [EventSource eventSourceWithURL:[<span class="built_in">NSURL</span> URLWithString:url]];</span><br><span class="line"></span><br><span class="line">[eventSource onMessage:^(Event *e) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, e);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[eventSource onError:^(Event *event) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>, event.error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
 
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2021/02/19/Server-Sent%20Events/" data-id="cklgfubq1000ay9kuby6q94ma" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2021/02/19/Server-Sent%20Events/" data-id="cklhgttyt0008r3ku5rkp8muz" class="article-share-link">
                                             分享
                                         </a>
                                         

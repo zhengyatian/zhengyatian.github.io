@@ -131,6 +131,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 atang1011.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATang1011/atang1011.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>1Q84中的哲学</title>
     <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
     <content><![CDATA[<ul>
@@ -150,23 +167,6 @@
       <tags>
         <tag>7788</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 atang1011.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATang1011/atang1011.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
   </entry>
   <entry>
     <title>Hexo 文字中如何插入图片</title>
@@ -219,19 +219,6 @@
       <tags>
         <tag>iOS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
   </entry>
   <entry>
     <title>Server-Sent Events / EventSource</title>
@@ -287,10 +274,78 @@
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">data:  message\n\n</span><br><span class="line"></span><br><span class="line">data: begin message\n</span><br><span class="line">data: continue message\n\n</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送json</span></span><br><span class="line">data: &#123;\n</span><br><span class="line">data: "foo": "bar",\n</span><br><span class="line">data: "baz", 555\n</span><br><span class="line">data: &#125;\n\n</span><br></pre></td></tr></table></figure>
 
 <h5 id="id-数据标识"><a href="#id-数据标识" class="headerlink" title="id 数据标识"></a>id 数据标识</h5><p>相当于每条数据的编号。</p>
+<p>浏览器用 <code>lastEventId</code> 属性读取这个值。一旦连接断线，浏览器会发送一个 HTTP 头，里面包含一个特殊的 <code>Last-Event-ID</code> 头信息，将这个值发送回去，用来帮助服务器端重建连接。因此，这个头信息可以被视为一种同步机制。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">id: msg1\n</span><br><span class="line">data: message\n\n</span><br></pre></td></tr></table></figure>
+
+<h5 id="event-自定义的事件类型"><a href="#event-自定义的事件类型" class="headerlink" title="event 自定义的事件类型"></a>event 自定义的事件类型</h5><p>默认是<code>message</code>事件。浏览器可以用<code>addEventListener()</code>监听该事件。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: foo\n</span><br><span class="line">data: a foo event\n\n</span><br><span class="line"></span><br><span class="line">data: an unnamed event\n\n</span><br><span class="line"></span><br><span class="line">event: bar\n</span><br><span class="line">data: a bar event\n\n</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码创造了三条信息。第一条的名字是 <code>foo</code> ，触发浏览器的 <code>foo</code> 事件；第二条未取名，表示默认类型，触发浏览器的 <code>message</code> 事件；第三条是 <code>bar</code> ，触发浏览器的 <code>bar</code> 事件。</p>
+<p>下面是另一个例子。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">event: userconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:33:48"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:11", "text": "Hi everyone."&#125;</span><br><span class="line"></span><br><span class="line">event: userdisconnect</span><br><span class="line">data: &#123;"username": "bobby", "time": "02:34:23"&#125;</span><br><span class="line"></span><br><span class="line">event: usermessage</span><br><span class="line">data: &#123;"username": "sean", "time": "02:34:36", "text": "Bye, bobby."&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="retry-重连间隔"><a href="#retry-重连间隔" class="headerlink" title="retry 重连间隔"></a>retry 重连间隔</h5><p>服务器可以用 <code>retry</code> 字段，指定浏览器重新发起连接的时间间隔。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">retry: 10000\n</span><br></pre></td></tr></table></figure>
+
+<p>两种情况会导致浏览器重新发起连接：一种是时间间隔到期，二是由于网络错误等原因，导致连接出错。</p>
+<h3 id="iOS-实现"><a href="#iOS-实现" class="headerlink" title="iOS 实现"></a>iOS 实现</h3><p>从上面的内容我们可以知道，既然 EventSource 客户端与 server 建立连接是基于标准的 HTTP 协议，那我们想要实现一套自己的 EventSource API ，只需要按规则解析 message 即可。</p>
+<p>大致的思路：</p>
+<ul>
+<li>使用 <code>NSURLSession</code> 来发起请求以及处理服务器的响应。</li>
+<li>在 <code>NSURLSession</code>  的代理方法中解析得到的文本信息，使用自定义的 <code>Event</code> 对象接收。</li>
+<li>通过回调将 <code>Event</code> 传递给调用者。</li>
+</ul>
+<p>代码是在下面这份上做的改动，添加了一些线程安全的处理，以及 session 的释放，不然会造成内存泄漏。</p>
+<blockquote>
+<p>引用的OC代码 <a href="https://github.com/neilco/EventSource" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<p>改动后的源码：<a href="https://github.com/ATang1011/YYEventSource" target="_blank" rel="noopener">ATang1011/YYEventSource</a></p>
+<h3 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h3><p>启动服务</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node sse-server.js</span><br></pre></td></tr></table></figure>
+
+<p>会在本机 <code>http://127.0.0.1:8844/stream</code> 启动一个 SSE 服务。</p>
+<p>使用浏览器或者 OC 代码访问这个地址就会看到信息输出了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"EventSource.h"</span></span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *url = <span class="string">@"http://127.0.0.1:8844/stream"</span>;</span><br><span class="line">EventSource *eventSource = [EventSource eventSourceWithURL:[<span class="built_in">NSURL</span> URLWithString:url]];</span><br><span class="line"></span><br><span class="line">[eventSource onMessage:^(Event *e) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, e);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[eventSource onError:^(Event *event) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>, event.error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
   </entry>
   <entry>
     <title>WKWebView 小结儿</title>
@@ -375,28 +430,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>iOS 动态修改状态栏风格</title>
     <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
     <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
@@ -462,22 +495,29 @@
       </tags>
   </entry>
   <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
-</ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
 ]]></content>
       <tags>
-        <tag>Mac</tag>
+        <tag>瞎扯</tag>
       </tags>
   </entry>
   <entry>
@@ -525,29 +565,40 @@
 <h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
   </entry>
   <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/1.png" alt="图一"></p>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+</ul>
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
 ]]></content>
       <tags>
-        <tag>瞎扯</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绿豆儿没了</title>
+    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
+    <content><![CDATA[<center>
+  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
+</center>
+
+
+
+<p>我的绿豆儿死了。</p>
+<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
+<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
+<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
       </tags>
   </entry>
   <entry>
@@ -561,17 +612,6 @@
 <p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
   </entry>
   <entry>
     <title>吃饭啦</title>
@@ -608,21 +648,14 @@
       </tags>
   </entry>
   <entry>
-    <title>绿豆儿没了</title>
-    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
-    <content><![CDATA[<center>
-  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
-</center>
-
-
-
-<p>我的绿豆儿死了。</p>
-<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
-<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
-<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
-        <tag>我</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
