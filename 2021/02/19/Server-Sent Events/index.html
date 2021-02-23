@@ -159,10 +159,13 @@
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"EventSource.h"</span></span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *url = <span class="string">@"http://127.0.0.1:8844/stream"</span>;</span><br><span class="line">EventSource *eventSource = [EventSource eventSourceWithURL:[<span class="built_in">NSURL</span> URLWithString:url]];</span><br><span class="line"></span><br><span class="line">[eventSource onMessage:^(Event *e) &#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, e);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[eventSource onError:^(Event *event) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>, event.error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
 
 
+
+<h4 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h4><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
+
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2021/02/19/Server-Sent%20Events/" data-id="cklhgttyt0008r3ku5rkp8muz" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2021/02/19/Server-Sent%20Events/" data-id="cklhgwrii000ftlku79x2h5zh" class="article-share-link">
                                             分享
                                         </a>
                                         
