@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 atang1011.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATang1011/atang1011.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
 ]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
   </entry>
   <entry>
     <title>DeviceCheck</title>
@@ -152,46 +148,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 atang1011.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATang1011/atang1011.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>Inferred (Constraints) 和 Autoresizing Mask</title>
     <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
     <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
@@ -221,16 +177,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
 <a id="more"></a>
 
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
@@ -329,6 +295,213 @@
       </tags>
   </entry>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>UIDocumentInteractionController</title>
+    <url>/2021/02/07/UIDocumentInteractionController/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>官方文档：<a href="https://developer.apple.com/documentation/uikit/uidocumentinteractioncontroller" target="_blank" rel="noopener">UIDocumentInteractionController</a></p>
+</blockquote>
+<p>一种视图控制器，用于预览、打开或打印应用程序无法直接处理的文件格式的文件。名字叫控制器，但却是继承自  NSObject ……</p>
+<h3 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h3><p>在 iOS 上简单的使用它来打开文件是类似这样的：</p>
+<a id="more"></a>
+
+
+
+<p>初始化的时候，基本就是指定文件路径、指定本应用内打开，还是直接弹出选择菜单可以其他应用内打开</p>
+<ul>
+<li>初始化：</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本应用内预览文档</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置代理 --本应用内预览必须要添加代理 UIDocumentInteractionControllerDelegate</span></span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line"><span class="comment">//当前APP打开  需实现协议方法才可以完成预览功能</span></span><br><span class="line">documentController.presentPreview(animated: <span class="literal">true</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">documentInteractionControllerViewControllerForPreview</span><span class="params">(<span class="number">_</span> controller: UIDocumentInteractionController)</span></span> -&gt; <span class="type">UIViewController</span> &#123;</span><br><span class="line">  <span class="comment">//这里需要返回给一个控制器用于展现 documentController 在其上面，所以我们就返回当前控制器self</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们打开一个文档的时候就是左边这样的效果，直接预览文档。右上角的分享按钮也可以选择其他 App 打开文档：</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/Quick-Look.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/02/07/UIDocumentInteractionController/Share.png" class width="300"></div>
+</center>
+
+<ul>
+<li>其他应用内预览文档</li>
+</ul>
+<p>网上很多都是说，加上打开 Menu 菜单(见右图)的一句代码就可以用第三方应用打开，例如:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line">documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>只这样写你会发现，菜单确实可以弹出，但你点分享到任何一个 App （包括 Quick Look）都是没反应的，而且在 console 中会报如下错误：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">Could not instantiate <span class="keyword">class</span> <span class="built_in">NSURL</span>. Error: Error Domain=<span class="built_in">NSCocoaErrorDomain</span> Code=<span class="number">4864</span> <span class="string">"The URL archive of type “public.url” contains invalid data."</span> UserInfo=&#123;<span class="built_in">NSDebugDescription</span>=The URL archive of type “public.url” contains invalid data.&#125;</span><br></pre></td></tr></table></figure>
+
+<p>……</p>
+<p>网上的资料给的解决办法是 documentController 这个变量需要被持有一下，才可以用第三方 App 打开文档，所以上面的代码就变成了这样：</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIDocumentInteractionControllerDelegate</span>  </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> documentController = <span class="type">UIDocumentInteractionController</span>()</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">showDocInteractController</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line">    documentController.url = url</span><br><span class="line">    documentController.delegate = <span class="keyword">self</span></span><br><span class="line">    documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>持有一下就可以，咩<del>~</del></p>
+<p>PS : 设置 <code>presentOptionsMenuFromRect</code> 的话，我们给的是 全屏，那给一半儿的大小这个选择菜单会怎么弹呢，感兴趣自己试一下🤓……</p>
+<p>这些不是重点，重点是在 iPad 上，菜单的弹出会有些不一样的现象</p>
+<h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><p>上面同样其他应用内预览文档的代码，测试发现点击文档以后，没有弹出选择菜单，当然文档也没有打开。console 中报注入布局异常的错误：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.326794</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">85917</span>] [LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don't want. </span><br><span class="line">	Try <span class="keyword">this</span>: </span><br><span class="line">		(<span class="number">1</span>) look at each <span class="keyword">constraint</span> <span class="keyword">and</span> try to figure out which you don't <span class="keyword">expect</span>; </span><br><span class="line">		(<span class="number">2</span>) find the code that added the unwanted <span class="keyword">constraint</span> <span class="keyword">or</span> constraints <span class="keyword">and</span> fix it. </span><br><span class="line">(</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912da0 H:|-(0)-[_UIActivityContentTitleView:0x7fa2ccc33b10]   (active, names: '|':_UINavigationBarContentView:0x7fa2ccc26a40 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912e40 _UIActivityContentTitleView:0x7fa2ccc33b10.trailing == _UINavigationBarContentView:0x7fa2ccc26a40.trailing   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x6000019130c0 LPLinkView:0x7fa2ccc33f30.leading == UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'.leading   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912f30 H:[LPLinkView:0x7fa2ccc33f30]-(27)-|   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001919d10 'UIView-Encapsulated-Layout-Width' _UINavigationBarContentView:0x7fa2ccc26a40.width == 0   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912fd0 'UIView-leftMargin-guide-constraint' H:|-(16)-[UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'](LTR)   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking <span class="keyword">constraint</span> </span><br><span class="line">&lt;NSLayoutConstraint:<span class="number">0</span>x6000019130c0 LPLinkView:<span class="number">0</span>x7fa2ccc33f30<span class="variable">.leading</span> == UILayoutGuide:<span class="number">0</span>x600000322680'UIViewLayoutMarginsGuide'<span class="variable">.leading</span>   (active)&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch <span class="keyword">this</span> in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView<span class="variable">.h</span>&gt; may also be helpful.</span><br><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.327098</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">87855</span>] [Fetching] LPFileMetadataProviderSpecialization failed to retrieve a thumbnail from QuickLookThumbnailing (Error Domain=QLThumbnailErrorDomain Code=<span class="number">0</span> <span class="string">"Could not generate a thumbnail"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我们先看下 Safari 中的 Menu 是什么样子:</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu0.png" class width="600"></div>
+</center>
+
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu1.png" class width="500"></div>
+</center>
+
+<p>咦，无论横竖屏，Menu 不再是以屏幕宽度或者高度来处理的了，而且头上多了一点 “小尖尖~”。所以猜测我们需要给定它一个弹出点。但 API 貌似又没有对应的接口。</p>
+<p>参考了官方一个 issue 讨论，emmmmmm，其实我也没太看懂啥意思 😂，总之~~</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> frame = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="keyword">self</span>.view.frame.midX, y: <span class="keyword">self</span>.view.frame.midY, width: <span class="number">0</span>, height: <span class="keyword">self</span>.view.frame.height * <span class="number">0.5</span>)</span><br><span class="line">documentController.presentOptionsMenu(from: frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这句代码中的 frame 不给全屏就可以正常弹出，小尖尖的位置自己有兴趣可以调一调玩一玩儿~~</p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+</ul>
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS13 适配注意点</title>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
+<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
+ <a id="more"></a>
+
+<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
+<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
+<p>​    检查图片选择器？</p>
+<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
+
+<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
+
+<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
+<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
+<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
+
+<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
+
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -408,112 +581,6 @@
 ]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
- <a id="more"></a>
-
-<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
-<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
-<p>​    检查图片选择器？</p>
-<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
-
-<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
-
-<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
-<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
-<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 动态修改状态栏风格</title>
-    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
-    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
-<ul>
-<li>UIStatusBarStyle 的样式</li>
-<li>改变状态栏文字颜色的方式</li>
-<li>状态栏的显示和隐藏</li>
-</ul>
-<a id="more"></a>
-
-<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
-
-<p>属性，默认为 <code>YES</code>。</p>
-<ul>
-<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
-<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
-</ul>
-<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
-<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
-<li>全局隐藏的话，很简单，直接改配置。</li>
-<li>部分页面隐藏，同上，重写~~</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
-</ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -633,14 +700,18 @@
       </tags>
   </entry>
   <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>隐忍，从今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+<a id="more"></a>
+
+<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
+]]></content>
       <tags>
-        <tag>iOS</tag>
+        <tag>我</tag>
       </tags>
   </entry>
   <entry>
@@ -656,21 +727,6 @@
 <p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
 <p>终究是我没照顾好她。希望她去了她想去的地方。</p>
 <p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐忍</title>
-    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
-    <content><![CDATA[<p>124 VS 3565</p>
-<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
-<p>隐忍，从今天开始。</p>
-<p>希望你幸福，爱笑的汤先生。</p>
-<a id="more"></a>
-
-<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
 ]]></content>
       <tags>
         <tag>我</tag>
@@ -839,6 +895,17 @@
 </li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>HTTP 的一点儿小知识</title>

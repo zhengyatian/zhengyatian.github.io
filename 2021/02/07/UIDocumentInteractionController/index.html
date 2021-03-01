@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    UIDocumentInteractionController |
+    
+    迷</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-UIDocumentInteractionController" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      UIDocumentInteractionController
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2021/02/07/UIDocumentInteractionController/" class="article-date">
+  <time datetime="2021-02-07T13:49:32.000Z" itemprop="datePublished">2021-02-07</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>官方文档：<a href="https://developer.apple.com/documentation/uikit/uidocumentinteractioncontroller" target="_blank" rel="noopener">UIDocumentInteractionController</a></p>
+</blockquote>
+<p>一种视图控制器，用于预览、打开或打印应用程序无法直接处理的文件格式的文件。名字叫控制器，但却是继承自  NSObject ……</p>
+<h3 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h3><p>在 iOS 上简单的使用它来打开文件是类似这样的：</p>
+<a id="more"></a>
+
+
+
+<p>初始化的时候，基本就是指定文件路径、指定本应用内打开，还是直接弹出选择菜单可以其他应用内打开</p>
+<ul>
+<li>初始化：</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本应用内预览文档</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置代理 --本应用内预览必须要添加代理 UIDocumentInteractionControllerDelegate</span></span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line"><span class="comment">//当前APP打开  需实现协议方法才可以完成预览功能</span></span><br><span class="line">documentController.presentPreview(animated: <span class="literal">true</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">documentInteractionControllerViewControllerForPreview</span><span class="params">(<span class="number">_</span> controller: UIDocumentInteractionController)</span></span> -&gt; <span class="type">UIViewController</span> &#123;</span><br><span class="line">  <span class="comment">//这里需要返回给一个控制器用于展现 documentController 在其上面，所以我们就返回当前控制器self</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们打开一个文档的时候就是左边这样的效果，直接预览文档。右上角的分享按钮也可以选择其他 App 打开文档：</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/Quick-Look.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/02/07/UIDocumentInteractionController/Share.png" class width="300"></div>
+</center>
+
+<ul>
+<li>其他应用内预览文档</li>
+</ul>
+<p>网上很多都是说，加上打开 Menu 菜单(见右图)的一句代码就可以用第三方应用打开，例如:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line">documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>只这样写你会发现，菜单确实可以弹出，但你点分享到任何一个 App （包括 Quick Look）都是没反应的，而且在 console 中会报如下错误：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could not instantiate <span class="keyword">class</span> <span class="built_in">NSURL</span>. Error: Error Domain=<span class="built_in">NSCocoaErrorDomain</span> Code=<span class="number">4864</span> <span class="string">"The URL archive of type “public.url” contains invalid data."</span> UserInfo=&#123;<span class="built_in">NSDebugDescription</span>=The URL archive of type “public.url” contains invalid data.&#125;</span><br></pre></td></tr></table></figure>
+
+<p>……</p>
+<p>网上的资料给的解决办法是 documentController 这个变量需要被持有一下，才可以用第三方 App 打开文档，所以上面的代码就变成了这样：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIDocumentInteractionControllerDelegate</span>  </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> documentController = <span class="type">UIDocumentInteractionController</span>()</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">showDocInteractController</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line">    documentController.url = url</span><br><span class="line">    documentController.delegate = <span class="keyword">self</span></span><br><span class="line">    documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>持有一下就可以，咩<del>~</del></p>
+<p>PS : 设置 <code>presentOptionsMenuFromRect</code> 的话，我们给的是 全屏，那给一半儿的大小这个选择菜单会怎么弹呢，感兴趣自己试一下🤓……</p>
+<p>这些不是重点，重点是在 iPad 上，菜单的弹出会有些不一样的现象</p>
+<h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><p>上面同样其他应用内预览文档的代码，测试发现点击文档以后，没有弹出选择菜单，当然文档也没有打开。console 中报注入布局异常的错误：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.326794</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">85917</span>] [LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don't want. </span><br><span class="line">	Try <span class="keyword">this</span>: </span><br><span class="line">		(<span class="number">1</span>) look at each <span class="keyword">constraint</span> <span class="keyword">and</span> try to figure out which you don't <span class="keyword">expect</span>; </span><br><span class="line">		(<span class="number">2</span>) find the code that added the unwanted <span class="keyword">constraint</span> <span class="keyword">or</span> constraints <span class="keyword">and</span> fix it. </span><br><span class="line">(</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912da0 H:|-(0)-[_UIActivityContentTitleView:0x7fa2ccc33b10]   (active, names: '|':_UINavigationBarContentView:0x7fa2ccc26a40 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912e40 _UIActivityContentTitleView:0x7fa2ccc33b10.trailing == _UINavigationBarContentView:0x7fa2ccc26a40.trailing   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x6000019130c0 LPLinkView:0x7fa2ccc33f30.leading == UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'.leading   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912f30 H:[LPLinkView:0x7fa2ccc33f30]-(27)-|   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001919d10 'UIView-Encapsulated-Layout-Width' _UINavigationBarContentView:0x7fa2ccc26a40.width == 0   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912fd0 'UIView-leftMargin-guide-constraint' H:|-(16)-[UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'](LTR)   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking <span class="keyword">constraint</span> </span><br><span class="line">&lt;NSLayoutConstraint:<span class="number">0</span>x6000019130c0 LPLinkView:<span class="number">0</span>x7fa2ccc33f30<span class="variable">.leading</span> == UILayoutGuide:<span class="number">0</span>x600000322680'UIViewLayoutMarginsGuide'<span class="variable">.leading</span>   (active)&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch <span class="keyword">this</span> in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView<span class="variable">.h</span>&gt; may also be helpful.</span><br><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.327098</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">87855</span>] [Fetching] LPFileMetadataProviderSpecialization failed to retrieve a thumbnail from QuickLookThumbnailing (Error Domain=QLThumbnailErrorDomain Code=<span class="number">0</span> <span class="string">"Could not generate a thumbnail"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我们先看下 Safari 中的 Menu 是什么样子:</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu0.png" class width="600"></div>
+</center>
+
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu1.png" class width="500"></div>
+</center>
+
+<p>咦，无论横竖屏，Menu 不再是以屏幕宽度或者高度来处理的了，而且头上多了一点 “小尖尖~”。所以猜测我们需要给定它一个弹出点。但 API 貌似又没有对应的接口。</p>
+<p>参考了官方一个 issue 讨论，emmmmmm，其实我也没太看懂啥意思 😂，总之~~</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> frame = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="keyword">self</span>.view.frame.midX, y: <span class="keyword">self</span>.view.frame.midY, width: <span class="number">0</span>, height: <span class="keyword">self</span>.view.frame.height * <span class="number">0.5</span>)</span><br><span class="line">documentController.presentOptionsMenu(from: frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这句代码中的 frame 不给全屏就可以正常弹出，小尖尖的位置自己有兴趣可以调一调玩一玩儿~~</p>
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="https://atang1011.github.io/2021/02/07/UIDocumentInteractionController/" data-id="cklpz4uqm000b2mku6bzs3and" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2021/02/19/Server-Sent%20Events/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Server-Sent Events / EventSource
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">iOS 动态修改状态栏风格</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'c0fd3fecc668416852dc',
+      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+      repo: 'YYBlogGitTalk',
+      owner: 'ATang1011',
+      admin: ['ATang1011'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2021 迷</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>
