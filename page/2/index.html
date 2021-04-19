@@ -61,6 +61,66 @@
       <h1 class="page-type-title"></h1>
       
         
+          <article id="post-由 Pod 导致的File not found" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/">由 Pod 导致的 File not found</a>
+    </h2>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/" class="article-date">
+  <time datetime="2020-09-04T07:33:35.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="https://atang1011.github.io/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/" data-id="cknognxra000v04kucbjefmdz" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+
+                
+
+</article>
+        
           <article id="post-DeviceCheck" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
@@ -108,7 +168,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2020/06/05/DeviceCheck/" data-id="cknicqqj300024aku1g0pg58j" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2020/06/05/DeviceCheck/" data-id="cknognxqg000004kugt1i5b54" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -171,7 +231,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/" data-id="cknicqqjr000s4akuc5padt9t" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/" data-id="cknognxr8000t04kubaek1gqx" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -238,7 +298,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" data-id="cknicqqjt000u4akuex6k8ebl" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/" data-id="cknognxrb000y04kucy07bkkq" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -302,7 +362,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/" data-id="cknicqqiw00004akudfw13lhn" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/" data-id="cknognxqo000204ku7xku55b2" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -365,7 +425,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="cknicqqjp000l4akugma48d73" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="cknognxr5000n04ku1aunbpm5" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -430,7 +490,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cknicqqjb000a4aku0go1gmo8" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="cknognxqv000a04ku0b7s7xzr" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -490,7 +550,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2018/12/27/Warning!PATH-is/" data-id="cknicqqjm000h4aku23qq73me" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2018/12/27/Warning!PATH-is/" data-id="cknognxr0000h04ku475ghrj6" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -550,7 +610,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="cknicqqjs000t4aku95gp1ajz" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="cknognxrb001004kuh2wgh3tc" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -616,67 +676,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" data-id="cknicqqjq000p4aku2iqq0kmj" class="article-share-link">
-                                            分享
-                                        </a>
-                                        
-                                    </footer>
-
-    </div>
-
-    
-
-                
-
-</article>
-        
-          <article id="post-Hexo文字中如何插入图片" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">Hexo 文字中如何插入图片</a>
-    </h2>
-  
-  
-
-
-
-
-            </header>
-            
-
-                
-                    <div class="article-meta">
-                        <a href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-date">
-  <time datetime="2018-02-22T02:58:34.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-                            
-                    </div>
-                    
-
-                        
-
-                                    <div class="article-entry" itemprop="articleBody">
-                                        
-
-
-                                            
-
-                                                
-                                                    <p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-                                                        
-                                                            <a class="article-more-link" href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">
-                                                                查看全文...
-                                                            </a>
-                                                            
-                                                                
-                                    </div>
-                                    <footer class="article-footer">
-                                        <a data-url="https://atang1011.github.io/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" data-id="cknicqqja00074aku5jp5dyn9" class="article-share-link">
+                                        <a data-url="https://atang1011.github.io/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" data-id="cknognxr7000r04ku71xr3sm7" class="article-share-link">
                                             分享
                                         </a>
                                         
