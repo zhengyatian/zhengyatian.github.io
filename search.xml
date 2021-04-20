@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -131,35 +152,14 @@
       </tags>
   </entry>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo + GitHub Pages 404</title>
     <url>/2017/10/02/GitHub%20Pages%20404/</url>
     <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
 <p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
 <p>​        <a id="more"></a></p>
 <h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 atang1011.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATang1011/atang1011.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
 <h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
@@ -192,6 +192,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Inferred (Constraints) 和 Autoresizing Mask</title>
     <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
     <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
@@ -219,19 +232,6 @@
       <tags>
         <tag>iOS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
   </entry>
   <entry>
     <title>Server-Sent Events / EventSource</title>
@@ -312,7 +312,7 @@
 <blockquote>
 <p>引用的OC代码 <a href="https://github.com/neilco/EventSource" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
-<p>改动后的源码：<a href="https://github.com/ATang1011/YYEventSource" target="_blank" rel="noopener">ATang1011/YYEventSource</a></p>
+<p>改动后的源码：<a href="https://github.com/ATommyGirl/YYEventSource" target="_blank" rel="noopener">ATommyGirl/YYEventSource</a></p>
 <h3 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h3><p>启动服务</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node sse-server.js</span><br></pre></td></tr></table></figure>
 
@@ -323,67 +323,6 @@
 
 
 <h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>URL Loading System[译]</title>
-    <url>/2021/04/19/URL%20Loading%20System/</url>
-    <content><![CDATA[<blockquote>
-<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
-<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
-<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
-</blockquote>
-<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
-<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
-<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
-<a id="more"></a>
-
-<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
-<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
-<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
-<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
-<ul>
-<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
-<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
-<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
-</ul>
-<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
-<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
-<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
-<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
-</ul>
-<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
-<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
-<li>Uploading Streams of Data：将数据流发送到服务器。</li>
-</ul>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
-<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
-<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
-<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
-</ul>
-<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
-<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
-<li>CachedURLResponse：对URL请求的缓存响应。</li>
-<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
-</ul>
-<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
-<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
-<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
-<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
-<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
-<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
-</ul>
-<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
-<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
-<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
-</ul>
-<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
-<li>URLError：URL加载API返回的错误代码。</li>
-<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
-</ul>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -457,26 +396,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+    <title>URL Loading System 之 NSURLRequest</title>
+    <url>/2021/04/19/NSURLRequest/</url>
+    <content><![CDATA[<p><a href>URL Loading System[译]</a></p>
 ]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>WKWebView 小结儿</title>
@@ -559,6 +485,89 @@
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>URL Loading System[译]</title>
+    <url>/2021/04/19/URL%20Loading%20System/</url>
+    <content><![CDATA[<blockquote>
+<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
+<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
+<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
+</blockquote>
+<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
+<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
+<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
+<a id="more"></a>
+
+<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
+<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
+<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
+<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
+<ul>
+<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
+<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
+<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
+</ul>
+<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
+<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
+<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
+<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
+</ul>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
+<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
+<li>Uploading Streams of Data：将数据流发送到服务器。</li>
+</ul>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
+<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
+<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
+<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
+</ul>
+<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
+<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
+<li>CachedURLResponse：对URL请求的缓存响应。</li>
+<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
+</ul>
+<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
+<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
+<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
+<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
+<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
+<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
+</ul>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
+<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
+<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
+</ul>
+<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
+<li>URLError：URL加载API返回的错误代码。</li>
+<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
   </entry>
   <entry>
     <title>iOS 动态修改状态栏风格</title>
@@ -715,26 +724,6 @@
       </tags>
   </entry>
   <entry>
-    <title>昨天</title>
-    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
-    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -769,6 +758,15 @@
       </tags>
   </entry>
   <entry>
+    <title>昨天</title>
+    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
+    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>去掉UIWebView底部的黑条</title>
     <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
     <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
@@ -779,6 +777,17 @@
 <p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>绿豆儿没了</title>
@@ -824,7 +833,7 @@
 <h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://atang1011.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://ATommyGirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
 <h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
 <p>看完文档就会知道，真的好方便。。。</p>
 <ul>
@@ -901,7 +910,7 @@
 </li>
 <li>POP</li>
 <li>SMTP<ul>
-<li>见<a href="https://atang1011.github.io/2018/12/12/mailcore2-iOS之二SMTP/">mailcore2-ios  之二 SMTP</a></li>
+<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/">mailcore2-ios  之二 SMTP</a></li>
 </ul>
 </li>
 </ul>
