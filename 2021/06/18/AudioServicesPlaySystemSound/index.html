@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    AudioServicesPlaySystemSound 播放系统提示音 |
+    
+    迷</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-AudioServicesPlaySystemSound" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      AudioServicesPlaySystemSound 播放系统提示音
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2021/06/18/AudioServicesPlaySystemSound/" class="article-date">
+  <time datetime="2021-06-18T08:50:01.000Z" itemprop="datePublished">2021-06-18</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>系统提示音 SystemSoundID 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br></pre></td><td class="code"><pre><span class="line">AudioServices is a group of C functions in AudioToolbox for playing short (≤30 seconds) sounds.</span><br><span class="line"></span><br><span class="line">Predefined sounds</span><br><span class="line"></span><br><span class="line">There are some predefined system sounds, for the system sound ID in the range 1000 to 2000 (decimal), as shown below (from 2.0 to 5.0 beta). The system sounds are all stored in &#x2F;System&#x2F;Library&#x2F;Audio&#x2F;UISounds&#x2F;.</span><br><span class="line"></span><br><span class="line">Sound ID        File name (iPhone)        File name (iPod Touch)        Category        Note</span><br><span class="line"></span><br><span class="line">1000    new-mail.caf    new-mail.caf    MailReceived</span><br><span class="line"></span><br><span class="line">1001    mail-sent.caf    mail-sent.caf    MailSent</span><br><span class="line"></span><br><span class="line">1002    Voicemail.caf    Voicemail.caf    VoicemailReceived</span><br><span class="line"></span><br><span class="line">1003    ReceivedMessage.caf    ReceivedMessage.caf    SMSReceived</span><br><span class="line"></span><br><span class="line">1004    SentMessage.caf    SentMessage.caf    SMSSent</span><br><span class="line"></span><br><span class="line">1005    alarm.caf    sq_alarm.caf    CalendarAlert</span><br><span class="line"></span><br><span class="line">1006    low_power.caf    low_power.caf    LowPower</span><br><span class="line"></span><br><span class="line">1007    sms-received1.caf    sms-received1.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1008    sms-received2.caf    sms-received2.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1009    sms-received3.caf    sms-received3.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1010    sms-received4.caf    sms-received4.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1011    -    -    SMSReceived_Vibrate</span><br><span class="line"></span><br><span class="line">1012    sms-received1.caf    sms-received1.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1013    sms-received5.caf    sms-received5.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1014    sms-received6.caf    sms-received6.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1015    Voicemail.caf    Voicemail.caf    -    Available since 2.1</span><br><span class="line"></span><br><span class="line">1016    tweet_sent.caf    tweet_sent.caf    SMSSent    Available since 5.0</span><br><span class="line"></span><br><span class="line">1020    Anticipate.caf    Anticipate.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1021    Bloom.caf    Bloom.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1022    Calypso.caf    Calypso.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1023    Choo_Choo.caf    Choo_Choo.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1024    Descent.caf    Descent.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1025    Fanfare.caf    Fanfare.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1026    Ladder.caf    Ladder.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1027    Minuet.caf    Minuet.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1028    News_Flash.caf    News_Flash.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1029    Noir.caf    Noir.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1030    Sherwood_Forest.caf    Sherwood_Forest.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1031    Spell.caf    Spell.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1032    Suspense.caf    Suspense.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1033    Telegraph.caf    Telegraph.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1034    Tiptoes.caf    Tiptoes.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1035    Typewriters.caf    Typewriters.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1036    Update.caf    Update.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1050    ussd.caf    ussd.caf    USSDAlert</span><br><span class="line"></span><br><span class="line">1051    SIMToolkitCallDropped.caf    SIMToolkitCallDropped.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1052    SIMToolkitGeneralBeep.caf    SIMToolkitGeneralBeep.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1053    SIMToolkitNegativeACK.caf    SIMToolkitNegativeACK.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1054    SIMToolkitPositiveACK.caf    SIMToolkitPositiveACK.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1055    SIMToolkitSMS.caf    SIMToolkitSMS.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1057    Tink.caf    Tink.caf    PINKeyPressed</span><br><span class="line"></span><br><span class="line">1070    ct-busy.caf    ct-busy.caf    AudioToneBusy    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1071    ct-congestion.caf    ct-congestion.caf    AudioToneCongestion    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1072    ct-path-ack.caf    ct-path-ack.caf    AudioTonePathAcknowledge    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1073    ct-error.caf    ct-error.caf    AudioToneError    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1074    ct-call-waiting.caf    ct-call-waiting.caf    AudioToneCallWaiting    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1075    ct-keytone2.caf    ct-keytone2.caf    AudioToneKey2    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1100    lock.caf    sq_lock.caf    ScreenLocked</span><br><span class="line"></span><br><span class="line">1101    unlock.caf    sq_lock.caf    ScreenUnlocked</span><br><span class="line"></span><br><span class="line">1102    -    -    FailedUnlock</span><br><span class="line"></span><br><span class="line">1103    Tink.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1104    Tock.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1105    Tock.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1106    beep-beep.caf    sq_beep-beep.caf    ConnectedToPower</span><br><span class="line"></span><br><span class="line">1107    RingerChanged.caf    RingerChanged.caf    RingerSwitchIndication</span><br><span class="line"></span><br><span class="line">1108    photoShutter.caf    photoShutter.caf    CameraShutter</span><br><span class="line"></span><br><span class="line">1109    shake.caf    shake.caf    ShakeToShuffle    Available since 3.0</span><br><span class="line"></span><br><span class="line">1110    jbl_begin.caf    jbl_begin.caf    JBL_Begin    Available since 3.0</span><br><span class="line"></span><br><span class="line">1111    jbl_confirm.caf    jbl_confirm.caf    JBL_Confirm    Available since 3.0</span><br><span class="line"></span><br><span class="line">1112    jbl_cancel.caf    jbl_cancel.caf    JBL_Cancel    Available since 3.0</span><br><span class="line"></span><br><span class="line">1113    begin_record.caf    begin_record.caf    BeginRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1114    end_record.caf    end_record.caf    EndRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1115    jbl_ambiguous.caf    jbl_ambiguous.caf    JBL_Ambiguous    Available since 3.0</span><br><span class="line"></span><br><span class="line">1116    jbl_no_match.caf    jbl_no_match.caf    JBL_NoMatch    Available since 3.0</span><br><span class="line"></span><br><span class="line">1117    begin_video_record.caf    begin_video_record.caf    BeginVideoRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1118    end_video_record.caf    end_video_record.caf    EndVideoRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1150    vc~invitation-accepted.caf    vc~invitation-accepted.caf    VCInvitationAccepted    Available since 4.0</span><br><span class="line"></span><br><span class="line">1151    vc~ringing.caf    vc~ringing.caf    VCRinging    Available since 4.0</span><br><span class="line"></span><br><span class="line">1152    vc~ended.caf    vc~ended.caf    VCEnded    Available since 4.0</span><br><span class="line"></span><br><span class="line">1153    ct-call-waiting.caf    ct-call-waiting.caf    VCCallWaiting    Available since 4.1</span><br><span class="line"></span><br><span class="line">1154    vc~ringing.caf    vc~ringing.caf    VCCallUpgrade    Available since 4.1</span><br><span class="line"></span><br><span class="line">1200    dtmf-0.caf    dtmf-0.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1201    dtmf-1.caf    dtmf-1.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1202    dtmf-2.caf    dtmf-2.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1203    dtmf-3.caf    dtmf-3.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1204    dtmf-4.caf    dtmf-4.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1205    dtmf-5.caf    dtmf-5.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1206    dtmf-6.caf    dtmf-6.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1207    dtmf-7.caf    dtmf-7.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1208    dtmf-8.caf    dtmf-8.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1209    dtmf-9.caf    dtmf-9.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1210    dtmf-star.caf    dtmf-star.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1211    dtmf-pound.caf    dtmf-pound.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1254    long_low_short_high.caf    long_low_short_high.caf    Headset_StartCall</span><br><span class="line"></span><br><span class="line">1255    short_double_high.caf    short_double_high.caf    Headset_Redial</span><br><span class="line"></span><br><span class="line">1256    short_low_high.caf    short_low_high.caf    Headset_AnswerCall</span><br><span class="line"></span><br><span class="line">1257    short_double_low.caf    short_double_low.caf    Headset_EndCall</span><br><span class="line"></span><br><span class="line">1258    short_double_low.caf    short_double_low.caf    Headset_CallWaitingActions</span><br><span class="line"></span><br><span class="line">1259    middle_9_short_double_low.caf    middle_9_short_double_low.caf    Headset_TransitionEnd</span><br><span class="line"></span><br><span class="line">1300    Voicemail.caf    Voicemail.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1301    ReceivedMessage.caf    ReceivedMessage.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1302    new-mail.caf    new-mail.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1303    mail-sent.caf    mail-sent.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1304    alarm.caf    sq_alarm.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1305    lock.caf    sq_lock.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1306    Tock.caf    sq_tock.caf    KeyPressClickPreview    The category was SystemSoundPreview before 3.2.</span><br><span class="line"></span><br><span class="line">1307    sms-received1.caf    sms-received1.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1308    sms-received2.caf    sms-received2.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1309    sms-received3.caf    sms-received3.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1310    sms-received4.caf    sms-received4.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1311    -    -    SMSReceived_Vibrate</span><br><span class="line"></span><br><span class="line">1312    sms-received1.caf    sms-received1.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1313    sms-received5.caf    sms-received5.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1314    sms-received6.caf    sms-received6.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1315    Voicemail.caf    Voicemail.caf    SystemSoundPreview    Available since 2.1</span><br><span class="line"></span><br><span class="line">1320    Anticipate.caf    Anticipate.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1321    Bloom.caf    Bloom.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1322    Calypso.caf    Calypso.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1323    Choo_Choo.caf    Choo_Choo.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1324    Descent.caf    Descent.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1325    Fanfare.caf    Fanfare.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1326    Ladder.caf    Ladder.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1327    Minuet.caf    Minuet.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1328    News_Flash.caf    News_Flash.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1329    Noir.caf    Noir.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1330    Sherwood_Forest.caf    Sherwood_Forest.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1331    Spell.caf    Spell.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1332    Suspense.caf    Suspense.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1333    Telegraph.caf    Telegraph.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1334    Tiptoes.caf    Tiptoes.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1335    Typewriters.caf    Typewriters.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1336    Update.caf    Update.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1350    -    -    RingerVibeChanged</span><br><span class="line"></span><br><span class="line">1351    -    -    SilentVibeChanged</span><br><span class="line"></span><br><span class="line">4095    -    -    Vibrate    There was no category for this sound before 2.2.</span><br><span class="line"></span><br><span class="line">In the SDK this is the constant kSystemSoundID</span><br></pre></td></tr></table></figure>
+
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="https://atommygirl.github.io/2021/06/18/AudioServicesPlaySystemSound/" data-id="ckq23fauz001di4kue5zw562t" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/04/19/NSURLRequest/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">URL Loading System 之 NSURLRequest/URLRequest</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'c0fd3fecc668416852dc',
+      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+      repo: 'YYBlogGitTalk',
+      owner: 'ATang1011',
+      admin: ['ATang1011'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2021 迷</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>

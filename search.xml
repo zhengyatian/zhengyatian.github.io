@@ -169,6 +169,35 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
+    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
+    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
+<p>​        <a id="more"></a></p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
+</center>
+
+<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
+<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
+</center>
+
+<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
+<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
+<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
+<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -205,29 +234,31 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
-    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
-    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
-<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
-<p>​        <a id="more"></a></p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
-</center>
+    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
+    <url>/2021/04/19/NSURLRequest/</url>
+    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
+<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
+<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
+<p>httpbin 可以把我们请求时的信息，返回给我们</p>
+</blockquote>
+<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
 
-<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
-<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
-</center>
+<p>返回结果：</p>
+<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
-<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
-<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
-<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
+<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
+
+<p>添加参数</p>
+<p>系列：</p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -329,76 +360,61 @@
       </tags>
   </entry>
   <entry>
-    <title>UIDocumentInteractionController</title>
-    <url>/2021/02/07/UIDocumentInteractionController/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
-<p>官方文档：<a href="https://developer.apple.com/documentation/uikit/uidocumentinteractioncontroller" target="_blank" rel="noopener">UIDocumentInteractionController</a></p>
+    <title>URL Loading System[译]</title>
+    <url>/2021/04/19/URL%20Loading%20System/</url>
+    <content><![CDATA[<blockquote>
+<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
+<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
+<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
 </blockquote>
-<p>一种视图控制器，用于预览、打开或打印应用程序无法直接处理的文件格式的文件。名字叫控制器，但却是继承自  NSObject ……</p>
-<h3 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h3><p>在 iOS 上简单的使用它来打开文件是类似这样的：</p>
+<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
+<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
+<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
 <a id="more"></a>
 
-
-
-<p>初始化的时候，基本就是指定文件路径、指定本应用内打开，还是直接弹出选择菜单可以其他应用内打开</p>
+<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
+<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
+<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
+<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
 <ul>
-<li>初始化：</li>
+<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
+<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
+<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>本应用内预览文档</li>
+<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
+<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
+<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
+<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置代理 --本应用内预览必须要添加代理 UIDocumentInteractionControllerDelegate</span></span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line"><span class="comment">//当前APP打开  需实现协议方法才可以完成预览功能</span></span><br><span class="line">documentController.presentPreview(animated: <span class="literal">true</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">documentInteractionControllerViewControllerForPreview</span><span class="params">(<span class="number">_</span> controller: UIDocumentInteractionController)</span></span> -&gt; <span class="type">UIViewController</span> &#123;</span><br><span class="line">  <span class="comment">//这里需要返回给一个控制器用于展现 documentController 在其上面，所以我们就返回当前控制器self</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当我们打开一个文档的时候就是左边这样的效果，直接预览文档。右上角的分享按钮也可以选择其他 App 打开文档：</p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/Quick-Look.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/02/07/UIDocumentInteractionController/Share.png" class width="300"></div>
-</center>
-
-<ul>
-<li>其他应用内预览文档</li>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
+<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
+<li>Uploading Streams of Data：将数据流发送到服务器。</li>
 </ul>
-<p>网上很多都是说，加上打开 Menu 菜单(见右图)的一句代码就可以用第三方应用打开，例如:</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line">documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
-
-<p>只这样写你会发现，菜单确实可以弹出，但你点分享到任何一个 App （包括 Quick Look）都是没反应的，而且在 console 中会报如下错误：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">Could not instantiate <span class="keyword">class</span> <span class="built_in">NSURL</span>. Error: Error Domain=<span class="built_in">NSCocoaErrorDomain</span> Code=<span class="number">4864</span> <span class="string">"The URL archive of type “public.url” contains invalid data."</span> UserInfo=&#123;<span class="built_in">NSDebugDescription</span>=The URL archive of type “public.url” contains invalid data.&#125;</span><br></pre></td></tr></table></figure>
-
-<p>……</p>
-<p>网上的资料给的解决办法是 documentController 这个变量需要被持有一下，才可以用第三方 App 打开文档，所以上面的代码就变成了这样：</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIDocumentInteractionControllerDelegate</span>  </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> documentController = <span class="type">UIDocumentInteractionController</span>()</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">showDocInteractController</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line">    documentController.url = url</span><br><span class="line">    documentController.delegate = <span class="keyword">self</span></span><br><span class="line">    documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>持有一下就可以，咩<del>~</del></p>
-<p>PS : 设置 <code>presentOptionsMenuFromRect</code> 的话，我们给的是 全屏，那给一半儿的大小这个选择菜单会怎么弹呢，感兴趣自己试一下🤓……</p>
-<p>这些不是重点，重点是在 iPad 上，菜单的弹出会有些不一样的现象</p>
-<h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><p>上面同样其他应用内预览文档的代码，测试发现点击文档以后，没有弹出选择菜单，当然文档也没有打开。console 中报注入布局异常的错误：</p>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.326794</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">85917</span>] [LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don't want. </span><br><span class="line">	Try <span class="keyword">this</span>: </span><br><span class="line">		(<span class="number">1</span>) look at each <span class="keyword">constraint</span> <span class="keyword">and</span> try to figure out which you don't <span class="keyword">expect</span>; </span><br><span class="line">		(<span class="number">2</span>) find the code that added the unwanted <span class="keyword">constraint</span> <span class="keyword">or</span> constraints <span class="keyword">and</span> fix it. </span><br><span class="line">(</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912da0 H:|-(0)-[_UIActivityContentTitleView:0x7fa2ccc33b10]   (active, names: '|':_UINavigationBarContentView:0x7fa2ccc26a40 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912e40 _UIActivityContentTitleView:0x7fa2ccc33b10.trailing == _UINavigationBarContentView:0x7fa2ccc26a40.trailing   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x6000019130c0 LPLinkView:0x7fa2ccc33f30.leading == UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'.leading   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912f30 H:[LPLinkView:0x7fa2ccc33f30]-(27)-|   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001919d10 'UIView-Encapsulated-Layout-Width' _UINavigationBarContentView:0x7fa2ccc26a40.width == 0   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912fd0 'UIView-leftMargin-guide-constraint' H:|-(16)-[UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'](LTR)   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking <span class="keyword">constraint</span> </span><br><span class="line">&lt;NSLayoutConstraint:<span class="number">0</span>x6000019130c0 LPLinkView:<span class="number">0</span>x7fa2ccc33f30<span class="variable">.leading</span> == UILayoutGuide:<span class="number">0</span>x600000322680'UIViewLayoutMarginsGuide'<span class="variable">.leading</span>   (active)&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch <span class="keyword">this</span> in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView<span class="variable">.h</span>&gt; may also be helpful.</span><br><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.327098</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">87855</span>] [Fetching] LPFileMetadataProviderSpecialization failed to retrieve a thumbnail from QuickLookThumbnailing (Error Domain=QLThumbnailErrorDomain Code=<span class="number">0</span> <span class="string">"Could not generate a thumbnail"</span>)</span><br></pre></td></tr></table></figure>
-
-<p>我们先看下 Safari 中的 Menu 是什么样子:</p>
-<center>
-    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu0.png" class width="600"></div>
-</center>
-
-<center>
-    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu1.png" class width="500"></div>
-</center>
-
-<p>咦，无论横竖屏，Menu 不再是以屏幕宽度或者高度来处理的了，而且头上多了一点 “小尖尖~”。所以猜测我们需要给定它一个弹出点。但 API 貌似又没有对应的接口。</p>
-<p>参考了官方一个 issue 讨论，emmmmmm，其实我也没太看懂啥意思 😂，总之~~</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> frame = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="keyword">self</span>.view.frame.midX, y: <span class="keyword">self</span>.view.frame.midY, width: <span class="number">0</span>, height: <span class="keyword">self</span>.view.frame.height * <span class="number">0.5</span>)</span><br><span class="line">documentController.presentOptionsMenu(from: frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这句代码中的 frame 不给全屏就可以正常弹出，小尖尖的位置自己有兴趣可以调一调玩一玩儿~~</p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>URL Loading System 之 NSURLRequest</title>
-    <url>/2021/04/19/NSURLRequest/</url>
-    <content><![CDATA[<p><a href>URL Loading System[译]</a></p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
+<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
+<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
+<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
+</ul>
+<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
+<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
+<li>CachedURLResponse：对URL请求的缓存响应。</li>
+<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
+</ul>
+<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
+<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
+<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
+<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
+<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
+<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
+</ul>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
+<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
+<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
+</ul>
+<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
+<li>URLError：URL加载API返回的错误代码。</li>
+<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -487,61 +503,67 @@
       </tags>
   </entry>
   <entry>
-    <title>URL Loading System[译]</title>
-    <url>/2021/04/19/URL%20Loading%20System/</url>
-    <content><![CDATA[<blockquote>
-<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
-<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
-<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
+    <title>UIDocumentInteractionController</title>
+    <url>/2021/02/07/UIDocumentInteractionController/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>官方文档：<a href="https://developer.apple.com/documentation/uikit/uidocumentinteractioncontroller" target="_blank" rel="noopener">UIDocumentInteractionController</a></p>
 </blockquote>
-<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
-<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
-<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
+<p>一种视图控制器，用于预览、打开或打印应用程序无法直接处理的文件格式的文件。名字叫控制器，但却是继承自  NSObject ……</p>
+<h3 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h3><p>在 iOS 上简单的使用它来打开文件是类似这样的：</p>
 <a id="more"></a>
 
-<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
-<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
-<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
-<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
+
+
+<p>初始化的时候，基本就是指定文件路径、指定本应用内打开，还是直接弹出选择菜单可以其他应用内打开</p>
 <ul>
-<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
-<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
-<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
+<li>初始化：</li>
 </ul>
-<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
-<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
-<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
-<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本应用内预览文档</li>
 </ul>
-<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
-<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
-<li>Uploading Streams of Data：将数据流发送到服务器。</li>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置代理 --本应用内预览必须要添加代理 UIDocumentInteractionControllerDelegate</span></span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line"><span class="comment">//当前APP打开  需实现协议方法才可以完成预览功能</span></span><br><span class="line">documentController.presentPreview(animated: <span class="literal">true</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">documentInteractionControllerViewControllerForPreview</span><span class="params">(<span class="number">_</span> controller: UIDocumentInteractionController)</span></span> -&gt; <span class="type">UIViewController</span> &#123;</span><br><span class="line">  <span class="comment">//这里需要返回给一个控制器用于展现 documentController 在其上面，所以我们就返回当前控制器self</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们打开一个文档的时候就是左边这样的效果，直接预览文档。右上角的分享按钮也可以选择其他 App 打开文档：</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/Quick-Look.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="/2021/02/07/UIDocumentInteractionController/Share.png" class width="300"></div>
+</center>
+
+<ul>
+<li>其他应用内预览文档</li>
 </ul>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
-<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
-<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
-<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
-</ul>
-<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
-<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
-<li>CachedURLResponse：对URL请求的缓存响应。</li>
-<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
-</ul>
-<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
-<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
-<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
-<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
-<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
-<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
-</ul>
-<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
-<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
-<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
-</ul>
-<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
-<li>URLError：URL加载API返回的错误代码。</li>
-<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
-</ul>
+<p>网上很多都是说，加上打开 Menu 菜单(见右图)的一句代码就可以用第三方应用打开，例如:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line"><span class="keyword">let</span> documentController = <span class="type">UIDocumentInteractionController</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">documentController.delegate = <span class="keyword">self</span></span><br><span class="line">documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>只这样写你会发现，菜单确实可以弹出，但你点分享到任何一个 App （包括 Quick Look）都是没反应的，而且在 console 中会报如下错误：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">Could not instantiate <span class="keyword">class</span> <span class="built_in">NSURL</span>. Error: Error Domain=<span class="built_in">NSCocoaErrorDomain</span> Code=<span class="number">4864</span> <span class="string">"The URL archive of type “public.url” contains invalid data."</span> UserInfo=&#123;<span class="built_in">NSDebugDescription</span>=The URL archive of type “public.url” contains invalid data.&#125;</span><br></pre></td></tr></table></figure>
+
+<p>……</p>
+<p>网上的资料给的解决办法是 documentController 这个变量需要被持有一下，才可以用第三方 App 打开文档，所以上面的代码就变成了这样：</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIDocumentInteractionControllerDelegate</span>  </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> documentController = <span class="type">UIDocumentInteractionController</span>()</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">showDocInteractController</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"hhh"</span>, withExtension: <span class="string">"docx"</span>)</span><br><span class="line">    documentController.url = url</span><br><span class="line">    documentController.delegate = <span class="keyword">self</span></span><br><span class="line">    documentController.presentOptionsMenu(from: <span class="keyword">self</span>.view.frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>持有一下就可以，咩<del>~</del></p>
+<p>PS : 设置 <code>presentOptionsMenuFromRect</code> 的话，我们给的是 全屏，那给一半儿的大小这个选择菜单会怎么弹呢，感兴趣自己试一下🤓……</p>
+<p>这些不是重点，重点是在 iPad 上，菜单的弹出会有些不一样的现象</p>
+<h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><p>上面同样其他应用内预览文档的代码，测试发现点击文档以后，没有弹出选择菜单，当然文档也没有打开。console 中报注入布局异常的错误：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.326794</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">85917</span>] [LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don't want. </span><br><span class="line">	Try <span class="keyword">this</span>: </span><br><span class="line">		(<span class="number">1</span>) look at each <span class="keyword">constraint</span> <span class="keyword">and</span> try to figure out which you don't <span class="keyword">expect</span>; </span><br><span class="line">		(<span class="number">2</span>) find the code that added the unwanted <span class="keyword">constraint</span> <span class="keyword">or</span> constraints <span class="keyword">and</span> fix it. </span><br><span class="line">(</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912da0 H:|-(0)-[_UIActivityContentTitleView:0x7fa2ccc33b10]   (active, names: '|':_UINavigationBarContentView:0x7fa2ccc26a40 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912e40 _UIActivityContentTitleView:0x7fa2ccc33b10.trailing == _UINavigationBarContentView:0x7fa2ccc26a40.trailing   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x6000019130c0 LPLinkView:0x7fa2ccc33f30.leading == UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'.leading   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912f30 H:[LPLinkView:0x7fa2ccc33f30]-(27)-|   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001919d10 'UIView-Encapsulated-Layout-Width' _UINavigationBarContentView:0x7fa2ccc26a40.width == 0   (active)&gt;"</span>,</span><br><span class="line">    <span class="string">"&lt;NSLayoutConstraint:0x600001912fd0 'UIView-leftMargin-guide-constraint' H:|-(16)-[UILayoutGuide:0x600000322680'UIViewLayoutMarginsGuide'](LTR)   (active, names: '|':_UIActivityContentTitleView:0x7fa2ccc33b10 )&gt;"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking <span class="keyword">constraint</span> </span><br><span class="line">&lt;NSLayoutConstraint:<span class="number">0</span>x6000019130c0 LPLinkView:<span class="number">0</span>x7fa2ccc33f30<span class="variable">.leading</span> == UILayoutGuide:<span class="number">0</span>x600000322680'UIViewLayoutMarginsGuide'<span class="variable">.leading</span>   (active)&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch <span class="keyword">this</span> in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView<span class="variable">.h</span>&gt; may also be helpful.</span><br><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">26</span> <span class="number">14</span>:<span class="number">43</span>:<span class="number">02</span><span class="variable">.327098</span>+<span class="number">0800</span> UIDocumentInteraction[<span class="number">13039</span>:<span class="number">87855</span>] [Fetching] LPFileMetadataProviderSpecialization failed to retrieve a thumbnail from QuickLookThumbnailing (Error Domain=QLThumbnailErrorDomain Code=<span class="number">0</span> <span class="string">"Could not generate a thumbnail"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我们先看下 Safari 中的 Menu 是什么样子:</p>
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu0.png" class width="600"></div>
+</center>
+
+<center>
+    <div style="display:inline-block;"><img src="/2021/02/07/UIDocumentInteractionController/iPad-Menu1.png" class width="500"></div>
+</center>
+
+<p>咦，无论横竖屏，Menu 不再是以屏幕宽度或者高度来处理的了，而且头上多了一点 “小尖尖~”。所以猜测我们需要给定它一个弹出点。但 API 貌似又没有对应的接口。</p>
+<p>参考了官方一个 issue 讨论，emmmmmm，其实我也没太看懂啥意思 😂，总之~~</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> frame = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="keyword">self</span>.view.frame.midX, y: <span class="keyword">self</span>.view.frame.midY, width: <span class="number">0</span>, height: <span class="keyword">self</span>.view.frame.height * <span class="number">0.5</span>)</span><br><span class="line">documentController.presentOptionsMenu(from: frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这句代码中的 frame 不给全屏就可以正常弹出，小尖尖的位置自己有兴趣可以调一调玩一玩儿~~</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -724,6 +746,24 @@
       </tags>
   </entry>
   <entry>
+    <title>绿豆儿没了</title>
+    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
+    <content><![CDATA[<center>
+  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
+</center>
+
+
+
+<p>我的绿豆儿死了。</p>
+<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
+<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
+<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -758,15 +798,6 @@
       </tags>
   </entry>
   <entry>
-    <title>昨天</title>
-    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
-    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>去掉UIWebView底部的黑条</title>
     <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
     <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
@@ -779,6 +810,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>昨天</title>
+    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
+    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>由 Pod 导致的 File not found</title>
     <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
     <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
@@ -787,24 +827,6 @@
 <h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绿豆儿没了</title>
-    <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
-    <content><![CDATA[<center>
-  <div style="display:inline-block;"><img src="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/%E8%B1%86%E5%84%BF.jpg" class width="500"></div>
-</center>
-
-
-
-<p>我的绿豆儿死了。</p>
-<p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
-<p>终究是我没照顾好她。希望她去了她想去的地方。</p>
-<p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
       </tags>
   </entry>
   <entry>
@@ -820,6 +842,17 @@
 ]]></content>
       <tags>
         <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AudioServicesPlaySystemSound 播放系统提示音</title>
+    <url>/2021/06/18/AudioServicesPlaySystemSound/</url>
+    <content><![CDATA[<p>系统提示音 SystemSoundID 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">AudioServices is a group of C functions in AudioToolbox for playing short (≤30 seconds) sounds.</span><br><span class="line"></span><br><span class="line">Predefined sounds</span><br><span class="line"></span><br><span class="line">There are some predefined system sounds, for the system sound ID in the range 1000 to 2000 (decimal), as shown below (from 2.0 to 5.0 beta). The system sounds are all stored in &#x2F;System&#x2F;Library&#x2F;Audio&#x2F;UISounds&#x2F;.</span><br><span class="line"></span><br><span class="line">Sound ID        File name (iPhone)        File name (iPod Touch)        Category        Note</span><br><span class="line"></span><br><span class="line">1000    new-mail.caf    new-mail.caf    MailReceived</span><br><span class="line"></span><br><span class="line">1001    mail-sent.caf    mail-sent.caf    MailSent</span><br><span class="line"></span><br><span class="line">1002    Voicemail.caf    Voicemail.caf    VoicemailReceived</span><br><span class="line"></span><br><span class="line">1003    ReceivedMessage.caf    ReceivedMessage.caf    SMSReceived</span><br><span class="line"></span><br><span class="line">1004    SentMessage.caf    SentMessage.caf    SMSSent</span><br><span class="line"></span><br><span class="line">1005    alarm.caf    sq_alarm.caf    CalendarAlert</span><br><span class="line"></span><br><span class="line">1006    low_power.caf    low_power.caf    LowPower</span><br><span class="line"></span><br><span class="line">1007    sms-received1.caf    sms-received1.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1008    sms-received2.caf    sms-received2.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1009    sms-received3.caf    sms-received3.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1010    sms-received4.caf    sms-received4.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1011    -    -    SMSReceived_Vibrate</span><br><span class="line"></span><br><span class="line">1012    sms-received1.caf    sms-received1.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1013    sms-received5.caf    sms-received5.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1014    sms-received6.caf    sms-received6.caf    SMSReceived_Alert</span><br><span class="line"></span><br><span class="line">1015    Voicemail.caf    Voicemail.caf    -    Available since 2.1</span><br><span class="line"></span><br><span class="line">1016    tweet_sent.caf    tweet_sent.caf    SMSSent    Available since 5.0</span><br><span class="line"></span><br><span class="line">1020    Anticipate.caf    Anticipate.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1021    Bloom.caf    Bloom.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1022    Calypso.caf    Calypso.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1023    Choo_Choo.caf    Choo_Choo.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1024    Descent.caf    Descent.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1025    Fanfare.caf    Fanfare.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1026    Ladder.caf    Ladder.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1027    Minuet.caf    Minuet.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1028    News_Flash.caf    News_Flash.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1029    Noir.caf    Noir.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1030    Sherwood_Forest.caf    Sherwood_Forest.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1031    Spell.caf    Spell.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1032    Suspense.caf    Suspense.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1033    Telegraph.caf    Telegraph.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1034    Tiptoes.caf    Tiptoes.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1035    Typewriters.caf    Typewriters.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1036    Update.caf    Update.caf    SMSReceived_Alert    Available since 4.2</span><br><span class="line"></span><br><span class="line">1050    ussd.caf    ussd.caf    USSDAlert</span><br><span class="line"></span><br><span class="line">1051    SIMToolkitCallDropped.caf    SIMToolkitCallDropped.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1052    SIMToolkitGeneralBeep.caf    SIMToolkitGeneralBeep.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1053    SIMToolkitNegativeACK.caf    SIMToolkitNegativeACK.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1054    SIMToolkitPositiveACK.caf    SIMToolkitPositiveACK.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1055    SIMToolkitSMS.caf    SIMToolkitSMS.caf    SIMToolkitTone</span><br><span class="line"></span><br><span class="line">1057    Tink.caf    Tink.caf    PINKeyPressed</span><br><span class="line"></span><br><span class="line">1070    ct-busy.caf    ct-busy.caf    AudioToneBusy    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1071    ct-congestion.caf    ct-congestion.caf    AudioToneCongestion    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1072    ct-path-ack.caf    ct-path-ack.caf    AudioTonePathAcknowledge    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1073    ct-error.caf    ct-error.caf    AudioToneError    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1074    ct-call-waiting.caf    ct-call-waiting.caf    AudioToneCallWaiting    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1075    ct-keytone2.caf    ct-keytone2.caf    AudioToneKey2    There was no category for this sound before 4.0.</span><br><span class="line"></span><br><span class="line">1100    lock.caf    sq_lock.caf    ScreenLocked</span><br><span class="line"></span><br><span class="line">1101    unlock.caf    sq_lock.caf    ScreenUnlocked</span><br><span class="line"></span><br><span class="line">1102    -    -    FailedUnlock</span><br><span class="line"></span><br><span class="line">1103    Tink.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1104    Tock.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1105    Tock.caf    sq_tock.caf    KeyPressed</span><br><span class="line"></span><br><span class="line">1106    beep-beep.caf    sq_beep-beep.caf    ConnectedToPower</span><br><span class="line"></span><br><span class="line">1107    RingerChanged.caf    RingerChanged.caf    RingerSwitchIndication</span><br><span class="line"></span><br><span class="line">1108    photoShutter.caf    photoShutter.caf    CameraShutter</span><br><span class="line"></span><br><span class="line">1109    shake.caf    shake.caf    ShakeToShuffle    Available since 3.0</span><br><span class="line"></span><br><span class="line">1110    jbl_begin.caf    jbl_begin.caf    JBL_Begin    Available since 3.0</span><br><span class="line"></span><br><span class="line">1111    jbl_confirm.caf    jbl_confirm.caf    JBL_Confirm    Available since 3.0</span><br><span class="line"></span><br><span class="line">1112    jbl_cancel.caf    jbl_cancel.caf    JBL_Cancel    Available since 3.0</span><br><span class="line"></span><br><span class="line">1113    begin_record.caf    begin_record.caf    BeginRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1114    end_record.caf    end_record.caf    EndRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1115    jbl_ambiguous.caf    jbl_ambiguous.caf    JBL_Ambiguous    Available since 3.0</span><br><span class="line"></span><br><span class="line">1116    jbl_no_match.caf    jbl_no_match.caf    JBL_NoMatch    Available since 3.0</span><br><span class="line"></span><br><span class="line">1117    begin_video_record.caf    begin_video_record.caf    BeginVideoRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1118    end_video_record.caf    end_video_record.caf    EndVideoRecording    Available since 3.0</span><br><span class="line"></span><br><span class="line">1150    vc~invitation-accepted.caf    vc~invitation-accepted.caf    VCInvitationAccepted    Available since 4.0</span><br><span class="line"></span><br><span class="line">1151    vc~ringing.caf    vc~ringing.caf    VCRinging    Available since 4.0</span><br><span class="line"></span><br><span class="line">1152    vc~ended.caf    vc~ended.caf    VCEnded    Available since 4.0</span><br><span class="line"></span><br><span class="line">1153    ct-call-waiting.caf    ct-call-waiting.caf    VCCallWaiting    Available since 4.1</span><br><span class="line"></span><br><span class="line">1154    vc~ringing.caf    vc~ringing.caf    VCCallUpgrade    Available since 4.1</span><br><span class="line"></span><br><span class="line">1200    dtmf-0.caf    dtmf-0.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1201    dtmf-1.caf    dtmf-1.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1202    dtmf-2.caf    dtmf-2.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1203    dtmf-3.caf    dtmf-3.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1204    dtmf-4.caf    dtmf-4.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1205    dtmf-5.caf    dtmf-5.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1206    dtmf-6.caf    dtmf-6.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1207    dtmf-7.caf    dtmf-7.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1208    dtmf-8.caf    dtmf-8.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1209    dtmf-9.caf    dtmf-9.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1210    dtmf-star.caf    dtmf-star.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1211    dtmf-pound.caf    dtmf-pound.caf    TouchTone</span><br><span class="line"></span><br><span class="line">1254    long_low_short_high.caf    long_low_short_high.caf    Headset_StartCall</span><br><span class="line"></span><br><span class="line">1255    short_double_high.caf    short_double_high.caf    Headset_Redial</span><br><span class="line"></span><br><span class="line">1256    short_low_high.caf    short_low_high.caf    Headset_AnswerCall</span><br><span class="line"></span><br><span class="line">1257    short_double_low.caf    short_double_low.caf    Headset_EndCall</span><br><span class="line"></span><br><span class="line">1258    short_double_low.caf    short_double_low.caf    Headset_CallWaitingActions</span><br><span class="line"></span><br><span class="line">1259    middle_9_short_double_low.caf    middle_9_short_double_low.caf    Headset_TransitionEnd</span><br><span class="line"></span><br><span class="line">1300    Voicemail.caf    Voicemail.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1301    ReceivedMessage.caf    ReceivedMessage.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1302    new-mail.caf    new-mail.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1303    mail-sent.caf    mail-sent.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1304    alarm.caf    sq_alarm.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1305    lock.caf    sq_lock.caf    SystemSoundPreview</span><br><span class="line"></span><br><span class="line">1306    Tock.caf    sq_tock.caf    KeyPressClickPreview    The category was SystemSoundPreview before 3.2.</span><br><span class="line"></span><br><span class="line">1307    sms-received1.caf    sms-received1.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1308    sms-received2.caf    sms-received2.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1309    sms-received3.caf    sms-received3.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1310    sms-received4.caf    sms-received4.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1311    -    -    SMSReceived_Vibrate</span><br><span class="line"></span><br><span class="line">1312    sms-received1.caf    sms-received1.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1313    sms-received5.caf    sms-received5.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1314    sms-received6.caf    sms-received6.caf    SMSReceived_Selection</span><br><span class="line"></span><br><span class="line">1315    Voicemail.caf    Voicemail.caf    SystemSoundPreview    Available since 2.1</span><br><span class="line"></span><br><span class="line">1320    Anticipate.caf    Anticipate.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1321    Bloom.caf    Bloom.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1322    Calypso.caf    Calypso.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1323    Choo_Choo.caf    Choo_Choo.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1324    Descent.caf    Descent.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1325    Fanfare.caf    Fanfare.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1326    Ladder.caf    Ladder.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1327    Minuet.caf    Minuet.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1328    News_Flash.caf    News_Flash.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1329    Noir.caf    Noir.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1330    Sherwood_Forest.caf    Sherwood_Forest.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1331    Spell.caf    Spell.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1332    Suspense.caf    Suspense.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1333    Telegraph.caf    Telegraph.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1334    Tiptoes.caf    Tiptoes.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1335    Typewriters.caf    Typewriters.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1336    Update.caf    Update.caf    SMSReceived_Selection    Available since 4.2</span><br><span class="line"></span><br><span class="line">1350    -    -    RingerVibeChanged</span><br><span class="line"></span><br><span class="line">1351    -    -    SilentVibeChanged</span><br><span class="line"></span><br><span class="line">4095    -    -    Vibrate    There was no category for this sound before 2.2.</span><br><span class="line"></span><br><span class="line">In the SDK this is the constant kSystemSoundID</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
