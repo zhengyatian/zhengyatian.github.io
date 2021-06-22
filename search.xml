@@ -42,6 +42,36 @@
       </tags>
   </entry>
   <entry>
+    <title>GitTalk 404</title>
+    <url>/2021/06/22/GiTalk-404/</url>
+    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
+<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
+<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
+<a id="more"></a>
+
+<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
+<div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
+</center>
+
+
+
+
+
+</div></div></div></div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="/2020/06/05/DeviceCheck/1.png" alt></p>
@@ -189,36 +219,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>GitTalk 404</title>
-    <url>/2021/06/22/GiTalk-404/</url>
-    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
-<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
-<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
-<a id="more"></a>
-
-<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
-<div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
-</center>
-
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
-</center>
-
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
-</center>
-
-
-
-
-
-</div></div></div></div></div>]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -271,19 +271,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
     <url>/2020/02/14/LaunchImage/</url>
     <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
@@ -299,6 +286,19 @@
       <tags>
         <tag>iOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
   </entry>
   <entry>
     <title>Server-Sent Events / EventSource</title>
@@ -396,6 +396,39 @@
       </tags>
   </entry>
   <entry>
+    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
+    <url>/2021/04/19/NSURLRequest/</url>
+    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
+<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
+<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
+<p>httpbin 可以把我们请求时的信息，返回给我们</p>
+</blockquote>
+<a id="more"></a>
+
+<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
+
+<p>返回结果：</p>
+<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
+
+<p>添加参数</p>
+<p>系列：</p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UIDocumentInteractionController</title>
     <url>/2021/02/07/UIDocumentInteractionController/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
@@ -463,39 +496,6 @@
       </tags>
   </entry>
   <entry>
-    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
-    <url>/2021/04/19/NSURLRequest/</url>
-    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
-<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
-<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
-<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
-<p>httpbin 可以把我们请求时的信息，返回给我们</p>
-</blockquote>
-<a id="more"></a>
-
-<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
-
-<p>返回结果：</p>
-<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
-<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
-
-<p>添加参数</p>
-<p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>URL Loading System[译]</title>
     <url>/2021/04/19/URL%20Loading%20System/</url>
     <content><![CDATA[<blockquote>
@@ -551,6 +551,92 @@
 <li>URLError：URL加载API返回的错误代码。</li>
 <li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+<a id="more"></a>
+
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<blockquote>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
+</blockquote>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
+</blockquote>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
+
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+<a id="more"></a>
+
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -639,53 +725,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
-<a id="more"></a>
-
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-<a id="more"></a>
-
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Xcode 11 IPA processing failed 初见</title>
     <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
     <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
@@ -734,42 +773,22 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS 动态修改状态栏风格</title>
-    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
-    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
-<ul>
-<li>UIStatusBarStyle 的样式</li>
-<li>改变状态栏文字颜色的方式</li>
-<li>状态栏的显示和隐藏</li>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
 </ul>
-<a id="more"></a>
-
-<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
-
-<p>属性，默认为 <code>YES</code>。</p>
-<ul>
-<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
-<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
-</ul>
-<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
-<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
-<li>全局隐藏的话，很简单，直接改配置。</li>
-<li>部分页面隐藏，同上，重写~~</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
 ]]></content>
       <tags>
-        <tag>iOS</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -799,22 +818,50 @@
       </tags>
   </entry>
   <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
+    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
+    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
+<blockquote>
+<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
+</blockquote>
+<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
+<a id="more"></a>
+
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
+<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
+<ul>
+<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
+</li>
+<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
+<ul>
+<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
+<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
 </ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
-]]></content>
+</li>
+<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
+</li>
+</ul>
+<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
+<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
+<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
+<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
+<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
+<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
+<ul>
+<li><p>让美工去掉图片的透明度。</p>
+</li>
+<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
+</li>
+</ul>
+<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
       <tags>
-        <tag>Mac</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -888,18 +935,6 @@
       </tags>
   </entry>
   <entry>
-    <title>去掉UIWebView底部的黑条</title>
-    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
-    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-<a id="more"></a>
-
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
-<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
-<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -943,17 +978,6 @@
       </tags>
   </entry>
   <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绿豆儿没了</title>
     <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
     <content><![CDATA[<center>
@@ -972,6 +996,18 @@
       </tags>
   </entry>
   <entry>
+    <title>去掉UIWebView底部的黑条</title>
+    <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
+    <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+<a id="more"></a>
+
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
+<p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/2.png" alt="图二"></p>
+<p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>隐忍</title>
     <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
     <content><![CDATA[<p>124 VS 3565</p>
@@ -984,6 +1020,17 @@
 ]]></content>
       <tags>
         <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>

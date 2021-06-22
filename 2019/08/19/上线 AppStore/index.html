@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Mac 下 IDEA 无法启动的问题 |
+    iOS上线 AppStore - 打包、upload 时遇到的问题 |
     
     迷</title>
   
@@ -29,7 +29,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-Mac下IDEA无法启动的问题" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-上线 AppStore" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
     <div class="article-inner">
         
@@ -37,7 +37,7 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      Mac 下 IDEA 无法启动的问题
+      iOS上线 AppStore - 打包、upload 时遇到的问题
     </h1>
   
   
@@ -50,8 +50,8 @@
 
                 
                     <div class="article-meta">
-                        <a href="/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2019-01-24T10:00:46.000Z" itemprop="datePublished">2019-01-24</time>
+                        <a href="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/" class="article-date">
+  <time datetime="2019-08-19T09:52:53.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
                             
                     </div>
@@ -59,6 +59,8 @@
 
                         
                             
+    <div class="tocbot"></div>
+
 
 
 
@@ -72,22 +74,55 @@
                                             
 
                                                 
-                                                                    <p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+                                                                    <p>iOS打包上线遇到的问题记录和解决办法：</p>
 <blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
 </blockquote>
+<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
 <a id="more"></a>
 
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
+<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
+<ul>
+<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
+</li>
+<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
+<ul>
+<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
+<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
+</ul>
+</li>
+<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
+</li>
+</ul>
+<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
+<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
+<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
+<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
+<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
+<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
+<ul>
+<li><p>让美工去掉图片的透明度。</p>
+</li>
+<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
+</li>
+</ul>
+<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
+</center>
 
+</div></div>
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="ckq7x9zey000e0cku5f7i5wr0" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/" data-id="ckq7x9zfc00140cku08mc5grn" class="article-share-link">
                                             分享
                                         </a>
                                         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
                                     </footer>
 
     </div>
@@ -96,19 +131,19 @@
         
   <nav class="article-nav">
     
-      <a href="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/" class="article-nav-link">
+      <a href="/2019/08/19/App%20Store%20Connect/" class="article-nav-link">
         <strong class="article-nav-caption">前一篇</strong>
         <div class="article-nav-title">
           
-            iOS上线 AppStore - 打包、upload 时遇到的问题
+            iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？
           
         </div>
       </a>
     
     
-      <a href="/2018/12/27/Warning!PATH-is/" class="article-nav-link">
+      <a href="/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</div>
+        <div class="article-nav-title">Mac 下 IDEA 无法启动的问题</div>
       </a>
     
   </nav>
