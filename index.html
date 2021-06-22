@@ -107,7 +107,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/06/18/AudioServicesPlaySystemSound/" data-id="ckq674le8001fw7ku1jfxem8t" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/06/18/AudioServicesPlaySystemSound/" data-id="ckq7fu0yo001dkjkua1rbcyhp" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -176,7 +176,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/" data-id="ckq674ldd000kw7ku5p1y2ao8" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/" data-id="ckq7fu0xm000ikjku8vr59i9y" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -229,34 +229,21 @@
                                             
 
                                                 
-                                                                    <h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+                                                    <h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
 <h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
 <p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
 <p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
 <p>httpbin 可以把我们请求时的信息，返回给我们</p>
 </blockquote>
-<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
-
-<p>返回结果：</p>
-<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
-<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
-
-<p>添加参数</p>
-<p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
-
-                                                                        
+                                                        
+                                                            <a class="article-more-link" href="/2021/04/19/NSURLRequest/">
+                                                                查看全文...
+                                                            </a>
+                                                            
+                                                                
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/04/19/NSURLRequest/" data-id="ckq674ld7000cw7ku5kf2ggb1" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/04/19/NSURLRequest/" data-id="ckq7fu0x90007kjkudbdr1k54" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -314,7 +301,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/04/15/%E6%98%A8%E5%A4%A9/" data-id="ckq674ldq0013w7ku4c24gyiz" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/04/15/%E6%98%A8%E5%A4%A9/" data-id="ckq7fu0xx0011kjkugkygd3z2" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -377,7 +364,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" data-id="ckq674ld9000dw7ku6ncofajq" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" data-id="ckq7fu0xi000ekjkug4jl1kyb" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -443,7 +430,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/02/07/UIDocumentInteractionController/" data-id="ckq674ldc000iw7kubii02yrr" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/02/07/UIDocumentInteractionController/" data-id="ckq7fu0xk000gkjku0txg2fck" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -510,7 +497,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/" data-id="ckq674ldg000qw7kufdzd8msz" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/" data-id="ckq7fu0xp000qkjkucfj0c6cu" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -577,7 +564,7 @@
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" data-id="ckq674lds0016w7kudn8q4tld" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" data-id="ckq7fu0y00014kjkuccahfjmj" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -641,7 +628,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckq674ld40009w7ku8c9k4lfh" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckq7fu0xb000akjku90v00qor" class="article-share-link">
                                             分享
                                         </a>
                                         
@@ -706,7 +693,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/01/06/%E9%9A%90%E5%BF%8D/" data-id="ckq674ldu0018w7kubkulgrxy" class="article-share-link">
+                                        <a data-url="https://atommygirl.github.io/2021/01/06/%E9%9A%90%E5%BF%8D/" data-id="ckq7fu0y10016kjku59by6q4b" class="article-share-link">
                                             分享
                                         </a>
                                         
