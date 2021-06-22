@@ -22,21 +22,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+    <title>GitTalk 404</title>
+    <url>/2021/06/22/GiTalk-404/</url>
+    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
+<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
+<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
+<a id="more"></a>
 
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
+<div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
+</center>
 
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
+</center>
+
+
+
+
+
+</div></div></div></div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
   </entry>
   <entry>
     <title>DeviceCheck</title>
@@ -169,6 +182,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -232,39 +262,6 @@
 <p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
 <p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
-    <url>/2021/04/19/NSURLRequest/</url>
-    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
-<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
-<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
-<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
-<p>httpbin 可以把我们请求时的信息，返回给我们</p>
-</blockquote>
-<a id="more"></a>
-
-<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
-
-<p>返回结果：</p>
-<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
-<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
-
-<p>添加参数</p>
-<p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
   </entry>
   <entry>
     <title>Server-Sent Events / EventSource</title>
@@ -356,6 +353,39 @@
 
 
 <h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
+    <url>/2021/04/19/NSURLRequest/</url>
+    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
+<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
+<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
+<p>httpbin 可以把我们请求时的信息，返回给我们</p>
+</blockquote>
+<a id="more"></a>
+
+<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
+
+<p>返回结果：</p>
+<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
+
+<p>添加参数</p>
+<p>系列：</p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -839,6 +869,21 @@
       </tags>
   </entry>
   <entry>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>隐忍，从今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+<a id="more"></a>
+
+<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>绿豆儿没了</title>
     <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
     <content><![CDATA[<center>
@@ -851,21 +896,6 @@
 <p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
 <p>终究是我没照顾好她。希望她去了她想去的地方。</p>
 <p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐忍</title>
-    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
-    <content><![CDATA[<p>124 VS 3565</p>
-<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
-<p>隐忍，从今天开始。</p>
-<p>希望你幸福，爱笑的汤先生。</p>
-<a id="more"></a>
-
-<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
 ]]></content>
       <tags>
         <tag>我</tag>
