@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Xcode 11 IPA processing failed 初见 |
+    
+    迷</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-Xcode 11 IPA processing" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Xcode 11 IPA processing failed 初见
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2020/01/20/Xcode%2011%20IPA%20processing/" class="article-date">
+  <time datetime="2020-01-20T10:23:00.000Z" itemprop="datePublished">2020-01-20</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+<a id="more"></a>
+
+<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
+<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
+<blockquote>
+<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
+</blockquote>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
+<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
+<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
+</blockquote>
+<ul>
+<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
+<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
+<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
+
+<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="https://atommygirl.github.io/2020/01/20/Xcode%2011%20IPA%20processing/" data-id="ckq7wtm11000uc3ku0w3w40qq" class="article-share-link">
+                                            分享
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2020/02/14/LaunchImage/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Command CompileAssetCatalog failed with a nonzero exit code
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">iOS13 适配注意点</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'c0fd3fecc668416852dc',
+      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+      repo: 'YYBlogGitTalk',
+      owner: 'ATommyGirl',
+      admin: ['ATommyGirl'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2021 迷</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>

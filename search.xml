@@ -22,33 +22,23 @@
       </tags>
   </entry>
   <entry>
-    <title>GitTalk 404</title>
-    <url>/2021/06/22/GiTalk-404/</url>
-    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
-<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
-<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
+    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
+    <url>/2019/08/19/App%20Store%20Connect/</url>
+    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
 <a id="more"></a>
 
-<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
-<div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
-</center>
-
+<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
+<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
+<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
 <div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
+  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
 </center>
 
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
-</center>
-
-
-
-
-
-</div></div></div></div></div>]]></content>
+</div></div>]]></content>
       <tags>
-        <tag>7788</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -199,6 +189,36 @@
 ]]></content>
   </entry>
   <entry>
+    <title>GitTalk 404</title>
+    <url>/2021/06/22/GiTalk-404/</url>
+    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
+<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
+<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
+<a id="more"></a>
+
+<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
+<div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
+</center>
+
+
+
+
+
+</div></div></div></div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 文字中如何插入图片</title>
     <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
@@ -262,6 +282,23 @@
 <p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
 <p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
+    <url>/2020/02/14/LaunchImage/</url>
+    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
+<a id="more"></a>
+
+<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
+<p><img src="/2020/02/14/LaunchImage/1.png" alt="LaunchImage Setting.png"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/02/14/LaunchImage/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Server-Sent Events / EventSource</title>
@@ -359,39 +396,6 @@
       </tags>
   </entry>
   <entry>
-    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
-    <url>/2021/04/19/NSURLRequest/</url>
-    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
-<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
-<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
-<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
-<p>httpbin 可以把我们请求时的信息，返回给我们</p>
-</blockquote>
-<a id="more"></a>
-
-<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
-
-<p>返回结果：</p>
-<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
-<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
-
-<p>添加参数</p>
-<p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UIDocumentInteractionController</title>
     <url>/2021/02/07/UIDocumentInteractionController/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
@@ -453,6 +457,39 @@
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> frame = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="keyword">self</span>.view.frame.midX, y: <span class="keyword">self</span>.view.frame.midY, width: <span class="number">0</span>, height: <span class="keyword">self</span>.view.frame.height * <span class="number">0.5</span>)</span><br><span class="line">documentController.presentOptionsMenu(from: frame, <span class="keyword">in</span>: <span class="keyword">self</span>.view, animated: <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
 
 <p>这句代码中的 frame 不给全屏就可以正常弹出，小尖尖的位置自己有兴趣可以调一调玩一玩儿~~</p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
+    <url>/2021/04/19/NSURLRequest/</url>
+    <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+<h4 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h4><blockquote>
+<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
+<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
+<p>httpbin 可以把我们请求时的信息，返回给我们</p>
+</blockquote>
+<a id="more"></a>
+
+<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
+
+<p>返回结果：</p>
+<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
+
+<p>添加参数</p>
+<p>系列：</p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -647,6 +684,54 @@
 <p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
 <p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Xcode 11 IPA processing failed 初见</title>
+    <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
+    <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+<a id="more"></a>
+
+<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
+<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
+<blockquote>
+<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
+</blockquote>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
+<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
+<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
+</blockquote>
+<ul>
+<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
+<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
+<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
+
+<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>iOS 动态修改状态栏风格</title>
@@ -869,21 +954,6 @@
       </tags>
   </entry>
   <entry>
-    <title>隐忍</title>
-    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
-    <content><![CDATA[<p>124 VS 3565</p>
-<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
-<p>隐忍，从今天开始。</p>
-<p>希望你幸福，爱笑的汤先生。</p>
-<a id="more"></a>
-
-<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绿豆儿没了</title>
     <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
     <content><![CDATA[<center>
@@ -896,6 +966,21 @@
 <p>昨天晚上11点多，才想起来看看绿豆儿冬眠的怎么样，结果拿起来一看……那个画面感觉这辈子忘不了……</p>
 <p>终究是我没照顾好她。希望她去了她想去的地方。</p>
 <p>辛苦萝卜君把她和小白埋在一起了。😔😭</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隐忍</title>
+    <url>/2021/01/06/%E9%9A%90%E5%BF%8D/</url>
+    <content><![CDATA[<p>124 VS 3565</p>
+<p>可能傻子都知道，当然选择 3565 了。是吧。</p>
+<p>隐忍，从今天开始。</p>
+<p>希望你幸福，爱笑的汤先生。</p>
+<a id="more"></a>
+
+<p><img src="/2021/01/06/%E9%9A%90%E5%BF%8D/%E6%98%86%E6%98%8E%E6%B5%B7%E6%99%8F%E6%9D%91.jpg" alt></p>
 ]]></content>
       <tags>
         <tag>我</tag>
