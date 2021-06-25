@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   
@@ -11,13 +12,13 @@
     
     迷</title>
   
-    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
   
   
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
+  
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
@@ -27,54 +28,45 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-<main class="content">
-  <section class="outer">
-  <article id="post-Server-Sent Events" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <main class="content">
+    <section class="outer">
+  <article id="post-Server-Sent Events" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
 
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 class="article-title" itemprop="name">
-      Server-Sent Events / EventSource
-    </h1>
-  
-  
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
 
+<h1 class="article-title" itemprop="name">
+  Server-Sent Events / EventSource
+</h1>
 
 
 
-            </header>
-            
+    </header>
+    
 
-                
-                    <div class="article-meta">
-                        <a href="/2021/02/19/Server-Sent%20Events/" class="article-date">
+    
+    <div class="article-meta">
+      <a href="/2021/02/19/Server-Sent%20Events/" class="article-date">
   <time datetime="2021-02-19T09:26:12.000Z" itemprop="datePublished">2021-02-19</time>
 </a>
-                            
-                    </div>
-                    
+      
+    </div>
+    
 
-                        
-                            
-    <div class="tocbot"></div>
+    
+    
+<div class="tocbot"></div>
 
+    
 
-
-
-
-                                
-
-                                    <div class="article-entry" itemprop="articleBody">
-                                        
-
-
-                                            
-
-                                                
-                                                                    <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
 <p>​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？</p>
 <a id="more"></a>
 
@@ -162,121 +154,120 @@
 
 <h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
 
-                                                                        
-                                    </div>
-                                    <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" data-id="ckq7x9zf1000h0cku2uzd55sj" class="article-share-link">
-                                            分享
-                                        </a>
-                                        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-                                    </footer>
-
+      
     </div>
-
-    
-        
-  <nav class="article-nav">
-    
-      <a href="/2021/04/15/%E6%98%A8%E5%A4%A9/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            昨天
-          
-        </div>
+    <footer class="article-footer">
+      <a data-url="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" data-id="ckqbzlf59000i4jkuhztnfgib" class="article-share-link">
+        分享
       </a>
-    
-    
-      <a href="/2021/02/07/UIDocumentInteractionController/" class="article-nav-link">
-        <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">UIDocumentInteractionController</div>
-      </a>
-    
-  </nav>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
 
+    </footer>
 
-            
+  </div>
 
-                
-                    
-                        
-  <div class="gitalk" id="gitalk-container"></div>
   
+  
+<nav class="article-nav">
+  
+  <a href="/2021/04/15/%E6%98%A8%E5%A4%A9/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      昨天
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2021/02/07/UIDocumentInteractionController/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">UIDocumentInteractionController</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
-  
+
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  
+
 <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: 'c0fd3fecc668416852dc',
-      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-      repo: 'YYBlogGitTalk',
-      owner: 'ATommyGirl',
-      admin: ['ATommyGirl'],
-      // id: location.pathname,      // Ensure uniqueness and length less than 50
-      id: md5(location.pathname),
-      distractionFreeMode: false,  // Facebook-like distraction free mode
-      pagerDirection: 'last'
-    })
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'c0fd3fecc668416852dc',
+    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+    repo: 'YYBlogGitTalk',
+    owner: 'ATommyGirl',
+    admin: ['ATommyGirl'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
 
   gitalk.render('gitalk-container')
-  </script>
+</script>
 
-                            
+  
 
 </article>
 </section>
-  <footer class="footer">
+    <footer class="footer">
   <div class="outer">
     <div class="float-right">
       <ul class="list-inline">
   
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
   
-    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2021 迷</li>
+      <li>迷 &copy; 2021</li>
+      
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>
   </div>
 </footer>
-
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
 <nav class="navbar">
   
-    <div class="logo">
-      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-    </div>
+  <div class="logo">
+    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+  </div>
   
   <ul class="nav nav-main">
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
     
     <li class="nav-item">
       <a class="nav-item-link nav-item-search" title="搜索">
@@ -295,9 +286,9 @@
     </li>
     <li class="nav-item">
       
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
       
     </li>
   </ul>
@@ -308,8 +299,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-</aside>
-
+  </aside>
+  
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -322,33 +313,33 @@
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
 
 
-  
+
 <script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-  
+
 <script src="/js/tocbot.min.js"></script>
 
-  <script>
-    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-    tocbot.init({
-      tocSelector: '.tocbot',
-      contentSelector: '.article-entry',
-      headingSelector: 'h1, h2, h3, h4, h5, h6',
-      hasInnerContainers: true,
-      scrollSmooth: true,
-      positionFixedSelector: '.tocbot',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  </script>
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 
 <script src="/js/ocean.js"></script>
 
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+
 </html>

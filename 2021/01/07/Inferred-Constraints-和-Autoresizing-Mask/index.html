@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   
@@ -11,13 +12,13 @@
     
     迷</title>
   
-    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
   
   
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
+  
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
@@ -27,54 +28,45 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-<main class="content">
-  <section class="outer">
-  <article id="post-Inferred-Constraints-和-Autoresizing-Mask" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <main class="content">
+    <section class="outer">
+  <article id="post-Inferred-Constraints-和-Autoresizing-Mask" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
 
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 class="article-title" itemprop="name">
-      Inferred (Constraints) 和 Autoresizing Mask
-    </h1>
-  
-  
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
 
+<h1 class="article-title" itemprop="name">
+  Inferred (Constraints) 和 Autoresizing Mask
+</h1>
 
 
 
-            </header>
-            
+    </header>
+    
 
-                
-                    <div class="article-meta">
-                        <a href="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" class="article-date">
+    
+    <div class="article-meta">
+      <a href="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" class="article-date">
   <time datetime="2021-01-07T02:37:31.000Z" itemprop="datePublished">2021-01-07</time>
 </a>
-                            
-                    </div>
-                    
+      
+    </div>
+    
 
-                        
-                            
-    <div class="tocbot"></div>
+    
+    
+<div class="tocbot"></div>
 
+    
 
-
-
-
-                                
-
-                                    <div class="article-entry" itemprop="articleBody">
-                                        
-
-
-                                            
-
-                                                
-                                                                    <p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
 <h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
 <p>​        <a id="more"></a></p>
 <center>
@@ -96,121 +88,120 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-                                                                        
-                                    </div>
-                                    <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckq7x9zes000a0ckubkxp6j0s" class="article-share-link">
-                                            分享
-                                        </a>
-                                        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-                                    </footer>
-
+      
     </div>
-
-    
-        
-  <nav class="article-nav">
-    
-      <a href="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            绿豆儿没了
-          
-        </div>
+    <footer class="article-footer">
+      <a data-url="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckqbzlf4y000a4jku1gsubrdc" class="article-share-link">
+        分享
       </a>
-    
-    
-      <a href="/2021/01/06/%E9%9A%90%E5%BF%8D/" class="article-nav-link">
-        <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">隐忍</div>
-      </a>
-    
-  </nav>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
 
+    </footer>
 
-            
+  </div>
 
-                
-                    
-                        
-  <div class="gitalk" id="gitalk-container"></div>
   
+  
+<nav class="article-nav">
+  
+  <a href="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      绿豆儿没了
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2021/01/06/%E9%9A%90%E5%BF%8D/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">隐忍</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
-  
+
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  
+
 <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: 'c0fd3fecc668416852dc',
-      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-      repo: 'YYBlogGitTalk',
-      owner: 'ATommyGirl',
-      admin: ['ATommyGirl'],
-      // id: location.pathname,      // Ensure uniqueness and length less than 50
-      id: md5(location.pathname),
-      distractionFreeMode: false,  // Facebook-like distraction free mode
-      pagerDirection: 'last'
-    })
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'c0fd3fecc668416852dc',
+    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+    repo: 'YYBlogGitTalk',
+    owner: 'ATommyGirl',
+    admin: ['ATommyGirl'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
 
   gitalk.render('gitalk-container')
-  </script>
+</script>
 
-                            
+  
 
 </article>
 </section>
-  <footer class="footer">
+    <footer class="footer">
   <div class="outer">
     <div class="float-right">
       <ul class="list-inline">
   
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
   
-    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2021 迷</li>
+      <li>迷 &copy; 2021</li>
+      
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>
   </div>
 </footer>
-
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
 <nav class="navbar">
   
-    <div class="logo">
-      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-    </div>
+  <div class="logo">
+    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+  </div>
   
   <ul class="nav nav-main">
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
     
     <li class="nav-item">
       <a class="nav-item-link nav-item-search" title="搜索">
@@ -229,9 +220,9 @@
     </li>
     <li class="nav-item">
       
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
       
     </li>
   </ul>
@@ -242,8 +233,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-</aside>
-
+  </aside>
+  
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -256,33 +247,33 @@
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
 
 
-  
+
 <script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-  
+
 <script src="/js/tocbot.min.js"></script>
 
-  <script>
-    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-    tocbot.init({
-      tocSelector: '.tocbot',
-      contentSelector: '.article-entry',
-      headingSelector: 'h1, h2, h3, h4, h5, h6',
-      hasInnerContainers: true,
-      scrollSmooth: true,
-      positionFixedSelector: '.tocbot',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  </script>
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 
 <script src="/js/ocean.js"></script>
 
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+
 </html>

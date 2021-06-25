@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   
@@ -11,13 +12,13 @@
     
     迷</title>
   
-    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
   
   
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
+  
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
@@ -27,52 +28,43 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-<main class="content">
-  <section class="outer">
-  <article id="post-去掉UIWebView底部的黑条" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <main class="content">
+    <section class="outer">
+  <article id="post-去掉UIWebView底部的黑条" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
 
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 class="article-title" itemprop="name">
-      去掉UIWebView底部的黑条
-    </h1>
-  
-  
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
 
+<h1 class="article-title" itemprop="name">
+  去掉UIWebView底部的黑条
+</h1>
 
 
 
-            </header>
-            
+    </header>
+    
 
-                
-                    <div class="article-meta">
-                        <a href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" class="article-date">
+    
+    <div class="article-meta">
+      <a href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" class="article-date">
   <time datetime="2018-12-13T09:24:43.000Z" itemprop="datePublished">2018-12-13</time>
 </a>
-                            
-                    </div>
-                    
+      
+    </div>
+    
 
-                        
-                            
+    
+    
+    
 
-
-
-
-                                
-
-                                    <div class="article-entry" itemprop="articleBody">
-                                        
-
-
-                                            
-
-                                                
-                                                                    <p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
 <a id="more"></a>
 
 <p><img src="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/1.png" alt="图一"></p>
@@ -80,119 +72,118 @@
 <p>看文档里面的注释，发现，我的英文真的不咋地，自己翻译吧。。。。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isOpaque) <span class="built_in">BOOL</span>  opaque;                     </span><br><span class="line"><span class="comment">// default is YES. opaque views must fill their entire bounds or the results are undefined. </span></span><br><span class="line"><span class="comment">//the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels</span></span><br></pre></td></tr></table></figure>
 
-                                                                        
-                                    </div>
-                                    <footer class="article-footer">
-                                        <a data-url="https://atommygirl.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="ckq7x9zfk001e0cku5d7c5unk" class="article-share-link">
-                                            分享
-                                        </a>
-                                        
-                                    </footer>
-
+      
     </div>
-
-    
-        
-  <nav class="article-nav">
-    
-      <a href="/2018/12/27/Warning!PATH-is/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.
-          
-        </div>
+    <footer class="article-footer">
+      <a data-url="https://atommygirl.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="ckqbzlf5n00174jkugl7u6rfq" class="article-share-link">
+        分享
       </a>
-    
-    
-      <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-nav-link">
-        <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">mailcore 2 iOS  之二 SMTP</div>
-      </a>
-    
-  </nav>
+      
+    </footer>
 
+  </div>
 
-            
-
-                
-                    
-                        
-  <div class="gitalk" id="gitalk-container"></div>
   
+  
+<nav class="article-nav">
+  
+  <a href="/2018/12/27/Warning!PATH-is/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">mailcore 2 iOS  之二 SMTP</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
-  
+
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  
+
 <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: 'c0fd3fecc668416852dc',
-      clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-      repo: 'YYBlogGitTalk',
-      owner: 'ATommyGirl',
-      admin: ['ATommyGirl'],
-      // id: location.pathname,      // Ensure uniqueness and length less than 50
-      id: md5(location.pathname),
-      distractionFreeMode: false,  // Facebook-like distraction free mode
-      pagerDirection: 'last'
-    })
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'c0fd3fecc668416852dc',
+    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+    repo: 'YYBlogGitTalk',
+    owner: 'ATommyGirl',
+    admin: ['ATommyGirl'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
 
   gitalk.render('gitalk-container')
-  </script>
+</script>
 
-                            
+  
 
 </article>
 </section>
-  <footer class="footer">
+    <footer class="footer">
   <div class="outer">
     <div class="float-right">
       <ul class="list-inline">
   
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
   
-    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2021 迷</li>
+      <li>迷 &copy; 2021</li>
+      
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>
   </div>
 </footer>
-
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
 <nav class="navbar">
   
-    <div class="logo">
-      <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-    </div>
+  <div class="logo">
+    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+  </div>
   
   <ul class="nav nav-main">
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">Home</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
     
     <li class="nav-item">
       <a class="nav-item-link nav-item-search" title="搜索">
@@ -211,9 +202,9 @@
     </li>
     <li class="nav-item">
       
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
       
     </li>
   </ul>
@@ -224,8 +215,8 @@
   <div id="local-search-result" class="local-search-result"></div>
 </div>
 </div>
-</aside>
-
+  </aside>
+  
 <script src="/js/jquery-2.0.3.min.js"></script>
 
 
@@ -238,33 +229,33 @@
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
 
 
-  
+
 <script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-  
+
 <script src="/js/tocbot.min.js"></script>
 
-  <script>
-    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-    tocbot.init({
-      tocSelector: '.tocbot',
-      contentSelector: '.article-entry',
-      headingSelector: 'h1, h2, h3, h4, h5, h6',
-      hasInnerContainers: true,
-      scrollSmooth: true,
-      positionFixedSelector: '.tocbot',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  </script>
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 
 <script src="/js/ocean.js"></script>
 
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+
 </html>
