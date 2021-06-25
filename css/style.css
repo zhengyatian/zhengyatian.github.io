@@ -2343,10 +2343,13 @@ pre .javascript .function {
 .navbar .nav.nav-main .nav-item:nth-child(2) .nav-item-link::before {
   content: '\f12a';
 }
-.navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
+.navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
   content: '\f1a9';
 }
-.navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
+.navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
+  content: '\f153';
+}
+.navbar .nav.nav-main .nav-item:nth-child(5) .nav-item-link::before {
   content: '\f174';
 }
 .navbar-bottom {
