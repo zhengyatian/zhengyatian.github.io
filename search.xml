@@ -172,36 +172,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GitTalk 404</title>
-    <url>/2021/06/22/GiTalk-404/</url>
-    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
-<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
-<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
-<a id="more"></a>
-
-<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
-<div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
-</center>
-
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
-</center>
-
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
-</center>
-
-
-
-
-
-</div></div></div></div></div>]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo + GitHub Pages 404</title>
     <url>/2017/10/02/GitHub%20Pages%20404/</url>
     <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
@@ -248,20 +218,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
-    <url>/2020/02/14/LaunchImage/</url>
-    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
+    <title>GitTalk 404</title>
+    <url>/2021/06/22/GiTalk-404/</url>
+    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
+<p>这篇文章是要讲解怎么配置 GitTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
+<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GitTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
 <a id="more"></a>
 
-<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
-<p><img src="/2020/02/14/LaunchImage/1.png" alt="LaunchImage Setting.png"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2020/02/14/LaunchImage/flag.jpeg" class width="200"></div>
+<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
+<div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/1.png" class width="200"></div>
 </center>
 
-</div></div>]]></content>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/2.png" class width="200"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2021/06/22/GiTalk-404/3.png" class width="500"></div>
+</center>
+
+
+
+
+
+</div></div></div></div></div>]]></content>
       <tags>
-        <tag>iOS</tag>
+        <tag>7788</tag>
       </tags>
   </entry>
   <entry>
@@ -307,6 +290,23 @@
 ]]></content>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
+    <url>/2020/02/14/LaunchImage/</url>
+    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
+<a id="more"></a>
+
+<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
+<p><img src="/2020/02/14/LaunchImage/1.png" alt="LaunchImage Setting.png"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/02/14/LaunchImage/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -651,32 +651,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
-<a id="more"></a>
-
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>WebView</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
     <url>/2018/12/27/Warning!PATH-is/</url>
     <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
@@ -705,42 +679,29 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS 动态修改状态栏风格</title>
-    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
-    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
-<ul>
-<li>UIStatusBarStyle 的样式</li>
-<li>改变状态栏文字颜色的方式</li>
-<li>状态栏的显示和隐藏</li>
-</ul>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
 <a id="more"></a>
 
-<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
-
-<p>属性，默认为 <code>YES</code>。</p>
-<ul>
-<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
-<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
-</ul>
-<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
-<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
-<li>全局隐藏的话，很简单，直接改配置。</li>
-<li>部分页面隐藏，同上，重写~~</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
+        <tag>WebView</tag>
       </tags>
   </entry>
   <entry>
@@ -790,6 +751,45 @@
       <tags>
         <tag>iOS</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
+
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1018,6 +1018,19 @@
       </tags>
   </entry>
   <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Xcode</tag>
+        <tag>pod</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>绿豆儿没了</title>
     <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
     <content><![CDATA[<center>
@@ -1033,19 +1046,6 @@
 ]]></content>
       <tags>
         <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Xcode</tag>
-        <tag>pod</tag>
       </tags>
   </entry>
   <entry>
