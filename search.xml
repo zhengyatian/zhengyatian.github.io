@@ -294,22 +294,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>URL Loading System 之 NSURLRequest/URLRequest</title>
     <url>/2021/04/19/NSURLRequest/</url>
     <content><![CDATA[<h3 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h3><p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
@@ -341,6 +325,22 @@
       <tags>
         <tag>iOS</tag>
         <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -568,6 +568,32 @@
       </tags>
   </entry>
   <entry>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+<a id="more"></a>
+
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>WebView</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -644,32 +670,6 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">WKHTTPCookieStoreObserver</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)cookiesDidChangeInCookieStore:(<span class="built_in">WKHTTPCookieStore</span> *)cookieStore;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 
 <p>还没写完<del>~</del></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>WebView</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
-<a id="more"></a>
-
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
