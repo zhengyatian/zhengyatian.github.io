@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
+    <url>/2019/08/19/App%20Store%20Connect/</url>
+    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
+<a id="more"></a>
+
+<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
+<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
+<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1Q84中的哲学</title>
     <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
     <content><![CDATA[<ul>
@@ -19,26 +39,6 @@
 ]]></content>
       <tags>
         <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
-    <url>/2019/08/19/App%20Store%20Connect/</url>
-    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
-<a id="more"></a>
-
-<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
-<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
-<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -192,32 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitTalk 404</title>
     <url>/2021/06/22/GiTalk-404/</url>
     <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
@@ -243,6 +217,32 @@
 
 
 </div></div></div></div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
       <tags>
         <tag>7788</tag>
       </tags>
@@ -277,22 +277,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac 下 IDEA 无法启动的问题</title>
-    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-<a id="more"></a>
-
-<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
-<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
     <url>/2020/02/14/LaunchImage/</url>
     <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
@@ -307,6 +291,22 @@
 </div></div>]]></content>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 下 IDEA 无法启动的问题</title>
+    <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
+<blockquote>
+<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
+</blockquote>
+<a id="more"></a>
+
+<p>这样是通过命令行的方式来启动IDEA。<br>仔细看里面的提示，尤其Error开头的信息，应该会有具体原因。</p>
+<p>我的IDEA 使用的“破解版”……you know？ 然后<code>JetbrainsCrack-3.1-release-enc.jar</code> 被我不小心删了，放回原位就好了……</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -506,68 +506,6 @@
       </tags>
   </entry>
   <entry>
-    <title>URL Loading System[译]</title>
-    <url>/2021/04/19/URL%20Loading%20System/</url>
-    <content><![CDATA[<blockquote>
-<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
-<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
-<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
-</blockquote>
-<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
-<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
-<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
-<a id="more"></a>
-
-<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
-<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
-<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
-<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
-<ul>
-<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
-<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
-<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
-</ul>
-<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
-<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
-<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
-<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
-</ul>
-<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
-<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
-<li>Uploading Streams of Data：将数据流发送到服务器。</li>
-</ul>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
-<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
-<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
-<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
-</ul>
-<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
-<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
-<li>CachedURLResponse：对URL请求的缓存响应。</li>
-<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
-</ul>
-<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
-<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
-<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
-<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
-<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
-<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
-</ul>
-<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
-<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
-<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
-</ul>
-<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
-<li>URLError：URL加载API返回的错误代码。</li>
-<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -651,31 +589,65 @@
       </tags>
   </entry>
   <entry>
-    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
-    <url>/2018/12/27/Warning!PATH-is/</url>
-    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
+    <title>URL Loading System[译]</title>
+    <url>/2021/04/19/URL%20Loading%20System/</url>
+    <content><![CDATA[<blockquote>
+<p>Interact with URLs and communicate with servers using standard Internet protocols.</p>
+<p>:与URL交互并使用标准Internet协议与服务器通信。</p>
+<p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
+</blockquote>
+<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
+<p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
+<p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
 <a id="more"></a>
 
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
-<blockquote>
-<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
-</blockquote>
-<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
-
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
-<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
-<blockquote>
-<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
-</blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+<p><img src="/2021/04/19/URL%20Loading%20System/1.png" alt></p>
+<p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
+<p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
+<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
+<ul>
+<li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
+<li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
+<li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
+</ul>
+<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
+<li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
+<li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
+<li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
+</ul>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
+<li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
+<li>Uploading Streams of Data：将数据流发送到服务器。</li>
+</ul>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
+<li>Downloading Files from Websites：直接下载文件到文件系统。</li>
+<li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
+<li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
+</ul>
+<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
+<li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
+<li>CachedURLResponse：对URL请求的缓存响应。</li>
+<li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
+</ul>
+<h4 id="身份验证和凭证"><a href="#身份验证和凭证" class="headerlink" title="身份验证和凭证"></a>身份验证和凭证</h4><ul>
+<li>Handling an Authentication Challenge：当服务器要求对URL请求进行身份验证时，做出适当的响应。</li>
+<li>NSURLAuthenticationChallenge：来自服务器的挑战，要求来自客户端的身份验证。</li>
+<li>NSURLCredential：认证凭证，由特定于凭证类型和要使用的持久性存储类型（如果有）的信息组成。</li>
+<li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
+<li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
+</ul>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
+<li>NSHTTPCookie：HTTP cookie的表示形式。</li>
+<li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
+</ul>
+<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
+<li>URLError：URL加载API返回的错误代码。</li>
+<li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>iOS</tag>
-        <tag>Xcode</tag>
-        <tag>MAC</tag>
-        <tag>pod</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -705,52 +677,31 @@
       </tags>
   </entry>
   <entry>
-    <title>Xcode 11 IPA processing failed 初见</title>
-    <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
-    <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+    <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
+    <url>/2018/12/27/Warning!PATH-is/</url>
+    <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
 <a id="more"></a>
 
-<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
-<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
 <blockquote>
-<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
+<p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
 </blockquote>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
-<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
-<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
+<p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
+
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
+<blockquote>
+<p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
 </blockquote>
-<ul>
-<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
-<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
-<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
-
-<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+]]></content>
       <tags>
         <tag>iOS</tag>
         <tag>Xcode</tag>
+        <tag>MAC</tag>
+        <tag>pod</tag>
       </tags>
   </entry>
   <entry>
@@ -816,6 +767,55 @@
 ]]></content>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Xcode 11 IPA processing failed 初见</title>
+    <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
+    <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+<a id="more"></a>
+
+<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
+<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
+<blockquote>
+<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
+</blockquote>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
+<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
+<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
+</blockquote>
+<ul>
+<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
+<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
+<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
+
+<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -975,6 +975,15 @@
       </tags>
   </entry>
   <entry>
+    <title>昨天</title>
+    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
+    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>吃饭啦</title>
     <url>/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</url>
     <content><![CDATA[<p><img src="/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/0522lunch.jpg" alt></p>
@@ -1009,28 +1018,6 @@
       </tags>
   </entry>
   <entry>
-    <title>昨天</title>
-    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
-    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
-]]></content>
-      <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Xcode</tag>
-        <tag>pod</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绿豆儿没了</title>
     <url>/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/</url>
     <content><![CDATA[<center>
@@ -1059,6 +1046,19 @@
 ]]></content>
       <tags>
         <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/1.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Xcode</tag>
+        <tag>pod</tag>
       </tags>
   </entry>
   <entry>
