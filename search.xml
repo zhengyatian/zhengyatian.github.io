@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
-    <url>/2019/08/19/App%20Store%20Connect/</url>
-    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
-<a id="more"></a>
-
-<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
-<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
-<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1Q84中的哲学</title>
     <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
     <content><![CDATA[<ul>
@@ -39,6 +19,26 @@
 ]]></content>
       <tags>
         <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
+    <url>/2019/08/19/App%20Store%20Connect/</url>
+    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
+<a id="more"></a>
+
+<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
+<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
+<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -172,26 +172,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitTalk 404</title>
     <url>/2021/06/22/GiTalk-404/</url>
     <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GitTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
@@ -217,6 +197,26 @@
 
 
 </div></div></div></div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
       <tags>
         <tag>7788</tag>
       </tags>
@@ -589,6 +589,32 @@
       </tags>
   </entry>
   <entry>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+<a id="more"></a>
+
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>WebView</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>URL Loading System[译]</title>
     <url>/2021/04/19/URL%20Loading%20System/</url>
     <content><![CDATA[<blockquote>
@@ -651,29 +677,52 @@
       </tags>
   </entry>
   <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+    <title>Xcode 11 IPA processing failed 初见</title>
+    <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
+    <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
 <a id="more"></a>
 
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
+<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
+<blockquote>
+<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
+</blockquote>
+<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
+<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
+<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
+</blockquote>
+<ul>
+<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
+<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
+<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
+<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
 
+<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+</center>
 
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
-]]></content>
+</div></div>]]></content>
       <tags>
         <tag>iOS</tag>
-        <tag>WebView</tag>
+        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -770,71 +819,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Xcode 11 IPA processing failed 初见</title>
-    <url>/2020/01/20/Xcode%2011%20IPA%20processing/</url>
-    <content><![CDATA[<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
+    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
+    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
+<blockquote>
+<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
+</blockquote>
+<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
 <a id="more"></a>
 
-<p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
-<p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
-<blockquote>
-<p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
-</blockquote>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
-<h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
-<p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
-</blockquote>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
+<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
 <ul>
-<li><p>1、 进入framework所在的目录（以下的框架名称换成自己的即可）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [your framework path]</span><br></pre></td></tr></table></figure></li>
-<li><p>2、查看SDK的二进制文件支持的CPU架构，如果只显示armv7 arm64，那么就没问题，如果有模拟器的架构x86_64, i386那就是有问题</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>3、移除支持x86_64,i386的二进制文件<br>ps：移除自己对应的类型就可以，这里只是举个例子。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo OAChatClient.framework/OAChatClient -remove x86_64 -remove i386 -output OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>4、用第3步生成的新的可执行文件 替换framwork内部的可执行文件[记得备份]</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv OAChatClient OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure></li>
-<li><p>5、查看我们瘦身后的可执行文件是否正确，显示armv7或arm64，就完成剥离，再打包应该就可以了，啊哈哈哈</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lipo -info OAChatClient.framework/OAChatClient</span><br></pre></td></tr></table></figure>
+<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
 </li>
-<li><p>如果你觉得以上操作比较麻烦，每次模拟器调试和打包还要替换对应的SDK,那么以下方式将更加简便的解决你的问题：<br>buildPhases-&gt;New Run Script Phase添加以下内容</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">APP_PATH=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;WRAPPER_NAME&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This script loops through the frameworks embedded in the application and</span></span><br><span class="line"><span class="comment"># removes unused architectures.</span></span><br><span class="line">find <span class="string">"<span class="variable">$APP_PATH</span>"</span> -name <span class="string">'*.framework'</span> -<span class="built_in">type</span> d | <span class="keyword">while</span> <span class="built_in">read</span> -r FRAMEWORK</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">FRAMEWORK_EXECUTABLE_NAME=$(defaults <span class="built_in">read</span> <span class="string">"<span class="variable">$FRAMEWORK</span>/Info.plist"</span> CFBundleExecutable)</span><br><span class="line">FRAMEWORK_EXECUTABLE_PATH=<span class="string">"<span class="variable">$FRAMEWORK</span>/<span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Executable is <span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line">EXTRACTED_ARCHS=()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ARCH <span class="keyword">in</span> <span class="variable">$ARCHS</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Extracting <span class="variable">$ARCH</span> from <span class="variable">$FRAMEWORK_EXECUTABLE_NAME</span>"</span></span><br><span class="line">lipo -extract <span class="string">"<span class="variable">$ARCH</span>"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span> -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span></span><br><span class="line">EXTRACTED_ARCHS+=(<span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-<span class="variable">$ARCH</span>"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Merging extracted architectures: <span class="variable">$&#123;ARCHS&#125;</span>"</span></span><br><span class="line">lipo -o <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> -create <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$&#123;EXTRACTED_ARCHS[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Replacing original executable with thinned version"</span></span><br><span class="line">rm <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line">mv <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>-merged"</span> <span class="string">"<span class="variable">$FRAMEWORK_EXECUTABLE_PATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
+<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
+<ul>
+<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
+<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
+</ul>
+</li>
+<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
 </li>
 </ul>
-<h3 id="小乌龙"><a href="#小乌龙" class="headerlink" title="小乌龙"></a>小乌龙</h3><p>PS：发现这个问题，是因为想使用人家野火的IM demo，自己打个包，结果就报了上面的问题，按照上面的步骤改完一个framework后，发现，其实野火的工程里，已经写好了脚本（文件：removex86.sh，是不是看名字就知道是干嘛的了），哈哈哈，只需要运行一下就ok了🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓</p>
-<p>这是人家的shell，如果有和我一样的人，一定要注意哦：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Frameworks</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo WFChatUIKit.framework/WFChatUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatUIKit.framework/WFChatUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatUIKit.framework/WFChatUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFAVEngineKit.framework/WFAVEngineKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFAVEngineKit.framework/WFAVEngineKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFAVEngineKit.framework/WFAVEngineKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFChatClient.framework/WFChatClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFChatClient.framework/WFChatClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFChatClient.framework/WFChatClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../WildFireChat/Moments</span><br><span class="line"><span class="comment">#lipo WFMomentClient.framework/WFMomentClient -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentClient.framework/WFMomentClient -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentClient.framework/WFMomentClient</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="comment"># lipo WFMomentUIKit.framework/WFMomentUIKit -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo WFMomentUIKit.framework/WFMomentUIKit -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment"># lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 WFMomentUIKit.framework/WFMomentUIKit</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ../../Frameworks</span><br><span class="line"></span><br><span class="line"><span class="comment">#lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin armv7 -output XXXX_armv7</span></span><br><span class="line">lipo GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC -thin arm64 -output XXXX_arm64</span><br><span class="line"><span class="comment">#lipo -create XXXX_armv7 XXXX_arm64 -output XXXX</span></span><br><span class="line">mv XXXX_arm64 GoogleWebRTC/Frameworks/frameworks/WebRTC.framework/WebRTC</span><br><span class="line">rm -rf XXXX*</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"朋友圈的库如果不存在，脚本会报错误，可以忽略掉！"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行这个脚本后，打包时一定不要打开ios-chat这个项目空间进行打包，因为会重新生成这些被瘦身的库。要打开wfchat这个项目进行打包！"</span></span><br></pre></td></tr></table></figure>
-
-<p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
+<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
+<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
+<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
+<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
+<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
+<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
+<ul>
+<li><p>让美工去掉图片的透明度。</p>
+</li>
+<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
+</li>
+</ul>
+<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
 <div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
 </center>
 
 </div></div>]]></content>
       <tags>
         <tag>iOS</tag>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
-</ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -886,53 +914,6 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
-    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
-    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
-<blockquote>
-<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
-</blockquote>
-<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
-<a id="more"></a>
-
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
-<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
-<ul>
-<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
-</li>
-<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
-<ul>
-<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
-<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
-</ul>
-</li>
-<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
-</li>
-</ul>
-<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
-<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
-<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
-<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
-<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
-<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
-<ul>
-<li><p>让美工去掉图片的透明度。</p>
-</li>
-<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
-</li>
-</ul>
-<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>乌龙 之 我吐了</title>
     <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
     <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
@@ -972,6 +953,25 @@
       <tags>
         <tag>iOS</tag>
         <tag>WebView</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+</ul>
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>

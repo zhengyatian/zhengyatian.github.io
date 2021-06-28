@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://atommygirl.github.io/about/index.html</loc>
+    
+    <lastmod>2021-06-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://atommygirl.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</loc>
+    
+    <lastmod>2021-06-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://atommygirl.github.io/2021/01/06/%E9%9A%90%E5%BF%8D/</loc>
     
     <lastmod>2021-06-28</lastmod>
@@ -10,13 +24,6 @@
   
   <url>
     <loc>https://atommygirl.github.io/2015/08/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/</loc>
-    
-    <lastmod>2021-06-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://atommygirl.github.io/2020/05/22/%E5%90%83%E9%A5%AD%E5%95%A6/</loc>
     
     <lastmod>2021-06-25</lastmod>
     
@@ -129,13 +136,6 @@
   
   <url>
     <loc>https://atommygirl.github.io/gallery/index.html</loc>
-    
-    <lastmod>2021-06-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://atommygirl.github.io/about/index.html</loc>
     
     <lastmod>2021-06-25</lastmod>
     
@@ -284,14 +284,14 @@
 
   
   <url>
-    <loc>https://atommygirl.github.io/tags/iOS/</loc>
+    <loc>https://atommygirl.github.io/tags/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://atommygirl.github.io/tags/%E8%AF%BB%E4%B9%A6/</loc>
+    <loc>https://atommygirl.github.io/tags/iOS/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
