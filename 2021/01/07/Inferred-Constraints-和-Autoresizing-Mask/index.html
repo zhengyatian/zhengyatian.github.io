@@ -1,72 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    Inferred (Constraints) 和 Autoresizing Mask |
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！ 乌龙可用与不可用： ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Inferred (Constraints) 和 Autoresizing Mask">
+<meta property="og:url" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！ 乌龙可用与不可用： ​">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png">
+<meta property="og:image" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png">
+<meta property="og:image" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png">
+<meta property="og:image" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png">
+<meta property="article:published_time" content="2021-01-07T02:37:31.000Z">
+<meta property="article:modified_time" content="2021-02-25T07:42:42.625Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png">
     
-    迷</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <main class="content">
-    <section class="outer">
-  <article id="post-Inferred-Constraints-和-Autoresizing-Mask" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
+<body class="max-width mx-auto px3 ltr">
     
-    <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2021/01/06/%E9%9A%90%E5%BF%8D/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&text=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&is_video=false&description=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Inferred (Constraints) 和 Autoresizing Mask&body=Check out this article: https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&name=Inferred (Constraints) 和 Autoresizing Mask&description=&lt;p&gt;很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！&lt;/p&gt;
+&lt;h5 id=&#34;乌龙&#34;&gt;&lt;a href=&#34;#乌龙&#34; class=&#34;headerlink&#34; title=&#34;乌龙&#34;&gt;&lt;/a&gt;乌龙&lt;/h5&gt;&lt;p&gt;可用与不可用：&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&t=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#乌龙"><span class="toc-number">1.</span> <span class="toc-text">乌龙</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PS-有兴趣可以看看这两个讨论"><span class="toc-number">2.</span> <span class="toc-text">PS: 有兴趣可以看看这两个讨论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PPS-Hexo-里图片并排原来可以这样写……"><span class="toc-number">3.</span> <span class="toc-text">PPS:  Hexo 里图片并排原来可以这样写……</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Inferred (Constraints) 和 Autoresizing Mask
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
       
-
-<h1 class="article-title" itemprop="name">
-  Inferred (Constraints) 和 Autoresizing Mask
-</h1>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" class="article-date">
-  <time datetime="2021-01-07T02:37:31.000Z" itemprop="datePublished">2021-01-07</time>
-</a>
+    <div class="postdate">
+      
+        <time datetime="2021-01-07T02:37:31.000Z" itemprop="datePublished">2021-01-07</time>
+        
       
     </div>
-    
 
-    
-    
-<div class="tocbot"></div>
 
-    
+      
 
-    <div class="article-entry" itemprop="articleBody">
       
-      
-      
-      <p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/" rel="tag">iOS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
 <h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
 <p>​        <a id="more"></a></p>
 <center>
@@ -88,196 +183,169 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" data-id="ckqg8sg6s000cxeku1g22ebqa" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+  </div>
+</article>
 
-    </footer>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#乌龙"><span class="toc-number">1.</span> <span class="toc-text">乌龙</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PS-有兴趣可以看看这两个讨论"><span class="toc-number">2.</span> <span class="toc-text">PS: 有兴趣可以看看这两个讨论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PPS-Hexo-里图片并排原来可以这样写……"><span class="toc-number">3.</span> <span class="toc-text">PPS:  Hexo 里图片并排原来可以这样写……</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&text=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&is_video=false&description=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Inferred (Constraints) 和 Autoresizing Mask&body=Check out this article: https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&title=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&name=Inferred (Constraints) 和 Autoresizing Mask&description=&lt;p&gt;很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！&lt;/p&gt;
+&lt;h5 id=&#34;乌龙&#34;&gt;&lt;a href=&#34;#乌龙&#34; class=&#34;headerlink&#34; title=&#34;乌龙&#34;&gt;&lt;/a&gt;乌龙&lt;/h5&gt;&lt;p&gt;可用与不可用：&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/&t=Inferred (Constraints) 和 Autoresizing Mask" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
 
   </div>
+</div>
 
-  
-  
-<nav class="article-nav">
-  
-  <a href="/2021/01/11/%E7%BB%BF%E8%B1%86%E5%84%BF%E6%B2%A1%E4%BA%86/" class="article-nav-link">
-    <strong class="article-nav-caption">前一篇</strong>
-    <div class="article-nav-title">
-      
-      绿豆儿没了
-      
-    </div>
-  </a>
-  
-  
-  <a href="/2021/01/06/%E9%9A%90%E5%BF%8D/" class="article-nav-link">
-    <strong class="article-nav-caption">后一篇</strong>
-    <div class="article-nav-title">隐忍</div>
-  </a>
-  
-</nav>
-
-  
-
-  
-  
-  
-<div class="gitalk" id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'c0fd3fecc668416852dc',
-    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-    repo: 'YYBlogGitTalk',
-    owner: 'ATommyGirl',
-    admin: ['ATommyGirl'],
-    // id: location.pathname,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname),
-    distractionFreeMode: false,  // Facebook-like distraction free mode
-    pagerDirection: 'last'
-  })
-
-  gitalk.render('gitalk-container')
-</script>
-
-  
-
-</article>
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>迷 &copy; 2021</li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
-    </ul>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-  <div class="logo">
-    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">相册</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
-<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-<script src="/js/lazyload.min.js"></script>
+<!-- Google Analytics -->
 
+<!-- Baidu Analytics -->
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
 
+<!-- Disqus Comments -->
 
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        var disqus_shortname = 'YYLittleCat';
 
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
-
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-  });
-</script>
-
-
-
-<script src="/js/ocean.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
-
 </html>

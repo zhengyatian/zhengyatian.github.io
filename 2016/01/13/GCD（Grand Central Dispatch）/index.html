@@ -1,72 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    GCD (Grand Central Dispatch) |
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="转载自 戴铭老师 文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。  文中的Demo在这里 https:&#x2F;&#x2F;github.com&#x2F;ming1016&#x2F;GCDDemo 对着文章试着来调demo体会更深哦，细细嚼消化好🤓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GCD (Grand Central Dispatch)">
+<meta property="og:url" content="https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="转载自 戴铭老师 文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。  文中的Demo在这里 https:&#x2F;&#x2F;github.com&#x2F;ming1016&#x2F;GCDDemo 对着文章试着来调demo体会更深哦，细细嚼消化好🤓">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-01-13T14:20:34.000Z">
+<meta property="article:modified_time" content="2020-06-02T08:39:27.033Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
     
-    迷</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>GCD (Grand Central Dispatch)</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <main class="content">
-    <section class="outer">
-  <article id="post-GCD（Grand Central Dispatch）" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
+<body class="max-width mx-auto px3 ltr">
     
-    <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2015/08/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&text=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&is_video=false&description=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=GCD (Grand Central Dispatch)&body=Check out this article: https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&name=GCD (Grand Central Dispatch)&description=&lt;p&gt;转载自 &lt;a href=&#34;https://github.com/ming1016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;戴铭老师&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。 &lt;/p&gt;
+&lt;p&gt;文中的Demo在这里 &lt;a href=&#34;https://github.com/ming1016/GCDDemo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ming1016/GCDDemo&lt;/a&gt; 对着文章试着来调demo体会更深哦，细细嚼消化好🤓&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&t=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GCD概要"><span class="toc-number">1.</span> <span class="toc-text">GCD概要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、-系统标准两个队列"><span class="toc-number">1.1.1.</span> <span class="toc-text">一、 系统标准两个队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、自定义队列"><span class="toc-number">1.1.2.</span> <span class="toc-text">二、自定义队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、同步异步线程创建"><span class="toc-number">1.1.3.</span> <span class="toc-text">三、同步异步线程创建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列（dispatch-queue）"><span class="toc-number">2.</span> <span class="toc-text">队列（dispatch queue）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">2.1.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、dispatch-get-global-queue"><span class="toc-number">2.1.1.</span> <span class="toc-text">一、dispatch_get_global_queue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、dispatch-queue-create"><span class="toc-number">2.1.2.</span> <span class="toc-text">二、dispatch_queue_create</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、队列优先级"><span class="toc-number">2.1.3.</span> <span class="toc-text">三、队列优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列类型"><span class="toc-number">2.2.</span> <span class="toc-text">队列类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、5种队列"><span class="toc-number">2.2.1.</span> <span class="toc-text">一、5种队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、何时使用何种队列类型"><span class="toc-number">2.2.2.</span> <span class="toc-text">二、何时使用何种队列类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、QoS等级参数的写法"><span class="toc-number">2.2.3.</span> <span class="toc-text">三、QoS等级参数的写法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单使用和介绍"><span class="toc-number">3.1.</span> <span class="toc-text">简单使用和介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、dispatch-once用法"><span class="toc-number">3.1.1.</span> <span class="toc-text">一、dispatch_once用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、dispatch-async"><span class="toc-number">3.1.2.</span> <span class="toc-text">二、dispatch_async</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、dispatch-after延后执行"><span class="toc-number">3.1.3.</span> <span class="toc-text">三、dispatch_after延后执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、dispatch-barrier-async使用Barrier-Task方法"><span class="toc-number">3.1.4.</span> <span class="toc-text">四、dispatch_barrier_async使用Barrier Task方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、dispatch-apply进行快速迭代"><span class="toc-number">3.1.5.</span> <span class="toc-text">五、dispatch_apply进行快速迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、Block组合Dispatch-groups"><span class="toc-number">3.1.6.</span> <span class="toc-text">六、Block组合Dispatch_groups</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、Dispatch-Block"><span class="toc-number">3.1.7.</span> <span class="toc-text">七、Dispatch Block</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dispatch-block-t-创建block"><span class="toc-number">3.1.7.1.</span> <span class="toc-text">dispatch_block_t 创建block</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#dispatch-block-notify"><span class="toc-number">3.1.7.2.</span> <span class="toc-text">dispatch_block_notify</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用dispatch-block-object（调度块）在任务执行前进行取消"><span class="toc-number">3.1.7.3.</span> <span class="toc-text">使用dispatch block object（调度块）在任务执行前进行取消</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、Dispatch-Source-用GCD监视进程"><span class="toc-number">3.1.8.</span> <span class="toc-text">九、Dispatch Source 用GCD监视进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、Dispatch-Semaphore和的介绍"><span class="toc-number">3.1.9.</span> <span class="toc-text">十、Dispatch Semaphore和的介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十一、锁"><span class="toc-number">3.1.10.</span> <span class="toc-text">十一、锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十二、dispatch-suspend和dispatch-resume挂起和恢复队列"><span class="toc-number">3.1.11.</span> <span class="toc-text">十二、dispatch_suspend和dispatch_resume挂起和恢复队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十三、dispatch-set-context和dispatch-get-context"><span class="toc-number">3.1.12.</span> <span class="toc-text">十三、dispatch_set_context和dispatch_get_context</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCD深入操作"><span class="toc-number">4.</span> <span class="toc-text">GCD深入操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GCD死锁"><span class="toc-number">4.1.</span> <span class="toc-text">GCD死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GCD实际使用"><span class="toc-number">4.2.</span> <span class="toc-text">GCD实际使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS系统版本新特性"><span class="toc-number">5.</span> <span class="toc-text">iOS系统版本新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS8"><span class="toc-number">5.1.</span> <span class="toc-text">iOS8</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        GCD (Grand Central Dispatch)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
       
-
-<h1 class="article-title" itemprop="name">
-  GCD (Grand Central Dispatch)
-</h1>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" class="article-date">
-  <time datetime="2016-01-13T14:20:34.000Z" itemprop="datePublished">2016-01-13</time>
-</a>
+    <div class="postdate">
+      
+        <time datetime="2016-01-13T14:20:34.000Z" itemprop="datePublished">2016-01-13</time>
+        
       
     </div>
-    
 
-    
-    
-<div class="tocbot"></div>
 
-    
+      
 
-    <div class="article-entry" itemprop="articleBody">
       
-      
-      
-      <p>转载自 <a href="https://github.com/ming1016" target="_blank" rel="noopener">戴铭老师</a></p>
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/" rel="tag">iOS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>转载自 <a href="https://github.com/ming1016" target="_blank" rel="noopener">戴铭老师</a></p>
 <p>文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。 </p>
 <p>文中的Demo在这里 <a href="https://github.com/ming1016/GCDDemo" target="_blank" rel="noopener">https://github.com/ming1016/GCDDemo</a> 对着文章试着来调demo体会更深哦，细细嚼消化好🤓</p>
 <a id="more"></a>
@@ -518,196 +608,169 @@
 </tr>
 </tbody></table>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" data-id="ckqg8sg9g002yxekuf4qbavmy" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+  </div>
+</article>
 
-    </footer>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GCD概要"><span class="toc-number">1.</span> <span class="toc-text">GCD概要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、-系统标准两个队列"><span class="toc-number">1.1.1.</span> <span class="toc-text">一、 系统标准两个队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、自定义队列"><span class="toc-number">1.1.2.</span> <span class="toc-text">二、自定义队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、同步异步线程创建"><span class="toc-number">1.1.3.</span> <span class="toc-text">三、同步异步线程创建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列（dispatch-queue）"><span class="toc-number">2.</span> <span class="toc-text">队列（dispatch queue）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">2.1.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、dispatch-get-global-queue"><span class="toc-number">2.1.1.</span> <span class="toc-text">一、dispatch_get_global_queue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、dispatch-queue-create"><span class="toc-number">2.1.2.</span> <span class="toc-text">二、dispatch_queue_create</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、队列优先级"><span class="toc-number">2.1.3.</span> <span class="toc-text">三、队列优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列类型"><span class="toc-number">2.2.</span> <span class="toc-text">队列类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、5种队列"><span class="toc-number">2.2.1.</span> <span class="toc-text">一、5种队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、何时使用何种队列类型"><span class="toc-number">2.2.2.</span> <span class="toc-text">二、何时使用何种队列类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、QoS等级参数的写法"><span class="toc-number">2.2.3.</span> <span class="toc-text">三、QoS等级参数的写法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单使用和介绍"><span class="toc-number">3.1.</span> <span class="toc-text">简单使用和介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、dispatch-once用法"><span class="toc-number">3.1.1.</span> <span class="toc-text">一、dispatch_once用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、dispatch-async"><span class="toc-number">3.1.2.</span> <span class="toc-text">二、dispatch_async</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、dispatch-after延后执行"><span class="toc-number">3.1.3.</span> <span class="toc-text">三、dispatch_after延后执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、dispatch-barrier-async使用Barrier-Task方法"><span class="toc-number">3.1.4.</span> <span class="toc-text">四、dispatch_barrier_async使用Barrier Task方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、dispatch-apply进行快速迭代"><span class="toc-number">3.1.5.</span> <span class="toc-text">五、dispatch_apply进行快速迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、Block组合Dispatch-groups"><span class="toc-number">3.1.6.</span> <span class="toc-text">六、Block组合Dispatch_groups</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、Dispatch-Block"><span class="toc-number">3.1.7.</span> <span class="toc-text">七、Dispatch Block</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dispatch-block-t-创建block"><span class="toc-number">3.1.7.1.</span> <span class="toc-text">dispatch_block_t 创建block</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#dispatch-block-notify"><span class="toc-number">3.1.7.2.</span> <span class="toc-text">dispatch_block_notify</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用dispatch-block-object（调度块）在任务执行前进行取消"><span class="toc-number">3.1.7.3.</span> <span class="toc-text">使用dispatch block object（调度块）在任务执行前进行取消</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、Dispatch-Source-用GCD监视进程"><span class="toc-number">3.1.8.</span> <span class="toc-text">九、Dispatch Source 用GCD监视进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十、Dispatch-Semaphore和的介绍"><span class="toc-number">3.1.9.</span> <span class="toc-text">十、Dispatch Semaphore和的介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十一、锁"><span class="toc-number">3.1.10.</span> <span class="toc-text">十一、锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十二、dispatch-suspend和dispatch-resume挂起和恢复队列"><span class="toc-number">3.1.11.</span> <span class="toc-text">十二、dispatch_suspend和dispatch_resume挂起和恢复队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十三、dispatch-set-context和dispatch-get-context"><span class="toc-number">3.1.12.</span> <span class="toc-text">十三、dispatch_set_context和dispatch_get_context</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCD深入操作"><span class="toc-number">4.</span> <span class="toc-text">GCD深入操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GCD死锁"><span class="toc-number">4.1.</span> <span class="toc-text">GCD死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GCD实际使用"><span class="toc-number">4.2.</span> <span class="toc-text">GCD实际使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS系统版本新特性"><span class="toc-number">5.</span> <span class="toc-text">iOS系统版本新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS8"><span class="toc-number">5.1.</span> <span class="toc-text">iOS8</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&text=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&is_video=false&description=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=GCD (Grand Central Dispatch)&body=Check out this article: https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&title=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&name=GCD (Grand Central Dispatch)&description=&lt;p&gt;转载自 &lt;a href=&#34;https://github.com/ming1016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;戴铭老师&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。 &lt;/p&gt;
+&lt;p&gt;文中的Demo在这里 &lt;a href=&#34;https://github.com/ming1016/GCDDemo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ming1016/GCDDemo&lt;/a&gt; 对着文章试着来调demo体会更深哦，细细嚼消化好🤓&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/&t=GCD (Grand Central Dispatch)" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
 
   </div>
+</div>
 
-  
-  
-<nav class="article-nav">
-  
-  <a href="/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" class="article-nav-link">
-    <strong class="article-nav-caption">前一篇</strong>
-    <div class="article-nav-title">
-      
-      iOS编码规范总结
-      
-    </div>
-  </a>
-  
-  
-  <a href="/2015/08/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
-    <strong class="article-nav-caption">后一篇</strong>
-    <div class="article-nav-title">HTTP 的一点儿小知识</div>
-  </a>
-  
-</nav>
-
-  
-
-  
-  
-  
-<div class="gitalk" id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'c0fd3fecc668416852dc',
-    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-    repo: 'YYBlogGitTalk',
-    owner: 'ATommyGirl',
-    admin: ['ATommyGirl'],
-    // id: location.pathname,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname),
-    distractionFreeMode: false,  // Facebook-like distraction free mode
-    pagerDirection: 'last'
-  })
-
-  gitalk.render('gitalk-container')
-</script>
-
-  
-
-</article>
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>迷 &copy; 2021</li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
-    </ul>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-  <div class="logo">
-    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">相册</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
-<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-<script src="/js/lazyload.min.js"></script>
+<!-- Google Analytics -->
 
+<!-- Baidu Analytics -->
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
 
+<!-- Disqus Comments -->
 
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        var disqus_shortname = 'YYLittleCat';
 
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
-
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-  });
-</script>
-
-
-
-<script src="/js/ocean.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
-
 </html>

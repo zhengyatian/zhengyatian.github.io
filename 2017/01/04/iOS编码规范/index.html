@@ -1,72 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    iOS编码规范总结 |
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="一、空格在适当的地方、适当地加空格、可以适当地提高代码可读性你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS编码规范总结">
+<meta property="og:url" content="https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="一、空格在适当的地方、适当地加空格、可以适当地提高代码可读性你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/1.png">
+<meta property="article:published_time" content="2017-01-04T06:25:06.000Z">
+<meta property="article:modified_time" content="2021-04-20T09:57:42.767Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/1.png">
     
-    迷</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>iOS编码规范总结</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <main class="content">
-    <section class="outer">
-  <article id="post-iOS编码规范" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
+<body class="max-width mx-auto px3 ltr">
     
-    <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2017/10/02/GitHub%20Pages%20404/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&text=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&is_video=false&description=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS编码规范总结&body=Check out this article: https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&name=iOS编码规范总结&description=&lt;h3 id=&#34;一、空格&#34;&gt;&lt;a href=&#34;#一、空格&#34; class=&#34;headerlink&#34; title=&#34;一、空格&#34;&gt;&lt;/a&gt;一、空格&lt;/h3&gt;&lt;h4 id=&#34;在适当的地方、适当地加空格、可以适当地提高代码可读性&#34;&gt;&lt;a href=&#34;#在适当的地方、适当地加空格、可以适当地提高代码可读性&#34; class=&#34;headerlink&#34; title=&#34;在适当的地方、适当地加空格、可以适当地提高代码可读性&#34;&gt;&lt;/a&gt;在适当的地方、适当地加空格、可以适当地提高代码可读性&lt;/h4&gt;&lt;p&gt;你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“&lt;/p&gt;" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&t=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、空格"><span class="toc-number">1.</span> <span class="toc-text">一、空格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在适当的地方、适当地加空格、可以适当地提高代码可读性"><span class="toc-number">1.1.</span> <span class="toc-text">在适当的地方、适当地加空格、可以适当地提高代码可读性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、计时器"><span class="toc-number">2.</span> <span class="toc-text">二、计时器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NSTimer-替换为dispatch-source-timer"><span class="toc-number">2.1.</span> <span class="toc-text">NSTimer 替换为dispatch source timer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、URL字符串解析"><span class="toc-number">3.</span> <span class="toc-text">三、URL字符串解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><span class="toc-number">3.1.</span> <span class="toc-text">分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、-枚举"><span class="toc-number">4.</span> <span class="toc-text">四、 枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通枚举"><span class="toc-number">4.1.</span> <span class="toc-text">普通枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、C-语言的枚举写法-enum"><span class="toc-number">4.1.1.</span> <span class="toc-text">1、C 语言的枚举写法 enum</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、OC-整型枚举"><span class="toc-number">4.1.2.</span> <span class="toc-text">2、OC 整型枚举</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、字符串枚举实现方案"><span class="toc-number">4.1.3.</span> <span class="toc-text">3、字符串枚举实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、基于普通枚举，C-语言实现"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">1、基于普通枚举，C 语言实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、宏定义"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">2、宏定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、苹果官方的做法"><span class="toc-number">4.1.3.3.</span> <span class="toc-text">3、苹果官方的做法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#位移枚举"><span class="toc-number">4.2.</span> <span class="toc-text">位移枚举</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        iOS编码规范总结
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
       
-
-<h1 class="article-title" itemprop="name">
-  iOS编码规范总结
-</h1>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" class="article-date">
-  <time datetime="2017-01-04T06:25:06.000Z" itemprop="datePublished">2017-01-04</time>
-</a>
+    <div class="postdate">
+      
+        <time datetime="2017-01-04T06:25:06.000Z" itemprop="datePublished">2017-01-04</time>
+        
       
     </div>
-    
 
-    
-    
-<div class="tocbot"></div>
 
-    
+      
 
-    <div class="article-entry" itemprop="articleBody">
       
-      
-      
-      <h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/" rel="tag">iOS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="一、空格"><a href="#一、空格" class="headerlink" title="一、空格"></a>一、空格</h3><h4 id="在适当的地方、适当地加空格、可以适当地提高代码可读性"><a href="#在适当的地方、适当地加空格、可以适当地提高代码可读性" class="headerlink" title="在适当的地方、适当地加空格、可以适当地提高代码可读性"></a>在适当的地方、适当地加空格、可以适当地提高代码可读性</h4><p>你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“</p>
 <a id="more"></a>
 
 <p>为了避免博客风格影响视觉，直接上图片吧。其实我不知道是不是有这样明确的编码规范，我只是看苹果的怎么写，我就怎么写，下面也只是举一些简单的例子。</p>
@@ -118,196 +208,167 @@
 <p><strong>相比会产生过多二进制文件的宏定义方式, 建议用FOUNDATION_EXPORT</strong></p>
 <h4 id="位移枚举"><a href="#位移枚举" class="headerlink" title="位移枚举"></a>位移枚举</h4><p>==</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" data-id="ckqg8sg86002pxekucu7hg4lc" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+  </div>
+</article>
 
-    </footer>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、空格"><span class="toc-number">1.</span> <span class="toc-text">一、空格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在适当的地方、适当地加空格、可以适当地提高代码可读性"><span class="toc-number">1.1.</span> <span class="toc-text">在适当的地方、适当地加空格、可以适当地提高代码可读性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、计时器"><span class="toc-number">2.</span> <span class="toc-text">二、计时器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NSTimer-替换为dispatch-source-timer"><span class="toc-number">2.1.</span> <span class="toc-text">NSTimer 替换为dispatch source timer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、URL字符串解析"><span class="toc-number">3.</span> <span class="toc-text">三、URL字符串解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><span class="toc-number">3.1.</span> <span class="toc-text">分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、-枚举"><span class="toc-number">4.</span> <span class="toc-text">四、 枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通枚举"><span class="toc-number">4.1.</span> <span class="toc-text">普通枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、C-语言的枚举写法-enum"><span class="toc-number">4.1.1.</span> <span class="toc-text">1、C 语言的枚举写法 enum</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、OC-整型枚举"><span class="toc-number">4.1.2.</span> <span class="toc-text">2、OC 整型枚举</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、字符串枚举实现方案"><span class="toc-number">4.1.3.</span> <span class="toc-text">3、字符串枚举实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、基于普通枚举，C-语言实现"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">1、基于普通枚举，C 语言实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、宏定义"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">2、宏定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、苹果官方的做法"><span class="toc-number">4.1.3.3.</span> <span class="toc-text">3、苹果官方的做法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#位移枚举"><span class="toc-number">4.2.</span> <span class="toc-text">位移枚举</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&text=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&is_video=false&description=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS编码规范总结&body=Check out this article: https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&title=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&name=iOS编码规范总结&description=&lt;h3 id=&#34;一、空格&#34;&gt;&lt;a href=&#34;#一、空格&#34; class=&#34;headerlink&#34; title=&#34;一、空格&#34;&gt;&lt;/a&gt;一、空格&lt;/h3&gt;&lt;h4 id=&#34;在适当的地方、适当地加空格、可以适当地提高代码可读性&#34;&gt;&lt;a href=&#34;#在适当的地方、适当地加空格、可以适当地提高代码可读性&#34; class=&#34;headerlink&#34; title=&#34;在适当的地方、适当地加空格、可以适当地提高代码可读性&#34;&gt;&lt;/a&gt;在适当的地方、适当地加空格、可以适当地提高代码可读性&lt;/h4&gt;&lt;p&gt;你一定读过”紧凑型”的代码，一个字符挨着一个字符，如果不是会报错，可能类名和变量名之间都没有空格了。我之前认为吝啬空格的人是不是都生活的很纠结或者很没条理，明明可以豁达一些。但现在他们改变了我，”谁又能知道呢，毕竟人不能从表象就能分析透彻，也许他只是单纯的    懒   。。。。。。“&lt;/p&gt;" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2017/01/04/iOS%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/&t=iOS编码规范总结" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
 
   </div>
+</div>
 
-  
-  
-<nav class="article-nav">
-  
-  <a href="/2017/10/02/GitHub%20Pages%20404/" class="article-nav-link">
-    <strong class="article-nav-caption">前一篇</strong>
-    <div class="article-nav-title">
-      
-      Hexo + GitHub Pages 404
-      
-    </div>
-  </a>
-  
-  
-  <a href="/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" class="article-nav-link">
-    <strong class="article-nav-caption">后一篇</strong>
-    <div class="article-nav-title">GCD (Grand Central Dispatch)</div>
-  </a>
-  
-</nav>
-
-  
-
-  
-  
-  
-<div class="gitalk" id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'c0fd3fecc668416852dc',
-    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-    repo: 'YYBlogGitTalk',
-    owner: 'ATommyGirl',
-    admin: ['ATommyGirl'],
-    // id: location.pathname,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname),
-    distractionFreeMode: false,  // Facebook-like distraction free mode
-    pagerDirection: 'last'
-  })
-
-  gitalk.render('gitalk-container')
-</script>
-
-  
-
-</article>
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>迷 &copy; 2021</li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
-    </ul>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-  <div class="logo">
-    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">相册</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
-<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-<script src="/js/lazyload.min.js"></script>
+<!-- Google Analytics -->
 
+<!-- Baidu Analytics -->
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
 
+<!-- Disqus Comments -->
 
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        var disqus_shortname = 'YYLittleCat';
 
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
-
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-  });
-</script>
-
-
-
-<script src="/js/ocean.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
-
 </html>

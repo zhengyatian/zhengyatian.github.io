@@ -1,72 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    Server-Sent Events / EventSource |
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="背景​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。 ​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Server-Sent Events &#x2F; EventSource">
+<meta property="og:url" content="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="背景​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。 ​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/SSE.jpg">
+<meta property="article:published_time" content="2021-02-19T09:26:12.000Z">
+<meta property="article:modified_time" content="2021-04-20T09:58:15.660Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/SSE.jpg">
     
-    迷</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Server-Sent Events / EventSource</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <main class="content">
-    <section class="outer">
-  <article id="post-Server-Sent Events" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
+<body class="max-width mx-auto px3 ltr">
     
-    <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2021/04/15/%E6%98%A8%E5%A4%A9/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2021/02/07/UIDocumentInteractionController/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
+&lt;p&gt;​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-Sent-Events"><span class="toc-number">2.</span> <span class="toc-text">Server-Sent Events</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSE-本质"><span class="toc-number">2.1.</span> <span class="toc-text">SSE 本质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSE-特点"><span class="toc-number">2.2.</span> <span class="toc-text">SSE 特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventSource"><span class="toc-number">3.</span> <span class="toc-text">EventSource</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">3.1.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#message"><span class="toc-number">3.2.</span> <span class="toc-text">message</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#data-数据内容"><span class="toc-number">3.2.1.</span> <span class="toc-text">data 数据内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#id-数据标识"><span class="toc-number">3.2.2.</span> <span class="toc-text">id 数据标识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#event-自定义的事件类型"><span class="toc-number">3.2.3.</span> <span class="toc-text">event 自定义的事件类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#retry-重连间隔"><span class="toc-number">3.2.4.</span> <span class="toc-text">retry 重连间隔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS-实现"><span class="toc-number">4.</span> <span class="toc-text">iOS 实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟测试"><span class="toc-number">5.</span> <span class="toc-text">模拟测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习资料"><span class="toc-number">6.</span> <span class="toc-text">学习资料</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Server-Sent Events / EventSource
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
       
-
-<h1 class="article-title" itemprop="name">
-  Server-Sent Events / EventSource
-</h1>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2021/02/19/Server-Sent%20Events/" class="article-date">
-  <time datetime="2021-02-19T09:26:12.000Z" itemprop="datePublished">2021-02-19</time>
-</a>
+    <div class="postdate">
+      
+        <time datetime="2021-02-19T09:26:12.000Z" itemprop="datePublished">2021-02-19</time>
+        
       
     </div>
-    
 
-    
-    
-<div class="tocbot"></div>
 
-    
+      
 
-    <div class="article-entry" itemprop="articleBody">
       
-      
-      
-      <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/" rel="tag">iOS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。</p>
 <p>​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？</p>
 <a id="more"></a>
 
@@ -154,196 +245,168 @@
 
 <h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/server-sent_events.html" target="_blank" rel="noopener">阮一峰</a></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" data-id="ckqg8sg70000nxeku4fy55tg9" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+  </div>
+</article>
 
-    </footer>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-Sent-Events"><span class="toc-number">2.</span> <span class="toc-text">Server-Sent Events</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSE-本质"><span class="toc-number">2.1.</span> <span class="toc-text">SSE 本质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSE-特点"><span class="toc-number">2.2.</span> <span class="toc-text">SSE 特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventSource"><span class="toc-number">3.</span> <span class="toc-text">EventSource</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">3.1.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#message"><span class="toc-number">3.2.</span> <span class="toc-text">message</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#data-数据内容"><span class="toc-number">3.2.1.</span> <span class="toc-text">data 数据内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#id-数据标识"><span class="toc-number">3.2.2.</span> <span class="toc-text">id 数据标识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#event-自定义的事件类型"><span class="toc-number">3.2.3.</span> <span class="toc-text">event 自定义的事件类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#retry-重连间隔"><span class="toc-number">3.2.4.</span> <span class="toc-text">retry 重连间隔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS-实现"><span class="toc-number">4.</span> <span class="toc-text">iOS 实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟测试"><span class="toc-number">5.</span> <span class="toc-text">模拟测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习资料"><span class="toc-number">6.</span> <span class="toc-text">学习资料</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
+&lt;p&gt;​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
 
   </div>
+</div>
 
-  
-  
-<nav class="article-nav">
-  
-  <a href="/2021/04/15/%E6%98%A8%E5%A4%A9/" class="article-nav-link">
-    <strong class="article-nav-caption">前一篇</strong>
-    <div class="article-nav-title">
-      
-      昨天
-      
-    </div>
-  </a>
-  
-  
-  <a href="/2021/02/07/UIDocumentInteractionController/" class="article-nav-link">
-    <strong class="article-nav-caption">后一篇</strong>
-    <div class="article-nav-title">UIDocumentInteractionController</div>
-  </a>
-  
-</nav>
-
-  
-
-  
-  
-  
-<div class="gitalk" id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'c0fd3fecc668416852dc',
-    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
-    repo: 'YYBlogGitTalk',
-    owner: 'ATommyGirl',
-    admin: ['ATommyGirl'],
-    // id: location.pathname,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname),
-    distractionFreeMode: false,  // Facebook-like distraction free mode
-    pagerDirection: 'last'
-  })
-
-  gitalk.render('gitalk-container')
-</script>
-
-  
-
-</article>
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>迷 &copy; 2021</li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
-    </ul>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-  <div class="logo">
-    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">相册</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
-<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-<script src="/js/lazyload.min.js"></script>
+<!-- Google Analytics -->
 
+<!-- Baidu Analytics -->
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
 
+<!-- Disqus Comments -->
 
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        var disqus_shortname = 'YYLittleCat';
 
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
 
-
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-  });
-</script>
-
-
-
-<script src="/js/ocean.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
-
 </html>

@@ -1,770 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="迷">
+<meta property="og:url" content="https://atommygirl.github.io/page/3/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="YYLittleCat">
+<meta name="twitter:card" content="summary">
     
-    迷</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>迷</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <main class="content">
-    <section class="jumbotron">
-  <div class="video">
+<body class="max-width mx-auto px3 ltr">
     
-    <div class="video-frame">
-      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+    <div class="content index py4">
+        
+          <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/myicon.jpg);"></div>
+    
+  
+    <div id="title">
+      <h1>迷</h1>
     </div>
-    
-    <div class="video-media">
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/ocean.png"
-        x5-video-player-type="h5">
-        <source src="/images/ocean/ocean.mp4" type="video/mp4">
-        <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="/">迷</a></h1>
-      <p>喜欢吃橘子🍊，因为不用洗。🤓</p>
-      <div><img src="/images/mini-icon.svg" class="brand" alt="迷"></div>
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
-    </div>
-  </div>
-</section>
-<div id="landingpage">
-  <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
-    
-    
-    <article id="post-Xcode 11 IPA processing" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/archives">归档</a></li>
+       
+        <li><a href="/tags">标签</a></li>
+       
+        <li><a href="/gallery">相册</a></li>
+       
+        <li><a href="/about">关于</a></li>
+       
+        <li><a href="/search">搜索</a></li>
       
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/01/20/Xcode%2011%20IPA%20processing/">Xcode 11 IPA processing failed 初见</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/01/20/Xcode%2011%20IPA%20processing/" class="article-date">
-  <time datetime="2020-01-20T10:23:00.000Z" itemprop="datePublished">2020-01-20</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
-      
-      <a class="article-more-link" href="/2020/01/20/Xcode%2011%20IPA%20processing/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2020/01/20/Xcode%2011%20IPA%20processing/" data-id="ckqg8sg760011xekuf7pfhp29" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-iOS13 适配注意点" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/">iOS13 适配注意点</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/" class="article-date">
-  <time datetime="2019-11-05T08:47:04.000Z" itemprop="datePublished">2019-11-05</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
-      
-      <a class="article-more-link" href="/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="ckqg8sg7a0015xekubjwb9jpi" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-App Store Connect" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/08/19/App%20Store%20Connect/">iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2019/08/19/App%20Store%20Connect/" class="article-date">
-  <time datetime="2019-08-19T10:13:21.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
-      
-      <a class="article-more-link" href="/2019/08/19/App%20Store%20Connect/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2019/08/19/App%20Store%20Connect/" data-id="ckqg8sg6h0002xekugbvi5r3x" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-上线 AppStore" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/">iOS上线 AppStore - 打包、upload 时遇到的问题</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/" class="article-date">
-  <time datetime="2019-08-19T09:52:53.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>iOS打包上线遇到的问题记录和解决办法：</p>
-<blockquote>
-<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
-</blockquote>
-<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
-      
-      <a class="article-more-link" href="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/" data-id="ckqg8sg7e001cxekuf5af6hwk" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-Mac下IDEA无法启动的问题" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/">Mac 下 IDEA 无法启动的问题</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2019-01-24T10:00:46.000Z" itemprop="datePublished">2019-01-24</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
-<blockquote>
-<p>打开finder-&gt;应用程序-&gt;idea.app-&gt;右键-&gt;显示包内容-&gt;然后MaxOS-&gt;双击shell脚本（idea）</p>
-</blockquote>
-      
-      <a class="article-more-link" href="/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="ckqg8sg6x000ixeku9sssapjv" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-Warning!PATH-is" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/12/27/Warning!PATH-is/">Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2018/12/27/Warning!PATH-is/" class="article-date">
-  <time datetime="2018-12-27T02:23:00.000Z" itemprop="datePublished">2018-12-27</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
-      
-      <a class="article-more-link" href="/2018/12/27/Warning!PATH-is/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2018/12/27/Warning!PATH-is/" data-id="ckqg8sg75000zxeku53818x4a" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/" rel="tag">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pod/" rel="tag">pod</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-去掉UIWebView底部的黑条" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/">去掉UIWebView底部的黑条</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" class="article-date">
-  <time datetime="2018-12-13T09:24:43.000Z" itemprop="datePublished">2018-12-13</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
-      
-      <a class="article-more-link" href="/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/" data-id="ckqg8sg7g001hxekuh4d09mow" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebView/" rel="tag">WebView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-mailcore2-iOS之二SMTP" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/">mailcore 2 iOS  之二 SMTP</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" class="article-date">
-  <time datetime="2018-12-12T01:50:22.000Z" itemprop="datePublished">2018-12-12</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
-<p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，</p>
-<p>希望对你们有帮助，也做个沟通交流。</p>
-<ul>
-<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
-</li>
-<li><p>SMTP</p></li></ul>
-      
-      <a class="article-more-link" href="/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/" data-id="ckqg8sg7d001axeku62lkdev3" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-Hexo文字中如何插入图片" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">Hexo 文字中如何插入图片</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-date">
-  <time datetime="2018-02-22T02:58:34.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-      
-      <a class="article-more-link" href="/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" data-id="ckqg8sg6u000dxekuf0puddtg" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/7788/" rel="tag">7788</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-    <article id="post-mailcore2-iOS之一IMAP" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/">mailcore 2  iOS  之一 IMAP</a>
-</h2>
-
-
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/" class="article-date">
-  <time datetime="2018-02-02T05:50:22.000Z" itemprop="datePublished">2018-02-02</time>
-</a>
-      
-    </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-      <p>公司开发oa中的邮箱，资源限制，最后iOS开发采用的mailcore2-ios框架。研究的不深，只当做个分享，口条不好，凑合看吧。</p>
-<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我直接用的cocoapods，非常方便，只是资源包大了一点，耐心等待就好了，其他方式没试过。<br><code>pod &#39;mailcore2-ios&#39;</code></p>
-<p><a href="https://github.com/MailCore/mailcore2" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2</a> 官方，有问题提issue，开发者会很热心回答的。</p>
-      
-      <a class="article-more-link" href="/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/">
-        查看全文...
-      </a>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atommygirl.github.io/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/" data-id="ckqg8sg87002rxekueoevhwju" class="article-share-link">
-        分享
-      </a>
-      
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%82%AE%E7%AE%B1/" rel="tag">邮箱</a></li></ul>
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-    
-  </article>
-  
-
-  
-  <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
-  </nav>
-  
-</section>
-</div>
-
-    <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-  <li><i class="fe fe-bar-chart"></i> <span id="busuanzi_value_site_pv"></span></li>
-  
-  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>迷 &copy; 2021</li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
     </ul>
   </div>
-</footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
+</header>
+
+        
+        <section id="about">
   
-  <div class="logo">
-    <a href="/"><img src="/images/myicon.jpg" alt="迷"></a>
+  
+    <p>
+      在这里找到我：
+      
+      
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="https://github.com/ATommyGirl" aria-label="github">
+            <i class="fab fa-github"></i><!--
+      ---></a><!--
+    ---><!--
+    --->  
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="twitter">
+            <i class="fab fa-twitter"></i><!--
+      ---></a><!--
+    ---><!--
+    --->  
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="facebook">
+            <i class="fab fa-facebook"></i><!--
+      ---></a><!--
+    ---><!--
+    --->   
+        
+      
+        
+          <a class="icon" target="_blank" rel="noopener" href="mailto:zhengyt_91@163.com" aria-label="mail">
+            <i class="fas fa-envelope"></i><!--
+      ---></a>
+        <!--
+    --->.
+        
+      
+    </p>
+  
+</section>
+
+<section id="writing">
+  <span class="h1"><a href="/">文章</a></span>
+  
+  <ul class="post-list">
+    
+    
+      
+    
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2021-06-28T07:10:02.000Z" itemprop="datePublished">2021-06-28</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2021/06/28/CodeBlock/">CodeBlock</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2021-06-22T10:02:06.000Z" itemprop="datePublished">2021-06-22</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2021/06/22/GiTalk-404/">GitTalk 404</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2021-06-22T08:35:23.000Z" itemprop="datePublished">2021-06-22</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2021/06/22/WKWebView-Keyboard-0/">WKWebView 隐藏系统键盘的 inputAccessoryView</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2021-06-18T08:50:01.000Z" itemprop="datePublished">2021-06-18</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2021/06/18/AudioServicesPlaySystemSound/">AudioServicesPlaySystemSound 播放系统提示音</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2021-04-19T08:14:32.000Z" itemprop="datePublished">2021-04-19</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a>
+    
+
+
+</span>
+      </li>
+    
+  </ul>
+  
+</section>
+
+
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
   </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/gallery">相册</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/about">关于</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        搜索
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
 
-
-<script src="/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/js/lazyload.min.js"></script>
-
-
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+    </div>
+    <!-- styles -->
 
 
 
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
 
 
 
 
+<!-- clipboard -->
 
 
-<script src="/js/ocean.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'YYLittleCat';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
-
 </html>
