@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
-    <url>/2019/08/19/App%20Store%20Connect/</url>
-    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
-<a id="more"></a>
-
-<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
-<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
-<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
-<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1Q84中的哲学</title>
     <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
     <content><![CDATA[<ul>
@@ -39,6 +19,26 @@
 ]]></content>
       <tags>
         <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
+    <url>/2019/08/19/App%20Store%20Connect/</url>
+    <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/1.png" alt="my app&#39;s issues"></p>
+<a id="more"></a>
+
+<p>这里面是我们刚刚打包的问题，一定要一一修改，不然Connect里不会显示的。我这个问题，就是权限描述没有加……</p>
+<p>注意，现在权限的描述，必须写清楚该功能用在了哪里，类似”%%%应用想使用您的麦克风“ 这种描述是不行了，应该是”%%%应用在录音时需要使用您的麦克风“ 之类的。</p>
+<p>当你收到下面这种邮件时，才表示我们的ipa没有问题，真正上传到Connect了，这个时候你再去刷新一下，应该就可以选择对应的包了。</p>
+<p><img src="/2019/08/19/App%20Store%20Connect/2.png" alt="Upload真的成功了"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/App%20Store%20Connect/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -172,6 +172,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GiTalk 404</title>
     <url>/2021/06/22/GiTalk-404/</url>
     <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GiTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
@@ -200,20 +220,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
 
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>7788</tag>
@@ -326,32 +352,6 @@
 </li>
 </ol>
 <p>PS: <a href="https://www.hansion.win/2020/04/13/hexo-bo-ke-deng-jing-tai-wang-ye-ti-jiao-bai-du-he-google-gu-ge-shou-lu/#toc-heading-8" target="_blank" rel="noopener">转载自Hansion</a>，按照博主的说明，基本上算是完成了，可以成功搜到一部分内容，有些搜到的标题很诡异，还在看~~</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
 ]]></content>
       <tags>
         <tag>7788</tag>
@@ -864,32 +864,6 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS13 适配注意点</title>
-    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
-<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
- <a id="more"></a>
-
-<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
-<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
-<p>​    检查图片选择器？</p>
-<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
-
-<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
-
-<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
-<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
-<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS 动态修改状态栏风格</title>
     <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
     <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
@@ -923,6 +897,32 @@
 
 
 
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS13 适配注意点</title>
+    <url>/2019/11/05/iOS13%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <content><![CDATA[<h5 id="1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField"><a href="#1、KVC-获取私有属性-直接崩溃，比方说获取-SearchBar-的-TextField" class="headerlink" title="1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField"></a>1、KVC 获取私有属性 直接崩溃，比方说获取 SearchBar 的 TextField</h5><p>​    解决方案是做版本判断 iOS13 的 searchbar 新增了一个 searchTextField 属性</p>
+<h5 id="2、Segement、SearchBar的样式变了，注意一下"><a href="#2、Segement、SearchBar的样式变了，注意一下" class="headerlink" title="2、Segement、SearchBar的样式变了，注意一下"></a>2、Segement、SearchBar的样式变了，注意一下</h5><p>​    for 循环查找子视图失效，改为  searchBar.searchTextField  </p>
+ <a id="more"></a>
+
+<h5 id="3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。"><a href="#3、UIWebView-终极废弃，需要替换-WKWebView，不然-AppStore-审核是不通过的。" class="headerlink" title="3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。"></a>3、UIWebView 终极废弃，需要替换 WKWebView，不然 AppStore 审核是不通过的。</h5><h5 id="4、黑夜模式"><a href="#4、黑夜模式" class="headerlink" title="4、黑夜模式"></a>4、黑夜模式</h5><h5 id="5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView"><a href="#5、TextField：LeftView如果是图片的话-会覆盖整个-TextField-解决办法是用一个-view-包裹一下图片作为LeftView" class="headerlink" title="5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView"></a>5、TextField：LeftView如果是图片的话 会覆盖整个 TextField 解决办法是用一个 view 包裹一下图片作为LeftView</h5><h5 id="6、UniversalLink"><a href="#6、UniversalLink" class="headerlink" title="6、UniversalLink"></a>6、UniversalLink</h5><h5 id="https-www-jianshu-com-p-03e6b7828307"><a href="#https-www-jianshu-com-p-03e6b7828307" class="headerlink" title="https://www.jianshu.com/p/03e6b7828307"></a><a href="https://www.jianshu.com/p/03e6b7828307" target="_blank" rel="noopener">https://www.jianshu.com/p/03e6b7828307</a></h5><p>​    微信分享强制使用。注册微信开放平台的时候 iOS的项目必须填这个。</p>
+<h5 id="7、模态出的页面，需要指定对应的弹出模式"><a href="#7、模态出的页面，需要指定对应的弹出模式" class="headerlink" title="7、模态出的页面，需要指定对应的弹出模式"></a>7、模态出的页面，需要指定对应的弹出模式</h5><p>​    例如：UIModalPresentationOverFullScreen</p>
+<p>​    检查图片选择器？</p>
+<h5 id="8、Tabbar的文字颜色"><a href="#8、Tabbar的文字颜色" class="headerlink" title="8、Tabbar的文字颜色"></a>8、Tabbar的文字颜色</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[tabbarItem setTitleTextAttributes:@&#123;NSForegroundColorAttributeName:selectColor&#125; forState:UIControlStateSelected];</span><br></pre></td></tr></table></figure>
+
+<p>​    此方法在 iOS 13 会有 bug，当我们 push 到下一页再次返回时 tabbar 字体颜色设置会失效。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.tabBar.tintColor = selectColor;</span><br></pre></td></tr></table></figure>
+
+<h5 id="9、通过-NSURLSessionDataTask-下载文件流"><a href="#9、通过-NSURLSessionDataTask-下载文件流" class="headerlink" title="9、通过 NSURLSessionDataTask 下载文件流"></a>9、通过 NSURLSessionDataTask 下载文件流</h5><p>​    需要在头部指定接受的返回格式：<code>application/octet-stream</code></p>
+<h5 id="10、Cocoapods"><a href="#10、Cocoapods" class="headerlink" title="10、Cocoapods"></a>10、Cocoapods</h5><p>​    升级 CocoaPods 到 1.8.4 版本</p>
+<p>​    但是随即问题就来了, 执行 pod install 下载库时，出现错误</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">[!] <span class="symbol">CDN:</span> trunk URL couldn<span class="string">'t be downloaded: https://cdn.cocoapods.org/all_pods_versions_a_7_5.txt, error: execution expired</span></span><br></pre></td></tr></table></figure>
+
+<p>后来查了半天资料, 最终在 <a href="https://github.com/CocoaPods/CocoaPods/issues/9303" target="_blank" rel="noopener">github CocoaPods issues</a> 找到解决方案：在 Podfile 加上 source <code>https://github.com/CocoaPods/Specs.git</code> 不使用新版本的 CDN</p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
