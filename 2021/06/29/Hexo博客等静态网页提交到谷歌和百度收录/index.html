@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="什么是 站点地图 ？  站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客等静态网页提交到谷歌和百度收录">
+<meta property="og:url" content="https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="什么是 站点地图 ？  站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210038.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122236.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413204214.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122915.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413202939.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210128.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210323.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210527.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211123.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211221.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413212519.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211705.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414124339.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132047.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132514.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132654.png">
+<meta property="og:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132951.png">
+<meta property="article:published_time" content="2021-06-29T06:42:00.000Z">
+<meta property="article:modified_time" content="2021-06-29T07:08:22.150Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="7788">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210038.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/mini-icon.svg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Hexo博客等静态网页提交到谷歌和百度收录</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2021/06/22/GiTalk-404/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&text=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&is_video=false&description=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo博客等静态网页提交到谷歌和百度收录&body=Check out this article: https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&name=Hexo博客等静态网页提交到谷歌和百度收录&description=&lt;h3 id=&#34;什么是-站点地图-？&#34;&gt;&lt;a href=&#34;#什么是-站点地图-？&#34; class=&#34;headerlink&#34; title=&#34;什么是 站点地图 ？&#34;&gt;&lt;/a&gt;什么是 站点地图 ？&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt; 站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找到他们想看的页面。&lt;/p&gt;
+&lt;p&gt;–百度百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一、生成站点地图&#34;&gt;&lt;a href=&#34;#一、生成站点地图&#34; class=&#34;headerlink&#34; title=&#34;一、生成站点地图&#34;&gt;&lt;/a&gt;一、生成站点地图&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装站点地图生成插件&lt;/p&gt;
+&lt;figure class=&#34;highlight powershell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo&lt;span class=&#34;literal&#34;&gt;-generator&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-baidu&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-sitemap&lt;/span&gt; -&lt;span class=&#34;literal&#34;&gt;-save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo&lt;span class=&#34;literal&#34;&gt;-generator&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-sitemap&lt;/span&gt; -&lt;span class=&#34;literal&#34;&gt;-save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;&lt;/ol&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&t=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-站点地图-？"><span class="toc-number">1.</span> <span class="toc-text">什么是 站点地图 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、生成站点地图"><span class="toc-number">2.</span> <span class="toc-text">一、生成站点地图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、提交到百度站长（百度收录）"><span class="toc-number">3.</span> <span class="toc-text">二、提交到百度站长（百度收录）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解决百度不爬取-Github-Pages-的问题"><span class="toc-number">3.1.</span> <span class="toc-text">解决百度不爬取 Github Pages 的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sitemap-方式提交"><span class="toc-number">3.2.</span> <span class="toc-text">sitemap 方式提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主动推送方式提交"><span class="toc-number">3.3.</span> <span class="toc-text">主动推送方式提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动推送方式提交"><span class="toc-number">3.4.</span> <span class="toc-text">自动推送方式提交</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、提交到谷歌搜索（谷歌收录）"><span class="toc-number">4.</span> <span class="toc-text">三、提交到谷歌搜索（谷歌收录）</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hexo博客等静态网页提交到谷歌和百度收录
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-06-29T06:42:00.000Z" itemprop="datePublished">2021-06-29</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/7788/" rel="tag">7788</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="什么是-站点地图-？"><a href="#什么是-站点地图-？" class="headerlink" title="什么是 站点地图 ？"></a>什么是 站点地图 ？</h3><blockquote>
+<p> 站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找到他们想看的页面。</p>
+<p>–百度百科</p>
+</blockquote>
+<h3 id="一、生成站点地图"><a href="#一、生成站点地图" class="headerlink" title="一、生成站点地图"></a>一、生成站点地图</h3><ol>
+<li><p>安装站点地图生成插件</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-baidu</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+</li>
+<li><p>在博客根目录的<code>_config.yml</code>中添加自动生成 sitemap 的配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>同时确认一下该文件里面 url 对应的是否是接下来要提交的域名</p>
+</li>
+<li><p>生成和部署</p>
+<p>此时会在<code>public</code>目录下生成两个文件</p>
+<blockquote>
+<p><code>sitemap.xml</code> 用于提交给谷歌</p>
+<p><code>baidusitemap.xml</code> 用于提交给百度</p>
+</blockquote>
+</li>
+<li><p>部署成功后，在浏览器打开 <code>你的域名/baidusitemap.xml</code>，成功展示即代表成功</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210038.png" alt="img"></p>
+</li>
+</ol>
+<h3 id="二、提交到百度站长（百度收录）"><a href="#二、提交到百度站长（百度收录）" class="headerlink" title="二、提交到百度站长（百度收录）"></a>二、提交到百度站长（百度收录）</h3><h4 id="解决百度不爬取-Github-Pages-的问题"><a href="#解决百度不爬取-Github-Pages-的问题" class="headerlink" title="解决百度不爬取 Github Pages 的问题"></a>解决百度不爬取 Github Pages 的问题</h4><p>如果你的博客部署在 Github Pages, 百度是不会爬取的，这种情况需要借用其他平台转换一下。</p>
+<p>这里以 coding 为例</p>
+<ol>
+<li><p>在 coding 中也创建一个博客项目，取得提交地址</p>
+</li>
+<li><p>在博客根目录的<code>_config.yml</code>中添加 coding 仓库的配置，注意增加了<code>-</code>号，这样在部署的时候会同时部署到 Github 和 coding</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/hansionit/hansionit.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>hexo g -d</code>生成部署一下，会提交代码到 coding</p>
+</li>
+<li><p>在 coding 中开启 pages 服务，配置自定义域名，在你的域名解析控制台增加两条 CNAME，解析线路选择<code>百度</code>，让百度解析到 coding 的地址</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122236.png" alt="img"></p>
+</li>
+</ol>
+<h4 id="sitemap-方式提交"><a href="#sitemap-方式提交" class="headerlink" title="sitemap 方式提交"></a>sitemap 方式提交</h4><ol>
+<li><p>查询是否被收录</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413204214.png" alt="img"></p>
+</li>
+<li><p>若没有收录，则点击<code>提交网址</code>进行提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122915.png" alt="img"></p>
+<p>然后打开 <a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>，进入<code>站点管理</code> -&gt; <code>添加网站</code>    </p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413202939.png" alt="img"></p>
+</li>
+<li><p>添加完网站后，点击<code>管理站点</code> -&gt; <code>站点属性设置</code></p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210128.png" alt="img"></p>
+</li>
+<li><p>选择链接提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210323.png" alt="img"></p>
+</li>
+<li><p>选择 sitemap，输入上文中的 sitmap 地址，点击提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210527.png" alt="img"></p>
+</li>
+</ol>
+<p>   如果提示错误，<strong>以下文件已经提交过了，如想重新提交，请先到文件对应工具的站点下删除此文件。</strong></p>
+<p>   <img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211123.png" alt="img"></p>
+<p>   可在下方进行勾选删除后重新提交，如果链接一模一样，没有必要删除，点击删除按钮左边的<code>手动更新文件</code>更新一下即可</p>
+<p>   <img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211221.png" alt="img"></p>
+<h4 id="主动推送方式提交"><a href="#主动推送方式提交" class="headerlink" title="主动推送方式提交"></a>主动推送方式提交</h4><ol>
+<li><p>安装插件<code>npm install hexo-baidu-url-submit --save</code></p>
+</li>
+<li><p>在博客根目录的<code>config.yml</code>中添加</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">100</span>                 <span class="comment"># 提交最新的多少个链接</span></span><br><span class="line">  <span class="attr">host:</span>       <span class="comment"># 在百度站长平台中添加的域名</span></span><br><span class="line">  <span class="attr">token:</span>     <span class="comment"># 秘钥</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>token 在推送的接口中有</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413212519.png" alt="img"></p>
+</li>
+<li><p>同样是该文件，在<code>deployer</code>中新加一行<code>type: baidu_url_submitter</code>, 注意需要为两个<code>type</code>前面添加<code>-</code>符号，结果如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成部署</p>
+</li>
+</ol>
+<p>若最后有输出<code>{&quot;remain&quot;:2997,&quot;success&quot;:3} INFO Deploy done: baidu_url_submitter</code>, 则代表成功, success 的值代表成功多少条，remain 的值代表当天剩余可推送条数</p>
+<h4 id="自动推送方式提交"><a href="#自动推送方式提交" class="headerlink" title="自动推送方式提交"></a>自动推送方式提交</h4><p>Hexo 的有些主题已完成了此步骤，可先自行确认是否已经完成，一般完成此步骤的主题的<code>_config.yml</code>文件中会有<code>baidu_push</code>属性，将其设置为<code>true</code></p>
+<p>选择<code>自动推送</code> -&gt; <code>复制代码</code></p>
+<p>没有集成这项功能的，我们可以把代码粘贴到 <code>header.ejs</code> 文件的 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 标签之间</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211705.png" alt="img"></p>
+<h3 id="三、提交到谷歌搜索（谷歌收录）"><a href="#三、提交到谷歌搜索（谷歌收录）" class="headerlink" title="三、提交到谷歌搜索（谷歌收录）"></a>三、提交到谷歌搜索（谷歌收录）</h3><ol>
+<li><p>进入 <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a> 登录你的谷歌账号</p>
+</li>
+<li><p>在<code>网址前缀</code>中填写地址</p>
+</li>
+<li><p>下载验证文件</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414124339.png" alt="img"></p>
+</li>
+<li><p>存入<strong>主题</strong>的<code>source</code>目录，而不是根目录的 source 目录，<code>hexo g -d</code>生成部署，然后点击<code>验证</code>，验证成功如下图所示。若提示<code>您的验证文件中的内容不正确。您使用的验证文件是从这里下载的吗?</code>, 你需要检查一下目录是否放至正确</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132047.png" alt="img"></p>
+</li>
+<li><p>点击<code>前往资源页面</code>，点击<code>站点地图</code>, 输入站点地图的地址，点击<code>提交</code></p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132514.png" alt="img"></p>
+</li>
+<li><p>提交成功后，若显示<code>无法获取</code>，点击<code>无法获取</code>会进行网页获取，再刷新网页即可显示成功</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132654.png" alt="img"></p>
+</li>
+<li><p>可以顺便把百度的 sitemap 也提交上<code>baidusitemap.xml</code>, 成功结果如下：</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132951.png" alt="img"></p>
+</li>
+</ol>
+<p>PS: <a href="https://www.hansion.win/2020/04/13/hexo-bo-ke-deng-jing-tai-wang-ye-ti-jiao-bai-du-he-google-gu-ge-shou-lu/#toc-heading-8" target="_blank" rel="noopener">转载自Hansion</a>，按照博主的说明，基本上算是完成了，可以成功搜到一部分内容，有些搜到的标题很诡异，还在看~~</p>
+
+  </div>
+</article>
+
+
+    
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://tommygirl.cn/gDark.css">
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'c0fd3fecc668416852dc',
+    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+    repo: 'YYBlogGitTalk',
+    owner: 'ATommyGirl',
+    admin: ['ATommyGirl'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+    
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-站点地图-？"><span class="toc-number">1.</span> <span class="toc-text">什么是 站点地图 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、生成站点地图"><span class="toc-number">2.</span> <span class="toc-text">一、生成站点地图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、提交到百度站长（百度收录）"><span class="toc-number">3.</span> <span class="toc-text">二、提交到百度站长（百度收录）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解决百度不爬取-Github-Pages-的问题"><span class="toc-number">3.1.</span> <span class="toc-text">解决百度不爬取 Github Pages 的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sitemap-方式提交"><span class="toc-number">3.2.</span> <span class="toc-text">sitemap 方式提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主动推送方式提交"><span class="toc-number">3.3.</span> <span class="toc-text">主动推送方式提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动推送方式提交"><span class="toc-number">3.4.</span> <span class="toc-text">自动推送方式提交</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、提交到谷歌搜索（谷歌收录）"><span class="toc-number">4.</span> <span class="toc-text">三、提交到谷歌搜索（谷歌收录）</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&text=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&is_video=false&description=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo博客等静态网页提交到谷歌和百度收录&body=Check out this article: https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&title=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&name=Hexo博客等静态网页提交到谷歌和百度收录&description=&lt;h3 id=&#34;什么是-站点地图-？&#34;&gt;&lt;a href=&#34;#什么是-站点地图-？&#34; class=&#34;headerlink&#34; title=&#34;什么是 站点地图 ？&#34;&gt;&lt;/a&gt;什么是 站点地图 ？&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt; 站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找到他们想看的页面。&lt;/p&gt;
+&lt;p&gt;–百度百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一、生成站点地图&#34;&gt;&lt;a href=&#34;#一、生成站点地图&#34; class=&#34;headerlink&#34; title=&#34;一、生成站点地图&#34;&gt;&lt;/a&gt;一、生成站点地图&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装站点地图生成插件&lt;/p&gt;
+&lt;figure class=&#34;highlight powershell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo&lt;span class=&#34;literal&#34;&gt;-generator&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-baidu&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-sitemap&lt;/span&gt; -&lt;span class=&#34;literal&#34;&gt;-save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo&lt;span class=&#34;literal&#34;&gt;-generator&lt;/span&gt;&lt;span class=&#34;literal&#34;&gt;-sitemap&lt;/span&gt; -&lt;span class=&#34;literal&#34;&gt;-save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;&lt;/ol&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/&t=Hexo博客等静态网页提交到谷歌和百度收录" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2015-2021
+    YYLittleCat
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/gallery">相册</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":600,"vOffset":-100,"hOffset":-50},"mobile":{"show":true},"log":false});</script></body>
+</html>
