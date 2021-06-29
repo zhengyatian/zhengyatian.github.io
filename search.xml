@@ -948,53 +948,6 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
-    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
-    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
-<blockquote>
-<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
-</blockquote>
-<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
-<a id="more"></a>
-
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
-<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
-<ul>
-<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
-</li>
-<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
-<ul>
-<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
-<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
-</ul>
-</li>
-<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
-</li>
-</ul>
-<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
-<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
-<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
-<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
-<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
-<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
-<ul>
-<li><p>让美工去掉图片的透明度。</p>
-</li>
-<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
-</li>
-</ul>
-<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
     <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
@@ -1040,6 +993,53 @@
       <tags>
         <tag>iOS</tag>
         <tag>邮箱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
+    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
+    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
+<blockquote>
+<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
+</blockquote>
+<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
+<a id="more"></a>
+
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
+<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
+<ul>
+<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
+</li>
+<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
+<ul>
+<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
+<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
+</ul>
+</li>
+<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
+</li>
+</ul>
+<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
+<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
+<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
+<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
+<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
+<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
+<ul>
+<li><p>让美工去掉图片的透明度。</p>
+</li>
+<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
+</li>
+</ul>
+<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
