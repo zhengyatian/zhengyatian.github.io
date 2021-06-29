@@ -13,19 +13,19 @@
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="忽然有一天。。。使用 cocoapods 安装三方库不好使了，报了好长的错。。。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tommygirl.cn/2018/12/27/Warning!PATH-is/1.png">
-<meta property="og:image" content="https://tommygirl.cn/2018/12/27/Warning!PATH-is/2.png">
-<meta property="og:image" content="https://tommygirl.cn/2018/12/27/Warning!PATH-is/3.png">
-<meta property="og:image" content="https://tommygirl.cn/2018/12/27/Warning!PATH-is/4.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/32.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/33.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/34.png">
 <meta property="article:published_time" content="2018-12-27T02:23:00.000Z">
-<meta property="article:modified_time" content="2021-06-25T07:43:57.520Z">
+<meta property="article:modified_time" content="2021-06-29T09:12:28.887Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Xcode">
 <meta property="article:tag" content="MAC">
 <meta property="article:tag" content="pod">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tommygirl.cn/2018/12/27/Warning!PATH-is/1.png">
+<meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png">
     
     
       
@@ -74,8 +74,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          
@@ -165,20 +163,20 @@
     <p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
 <a id="more"></a>
 
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="/2018/12/27/Warning!PATH-is/1.png" alt="error"></p>
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt="error"></p>
 <blockquote>
 <p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
 </blockquote>
 <p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
 
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="/2018/12/27/Warning!PATH-is/2.png" alt="rvm list"></p>
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/32.png" alt="rvm list"></p>
 <p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
 <blockquote>
 <p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
 </blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="/2018/12/27/Warning!PATH-is/3.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="/2018/12/27/Warning!PATH-is/4.png" alt="绿色走一波"></p>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/33.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/34.png" alt="绿色走一波"></p>
 
   </div>
 </article>
@@ -233,8 +231,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          
@@ -292,8 +288,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          

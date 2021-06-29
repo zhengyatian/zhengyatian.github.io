@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！ 乌龙可用与不可用： ​">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tommygirl.cn/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png">
-<meta property="og:image" content="https://tommygirl.cn/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png">
-<meta property="og:image" content="https://tommygirl.cn/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png">
-<meta property="og:image" content="https://tommygirl.cn/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/18.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/19.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/20.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/21.png">
 <meta property="article:published_time" content="2021-01-07T02:37:31.000Z">
-<meta property="article:modified_time" content="2021-02-25T07:42:42.625Z">
+<meta property="article:modified_time" content="2021-06-29T09:07:26.627Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tommygirl.cn/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png">
+<meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/18.png">
     
     
       
@@ -71,8 +71,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          
@@ -165,16 +163,18 @@
 <h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
 <p>​        <a id="more"></a></p>
 <center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/2.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/1.png" class width="300"></div>
+    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/18.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/19.png" class width="300"></div>
 </center>
+
 
 <p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
 <p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
 <center>
-    <div style="display:inline-block;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/3.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/4.png" class width="300"></div>
+    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/20.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/21.png" class width="300"></div>
 </center>
+
 
 <p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
 <h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
@@ -237,8 +237,6 @@
          
           <li><a href="/tags">标签</a></li>
          
-          <li><a href="/gallery">相册</a></li>
-         
           <li><a href="/about">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
@@ -297,8 +295,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          

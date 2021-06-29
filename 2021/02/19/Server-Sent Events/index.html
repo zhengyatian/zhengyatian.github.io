@@ -13,13 +13,13 @@
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="背景​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。 ​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tommygirl.cn/2021/02/19/Server-Sent%20Events/SSE.jpg">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/25.jpg">
 <meta property="article:published_time" content="2021-02-19T09:26:12.000Z">
-<meta property="article:modified_time" content="2021-04-20T09:58:15.660Z">
+<meta property="article:modified_time" content="2021-06-29T09:10:16.156Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tommygirl.cn/2021/02/19/Server-Sent%20Events/SSE.jpg">
+<meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/25.jpg">
     
     
       
@@ -68,8 +68,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          
@@ -165,7 +163,7 @@
 <p>​    好巧不巧，看到了另一个轻量级的方案：Server-Sent Events。</p>
 <h3 id="Server-Sent-Events"><a href="#Server-Sent-Events" class="headerlink" title="Server-Sent Events"></a>Server-Sent Events</h3><p>HTML5 中有一个轻量的替代 WebSocket的方案：Server-Sent Events，以下简称 SSE。</p>
 <h4 id="SSE-本质"><a href="#SSE-本质" class="headerlink" title="SSE 本质"></a>SSE 本质</h4><p>​    严格地说，HTTP 协议无法做到服务器主动推送信息。但是，有一种变通方法，就是服务器向客户端声明，接下来要发送的是流信息（streaming）。也就是说，发送的不是一次性的数据包，而是一个数据流，会连续不断地发送过来。这时，客户端不会关闭连接，会一直等着服务器发过来的新的数据流，视频播放就是这样的例子。本质上，这种通信就是以流信息的方式，完成一次用时很长的下载。SSE 就是利用这种机制，使用流信息向浏览器推送信息。</p>
-<h4 id="SSE-特点"><a href="#SSE-特点" class="headerlink" title="SSE 特点"></a>SSE 特点</h4><p><img src="/2021/02/19/Server-Sent%20Events/SSE.jpg" alt></p>
+<h4 id="SSE-特点"><a href="#SSE-特点" class="headerlink" title="SSE 特点"></a>SSE 特点</h4><p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/25.jpg" alt></p>
 <p>WebSocket 和 SSE 都是传统请求-响应 Web 架构的替代方案，但它们不是完全冲突的技术。</p>
 <ul>
 <li>SSE 使用 HTTP 协议，现有的服务器软件都支持。WebSocket 是一个独立协议。</li>
@@ -299,8 +297,6 @@
          
           <li><a href="/tags">标签</a></li>
          
-          <li><a href="/gallery">相册</a></li>
-         
           <li><a href="/about">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
@@ -358,8 +354,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          

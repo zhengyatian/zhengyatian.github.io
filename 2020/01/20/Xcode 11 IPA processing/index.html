@@ -13,17 +13,17 @@
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="问题：warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring itAssertion failed: Expected 2 archs in otool output:今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：IPA">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/1.png">
-<meta property="og:image" content="https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/2.png">
-<meta property="og:image" content="https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/3.png">
-<meta property="og:image" content="https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/35.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/36.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/37.png">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg">
 <meta property="article:published_time" content="2020-01-20T10:23:00.000Z">
-<meta property="article:modified_time" content="2021-06-25T07:53:33.283Z">
+<meta property="article:modified_time" content="2021-06-29T09:13:40.072Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Xcode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/1.png">
+<meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/35.png">
     
     
       
@@ -73,8 +73,6 @@
          
           <li><a href="/tags">标签</a></li>
          
-          <li><a href="/gallery">相册</a></li>
-         
           <li><a href="/about">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
@@ -111,7 +109,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&title=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&title=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&name=Xcode 11 IPA processing failed 初见&description=&lt;h3 id=&#34;问题：&#34;&gt;&lt;a href=&#34;#问题：&#34; class=&#34;headerlink&#34; title=&#34;问题：&#34;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;h4 id=&#34;warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it&#34;&gt;&lt;a href=&#34;#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it&#34; class=&#34;headerlink&#34; title=&#34;warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it&#34;&gt;&lt;/a&gt;warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it&lt;/h4&gt;&lt;h4 id=&#34;Assertion-failed-Expected-2-archs-in-otool-output&#34;&gt;&lt;a href=&#34;#Assertion-failed-Expected-2-archs-in-otool-output&#34; class=&#34;headerlink&#34; title=&#34;Assertion failed: Expected 2 archs in otool output:&#34;&gt;&lt;/a&gt;Assertion failed: Expected 2 archs in otool output:&lt;/h4&gt;&lt;p&gt;今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：&lt;code&gt;IPA processing failed&lt;/code&gt;&lt;br&gt;看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2020/01/20/Xcode%2011%20IPA%20processing/1.png&#34; alt=&#34;IPA processing failed&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/35.png&#34; alt=&#34;IPA processing failed&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&t=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -162,16 +160,16 @@
 
   <div class="content" itemprop="articleBody">
     <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it"><a href="#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it" class="headerlink" title="warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it"></a>warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it</h4><h4 id="Assertion-failed-Expected-2-archs-in-otool-output"><a href="#Assertion-failed-Expected-2-archs-in-otool-output" class="headerlink" title="Assertion failed: Expected 2 archs in otool output:"></a>Assertion failed: Expected 2 archs in otool output:</h4><p>今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：<code>IPA processing failed</code><br>看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕<del>~</del></p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/1.png" alt="IPA processing failed"></p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/35.png" alt="IPA processing failed"></p>
 <a id="more"></a>
 
 <p>Show Logs 我们会看到下面四个日志文件，就是我们本次Archive~Package过程中的日志，然后我们着重看一下第二个选中的log</p>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/2.png" alt="log"></p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/36.png" alt="log"></p>
 <p>搜索一下 <code>error</code> 或者 <code>failed</code> 总会发现什么的，喏，我们发现了就包含一个failed，注意上下文划线的几句话，应该是提示的那个framework包含了模拟器架构，上架肯定是要移除的，所以我们需要忽略它，换句话说，它太胖了，我们需要给它瘦个身🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️🤹‍♂️</p>
 <blockquote>
 <p>模拟器32位处理器测试需要i386架构，（iphone5，iphone5s以下的模拟器）<br>模拟器64位处理器测试需要x86_64架构，(iphone6以上的模拟器)<br>真机32位处理器需要armv7,或者armv7s架构，（iphone4真机/armv7, ipnone5，iphone5s真机/armv7s）<br>真机64位处理器需要arm64架构，(iphone6，iphone6p以上的真机)</p>
 </blockquote>
-<p><img src="/2020/01/20/Xcode%2011%20IPA%20processing/3.png" alt="寻找恐惧"></p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/37.png" alt="寻找恐惧"></p>
 <h3 id="Framework-瘦身大法"><a href="#Framework-瘦身大法" class="headerlink" title="Framework 瘦身大法"></a>Framework 瘦身大法</h3><blockquote>
 <p>本段内容来自于：<a href="[https://www.jianshu.com/p/3c6b1dd7a0ed](https://www.jianshu.com/p/3c6b1dd7a0ed)">xcode11打包失败 IPA processing failed 问题解决</a></p>
 </blockquote>
@@ -198,8 +196,9 @@
 
 <p>PPS：运行脚本的命令就是<code>sh ***.sh</code></p>
 <div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2020/01/20/Xcode%2011%20IPA%20processing/flag.jpeg" class width="200"></div>
+  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg" class width="200"></div>
 </center>
+
 
 </div></div>
   </div>
@@ -256,8 +255,6 @@
          
           <li><a href="/tags">标签</a></li>
          
-          <li><a href="/gallery">相册</a></li>
-         
           <li><a href="/about">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
@@ -281,7 +278,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&title=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&title=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&name=Xcode 11 IPA processing failed 初见&description=&lt;h3 id=&#34;问题：&#34;&gt;&lt;a href=&#34;#问题：&#34; class=&#34;headerlink&#34; title=&#34;问题：&#34;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;h4 id=&#34;warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it&#34;&gt;&lt;a href=&#34;#warning-Configuration-issue-platform-iPhoneSimulator-platform-doesn’t-have-any-non-simulator-SDKs-ignoring-it&#34; class=&#34;headerlink&#34; title=&#34;warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it&#34;&gt;&lt;/a&gt;warning: Configuration issue: platform iPhoneSimulator.platform doesn’t have any non-simulator SDKs; ignoring it&lt;/h4&gt;&lt;h4 id=&#34;Assertion-failed-Expected-2-archs-in-otool-output&#34;&gt;&lt;a href=&#34;#Assertion-failed-Expected-2-archs-in-otool-output&#34; class=&#34;headerlink&#34; title=&#34;Assertion failed: Expected 2 archs in otool output:&#34;&gt;&lt;/a&gt;Assertion failed: Expected 2 archs in otool output:&lt;/h4&gt;&lt;p&gt;今天准备打一个企业ipa的时候，报了一个错，吓出了一身冷汗：&lt;code&gt;IPA processing failed&lt;/code&gt;&lt;br&gt;看到了 Show Logs，就抱着试试看的态度，点开了，毕竟试试又不会怀孕&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2020/01/20/Xcode%2011%20IPA%20processing/1.png&#34; alt=&#34;IPA processing failed&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/35.png&#34; alt=&#34;IPA processing failed&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2020/01/20/Xcode%2011%20IPA%20processing/&t=Xcode 11 IPA processing failed 初见" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -315,8 +312,6 @@
           <li><a href="/archives">归档</a></li>
          
           <li><a href="/tags">标签</a></li>
-         
-          <li><a href="/gallery">相册</a></li>
          
           <li><a href="/about">关于</a></li>
          
