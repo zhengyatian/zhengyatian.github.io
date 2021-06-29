@@ -172,26 +172,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GiTalk 404</title>
     <url>/2021/06/22/GiTalk-404/</url>
     <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GiTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
@@ -220,26 +200,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
 ]]></content>
       <tags>
         <tag>7788</tag>
@@ -358,6 +332,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Inferred (Constraints) 和 Autoresizing Mask</title>
     <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
     <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
@@ -437,7 +437,7 @@
 <p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">HTTP 的一点儿小知识</a>。</p>
 <p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
@@ -446,7 +446,7 @@
 
 <p>添加参数</p>
 <p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/" target="_blank" rel="noopener">URL Loading System[译]</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -948,6 +948,53 @@
       </tags>
   </entry>
   <entry>
+    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
+    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
+    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
+<blockquote>
+<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
+</blockquote>
+<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
+<a id="more"></a>
+
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
+<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
+<ul>
+<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
+<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
+</li>
+<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
+<ul>
+<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
+<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
+</ul>
+</li>
+<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
+</li>
+</ul>
+<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
+<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
+<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
+<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
+<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
+<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
+<ul>
+<li><p>让美工去掉图片的透明度。</p>
+</li>
+<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
+</li>
+</ul>
+<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mailcore 2 iOS  之二 SMTP</title>
     <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
     <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
@@ -993,53 +1040,6 @@
       <tags>
         <tag>iOS</tag>
         <tag>邮箱</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
-    <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
-    <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
-<blockquote>
-<p>ERROR ITMS-90034<br>ERROR ITMS-4236<br>ERROR ITMS-90717</p>
-</blockquote>
-<h4 id="1-ERROR-ITMS-90034"><a href="#1-ERROR-ITMS-90034" class="headerlink" title="1. ERROR ITMS-90034:"></a>1. ERROR ITMS-90034:</h4><p>“Missing or invalid signature.The bundle’com.xxx.xxx’ at bundle path ‘Payload/xxx’ is not signed using an Apple submission certificate.”</p>
-<a id="more"></a>
-
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/1.png" alt="ERROR ITMS-90034"></p>
-<p>这个错误显示我们 没有使用符合苹果规范的证书签名App 而导致的。<br>接下来我们就一步一步的检查证书到底哪里出了问题：</p>
-<ul>
-<li><p>打开钥匙串，找到对应的生产证书，确保证书已经添加到钥匙串中，并且显示证书有效。</p>
-<p><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/2.png" alt="证书有效否"></p>
-</li>
-<li><p>如果显示 <code>此证书的签发者无效</code> ：</p>
-<ul>
-<li>证书是通过你打包电脑申请签发的，检查是否有过期的根证书，把所有显示已过期的证书<code>全部删除</code>。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/3.png" alt="显示已过期的证书"><br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/4.png" alt="删除所有过期的证书"></li>
-<li>证书是别人通过P12的方式转给你的，看看私钥是不是没有，可以从签发P12的电脑再重新导出一份。像下面这个证书没有小箭头就表示没有私钥。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/5.png" alt="没有私钥"></li>
-</ul>
-</li>
-<li><p>点击证书–&gt;显示简介–&gt;信任，如果此处，不是使用系统默认，就进行更改成“使用系统默认”。<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/6.png" alt="信任证书"></p>
-</li>
-</ul>
-<p>上面这些操作应该就能解决问题了，可以打包重新upload试试。</p>
-<h4 id="2-ERROR-ITMS-4236"><a href="#2-ERROR-ITMS-4236" class="headerlink" title="2. ERROR ITMS-4236:"></a>2. ERROR ITMS-4236:</h4><p>“Invalid value ‘2019-08-16 14:23:22’ for bundle_version” at SoftwareAssets”</p>
-<p>之前App的测试版本，为了方便知道更新时间，Build版本号是通过 Run Script 动态注入了一个时间格式，如下：<br><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/7.png" alt="Build"></p>
-<p>事实证明，不让这样用，哈哈，乖乖的改回了 2.2.2 。</p>
-<h4 id="3-ERROR-ITMS-90717"><a href="#3-ERROR-ITMS-90717" class="headerlink" title="3. ERROR ITMS-90717:"></a>3. ERROR ITMS-90717:</h4><p>“Invalid App Store Icon. The App Store Icon in the asset catalog in ‘.app’ can’t be transparent nor contain an alpha channel.”</p>
-<p>错误原因：应用图标不能有透明度或者包含Alpha 通道。</p>
-<ul>
-<li><p>让美工去掉图片的透明度。</p>
-</li>
-<li><p>自己修改图片的Alpha 通道选项为 否。预览-&gt;文件-&gt;导出为PNG，取消选中。如下图</p>
-</li>
-</ul>
-<p>  <img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/8.png" alt="alpha"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1195,7 +1195,7 @@
 <h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://ATommyGirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://ATommyGirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener">GCD (Grand Central Dispatch)</a> 。</p>
 <h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
 <p>看完文档就会知道，真的好方便。。。</p>
 <ul>
@@ -1272,7 +1272,7 @@
 </li>
 <li>POP</li>
 <li>SMTP<ul>
-<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/">mailcore2-ios  之二 SMTP</a></li>
+<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/" target="_blank" rel="noopener">mailcore2-ios  之二 SMTP</a></li>
 </ul>
 </li>
 </ul>
@@ -2091,16 +2091,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>回忆</title>
-    <url>/gallery/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>search</title>
     <url>/search/index.html</url>
     <content><![CDATA[]]></content>
@@ -2133,6 +2123,16 @@
 </tr>
 </tbody></table>
 ]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>回忆</title>
+    <url>/gallery/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>昆明</title>
