@@ -14,7 +14,7 @@
 <meta property="og:description" content="cd pwd 显示当前路径  1pwd   返回用户主目录  1cd">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-01T08:40:50.000Z">
-<meta property="article:modified_time" content="2021-07-01T09:01:25.674Z">
+<meta property="article:modified_time" content="2021-07-01T09:13:16.120Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="服务器">
 <meta property="article:tag" content="CentOS">
@@ -281,22 +281,22 @@
 <ol start="2">
 <li>若移动目标文件已存在，但不想弹出是否覆盖的提示，直接覆盖</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -f test.txt test2/</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="operator">-f</span> test.txt test2/</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>当源与目标都拥有同一个文件，若源文件比目标新则移动，否则不移动</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -u test.txt test2/</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="literal">-u</span> test.txt test2/</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>更改文件名称</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv test.txt test2.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv test.txt test2.txt</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
 <li>更改目录名称</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /test2 /test2_2[/size]</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /test2 /test2_2[/<span class="type">size</span>]</span><br></pre></td></tr></table></figure>
 
 
 
@@ -306,17 +306,17 @@
 <ol>
 <li>将自己的笔记设为只有自己才能看</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> chmod go-rwx test.txt </span><br><span class="line">或者 </span><br><span class="line"> chmod 700 test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod go<span class="literal">-rwx</span> test.txt </span><br><span class="line"><span class="comment"># 或者 </span></span><br><span class="line">chmod <span class="number">700</span> test.txt</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>同时修改多个文件的权限</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 test1.txt test2.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">700</span> test1.txt test2.txt</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>修改一个目录的权限，包括其子目录及文件</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 -R <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">700</span> <span class="literal">-R</span> test</span><br></pre></td></tr></table></figure>
 
 
 
@@ -366,7 +366,7 @@
 <ol start="6">
 <li>创建一个新的文件</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; new.txt 按 CTRL + C 结束录入</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; new.txt <span class="comment"># 按 CTRL + C 结束录入</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -376,12 +376,12 @@
 <ol>
 <li>新建档案文件</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi newfile.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi newfile.txt</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>修改档案文件</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.txt   <span class="comment">#test.txt 已存在</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.txt   <span class="comment">#test.txt 已存在</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li><p>vi 的两种工作模式：命令模式，编辑模式</p>
@@ -406,12 +406,12 @@
 <ol start="2">
 <li>在当前路径创建多级目录</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p mytest/test1/test1_1</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="literal">-p</span> mytest/test1/test1_1</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>在创建目录的同时给新建的目录赋权限</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m 777 testmod</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="literal">-m</span> <span class="number">777</span> testmod</span><br></pre></td></tr></table></figure>
 
 <p>这样任何人对此目录都有任何权限</p>
 <h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><blockquote>
@@ -464,13 +464,13 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -l test.txt test.txt_hlnk</span><br></pre></td></tr></table></figure>
 
 <p>使用 CentOS 常用命令查看 cpu</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">more /proc/cpuinfo | grep <span class="string">"model name"</span>   </span><br><span class="line">grep <span class="string">"model name"</span> /proc/cpuinfo   </span><br><span class="line">[root@localhost /]<span class="comment"># grep "CPU" /proc/cpuinfo   </span></span><br><span class="line">model name      : Intel(R) Pentium(R) Dual CPU E2180 @ 2.00GHz   </span><br><span class="line">model name      : Intel(R) Pentium(R) Dual CPU E2180 @ 2.00GHz</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">more /proc/cpuinfo | grep <span class="string">"model name"</span>   </span><br><span class="line">grep <span class="string">"model name"</span> /proc/cpuinfo   </span><br><span class="line">[<span class="type">root</span>@<span class="type">localhost</span> /]<span class="comment"># grep "CPU" /proc/cpuinfo   </span></span><br><span class="line">model name      : Intel(R) Pentium(R) Dual CPU E2180 <span class="selector-tag">@</span> <span class="number">2.00</span>GHz   </span><br><span class="line">model name      : Intel(R) Pentium(R) Dual CPU E2180 <span class="selector-tag">@</span> <span class="number">2.00</span>GHz</span><br></pre></td></tr></table></figure>
 
 <p>如果觉得需要看的更加舒服</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">"model name"</span> /proc/cpuinfo | cut -f2 -d:</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">"model name"</span> /proc/cpuinfo | cut <span class="literal">-f2</span> <span class="literal">-d</span>:</span><br></pre></td></tr></table></figure>
 
 <p>使用 CentOS 常用命令查看内存</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep MemTotal /proc/meminfo  grep MemTotal /proc/meminfo | cut -f2 -d:  free -m |grep <span class="string">"Mem"</span> | awk <span class="string">'&#123;print $2&#125;'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep MemTotal /proc/meminfo  grep MemTotal /proc/meminfo | cut <span class="literal">-f2</span> <span class="literal">-d</span>:  free <span class="literal">-m</span> |grep <span class="string">"Mem"</span> | awk <span class="string">'&#123;print $2&#125;'</span></span><br></pre></td></tr></table></figure>
 
 <p>使用 CentOS 常用命令查看 cpu 是 32 位还是 64 位 查看 CPU 位数 (32 or 64)</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getconf LONG_BIT</span><br></pre></td></tr></table></figure>
@@ -614,7 +614,7 @@
 <ol start="9">
 <li>显示挂载的文件系统</li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount </span><br><span class="line">cat /etc/fstab   <span class="comment"># 显示系统启动自动加载的文件系统 </span></span><br><span class="line">cat /etc/mtab   <span class="comment"># 显示当前加载的文件系统</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount </span><br><span class="line">cat /etc/fstab   # 显示系统启动自动加载的文件系统 </span><br><span class="line">cat /etc/mtab   # 显示当前加载的文件系统</span><br></pre></td></tr></table></figure>
 
 
   </div>
