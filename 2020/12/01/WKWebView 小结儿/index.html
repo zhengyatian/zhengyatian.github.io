@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香~啪啪。。 换他丫的！ 说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓">
+    <meta name="description" content="最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香~啪啪。。 换他丫的！ 说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WKWebView 小结儿">
 <meta property="og:url" content="https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/index.html">
 <meta property="og:site_name" content="迷">
-<meta property="og:description" content="最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香~啪啪。。 换他丫的！ 说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓">
+<meta property="og:description" content="最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香~啪啪。。 换他丫的！ 说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-01T02:40:36.000Z">
-<meta property="article:modified_time" content="2021-06-25T07:36:26.777Z">
+<meta property="article:modified_time" content="2021-07-02T08:00:59.685Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="WebView">
@@ -103,7 +103,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&name=WKWebView 小结儿&description=&lt;p&gt;最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香&lt;del&gt;~&lt;/del&gt;啪啪。。&lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&name=WKWebView 小结儿&description=&lt;p&gt;最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香&lt;del&gt;~&lt;/del&gt;啪啪。。&lt;/p&gt;
 &lt;p&gt;换他丫的！&lt;/p&gt;
 &lt;p&gt;说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&t=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
@@ -155,7 +155,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
+    <p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
 <p>换他丫的！</p>
 <p>说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓</p>
 <a id="more"></a>
@@ -304,7 +304,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&title=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&name=WKWebView 小结儿&description=&lt;p&gt;最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 时的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香&lt;del&gt;~&lt;/del&gt;啪啪。。&lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&name=WKWebView 小结儿&description=&lt;p&gt;最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香&lt;del&gt;~&lt;/del&gt;啪啪。。&lt;/p&gt;
 &lt;p&gt;换他丫的！&lt;/p&gt;
 &lt;p&gt;说来也惭愧，iOS 8.0 就开始支持 WebKit 了，一直没沉下心来学习，我们一起好好看看里面都有什么吧🤓&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/&t=WKWebView 小结儿" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
@@ -325,11 +325,12 @@
         
         <footer id="footer">
   <div class="footer-left">
+    YYLittleCat
     Copyright &copy;
     
     
     2015-2021
-    YYLittleCat
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
   </div>
   <div class="footer-right">
     <nav>
@@ -346,7 +347,7 @@
           <li><a href="/search/">搜索</a></li>
         
       </ul>
-    </nav>
+    </nav>    
   </div>
 </footer>
 
