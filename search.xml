@@ -43,240 +43,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GiTalk 404</title>
-    <url>/2021/06/22/GiTalk-404/</url>
-    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GiTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
-<p>这篇文章是要讲解怎么配置 GiTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
-<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GiTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
-<a id="more"></a>
-
-<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
-<center>
-    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/15.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/16.png" class width="240"></div>
-</center>
-
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/17.png" class width="500"></div>
-</center>
-
-
-
-
-
-
-</div></div>]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo博客等静态网页提交到谷歌和百度收录</title>
-    <url>/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="什么是-站点地图-？"><a href="#什么是-站点地图-？" class="headerlink" title="什么是 站点地图 ？"></a>什么是 站点地图 ？</h3><blockquote>
-<p> 站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找到他们想看的页面。</p>
-<p>–百度百科</p>
-</blockquote>
-<h3 id="一、生成站点地图"><a href="#一、生成站点地图" class="headerlink" title="一、生成站点地图"></a>一、生成站点地图</h3><ol>
-<li><p>安装站点地图生成插件</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-baidu</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-</li>
-<li><p>在博客根目录的<code>_config.yml</code>中添加自动生成 sitemap 的配置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
-
-<p>同时确认一下该文件里面 url 对应的是否是接下来要提交的域名</p>
-</li>
-<li><p>生成和部署</p>
-<p>此时会在<code>public</code>目录下生成两个文件</p>
-<blockquote>
-<p><code>sitemap.xml</code> 用于提交给谷歌</p>
-<p><code>baidusitemap.xml</code> 用于提交给百度</p>
-</blockquote>
-</li>
-<li><p>部署成功后，在浏览器打开 <code>你的域名/baidusitemap.xml</code>，成功展示即代表成功</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210038.png" alt="img"></p>
-</li>
-</ol>
-<h3 id="二、提交到百度站长（百度收录）"><a href="#二、提交到百度站长（百度收录）" class="headerlink" title="二、提交到百度站长（百度收录）"></a>二、提交到百度站长（百度收录）</h3><h4 id="解决百度不爬取-Github-Pages-的问题"><a href="#解决百度不爬取-Github-Pages-的问题" class="headerlink" title="解决百度不爬取 Github Pages 的问题"></a>解决百度不爬取 Github Pages 的问题</h4><p>如果你的博客部署在 Github Pages, 百度是不会爬取的，这种情况需要借用其他平台转换一下。</p>
-<p>这里以 coding 为例</p>
-<ol>
-<li><p>在 coding 中也创建一个博客项目，取得提交地址</p>
-</li>
-<li><p>在博客根目录的<code>_config.yml</code>中添加 coding 仓库的配置，注意增加了<code>-</code>号，这样在部署的时候会同时部署到 Github 和 coding</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/hansionit/hansionit.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>hexo g -d</code>生成部署一下，会提交代码到 coding</p>
-</li>
-<li><p>在 coding 中开启 pages 服务，配置自定义域名，在你的域名解析控制台增加两条 CNAME，解析线路选择<code>百度</code>，让百度解析到 coding 的地址</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122236.png" alt="img"></p>
-</li>
-</ol>
-<h4 id="sitemap-方式提交"><a href="#sitemap-方式提交" class="headerlink" title="sitemap 方式提交"></a>sitemap 方式提交</h4><ol>
-<li><p>查询是否被收录</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413204214.png" alt="img"></p>
-</li>
-<li><p>若没有收录，则点击<code>提交网址</code>进行提交</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122915.png" alt="img"></p>
-<p>然后打开 <a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>，进入<code>站点管理</code> -&gt; <code>添加网站</code>    </p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413202939.png" alt="img"></p>
-</li>
-<li><p>添加完网站后，点击<code>管理站点</code> -&gt; <code>站点属性设置</code></p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210128.png" alt="img"></p>
-</li>
-<li><p>选择链接提交</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210323.png" alt="img"></p>
-</li>
-<li><p>选择 sitemap，输入上文中的 sitmap 地址，点击提交</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210527.png" alt="img">    如果提示错误，<strong>以下文件已经提交过了，如想重新提交，请先到文件对应工具的站点下删除此文件。</strong></p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211123.png" alt="img"></p>
-<p>可在下方进行勾选删除后重新提交，如果链接一模一样，没有必要删除，点击删除按钮左边的手动更新文件更新一下即可</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211221.png" alt="img"></p>
-</li>
-</ol>
-<h4 id="主动推送方式提交"><a href="#主动推送方式提交" class="headerlink" title="主动推送方式提交"></a>主动推送方式提交</h4><ol>
-<li><p>安装插件<code>npm install hexo-baidu-url-submit --save</code></p>
-</li>
-<li><p>在博客根目录的<code>config.yml</code>中添加</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">100</span>                 <span class="comment"># 提交最新的多少个链接</span></span><br><span class="line">  <span class="attr">host:</span>       <span class="comment"># 在百度站长平台中添加的域名</span></span><br><span class="line">  <span class="attr">token:</span>     <span class="comment"># 秘钥</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span></span><br></pre></td></tr></table></figure>
-
-<p>token 在推送的接口中有</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413212519.png" alt="img"></p>
-</li>
-<li><p>同样是该文件，在<code>deployer</code>中新加一行<code>type: baidu_url_submitter</code>, 注意需要为两个<code>type</code>前面添加<code>-</code>符号，结果如：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成部署</p>
-</li>
-</ol>
-<p>若最后有输出<code>{&quot;remain&quot;:2997,&quot;success&quot;:3} INFO Deploy done: baidu_url_submitter</code>, 则代表成功, success 的值代表成功多少条，remain 的值代表当天剩余可推送条数</p>
-<h4 id="自动推送方式提交"><a href="#自动推送方式提交" class="headerlink" title="自动推送方式提交"></a>自动推送方式提交</h4><p>Hexo 的有些主题已完成了此步骤，可先自行确认是否已经完成，一般完成此步骤的主题的<code>_config.yml</code>文件中会有<code>baidu_push</code>属性，将其设置为<code>true</code></p>
-<p>选择<code>自动推送</code> -&gt; <code>复制代码</code></p>
-<p>没有集成这项功能的，我们可以把代码粘贴到 <code>header.ejs</code> 文件的 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 标签之间</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211705.png" alt="img"></p>
-<h3 id="三、提交到谷歌搜索（谷歌收录）"><a href="#三、提交到谷歌搜索（谷歌收录）" class="headerlink" title="三、提交到谷歌搜索（谷歌收录）"></a>三、提交到谷歌搜索（谷歌收录）</h3><ol>
-<li><p>进入 <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a> 登录你的谷歌账号</p>
-</li>
-<li><p>在<code>网址前缀</code>中填写地址</p>
-</li>
-<li><p>下载验证文件</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414124339.png" alt="img"></p>
-</li>
-<li><p>存入<strong>主题</strong>的<code>source</code>目录，而不是根目录的 source 目录，<code>hexo g -d</code>生成部署，然后点击<code>验证</code>，验证成功如下图所示。若提示<code>您的验证文件中的内容不正确。您使用的验证文件是从这里下载的吗?</code>, 你需要检查一下目录是否放至正确</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132047.png" alt="img"></p>
-</li>
-<li><p>点击<code>前往资源页面</code>，点击<code>站点地图</code>, 输入站点地图的地址，点击<code>提交</code></p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132514.png" alt="img"></p>
-</li>
-<li><p>提交成功后，若显示<code>无法获取</code>，点击<code>无法获取</code>会进行网页获取，再刷新网页即可显示成功</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132654.png" alt="img"></p>
-</li>
-<li><p>可以顺便把百度的 sitemap 也提交上<code>baidusitemap.xml</code>, 成功结果如下：</p>
-<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132951.png" alt="img"></p>
-</li>
-</ol>
-<p>PS: <a href="https://www.hansion.win/2020/04/13/hexo-bo-ke-deng-jing-tai-wang-ye-ti-jiao-bai-du-he-google-gu-ge-shou-lu/#toc-heading-8" target="_blank" rel="noopener">转载自Hansion</a>，按照博主的说明，基本上算是完成了，可以成功搜到一部分内容，有些搜到的标题很诡异，还在看~~</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
-    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
-    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
-<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
-<p>​        <a id="more"></a></p>
-<center>
-    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/18.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/19.png" class width="300"></div>
-</center>
-
-
-<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
-<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
-<center>
-    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/20.png" class width="300"></div>
-    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/21.png" class width="300"></div>
-</center>
-
-
-<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
-<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
-<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
-<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
-    <url>/2020/02/14/LaunchImage/</url>
-    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
-<a id="more"></a>
-
-<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/23.png" alt="LaunchImage Setting.png"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DeviceCheck</title>
     <url>/2020/06/05/DeviceCheck/</url>
     <content><![CDATA[<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/14.png" alt></p>
@@ -407,6 +173,240 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GiTalk 404</title>
+    <url>/2021/06/22/GiTalk-404/</url>
+    <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GiTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
+<p>这篇文章是要讲解怎么配置 GiTalk 吗？😂😂😂😂😂NO~网上有很多文章，例如这一个 <a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">例如</a>。</p>
+<p>只是想记录一下，在修改了GitHub 用户名以后，使用 GiTalk 进行评论，却显示 404 的问题，因为我自己总是忘记了在哪里修改配置……😂😂😂😂😂</p>
+<a id="more"></a>
+
+<p>就是先这样，再这样，最后那样就好了……😂😂😂😂😂，又是蠢哭的一天。</p>
+<center>
+    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/15.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/16.png" class width="240"></div>
+</center>
+
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/17.png" class width="500"></div>
+</center>
+
+
+
+
+
+
+</div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客等静态网页提交到谷歌和百度收录</title>
+    <url>/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="什么是-站点地图-？"><a href="#什么是-站点地图-？" class="headerlink" title="什么是 站点地图 ？"></a>什么是 站点地图 ？</h3><blockquote>
+<p> 站点地图是一个网站所有链接的容器。很多网站的连接层次比较深，爬虫很难抓取到，站点地图可以方便爬虫抓取网站页面，通过抓取网站页面，清晰了解网站的架构，网站地图一般存放在根目录下并命名 sitemap，为爬虫指路，增加网站重要内容页面的收录。站点地图就是根据网站的结构、框架、内容，生成的导航网页文件。站点地图对于提高用户体验有好处，它们为网站访问者指明方向，并帮助迷失的访问者找到他们想看的页面。</p>
+<p>–百度百科</p>
+</blockquote>
+<h3 id="一、生成站点地图"><a href="#一、生成站点地图" class="headerlink" title="一、生成站点地图"></a>一、生成站点地图</h3><ol>
+<li><p>安装站点地图生成插件</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-baidu</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-sitemap</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+</li>
+<li><p>在博客根目录的<code>_config.yml</code>中添加自动生成 sitemap 的配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>同时确认一下该文件里面 url 对应的是否是接下来要提交的域名</p>
+</li>
+<li><p>生成和部署</p>
+<p>此时会在<code>public</code>目录下生成两个文件</p>
+<blockquote>
+<p><code>sitemap.xml</code> 用于提交给谷歌</p>
+<p><code>baidusitemap.xml</code> 用于提交给百度</p>
+</blockquote>
+</li>
+<li><p>部署成功后，在浏览器打开 <code>你的域名/baidusitemap.xml</code>，成功展示即代表成功</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210038.png" alt="img"></p>
+</li>
+</ol>
+<h3 id="二、提交到百度站长（百度收录）"><a href="#二、提交到百度站长（百度收录）" class="headerlink" title="二、提交到百度站长（百度收录）"></a>二、提交到百度站长（百度收录）</h3><h4 id="解决百度不爬取-Github-Pages-的问题"><a href="#解决百度不爬取-Github-Pages-的问题" class="headerlink" title="解决百度不爬取 Github Pages 的问题"></a>解决百度不爬取 Github Pages 的问题</h4><p>如果你的博客部署在 Github Pages, 百度是不会爬取的，这种情况需要借用其他平台转换一下。</p>
+<p>这里以 coding 为例</p>
+<ol>
+<li><p>在 coding 中也创建一个博客项目，取得提交地址</p>
+</li>
+<li><p>在博客根目录的<code>_config.yml</code>中添加 coding 仓库的配置，注意增加了<code>-</code>号，这样在部署的时候会同时部署到 Github 和 coding</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/hansionit/hansionit.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>hexo g -d</code>生成部署一下，会提交代码到 coding</p>
+</li>
+<li><p>在 coding 中开启 pages 服务，配置自定义域名，在你的域名解析控制台增加两条 CNAME，解析线路选择<code>百度</code>，让百度解析到 coding 的地址</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122236.png" alt="img"></p>
+</li>
+</ol>
+<h4 id="sitemap-方式提交"><a href="#sitemap-方式提交" class="headerlink" title="sitemap 方式提交"></a>sitemap 方式提交</h4><ol>
+<li><p>查询是否被收录</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413204214.png" alt="img"></p>
+</li>
+<li><p>若没有收录，则点击<code>提交网址</code>进行提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414122915.png" alt="img"></p>
+<p>然后打开 <a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>，进入<code>站点管理</code> -&gt; <code>添加网站</code>    </p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413202939.png" alt="img"></p>
+</li>
+<li><p>添加完网站后，点击<code>管理站点</code> -&gt; <code>站点属性设置</code></p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210128.png" alt="img"></p>
+</li>
+<li><p>选择链接提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210323.png" alt="img"></p>
+</li>
+<li><p>选择 sitemap，输入上文中的 sitmap 地址，点击提交</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413210527.png" alt="img">    如果提示错误，<strong>以下文件已经提交过了，如想重新提交，请先到文件对应工具的站点下删除此文件。</strong></p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211123.png" alt="img"></p>
+<p>可在下方进行勾选删除后重新提交，如果链接一模一样，没有必要删除，点击删除按钮左边的手动更新文件更新一下即可</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211221.png" alt="img"></p>
+</li>
+</ol>
+<h4 id="主动推送方式提交"><a href="#主动推送方式提交" class="headerlink" title="主动推送方式提交"></a>主动推送方式提交</h4><ol>
+<li><p>安装插件<code>npm install hexo-baidu-url-submit --save</code></p>
+</li>
+<li><p>在博客根目录的<code>config.yml</code>中添加</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">100</span>                 <span class="comment"># 提交最新的多少个链接</span></span><br><span class="line">  <span class="attr">host:</span>       <span class="comment"># 在百度站长平台中添加的域名</span></span><br><span class="line">  <span class="attr">token:</span>     <span class="comment"># 秘钥</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>token 在推送的接口中有</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413212519.png" alt="img"></p>
+</li>
+<li><p>同样是该文件，在<code>deployer</code>中新加一行<code>type: baidu_url_submitter</code>, 注意需要为两个<code>type</code>前面添加<code>-</code>符号，结果如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://e.coding.net/hansion_it/Blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成部署</p>
+</li>
+</ol>
+<p>若最后有输出<code>{&quot;remain&quot;:2997,&quot;success&quot;:3} INFO Deploy done: baidu_url_submitter</code>, 则代表成功, success 的值代表成功多少条，remain 的值代表当天剩余可推送条数</p>
+<h4 id="自动推送方式提交"><a href="#自动推送方式提交" class="headerlink" title="自动推送方式提交"></a>自动推送方式提交</h4><p>Hexo 的有些主题已完成了此步骤，可先自行确认是否已经完成，一般完成此步骤的主题的<code>_config.yml</code>文件中会有<code>baidu_push</code>属性，将其设置为<code>true</code></p>
+<p>选择<code>自动推送</code> -&gt; <code>复制代码</code></p>
+<p>没有集成这项功能的，我们可以把代码粘贴到 <code>header.ejs</code> 文件的 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 标签之间</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200413211705.png" alt="img"></p>
+<h3 id="三、提交到谷歌搜索（谷歌收录）"><a href="#三、提交到谷歌搜索（谷歌收录）" class="headerlink" title="三、提交到谷歌搜索（谷歌收录）"></a>三、提交到谷歌搜索（谷歌收录）</h3><ol>
+<li><p>进入 <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a> 登录你的谷歌账号</p>
+</li>
+<li><p>在<code>网址前缀</code>中填写地址</p>
+</li>
+<li><p>下载验证文件</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414124339.png" alt="img"></p>
+</li>
+<li><p>存入<strong>主题</strong>的<code>source</code>目录，而不是根目录的 source 目录，<code>hexo g -d</code>生成部署，然后点击<code>验证</code>，验证成功如下图所示。若提示<code>您的验证文件中的内容不正确。您使用的验证文件是从这里下载的吗?</code>, 你需要检查一下目录是否放至正确</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132047.png" alt="img"></p>
+</li>
+<li><p>点击<code>前往资源页面</code>，点击<code>站点地图</code>, 输入站点地图的地址，点击<code>提交</code></p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132514.png" alt="img"></p>
+</li>
+<li><p>提交成功后，若显示<code>无法获取</code>，点击<code>无法获取</code>会进行网页获取，再刷新网页即可显示成功</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132654.png" alt="img"></p>
+</li>
+<li><p>可以顺便把百度的 sitemap 也提交上<code>baidusitemap.xml</code>, 成功结果如下：</p>
+<p><img src="https://my-online-pics.oss-cn-beijing.aliyuncs.com/img/20200414132951.png" alt="img"></p>
+</li>
+</ol>
+<p>PS: <a href="https://www.hansion.win/2020/04/13/hexo-bo-ke-deng-jing-tai-wang-ye-ti-jiao-bai-du-he-google-gu-ge-shou-lu/#toc-heading-8" target="_blank" rel="noopener">转载自Hansion</a>，按照博主的说明，基本上算是完成了，可以成功搜到一部分内容，有些搜到的标题很诡异，还在看~~</p>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Inferred (Constraints) 和 Autoresizing Mask</title>
+    <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
+    <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
+<h5 id="乌龙"><a href="#乌龙" class="headerlink" title="乌龙"></a>乌龙</h5><p>可用与不可用：</p>
+<p>​        <a id="more"></a></p>
+<center>
+    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/18.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/19.png" class width="300"></div>
+</center>
+
+
+<p>吓死我了，CV 大法居然都不好使了？！！！！！</p>
+<p>对比了一下两个 View 的设置以后，发现是 Layout 选项不同的原因，<code>Inferred (Constraints)</code> 和 <code>Autoresizing Mask</code> 。</p>
+<center>
+    <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/20.png" class width="300"></div>
+    <div style="display:inline-block;margin-left:10px;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/21.png" class width="300"></div>
+</center>
+
+
+<p>新页面自动使用 <code>Autoresizing Mask</code> ，不清楚是不是 Xcode 12.* 的bug，我记得 <code>Autoresizing Mask</code>  早些时候就不怎么用了，居然又出来了，还是很有意思的。</p>
+<h5 id="PS-有兴趣可以看看这两个讨论"><a href="#PS-有兴趣可以看看这两个讨论" class="headerlink" title="PS: 有兴趣可以看看这两个讨论"></a>PS: 有兴趣可以看看这两个讨论</h5><p><a href="https://developer.apple.com/forums/thread/669586" target="_blank" rel="noopener">Constraint Layout No Longer Available</a></p>
+<p><a href="https://dev.classmethod.jp/articles/new-auto-layout-feature/" target="_blank" rel="noopener">[iOS 10] Auto Layout の新機能について</a></p>
+<h5 id="PPS-Hexo-里图片并排原来可以这样写……"><a href="#PPS-Hexo-里图片并排原来可以这样写……" class="headerlink" title="PPS:  Hexo 里图片并排原来可以这样写……"></a>PPS:  Hexo 里图片并排原来可以这样写……</h5><p><a href="https://blog.ahao.moe/posts/Hexo_multiple_images_side_by_side.html" target="_blank" rel="noopener">参考自</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;"</span>&gt;</span>&#123;%img /img/1.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:inline-block;margin-left:10px;"</span>&gt;</span>&#123;%img /img/2.png 300%&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
+    <url>/2020/02/14/LaunchImage/</url>
+    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
+<a id="more"></a>
+
+<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/23.png" alt="LaunchImage Setting.png"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac 下 IDEA 无法启动的问题</title>
     <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
@@ -440,7 +440,7 @@
 <p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">HTTP 的一点儿小知识</a>。</p>
 <p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
@@ -449,7 +449,7 @@
 
 <p>添加参数</p>
 <p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/" target="_blank" rel="noopener">URL Loading System[译]</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -588,32 +588,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
-<a id="more"></a>
-
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>WebView</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -690,6 +664,32 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">WKHTTPCookieStoreObserver</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)cookiesDidChangeInCookieStore:(<span class="built_in">WKHTTPCookieStore</span> *)cookieStore;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 
 <p>还没写完<del>~</del></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>WebView</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+<a id="more"></a>
+
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -859,54 +859,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mailcore 2 iOS  之二 SMTP</title>
-    <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
-    <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
-<p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，</p>
-<p>希望对你们有帮助，也做个沟通交流。</p>
-<ul>
-<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
-</li>
-<li><p>SMTP</p>
-  <a id="more"></a>
-
-<ul>
-<li>登录/用户验证</li>
-<li>创建邮件体</li>
-<li>附件添加</li>
-<li>发送</li>
-<li>发送成功后<code>手动</code>添加到<code>“已发送”</code>文件夹</li>
-</ul>
-</li>
-</ul>
-<h5 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h5><h6 id="1、登录-用户验证"><a href="#1、登录-用户验证" class="headerlink" title="1、登录/用户验证"></a>1、登录/用户验证</h6><p>​    不论哪种协议，都需要先验证邮箱地址/服务器、密码、端口等，SMTP也一样，你也可以不验证，大不了就是发不出去邮件。。。🤓🤓🤓🤓🤓</p>
-<p>创建session，都类似的</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.smtpSession.hostname = session.smtpHost;<span class="comment">//smtp.***.com</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.username = session.username;<span class="comment">//littlecat@xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.password = session.password;<span class="comment">//password</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.port     = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)session.smtpPort;<span class="comment">//25、465、587？</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.connectionType = session.smtpIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;<span class="comment">//取决于你的邮件服务器是不是SSL的；</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.authType = MCOAuthTypeSASLLogin;<span class="comment">//session校验的类型，这里选的登录，其他还没搞明白(没看。。)😌</span></span><br></pre></td></tr></table></figure>
-
-<p>校验邮箱信息</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOSMTPOperation *smtpOperation = [smtpSession loginOperation];</span><br><span class="line">[smtpOperation start:^(<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"finished checking SMTP account."</span>);</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="comment">//now ,you can send email.</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error check smtp account: %@"</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<h6 id="2、创建邮件"><a href="#2、创建邮件" class="headerlink" title="2、创建邮件"></a>2、创建邮件</h6><ul>
-<li>create message builder;</li>
-<li>set sender(from)、receiver（to）、cc and bcc;</li>
-<li>set body (html body  or  plain text body);</li>
-</ul>
-<p>懒得正经打字了，bite me！🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)messageBuildFrom:(<span class="built_in">NSString</span> *)displayName <span class="comment">// 发件人昵称，可以不设置；</span></span><br><span class="line">                 mailBox:(<span class="built_in">NSString</span> *)mail  <span class="comment">//发件人邮箱地址；</span></span><br><span class="line">                      to:(<span class="built_in">NSArray</span> *)to  <span class="comment">//收件人（邮箱地址字符串格式，下同）；</span></span><br><span class="line">                      cc:(<span class="built_in">NSArray</span> *)cc  <span class="comment">//抄送人；</span></span><br><span class="line">                     bcc:(<span class="built_in">NSArray</span> *)bcc  <span class="comment">//密送人；</span></span><br><span class="line">                 subject:(<span class="built_in">NSString</span> *)subject  <span class="comment">//邮件主题；</span></span><br><span class="line">                textBody:(<span class="built_in">NSString</span> *)body  <span class="comment">//邮件正文，我这里是带标签的html文本；</span></span><br><span class="line">                 attachs:(<span class="built_in">NSDictionary</span> *)attachs  <span class="comment">//附件s（文件名称和NSData格式数据）；</span></span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser  <span class="comment">//转发时的原邮件；</span></span><br><span class="line">         completeHandler:(<span class="keyword">void</span>(^)())complete</span><br><span class="line">                   error:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder = [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//header;</span></span><br><span class="line">    <span class="keyword">if</span> (displayName != <span class="literal">nil</span>) &#123;</span><br><span class="line">        msgBuilder.header.from = [MCOAddress addressWithDisplayName:displayName mailbox:mail];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        msgBuilder.header.from = [MCOAddress addressWithMailbox:mail];</span><br><span class="line">    &#125;</span><br><span class="line">    msgBuilder.header.to      = [<span class="keyword">self</span> mailStringToMCOAddress:to];<span class="comment">//字符串格式的邮箱地址，要转成address类；</span></span><br><span class="line">    msgBuilder.header.cc      = [<span class="keyword">self</span> mailStringToMCOAddress:cc];</span><br><span class="line">    msgBuilder.header.bcc     = [<span class="keyword">self</span> mailStringToMCOAddress:bcc];</span><br><span class="line">    msgBuilder.header.subject = subject;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//body</span></span><br><span class="line">    [msgBuilder setHTMLBody:body];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//------见下</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSArray</span> *)mailStringToMCOAddress:(<span class="built_in">NSArray</span> *)arr</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSMutableArray</span> *temp = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *str <span class="keyword">in</span> arr) &#123;</span><br><span class="line">        MCOAddress *add = [MCOAddress addressWithMailbox:str];</span><br><span class="line">        [temp addObject:add];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp.copy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="3、附件处理"><a href="#3、附件处理" class="headerlink" title="3、附件处理"></a>3、附件处理</h6><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)messageBuildFrom:(<span class="built_in">NSString</span> *)displayName</span><br><span class="line">                 mailBox:(<span class="built_in">NSString</span> *)mail</span><br><span class="line">                      to:(<span class="built_in">NSArray</span> *)to</span><br><span class="line">                      cc:(<span class="built_in">NSArray</span> *)cc</span><br><span class="line">                     bcc:(<span class="built_in">NSArray</span> *)bcc</span><br><span class="line">                 subject:(<span class="built_in">NSString</span> *)subject</span><br><span class="line">                textBody:(<span class="built_in">NSString</span> *)body</span><br><span class="line">                 attachs:(<span class="built_in">NSDictionary</span> *)attachs</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser</span><br><span class="line">         completeHandler:(<span class="keyword">void</span>(^)())complete</span><br><span class="line">                   error:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder = [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// -------见上 。。。 ------//</span></span><br><span class="line">    <span class="keyword">if</span> (msgParser != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="comment">//附加资源，</span></span><br><span class="line">        <span class="built_in">NSArray</span> *inAttach = msgParser.htmlInlineAttachments;</span><br><span class="line">        <span class="keyword">for</span> (MCOAttachment *attach <span class="keyword">in</span> inAttach) &#123;</span><br><span class="line">            <span class="built_in">NSString</span> * path = [<span class="built_in">NSTemporaryDirectory</span>() stringByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_%@"</span>,msgParser.header.messageID,attach.filename]];</span><br><span class="line">            <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfFile:path];</span><br><span class="line">            <span class="keyword">if</span> (data) &#123;</span><br><span class="line">                MCOAttachment *temp = [MCOAttachment attachmentWithData:data filename:attach.filename];</span><br><span class="line">                temp.inlineAttachment = <span class="literal">YES</span>;</span><br><span class="line">                [msgBuilder addRelatedAttachment:temp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//看接口文档的意思，上面是把转发的邮件中的附件添加上，</span></span><br><span class="line">    <span class="comment">//可是并不起作用。。。采取的方法是，下面循环再添加一次。。。。🤧🤧🤧🤧🤧</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//附件</span></span><br><span class="line">    <span class="keyword">if</span> (attachs) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">NSString</span> *name <span class="keyword">in</span> attachs.allKeys) &#123;</span><br><span class="line">            MCOAttachment *attach = [MCOAttachment attachmentWithData:[attachs objectForKey:name] filename:name];</span><br><span class="line">            [msgBuilder addAttachment:attach];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//send</span></span><br><span class="line">    <span class="comment">//--------见下</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="4、发送邮件"><a href="#4、发送邮件" class="headerlink" title="4、发送邮件"></a>4、发送邮件</h6><p>邮件也创建了，附件添加完，终于要发送了，但是要注意的是<code>发送操作成功完成后，对方确实可以成功收到，但是在发送方的“已发送”是没有的，需要手动append一份过去</code>。<br>执行append操作，需要用<code>imapSession</code>的，不要搞错了。😅<br> “已发送”文件夹的filepath，可能是 <code>Sent、Sent Messages</code>等等，具体看你解析的邮箱服务器，不一定都是Sent 哦。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//send</span></span><br><span class="line"><span class="built_in">NSData</span> *rfc822 = [msgBuilder data];</span><br><span class="line">MCOSMTPSendOperation *send = [smtpSession sendOperationWithData:rfc822];</span><br><span class="line">[send start:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        fail(error);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//发送成功后，手动添加到“已发送”；</span></span><br><span class="line">        MCOIMAPAppendMessageOperation *op = [imapSession appendMessageOperationWithFolder:[MMIMAPTool getVirtualNameFor:<span class="string">@"Sent"</span>] messageData:rfc822 flags:MCOMessageFlagMDNSent];</span><br><span class="line">        [op start:^(<span class="built_in">NSError</span> *error, uint32_t createdUID) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"create sent message :%@\nerror:%@"</span>, @(createdUID), error);</span><br><span class="line">        &#125;];</span><br><span class="line">        complete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
-<h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>邮箱</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
     <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
     <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
@@ -954,168 +906,51 @@
       </tags>
   </entry>
   <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 迁移至云服务的记录</title>
-    <url>/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<blockquote>
-<p>这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程<del>~</del></p>
-</blockquote>
-<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><blockquote>
-<p>腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿</p>
-<p>标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps</p>
-</blockquote>
-<h3 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h3><a id="more"></a>
-
-<p>用到的文件命令：</p>
-<ol>
-<li>在当前路径创建一级目录</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>在当前路径创建多级目录</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p mytest/test1/test1_1</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>在创建目录的同时给新建的目录赋权限</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -m 777 testmod</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>修改一个目录的权限</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod 700 -R <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<p>PS：<a href="https://www.haorooms.com/post/centeros_wj_zj" target="_blank" rel="noopener">参考自</a></p>
-<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><ol>
-<li><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4></li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><h4 id="测试-nginx-配置文件"><a href="#测试-nginx-配置文件" class="headerlink" title="测试 nginx 配置文件"></a>测试 nginx 配置文件</h4></li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br><span class="line"></span><br><span class="line"><span class="comment">#结果ok，会打印如下</span></span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><h4 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h4></li>
-</ol>
-<p>查看<code>/etc/nginx/nginx.conf</code>文件，内容如下：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># For more information on configuration, see:</span></span><br><span class="line"><span class="comment">#   * Official English Documentation: http://nginx.org/en/docs/</span></span><br><span class="line"><span class="comment">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">user</span> nginx;</span><br><span class="line"><span class="attribute">worker_processes</span> auto;</span><br><span class="line"><span class="attribute">error_log</span> /var/log/nginx/error.log;</span><br><span class="line"><span class="attribute">pid</span> /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span></span><br><span class="line"><span class="attribute">include</span> /usr/share/nginx/modules/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line"><span class="section">events</span> &#123;</span><br><span class="line">    <span class="attribute">worker_connections</span> <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">log_format</span>  main  <span class="string">'<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] "<span class="variable">$request</span>" '</span></span><br><span class="line">                      <span class="string">'<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> "<span class="variable">$http_referer</span>" '</span></span><br><span class="line">                      <span class="string">'"<span class="variable">$http_user_agent</span>" "<span class="variable">$http_x_forwarded_for</span>"'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">access_log</span>  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">sendfile</span>            <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nopush</span>          <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nodelay</span>         <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">keepalive_timeout</span>   <span class="number">65</span>;</span><br><span class="line">    <span class="attribute">types_hash_max_size</span> <span class="number">4096</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">include</span>             /etc/nginx/mime.types;</span><br><span class="line">    <span class="attribute">default_type</span>        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Load modular configuration files from the /etc/nginx/conf.d directory.</span></span><br><span class="line">    <span class="comment"># See http://nginx.org/en/docs/ngx_core_module.html#include</span></span><br><span class="line">    <span class="comment"># for more information.</span></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span>  _;</span><br><span class="line">        <span class="attribute">root</span>         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">        <span class="attribute">include</span> /etc/nginx/default.d/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line">        <span class="attribute">location</span> = /<span class="number">404</span>.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">"/etc/nginx/nginx.conf" 84L, 2336C                                                                                                                             1,1           Top</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><h4 id="启动、停止、查看状态、开机自启动"><a href="#启动、停止、查看状态、开机自启动" class="headerlink" title="启动、停止、查看状态、开机自启动"></a>启动、停止、查看状态、开机自启动</h4></li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start nginx.service</span><br><span class="line">systemctl stop nginx.service</span><br><span class="line">systemctl reload nginx.service</span><br><span class="line">systemctl status nginx.service</span><br><span class="line">service nginx start</span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
-
-<p>​    启动以后类似下面的输出</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">● nginx.service - The nginx HTTP and reverse proxy server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Wed 2021-06-30 21:25:38 CST; 4s ago</span><br><span class="line">  Process: 2231 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2228 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2227 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 2233 (nginx)</span><br><span class="line">   CGroup: /system.slice/nginx.service</span><br><span class="line">           ├─2233 nginx: master process /usr/sbin/nginx</span><br><span class="line">           └─2235 nginx: worker process</span><br><span class="line">           </span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos systemd[1]: Starting The nginx HTTP and reverse proxy server...</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos nginx[2228]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos nginx[2228]: nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos systemd[1]: Started The nginx HTTP and reverse proxy server.</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Hexo-个人博客部署到-CentOS-个人服务器"><a href="#Hexo-个人博客部署到-CentOS-个人服务器" class="headerlink" title="Hexo 个人博客部署到 CentOS 个人服务器"></a>Hexo 个人博客部署到 CentOS 个人服务器</h3><ol>
-<li><h4 id="安装-Git-Nginx"><a href="#安装-Git-Nginx" class="headerlink" title="安装 Git Nginx"></a>安装 Git Nginx</h4></li>
-</ol>
-<p>升级 CentOS 所有包，包括系统版本内核升级</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum install -y git nginx</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><h4 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h4></li>
-</ol>
+    <title>mailcore 2 iOS  之二 SMTP</title>
+    <url>/2018/12/12/mailcore2-iOS%E4%B9%8B%E4%BA%8CSMTP/</url>
+    <content><![CDATA[<p>起源见 <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
+<p>上一篇大致说了下IMAP协议中的简单使用，看到文章有人看，为了我的<code>三个</code>👨‍💻‍👨‍💻‍👨‍💻‍粉丝，那我继续更新一下，</p>
+<p>希望对你们有帮助，也做个沟通交流。</p>
 <ul>
-<li>创建文件目录, 用于博客站点文件存放, 并更改目录读写权限</li>
+<li><p>IMAP <a href="http://zhengyatian.github.io/2018/02/02/2018-02-02-mailcore-2-iOS-%E4%B9%8B%E4%B8%80-IMAP/" target="_blank" rel="noopener">mailcore2-ios  之一 IMAP</a></p>
+</li>
+<li><p>SMTP</p>
+  <a id="more"></a>
+
+<ul>
+<li>登录/用户验证</li>
+<li>创建邮件体</li>
+<li>附件添加</li>
+<li>发送</li>
+<li>发送成功后<code>手动</code>添加到<code>“已发送”</code>文件夹</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/share/nginx/www/hexo</span><br><span class="line">chmod -R 755 /usr/share/nginx/www/hexo</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>配置 Nginx 服务器</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
-
-<p>通过 vim 查找 <code>listen 80</code> 找到如下代码, 并修改</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">      <span class="attribute">listen</span>       <span class="number">80</span>; <span class="comment"># 默认监听80端口，先不用管</span></span><br><span class="line">      <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">      <span class="attribute">server_name</span>  www.xxx.com; <span class="comment"># 填写个人域名，有的话就写，没有也可以保持 _</span></span><br><span class="line">      <span class="attribute">root</span>         /usr/share/nginx/www/hexo; </span><br><span class="line">  &#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>添加测试首页</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/share/nginx/www/hexo/index.html <span class="comment">#路径就是自己新建的博客路径</span></span><br></pre></td></tr></table></figure>
-
-<p>测试页的内容可以简单类似这样：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Nginx Bazinga!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>访问服务的 ip 或者 域名，能看到 <code>Nginx Bazinga!</code> 就表示 Nginx 基本成功了。</p>
-<ol start="3">
-<li><h4 id="下载-Nodejs"><a href="#下载-Nodejs" class="headerlink" title="下载 Nodejs"></a>下载 Nodejs</h4></li>
-</ol>
-<p>Nodejs 我也不是很懂，通过 yum 安装的并不是最新版本，网上有些资源说是要指定 源 ？</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install -y nodejs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以查看版本号的话，表示安装成功了。</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4></li>
-</ol>
-<ul>
-<li><p>首先要安装 Git，前面我们已经安装过了~</p>
-<p>新建一个存放 hexo git 内容的目录</p>
 </li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/share/nginx/git</span><br></pre></td></tr></table></figure>
+<h5 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h5><h6 id="1、登录-用户验证"><a href="#1、登录-用户验证" class="headerlink" title="1、登录/用户验证"></a>1、登录/用户验证</h6><p>​    不论哪种协议，都需要先验证邮箱地址/服务器、密码、端口等，SMTP也一样，你也可以不验证，大不了就是发不出去邮件。。。🤓🤓🤓🤓🤓</p>
+<p>创建session，都类似的</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.smtpSession.hostname = session.smtpHost;<span class="comment">//smtp.***.com</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.username = session.username;<span class="comment">//littlecat@xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.password = session.password;<span class="comment">//password</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.port     = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)session.smtpPort;<span class="comment">//25、465、587？</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.connectionType = session.smtpIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;<span class="comment">//取决于你的邮件服务器是不是SSL的；</span></span><br><span class="line"><span class="keyword">self</span>.smtpSession.authType = MCOAuthTypeSASLLogin;<span class="comment">//session校验的类型，这里选的登录，其他还没搞明白(没看。。)😌</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>初始化为 git 仓库</li>
+<p>校验邮箱信息</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOSMTPOperation *smtpOperation = [smtpSession loginOperation];</span><br><span class="line">[smtpOperation start:^(<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"finished checking SMTP account."</span>);</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="comment">//now ,you can send email.</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error check smtp account: %@"</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h6 id="2、创建邮件"><a href="#2、创建邮件" class="headerlink" title="2、创建邮件"></a>2、创建邮件</h6><ul>
+<li>create message builder;</li>
+<li>set sender(from)、receiver（to）、cc and bcc;</li>
+<li>set body (html body  or  plain text body);</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/nginx/git</span><br><span class="line">git init --bare ATommyGirl.git</span><br></pre></td></tr></table></figure>
+<p>懒得正经打字了，bite me！🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)messageBuildFrom:(<span class="built_in">NSString</span> *)displayName <span class="comment">// 发件人昵称，可以不设置；</span></span><br><span class="line">                 mailBox:(<span class="built_in">NSString</span> *)mail  <span class="comment">//发件人邮箱地址；</span></span><br><span class="line">                      to:(<span class="built_in">NSArray</span> *)to  <span class="comment">//收件人（邮箱地址字符串格式，下同）；</span></span><br><span class="line">                      cc:(<span class="built_in">NSArray</span> *)cc  <span class="comment">//抄送人；</span></span><br><span class="line">                     bcc:(<span class="built_in">NSArray</span> *)bcc  <span class="comment">//密送人；</span></span><br><span class="line">                 subject:(<span class="built_in">NSString</span> *)subject  <span class="comment">//邮件主题；</span></span><br><span class="line">                textBody:(<span class="built_in">NSString</span> *)body  <span class="comment">//邮件正文，我这里是带标签的html文本；</span></span><br><span class="line">                 attachs:(<span class="built_in">NSDictionary</span> *)attachs  <span class="comment">//附件s（文件名称和NSData格式数据）；</span></span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser  <span class="comment">//转发时的原邮件；</span></span><br><span class="line">         completeHandler:(<span class="keyword">void</span>(^)())complete</span><br><span class="line">                   error:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder = [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//header;</span></span><br><span class="line">    <span class="keyword">if</span> (displayName != <span class="literal">nil</span>) &#123;</span><br><span class="line">        msgBuilder.header.from = [MCOAddress addressWithDisplayName:displayName mailbox:mail];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        msgBuilder.header.from = [MCOAddress addressWithMailbox:mail];</span><br><span class="line">    &#125;</span><br><span class="line">    msgBuilder.header.to      = [<span class="keyword">self</span> mailStringToMCOAddress:to];<span class="comment">//字符串格式的邮箱地址，要转成address类；</span></span><br><span class="line">    msgBuilder.header.cc      = [<span class="keyword">self</span> mailStringToMCOAddress:cc];</span><br><span class="line">    msgBuilder.header.bcc     = [<span class="keyword">self</span> mailStringToMCOAddress:bcc];</span><br><span class="line">    msgBuilder.header.subject = subject;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//body</span></span><br><span class="line">    [msgBuilder setHTMLBody:body];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//------见下</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSArray</span> *)mailStringToMCOAddress:(<span class="built_in">NSArray</span> *)arr</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSMutableArray</span> *temp = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *str <span class="keyword">in</span> arr) &#123;</span><br><span class="line">        MCOAddress *add = [MCOAddress addressWithMailbox:str];</span><br><span class="line">        [temp addObject:add];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp.copy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>创建 Git 钩子 (hook), 用于指定 Git 的源代码 和 Git 配置文件</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/share/nginx/git/ATommyGirl.git/hooks/post-receive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 钩子内容如下</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/usr/share/nginx/www/hexo --git-dir=/usr/share/nginx/git/ATommyGirl.git checkout -f</span><br></pre></td></tr></table></figure>
+<h6 id="3、附件处理"><a href="#3、附件处理" class="headerlink" title="3、附件处理"></a>3、附件处理</h6><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)messageBuildFrom:(<span class="built_in">NSString</span> *)displayName</span><br><span class="line">                 mailBox:(<span class="built_in">NSString</span> *)mail</span><br><span class="line">                      to:(<span class="built_in">NSArray</span> *)to</span><br><span class="line">                      cc:(<span class="built_in">NSArray</span> *)cc</span><br><span class="line">                     bcc:(<span class="built_in">NSArray</span> *)bcc</span><br><span class="line">                 subject:(<span class="built_in">NSString</span> *)subject</span><br><span class="line">                textBody:(<span class="built_in">NSString</span> *)body</span><br><span class="line">                 attachs:(<span class="built_in">NSDictionary</span> *)attachs</span><br><span class="line">                htmlBody:(MCOAbstractMessage *)msgParser</span><br><span class="line">         completeHandler:(<span class="keyword">void</span>(^)())complete</span><br><span class="line">                   error:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error))fail</span><br><span class="line">&#123;</span><br><span class="line">    MCOMessageBuilder *msgBuilder = [[MCOMessageBuilder alloc] init];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// -------见上 。。。 ------//</span></span><br><span class="line">    <span class="keyword">if</span> (msgParser != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="comment">//附加资源，</span></span><br><span class="line">        <span class="built_in">NSArray</span> *inAttach = msgParser.htmlInlineAttachments;</span><br><span class="line">        <span class="keyword">for</span> (MCOAttachment *attach <span class="keyword">in</span> inAttach) &#123;</span><br><span class="line">            <span class="built_in">NSString</span> * path = [<span class="built_in">NSTemporaryDirectory</span>() stringByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_%@"</span>,msgParser.header.messageID,attach.filename]];</span><br><span class="line">            <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfFile:path];</span><br><span class="line">            <span class="keyword">if</span> (data) &#123;</span><br><span class="line">                MCOAttachment *temp = [MCOAttachment attachmentWithData:data filename:attach.filename];</span><br><span class="line">                temp.inlineAttachment = <span class="literal">YES</span>;</span><br><span class="line">                [msgBuilder addRelatedAttachment:temp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//看接口文档的意思，上面是把转发的邮件中的附件添加上，</span></span><br><span class="line">    <span class="comment">//可是并不起作用。。。采取的方法是，下面循环再添加一次。。。。🤧🤧🤧🤧🤧</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//附件</span></span><br><span class="line">    <span class="keyword">if</span> (attachs) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">NSString</span> *name <span class="keyword">in</span> attachs.allKeys) &#123;</span><br><span class="line">            MCOAttachment *attach = [MCOAttachment attachmentWithData:[attachs objectForKey:name] filename:name];</span><br><span class="line">            [msgBuilder addAttachment:attach];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//send</span></span><br><span class="line">    <span class="comment">//--------见下</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>保存并退出后, 给该文件添加可执行权限</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x /usr/share/nginx/git/ATommyGirl.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+<h6 id="4、发送邮件"><a href="#4、发送邮件" class="headerlink" title="4、发送邮件"></a>4、发送邮件</h6><p>邮件也创建了，附件添加完，终于要发送了，但是要注意的是<code>发送操作成功完成后，对方确实可以成功收到，但是在发送方的“已发送”是没有的，需要手动append一份过去</code>。<br>执行append操作，需要用<code>imapSession</code>的，不要搞错了。😅<br> “已发送”文件夹的filepath，可能是 <code>Sent、Sent Messages</code>等等，具体看你解析的邮箱服务器，不一定都是Sent 哦。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//send</span></span><br><span class="line"><span class="built_in">NSData</span> *rfc822 = [msgBuilder data];</span><br><span class="line">MCOSMTPSendOperation *send = [smtpSession sendOperationWithData:rfc822];</span><br><span class="line">[send start:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        fail(error);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//发送成功后，手动添加到“已发送”；</span></span><br><span class="line">        MCOIMAPAppendMessageOperation *op = [imapSession appendMessageOperationWithFolder:[MMIMAPTool getVirtualNameFor:<span class="string">@"Sent"</span>] messageData:rfc822 flags:MCOMessageFlagMDNSent];</span><br><span class="line">        [op start:^(<span class="built_in">NSError</span> *error, uint32_t createdUID) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"create sent message :%@\nerror:%@"</span>, @(createdUID), error);</span><br><span class="line">        &#125;];</span><br><span class="line">        complete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li><h4 id="本地-hexo-配置"><a href="#本地-hexo-配置" class="headerlink" title="本地 hexo 配置"></a>本地 hexo 配置</h4></li>
-</ol>
-<p>本地如何搭建 hexo 网上资料非常多。基于我们上面的操作，在本地博客文件夹根目录中的 <code>_config.yml</code>  配置文件增加一个 <code>deploy</code> 就可以了。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">root@your_server_ip:gitpath/git</span> <span class="comment">#用户名@域名或IP 地址:自己的git路径</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">message:</span></span><br></pre></td></tr></table></figure>
-
-<p>我有多个提交的地址：</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt></p>
-<p>PPS:<a href="https://www.jianshu.com/p/59eeb1493a45" target="_blank" rel="noopener">参考自01</a> 、<a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">参考自02</a></p>
-]]></content>
+<p>注：上一篇IMAP使用中提到过，创建草稿，过程和这个类似，不过最后执行append 是 放到 <code>草稿箱</code>，不是<code>已发送</code>了。</p>
+<h5 id="POP-还没写"><a href="#POP-还没写" class="headerlink" title="POP 还没写"></a>POP <a href>还没写</a></h5>]]></content>
       <tags>
-        <tag>7788</tag>
-        <tag>Mac</tag>
-        <tag>网络</tag>
-        <tag>服务器</tag>
+        <tag>iOS</tag>
+        <tag>邮箱</tag>
       </tags>
   </entry>
   <entry>
@@ -1188,6 +1023,32 @@
         <tag>iOS</tag>
         <tag>Xcode</tag>
         <tag>pod</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
       </tags>
   </entry>
   <entry>
@@ -1807,7 +1668,7 @@
 <h3 id="二、计时器"><a href="#二、计时器" class="headerlink" title="二、计时器"></a>二、计时器</h3><h4 id="NSTimer-替换为dispatch-source-timer"><a href="#NSTimer-替换为dispatch-source-timer" class="headerlink" title="NSTimer 替换为dispatch source timer"></a>NSTimer 替换为dispatch source timer</h4><p>NSTimer 在主线程的 Runloop 里会在 Runloop 切换其它模式时停止，这时就需要手动在子线程开启一个模式为 NSRunLoopCommonModes 的 Runloop，并且释放不到位，会导致引用 Timer 的对象也得不到释放。 如果不想开启一个新的 Runloop，并且避免引用问题，可以用不跟 Runloop 关联的 dispatch source timer。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)createTimer &#123;</span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, global);</span><br><span class="line">    </span><br><span class="line">    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span> * <span class="built_in">NSEC_PER_SEC</span>);</span><br><span class="line">    dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">        timeout --;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            dispatch_source_cancel(timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//do something after timer done.</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_resume(timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多关于GCD的用法，请见我的另一个总结<a href="https://ATommyGirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/">GCD (Grand Central Dispatch)</a> 。</p>
+<p>更多关于GCD的用法，请见我的另一个总结<a href="https://ATommyGirl.github.io/2016/01/13/GCD%EF%BC%88Grand%20Central%20Dispatch%EF%BC%89/" target="_blank" rel="noopener">GCD (Grand Central Dispatch)</a> 。</p>
 <h3 id="三、URL字符串解析"><a href="#三、URL字符串解析" class="headerlink" title="三、URL字符串解析"></a>三、URL字符串解析</h3><h4 id="分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式"><a href="#分析URL字符串的时候，使用-NSURLComponents-类做解析，不要通过字符串截取等方式" class="headerlink" title="分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式"></a>分析URL字符串的时候，使用 NSURLComponents 类做解析，不要通过字符串截取等方式</h4><p>我看很多人的代码，在解析别人传给他的URL 字符串时（例如自己的APP被拉起时），都是使用 <code>NSString</code> 的各种截取方法，然后再自己做判断，这是有点”危险”的做法。如果你自信逻辑严谨的话，那没的说，如果你不擅长或者懒得做异常处理， <code>NSRange</code>  的 <code>location</code> 存不存在以及 <code>length</code> 越界问题，就可以把程序搞crash。所以建议不要这样做，使用 <code>NSURLComponents</code> 。文档<a href="https://developer.apple.com/documentation/foundation/nsurlcomponents" target="_blank" rel="noopener">NSURLComponents</a></p>
 <p>看完文档就会知道，真的好方便。。。</p>
 <ul>
@@ -1884,7 +1745,7 @@
 </li>
 <li>POP</li>
 <li>SMTP<ul>
-<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/">mailcore2-ios  之二 SMTP</a></li>
+<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/" target="_blank" rel="noopener">mailcore2-ios  之二 SMTP</a></li>
 </ul>
 </li>
 </ul>
@@ -1962,6 +1823,176 @@
       <tags>
         <tag>iOS</tag>
         <tag>邮箱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 迁移至云服务的记录</title>
+    <url>/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<blockquote>
+<p>这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程<del>~</del></p>
+</blockquote>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><blockquote>
+<p>腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿</p>
+<p>标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps</p>
+</blockquote>
+<h3 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h3><a id="more"></a>
+
+<p>用到的文件命令：</p>
+<ol>
+<li>在当前路径创建一级目录</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在当前路径创建多级目录</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p mytest/test1/test1_1</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在创建目录的同时给新建的目录赋权限</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -m 777 testmod</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>修改一个目录的权限</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod 700 -R <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>PS：<a href="https://www.haorooms.com/post/centeros_wj_zj" target="_blank" rel="noopener">参考自</a></p>
+<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><ol>
+<li><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><h4 id="测试-nginx-配置文件"><a href="#测试-nginx-配置文件" class="headerlink" title="测试 nginx 配置文件"></a>测试 nginx 配置文件</h4></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br><span class="line"></span><br><span class="line"><span class="comment">#结果ok，会打印如下</span></span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><h4 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h4></li>
+</ol>
+<p>查看<code>/etc/nginx/nginx.conf</code>文件，内容如下：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># For more information on configuration, see:</span></span><br><span class="line"><span class="comment">#   * Official English Documentation: http://nginx.org/en/docs/</span></span><br><span class="line"><span class="comment">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">user</span> nginx;</span><br><span class="line"><span class="attribute">worker_processes</span> auto;</span><br><span class="line"><span class="attribute">error_log</span> /var/log/nginx/error.log;</span><br><span class="line"><span class="attribute">pid</span> /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span></span><br><span class="line"><span class="attribute">include</span> /usr/share/nginx/modules/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line"><span class="section">events</span> &#123;</span><br><span class="line">    <span class="attribute">worker_connections</span> <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">log_format</span>  main  <span class="string">'<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] "<span class="variable">$request</span>" '</span></span><br><span class="line">                      <span class="string">'<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> "<span class="variable">$http_referer</span>" '</span></span><br><span class="line">                      <span class="string">'"<span class="variable">$http_user_agent</span>" "<span class="variable">$http_x_forwarded_for</span>"'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">access_log</span>  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">sendfile</span>            <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nopush</span>          <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nodelay</span>         <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">keepalive_timeout</span>   <span class="number">65</span>;</span><br><span class="line">    <span class="attribute">types_hash_max_size</span> <span class="number">4096</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">include</span>             /etc/nginx/mime.types;</span><br><span class="line">    <span class="attribute">default_type</span>        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Load modular configuration files from the /etc/nginx/conf.d directory.</span></span><br><span class="line">    <span class="comment"># See http://nginx.org/en/docs/ngx_core_module.html#include</span></span><br><span class="line">    <span class="comment"># for more information.</span></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span>  _;</span><br><span class="line">        <span class="attribute">root</span>         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">        <span class="attribute">include</span> /etc/nginx/default.d/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line">        <span class="attribute">location</span> = /<span class="number">404</span>.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">"/etc/nginx/nginx.conf" 84L, 2336C                                                                                                                             1,1           Top</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><h4 id="启动、停止、查看状态、开机自启动"><a href="#启动、停止、查看状态、开机自启动" class="headerlink" title="启动、停止、查看状态、开机自启动"></a>启动、停止、查看状态、开机自启动</h4></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start nginx.service</span><br><span class="line">systemctl stop nginx.service</span><br><span class="line">systemctl reload nginx.service</span><br><span class="line">systemctl status nginx.service</span><br><span class="line">service nginx start</span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
+
+<p>​    启动以后类似下面的输出</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">● nginx.service - The nginx HTTP and reverse proxy server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Wed 2021-06-30 21:25:38 CST; 4s ago</span><br><span class="line">  Process: 2231 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2228 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2227 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 2233 (nginx)</span><br><span class="line">   CGroup: /system.slice/nginx.service</span><br><span class="line">           ├─2233 nginx: master process /usr/sbin/nginx</span><br><span class="line">           └─2235 nginx: worker process</span><br><span class="line">           </span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos systemd[1]: Starting The nginx HTTP and reverse proxy server...</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos nginx[2228]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos nginx[2228]: nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br><span class="line">Jun 30 21:25:38 VM-0-13-centos systemd[1]: Started The nginx HTTP and reverse proxy server.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Hexo-个人博客部署到-CentOS-个人服务器"><a href="#Hexo-个人博客部署到-CentOS-个人服务器" class="headerlink" title="Hexo 个人博客部署到 CentOS 个人服务器"></a>Hexo 个人博客部署到 CentOS 个人服务器</h3><ol>
+<li><h4 id="安装-Git-Nginx"><a href="#安装-Git-Nginx" class="headerlink" title="安装 Git Nginx"></a>安装 Git Nginx</h4></li>
+</ol>
+<p>升级 CentOS 所有包，包括系统版本内核升级</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum install -y git nginx</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><h4 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h4></li>
+</ol>
+<ul>
+<li>创建文件目录, 用于博客站点文件存放, 并更改目录读写权限</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/share/nginx/www/hexo</span><br><span class="line">chmod -R 755 /usr/share/nginx/www/hexo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置 Nginx 服务器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>通过 vim 查找 <code>listen 80</code> 找到如下代码, 并修改</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">      <span class="attribute">listen</span>       <span class="number">80</span>; <span class="comment"># 默认监听80端口，先不用管</span></span><br><span class="line">      <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">      <span class="attribute">server_name</span>  www.xxx.com; <span class="comment"># 填写个人域名，有的话就写，没有也可以保持 _</span></span><br><span class="line">      <span class="attribute">root</span>         /usr/share/nginx/www/hexo; </span><br><span class="line">  &#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加测试首页</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/share/nginx/www/hexo/index.html <span class="comment">#路径就是自己新建的博客路径</span></span><br></pre></td></tr></table></figure>
+
+<p>测试页的内容可以简单类似这样：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Nginx Bazinga!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>访问服务的 ip 或者 域名，能看到 <code>Nginx Bazinga!</code> 就表示 Nginx 基本成功了。</p>
+<ol start="3">
+<li><h4 id="下载-Nodejs"><a href="#下载-Nodejs" class="headerlink" title="下载 Nodejs"></a>下载 Nodejs</h4></li>
+</ol>
+<p>Nodejs 我也不是很懂，通过 yum 安装的并不是最新版本，网上有些资源说是要指定 源 ？</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install -y nodejs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以查看版本号的话，表示安装成功了。</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4></li>
+</ol>
+<ul>
+<li><p>首先要安装 Git，前面我们已经安装过了~</p>
+<p>新建一个存放 hexo git 内容的目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/share/nginx/git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>初始化为 git 仓库</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/share/nginx/git</span><br><span class="line">git init --bare ATommyGirl.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建 Git 钩子 (hook), 用于指定 Git 的源代码 和 Git 配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/share/nginx/git/ATommyGirl.git/hooks/post-receive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 钩子内容如下</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/usr/share/nginx/www/hexo --git-dir=/usr/share/nginx/git/ATommyGirl.git checkout -f</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>保存并退出后, 给该文件添加可执行权限</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x /usr/share/nginx/git/ATommyGirl.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><h4 id="本地-hexo-配置"><a href="#本地-hexo-配置" class="headerlink" title="本地 hexo 配置"></a>本地 hexo 配置</h4></li>
+</ol>
+<p>本地如何搭建 hexo 网上资料非常多。基于我们上面的操作，在本地博客文件夹根目录中的 <code>_config.yml</code>  配置文件增加一个 <code>deploy</code> 就可以了。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">root@your_server_ip:gitpath/git</span> <span class="comment">#用户名@域名或IP 地址:自己的git路径</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">message:</span></span><br></pre></td></tr></table></figure>
+
+<p>我有多个提交的地址：</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt></p>
+<p>PPS:<a href="https://www.jianshu.com/p/59eeb1493a45" target="_blank" rel="noopener">参考自01</a> 、<a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">参考自02</a></p>
+<h3 id="Nginx-部署-SSL-证书"><a href="#Nginx-部署-SSL-证书" class="headerlink" title="Nginx 部署 SSL 证书"></a>Nginx 部署 SSL 证书</h3><ol>
+<li>购买、申请 SSL 证书，我用的是腾讯一年免费的证书。</li>
+<li>不同的服务器需要不同格式的公私钥文件，腾讯云自动帮忙生成了，根据部署类型使用对应的文件，我的是 Nginx：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── Apache</span><br><span class="line">│   ├── 1_root_bundle.crt</span><br><span class="line">│   ├── 2_tommygirl.cn.crt</span><br><span class="line">│   └── 3_tommygirl.cn.key</span><br><span class="line">├── IIS</span><br><span class="line">│   └── tommygirl.cn.pfx</span><br><span class="line">├── Nginx</span><br><span class="line">│   ├── 1_tommygirl.cn_bundle.crt</span><br><span class="line">│   └── 2_tommygirl.cn.key</span><br><span class="line">├── Tomcat</span><br><span class="line">│   └── tommygirl.cn.jks</span><br><span class="line">├── tommygirl.cn.csr</span><br><span class="line">├── tommygirl.cn.key</span><br><span class="line">└── tommygirl.cn.pem</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>我在 <code>/etc/nginx/</code> 新建了两个文件夹 <code>servers</code> <code>certs</code> 来放配置信息和证书文件，只是不知道这样是否符合”国际惯例”😂</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir /etc/nginx/servers</span><br><span class="line">mkdir /etc/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>从本地把证书拷贝到云服务器上</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">scp -P 22 1_tommygirl.cn_bundle.crt username@host:/etc/nginx/certs</span><br><span class="line">scp -P 22 2_tommygirl.cn.key username@host:/etc/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>添加 ssl 配置</li>
+</ol>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">vim</span> /etc/nginx/servers/tommygirl.cn <span class="comment">#文件名自定义</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span>  tommygirl.cn;</span><br><span class="line">    <span class="attribute">ssl_certificate</span>  certs/1_tommygirl.cn_bundle.crt;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> certs/2_tommygirl.cn.key;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /usr/share/nginx/www/hexo;</span><br><span class="line">        <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个时候应该可以通过 https 来访问网站了。</p>
+<ol start="6">
+<li>http 自动转换 https，也是修改  <code>Nginx</code>  的配置，添加一个重定向，<code>rewrite</code> 还有其他的一些参数……</li>
+</ol>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  tommygirl.cn;</span><br><span class="line">    <span class="attribute">rewrite</span><span class="regexp"> ^(.*)$</span> https://tommygirl.cn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>7788</tag>
+        <tag>Mac</tag>
+        <tag>网络</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -2695,6 +2726,11 @@
       </tags>
   </entry>
   <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>我</title>
     <url>/about/index.html</url>
     <content><![CDATA[<h3 id="笔名：YYLittleCat"><a href="#笔名：YYLittleCat" class="headerlink" title="笔名：YYLittleCat"></a>笔名：YYLittleCat</h3><h3 id="法号：迷"><a href="#法号：迷" class="headerlink" title="法号：迷"></a>法号：迷</h3><h3 id="特点：漂亮"><a href="#特点：漂亮" class="headerlink" title="特点：漂亮"></a>特点：漂亮</h3><h3 id="爱好：周星驰的电影、柯南"><a href="#爱好：周星驰的电影、柯南" class="headerlink" title="爱好：周星驰的电影、柯南"></a>爱好：周星驰的电影、柯南</h3><h3 id="宠物：🐈、🐈、🐢"><a href="#宠物：🐈、🐈、🐢" class="headerlink" title="宠物：🐈、🐈、🐢"></a>宠物：🐈、🐈、🐢</h3><h3 id="职业：程序媛"><a href="#职业：程序媛" class="headerlink" title="职业：程序媛"></a>职业：程序媛</h3><h3 id="社交：欢迎文明交流"><a href="#社交：欢迎文明交流" class="headerlink" title="社交：欢迎文明交流"></a>社交：欢迎文明交流</h3><p>​    <img src="/about/index/lisence.jpg" alt></p>
@@ -2705,16 +2741,6 @@
   <entry>
     <title>回忆</title>
     <url>/gallery/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>search</title>
-    <url>/search/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -2750,6 +2776,11 @@
 </tr>
 </tbody></table>
 ]]></content>
+  </entry>
+  <entry>
+    <title>search</title>
+    <url>/search/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>昆明</title>

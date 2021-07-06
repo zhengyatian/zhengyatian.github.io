@@ -9,7 +9,7 @@
     <meta name="description" content="背景​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。 ​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Server-Sent Events &#x2F; EventSource">
-<meta property="og:url" content="https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/index.html">
+<meta property="og:url" content="https://tommygirl.cn/2021/02/19/Server-Sent%20Events/index.html">
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="背景​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。 ​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的">
 <meta property="og:locale" content="zh_CN">
@@ -95,18 +95,18 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://tommygirl.cn/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
 &lt;p&gt;​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -308,18 +308,18 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&text=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&is_video=false&description=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Server-Sent Events / EventSource&body=Check out this article: https://tommygirl.cn/2021/02/19/Server-Sent%20Events/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&title=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&name=Server-Sent Events / EventSource&description=&lt;h3 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;​    公司的 OA 项目中，往往需要接入很多业务系统，体现在 App UI 上就类似支付宝首页的九宫格。这些业务系统呢又不一定来自同一家厂商，当 App 需要和他们做一些交互的时候（例如获取每个业务的待办数目，展示在首页图标的角标上），手机端开发者就很头疼了。&lt;/p&gt;
 &lt;p&gt;​    就以待办数目为例，接口不统一、参数不统一、响应速度不统一、随时接入新的系统，交互过程如果写在 App 中，那就需要频繁的更新 App，这对用户来说，是非常不友好的。这个时候通常遵循的一个原则就是，将变化放在 OA-Server，OA-App 只需要与 OA-Server 约定好接口规范，只访问自己的后台即可，与各个业务的交互交给后台。那 OA-App 发送请求到  OA-Server，OA-Server 收到多个业务响应的待办数目以后怎么及时的通知 OA-App 呢？&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/02/19/Server-Sent%20Events/&t=Server-Sent Events / EventSource" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -337,14 +337,6 @@
         
         <footer id="footer">
   <div class="footer-left">
-    YYLittleCat
-    Copyright &copy;
-    
-    
-    2015-2021
-    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
-  </div>
-  <div class="footer-right">
     <nav>
       <ul>
          
@@ -359,8 +351,16 @@
           <li><a href="/search/">搜索</a></li>
         
       </ul>
-    </nav>    
+    </nav> 
   </div>
+  <div class="footer-right">
+      YYLittleCat
+      Copyright &copy;
+      
+      
+      2015-2021
+  </div>
+  <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
 </footer>
 
     </div>

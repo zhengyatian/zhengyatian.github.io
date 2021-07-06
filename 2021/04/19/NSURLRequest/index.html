@@ -9,7 +9,7 @@
     <meta name="description" content="NSURLRequest&#x2F;URLRequestNSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（GET，POST等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。 一个平平无奇的 GET 请求 网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应 官">
 <meta property="og:type" content="article">
 <meta property="og:title" content="URL Loading System 之 NSURLRequest&#x2F;URLRequest">
-<meta property="og:url" content="https://atommygirl.github.io/2021/04/19/NSURLRequest/index.html">
+<meta property="og:url" content="https://tommygirl.cn/2021/04/19/NSURLRequest/index.html">
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="NSURLRequest&#x2F;URLRequestNSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（GET，POST等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。 一个平平无奇的 GET 请求 网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应 官">
 <meta property="og:locale" content="zh_CN">
@@ -78,10 +78,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="上一篇 " href="/2021/06/18/AudioServicesPlaySystemSound/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="上一篇 " href="/2021/04/19/URL%20Loading%20System/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="下一篇 " href="/2021/04/19/URL%20Loading%20System/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="下一篇 " href="/2021/04/15/%E6%98%A8%E5%A4%A9/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -94,22 +94,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/04/19/NSURLRequest/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&text=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&is_video=false&description=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=URL Loading System 之 NSURLRequest/URLRequest&body=Check out this article: https://atommygirl.github.io/2021/04/19/NSURLRequest/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&name=URL Loading System 之 NSURLRequest/URLRequest&description=&lt;h3 id=&#34;NSURLRequest-URLRequest&#34;&gt;&lt;a href=&#34;#NSURLRequest-URLRequest&#34; class=&#34;headerlink&#34; title=&#34;NSURLRequest/URLRequest&#34;&gt;&lt;/a&gt;NSURLRequest/URLRequest&lt;/h3&gt;&lt;p&gt;NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（&lt;code&gt;GET&lt;/code&gt;，&lt;code&gt;POST&lt;/code&gt;等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/04/19/NSURLRequest/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&text=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&is_video=false&description=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=URL Loading System 之 NSURLRequest/URLRequest&body=Check out this article: https://tommygirl.cn/2021/04/19/NSURLRequest/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&name=URL Loading System 之 NSURLRequest/URLRequest&description=&lt;h3 id=&#34;NSURLRequest-URLRequest&#34;&gt;&lt;a href=&#34;#NSURLRequest-URLRequest&#34; class=&#34;headerlink&#34; title=&#34;NSURLRequest/URLRequest&#34;&gt;&lt;/a&gt;NSURLRequest/URLRequest&lt;/h3&gt;&lt;p&gt;NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（&lt;code&gt;GET&lt;/code&gt;，&lt;code&gt;POST&lt;/code&gt;等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。&lt;/p&gt;
 &lt;h4 id=&#34;一个平平无奇的-GET-请求&#34;&gt;&lt;a href=&#34;#一个平平无奇的-GET-请求&#34; class=&#34;headerlink&#34; title=&#34;一个平平无奇的 GET 请求&#34;&gt;&lt;/a&gt;一个平平无奇的 GET 请求&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应&lt;/p&gt;
 &lt;p&gt;官网：&lt;a href=&#34;https://httpbin.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://httpbin.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;httpbin 可以把我们请求时的信息，返回给我们&lt;/p&gt;
 &lt;/blockquote&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/04/19/NSURLRequest/&t=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/04/19/NSURLRequest/&t=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -173,7 +173,7 @@
 <p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95">HTTP 的一点儿小知识</a>。</p>
+<h4 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h4><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">HTTP 的一点儿小知识</a>。</p>
 <p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; &#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
@@ -182,7 +182,7 @@
 
 <p>添加参数</p>
 <p>系列：</p>
-<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/">URL Loading System[译]</a></p>
+<p><a href="https://atommygirl.github.io/2021/04/19/URL%20Loading%20System/" target="_blank" rel="noopener">URL Loading System[译]</a></p>
 
   </div>
 </article>
@@ -249,22 +249,22 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/04/19/NSURLRequest/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&text=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&is_video=false&description=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=URL Loading System 之 NSURLRequest/URLRequest&body=Check out this article: https://atommygirl.github.io/2021/04/19/NSURLRequest/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/04/19/NSURLRequest/&name=URL Loading System 之 NSURLRequest/URLRequest&description=&lt;h3 id=&#34;NSURLRequest-URLRequest&#34;&gt;&lt;a href=&#34;#NSURLRequest-URLRequest&#34; class=&#34;headerlink&#34; title=&#34;NSURLRequest/URLRequest&#34;&gt;&lt;/a&gt;NSURLRequest/URLRequest&lt;/h3&gt;&lt;p&gt;NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（&lt;code&gt;GET&lt;/code&gt;，&lt;code&gt;POST&lt;/code&gt;等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。&lt;/p&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/04/19/NSURLRequest/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&text=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&is_video=false&description=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=URL Loading System 之 NSURLRequest/URLRequest&body=Check out this article: https://tommygirl.cn/2021/04/19/NSURLRequest/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&title=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/04/19/NSURLRequest/&name=URL Loading System 之 NSURLRequest/URLRequest&description=&lt;h3 id=&#34;NSURLRequest-URLRequest&#34;&gt;&lt;a href=&#34;#NSURLRequest-URLRequest&#34; class=&#34;headerlink&#34; title=&#34;NSURLRequest/URLRequest&#34;&gt;&lt;/a&gt;NSURLRequest/URLRequest&lt;/h3&gt;&lt;p&gt;NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（&lt;code&gt;GET&lt;/code&gt;，&lt;code&gt;POST&lt;/code&gt;等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。&lt;/p&gt;
 &lt;h4 id=&#34;一个平平无奇的-GET-请求&#34;&gt;&lt;a href=&#34;#一个平平无奇的-GET-请求&#34; class=&#34;headerlink&#34; title=&#34;一个平平无奇的 GET 请求&#34;&gt;&lt;/a&gt;一个平平无奇的 GET 请求&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应&lt;/p&gt;
 &lt;p&gt;官网：&lt;a href=&#34;https://httpbin.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://httpbin.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;httpbin 可以把我们请求时的信息，返回给我们&lt;/p&gt;
 &lt;/blockquote&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/04/19/NSURLRequest/&t=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/04/19/NSURLRequest/&t=URL Loading System 之 NSURLRequest/URLRequest" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -282,14 +282,6 @@
         
         <footer id="footer">
   <div class="footer-left">
-    YYLittleCat
-    Copyright &copy;
-    
-    
-    2015-2021
-    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
-  </div>
-  <div class="footer-right">
     <nav>
       <ul>
          
@@ -304,8 +296,16 @@
           <li><a href="/search/">搜索</a></li>
         
       </ul>
-    </nav>    
+    </nav> 
   </div>
+  <div class="footer-right">
+      YYLittleCat
+      Copyright &copy;
+      
+      
+      2015-2021
+  </div>
+  <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
 </footer>
 
     </div>

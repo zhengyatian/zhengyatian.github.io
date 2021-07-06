@@ -9,13 +9,13 @@
     <meta name="description" content="这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程~  服务器 腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿 标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps  CentOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 迁移至云服务的记录">
-<meta property="og:url" content="https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:url" content="https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="迷">
 <meta property="og:description" content="这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程~  服务器 腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿 标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps  CentOS">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png">
 <meta property="article:published_time" content="2021-06-30T09:37:06.000Z">
-<meta property="article:modified_time" content="2021-07-01T08:40:04.954Z">
+<meta property="article:modified_time" content="2021-07-06T10:47:24.420Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="7788">
 <meta property="article:tag" content="Mac">
@@ -98,16 +98,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&text=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&is_video=false&description=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Hexo 迁移至云服务的记录&body=Check out this article: https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&name=Hexo 迁移至云服务的记录&description=&lt;blockquote&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&text=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&is_video=false&description=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo 迁移至云服务的记录&body=Check out this article: https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&name=Hexo 迁移至云服务的记录&description=&lt;blockquote&gt;
 &lt;p&gt;这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;服务器&#34;&gt;&lt;a href=&#34;#服务器&#34; class=&#34;headerlink&#34; title=&#34;服务器&#34;&gt;&lt;/a&gt;服务器&lt;/h3&gt;&lt;blockquote&gt;
@@ -115,12 +115,12 @@
 &lt;p&gt;标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h3&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx 部署 SSL 证书</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -292,6 +292,37 @@
 <p>我有多个提交的地址：</p>
 <p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt></p>
 <p>PPS:<a href="https://www.jianshu.com/p/59eeb1493a45" target="_blank" rel="noopener">参考自01</a> 、<a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">参考自02</a></p>
+<h3 id="Nginx-部署-SSL-证书"><a href="#Nginx-部署-SSL-证书" class="headerlink" title="Nginx 部署 SSL 证书"></a>Nginx 部署 SSL 证书</h3><ol>
+<li>购买、申请 SSL 证书，我用的是腾讯一年免费的证书。</li>
+<li>不同的服务器需要不同格式的公私钥文件，腾讯云自动帮忙生成了，根据部署类型使用对应的文件，我的是 Nginx：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── Apache</span><br><span class="line">│   ├── 1_root_bundle.crt</span><br><span class="line">│   ├── 2_tommygirl.cn.crt</span><br><span class="line">│   └── 3_tommygirl.cn.key</span><br><span class="line">├── IIS</span><br><span class="line">│   └── tommygirl.cn.pfx</span><br><span class="line">├── Nginx</span><br><span class="line">│   ├── 1_tommygirl.cn_bundle.crt</span><br><span class="line">│   └── 2_tommygirl.cn.key</span><br><span class="line">├── Tomcat</span><br><span class="line">│   └── tommygirl.cn.jks</span><br><span class="line">├── tommygirl.cn.csr</span><br><span class="line">├── tommygirl.cn.key</span><br><span class="line">└── tommygirl.cn.pem</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>我在 <code>/etc/nginx/</code> 新建了两个文件夹 <code>servers</code> <code>certs</code> 来放配置信息和证书文件，只是不知道这样是否符合”国际惯例”😂</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/nginx/servers</span><br><span class="line">mkdir /etc/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>从本地把证书拷贝到云服务器上</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -P 22 1_tommygirl.cn_bundle.crt username@host:/etc/nginx/certs</span><br><span class="line">scp -P 22 2_tommygirl.cn.key username@host:/etc/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>添加 ssl 配置</li>
+</ol>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vim</span> /etc/nginx/servers/tommygirl.cn <span class="comment">#文件名自定义</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span>  tommygirl.cn;</span><br><span class="line">    <span class="attribute">ssl_certificate</span>  certs/1_tommygirl.cn_bundle.crt;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> certs/2_tommygirl.cn.key;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /usr/share/nginx/www/hexo;</span><br><span class="line">        <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个时候应该可以通过 https 来访问网站了。</p>
+<ol start="6">
+<li>http 自动转换 https，也是修改  <code>Nginx</code>  的配置，添加一个重定向，<code>rewrite</code> 还有其他的一些参数……</li>
+</ol>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  tommygirl.cn;</span><br><span class="line">    <span class="attribute">rewrite</span><span class="regexp"> ^(.*)$</span> https://tommygirl.cn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
   </div>
 </article>
@@ -353,21 +384,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx 部署 SSL 证书</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&text=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&is_video=false&description=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Hexo 迁移至云服务的记录&body=Check out this article: https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&name=Hexo 迁移至云服务的记录&description=&lt;blockquote&gt;
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&text=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&is_video=false&description=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo 迁移至云服务的记录&body=Check out this article: https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&title=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&name=Hexo 迁移至云服务的记录&description=&lt;blockquote&gt;
 &lt;p&gt;这篇文章不是专门分享服务器搭建、CentOS 系统等等的，我对这些一窍不通，只是记录一下迁移 Hexo 的过程&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;服务器&#34;&gt;&lt;a href=&#34;#服务器&#34; class=&#34;headerlink&#34; title=&#34;服务器&#34;&gt;&lt;/a&gt;服务器&lt;/h3&gt;&lt;blockquote&gt;
@@ -375,7 +406,7 @@
 &lt;p&gt;标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h3&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://atommygirl.github.io/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -393,14 +424,6 @@
         
         <footer id="footer">
   <div class="footer-left">
-    YYLittleCat
-    Copyright &copy;
-    
-    
-    2015-2021
-    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
-  </div>
-  <div class="footer-right">
     <nav>
       <ul>
          
@@ -415,8 +438,16 @@
           <li><a href="/search/">搜索</a></li>
         
       </ul>
-    </nav>    
+    </nav> 
   </div>
+  <div class="footer-right">
+      YYLittleCat
+      Copyright &copy;
+      
+      
+      2015-2021
+  </div>
+  <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
 </footer>
 
     </div>
