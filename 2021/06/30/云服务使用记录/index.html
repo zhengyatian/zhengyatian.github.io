@@ -15,11 +15,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png">
 <meta property="article:published_time" content="2021-06-30T09:37:06.000Z">
-<meta property="article:modified_time" content="2021-07-06T10:47:24.420Z">
+<meta property="article:modified_time" content="2021-07-07T09:18:27.952Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="7788">
-<meta property="article:tag" content="Mac">
 <meta property="article:tag" content="网络">
+<meta property="article:tag" content="Mac">
 <meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png">
@@ -114,13 +114,13 @@
 &lt;p&gt;腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿&lt;/p&gt;
 &lt;p&gt;标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h3&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h2&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx 部署 SSL 证书</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS"><span class="toc-number"></span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number"></span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">0.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">0.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">0.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">0.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number"></span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">0.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">0.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">0.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">0.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">0.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number"></span> <span class="toc-text">Nginx 部署 SSL 证书</span></a>
     </div>
   </span>
 </div>
@@ -171,7 +171,7 @@
 <p>腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿</p>
 <p>标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps</p>
 </blockquote>
-<h3 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h3><a id="more"></a>
+<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><a id="more"></a>
 
 <p>用到的文件命令：</p>
 <ol>
@@ -195,7 +195,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 -R <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
 <p>PS：<a href="https://www.haorooms.com/post/centeros_wj_zj" target="_blank" rel="noopener">参考自</a></p>
-<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><ol>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ol>
 <li><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4></li>
 </ol>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
@@ -221,7 +221,7 @@
 
 
 
-<h3 id="Hexo-个人博客部署到-CentOS-个人服务器"><a href="#Hexo-个人博客部署到-CentOS-个人服务器" class="headerlink" title="Hexo 个人博客部署到 CentOS 个人服务器"></a>Hexo 个人博客部署到 CentOS 个人服务器</h3><ol>
+<h2 id="Hexo-个人博客部署到-CentOS-个人服务器"><a href="#Hexo-个人博客部署到-CentOS-个人服务器" class="headerlink" title="Hexo 个人博客部署到 CentOS 个人服务器"></a>Hexo 个人博客部署到 CentOS 个人服务器</h2><ol>
 <li><h4 id="安装-Git-Nginx"><a href="#安装-Git-Nginx" class="headerlink" title="安装 Git Nginx"></a>安装 Git Nginx</h4></li>
 </ol>
 <p>升级 CentOS 所有包，包括系统版本内核升级</p>
@@ -292,7 +292,7 @@
 <p>我有多个提交的地址：</p>
 <p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt></p>
 <p>PPS:<a href="https://www.jianshu.com/p/59eeb1493a45" target="_blank" rel="noopener">参考自01</a> 、<a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">参考自02</a></p>
-<h3 id="Nginx-部署-SSL-证书"><a href="#Nginx-部署-SSL-证书" class="headerlink" title="Nginx 部署 SSL 证书"></a>Nginx 部署 SSL 证书</h3><ol>
+<h2 id="Nginx-部署-SSL-证书"><a href="#Nginx-部署-SSL-证书" class="headerlink" title="Nginx 部署 SSL 证书"></a>Nginx 部署 SSL 证书</h2><ol>
 <li>购买、申请 SSL 证书，我用的是腾讯一年免费的证书。</li>
 <li>不同的服务器需要不同格式的公私钥文件，腾讯云自动帮忙生成了，根据部署类型使用对应的文件，我的是 Nginx：</li>
 </ol>
@@ -384,7 +384,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.</span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">3.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">3.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number">4.</span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">4.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">4.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">4.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">4.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">4.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number">5.</span> <span class="toc-text">Nginx 部署 SSL 证书</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.</span> <span class="toc-text">服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS"><span class="toc-number"></span> <span class="toc-text">CentOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number"></span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">0.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-nginx-配置文件"><span class="toc-number">0.2.</span> <span class="toc-text">测试 nginx 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置相关"><span class="toc-number">0.3.</span> <span class="toc-text">配置相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动、停止、查看状态、开机自启动"><span class="toc-number">0.4.</span> <span class="toc-text">启动、停止、查看状态、开机自启动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-个人博客部署到-CentOS-个人服务器"><span class="toc-number"></span> <span class="toc-text">Hexo 个人博客部署到 CentOS 个人服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git-Nginx"><span class="toc-number">0.1.</span> <span class="toc-text">安装 Git Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx-配置"><span class="toc-number">0.2.</span> <span class="toc-text">Nginx 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载-Nodejs"><span class="toc-number">0.3.</span> <span class="toc-text">下载 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">0.4.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地-hexo-配置"><span class="toc-number">0.5.</span> <span class="toc-text">本地 hexo 配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx-部署-SSL-证书"><span class="toc-number"></span> <span class="toc-text">Nginx 部署 SSL 证书</span></a>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -405,7 +405,7 @@
 &lt;p&gt;腾讯云 CentOS 7.2 64位 个人云服务器 用于测着玩儿&lt;/p&gt;
 &lt;p&gt;标准型SA2 | SA2.SMALL1 | 北京 | 1核| 1GB | 1Mbps&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h3&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;CentOS&#34;&gt;&lt;a href=&#34;#CentOS&#34; class=&#34;headerlink&#34; title=&#34;CentOS&#34;&gt;&lt;/a&gt;CentOS&lt;/h2&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/&t=Hexo 迁移至云服务的记录" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 

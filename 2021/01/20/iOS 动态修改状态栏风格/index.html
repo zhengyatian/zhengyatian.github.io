@@ -14,7 +14,7 @@
 <meta property="og:description" content="App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。  UIStatusBarStyle 的样式 改变状态栏文字颜色的方式 状态栏的显示和隐藏">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-20T09:54:04.000Z">
-<meta property="article:modified_time" content="2021-02-22T04:32:59.401Z">
+<meta property="article:modified_time" content="2021-07-07T09:38:46.742Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#UIStatusBarStyle-的样式"><span class="toc-number">1.</span> <span class="toc-text">UIStatusBarStyle 的样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改变状态栏文字的颜色"><span class="toc-number">2.</span> <span class="toc-text">改变状态栏文字的颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态栏的显示和隐藏"><span class="toc-number">3.</span> <span class="toc-text">状态栏的显示和隐藏</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UIStatusBarStyle-的样式"><span class="toc-number">1.</span> <span class="toc-text">UIStatusBarStyle 的样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改变状态栏文字的颜色"><span class="toc-number">2.</span> <span class="toc-text">改变状态栏文字的颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态栏的显示和隐藏"><span class="toc-number">3.</span> <span class="toc-text">状态栏的显示和隐藏</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -165,10 +165,10 @@
 </ul>
 <a id="more"></a>
 
-<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<h2 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h2><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<h2 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h2><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
 
 <p>属性，默认为 <code>YES</code>。</p>
@@ -180,7 +180,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
-<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<h2 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h2><ul>
 <li>全局隐藏的话，很简单，直接改配置。</li>
 <li>部分页面隐藏，同上，重写~~</li>
 </ul>
@@ -249,7 +249,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#UIStatusBarStyle-的样式"><span class="toc-number">1.</span> <span class="toc-text">UIStatusBarStyle 的样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改变状态栏文字的颜色"><span class="toc-number">2.</span> <span class="toc-text">改变状态栏文字的颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态栏的显示和隐藏"><span class="toc-number">3.</span> <span class="toc-text">状态栏的显示和隐藏</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UIStatusBarStyle-的样式"><span class="toc-number">1.</span> <span class="toc-text">UIStatusBarStyle 的样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改变状态栏文字的颜色"><span class="toc-number">2.</span> <span class="toc-text">改变状态栏文字的颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态栏的显示和隐藏"><span class="toc-number">3.</span> <span class="toc-text">状态栏的显示和隐藏</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

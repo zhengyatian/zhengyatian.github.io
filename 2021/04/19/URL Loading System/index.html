@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/30.png">
 <meta property="article:published_time" content="2021-04-19T08:14:32.000Z">
-<meta property="article:modified_time" content="2021-06-29T09:11:52.529Z">
+<meta property="article:modified_time" content="2021-07-07T09:28:37.227Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="网络">
@@ -80,10 +80,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="上一篇 " href="/2021/04/19/NSURLRequest/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="上一篇 " href="/2021/06/18/AudioServicesPlaySystemSound/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="下一篇 " href="/2021/04/15/%E6%98%A8%E5%A4%A9/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="下一篇 " href="/2021/04/19/NSURLRequest/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -110,7 +110,7 @@
 &lt;p&gt;:与URL交互并使用标准Internet协议与服务器通信。&lt;/p&gt;
 &lt;p&gt;官方文档：&lt;a href=&#34;https://developer.apple.com/documentation/foundation/url_loading_system?language=objc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苹果文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;综述&#34;&gt;&lt;a href=&#34;#综述&#34; class=&#34;headerlink&#34; title=&#34;综述&#34;&gt;&lt;/a&gt;综述&lt;/h3&gt;&lt;p&gt;URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。&lt;/p&gt;
+&lt;h2 id=&#34;综述&#34;&gt;&lt;a href=&#34;#综述&#34; class=&#34;headerlink&#34; title=&#34;综述&#34;&gt;&lt;/a&gt;综述&lt;/h2&gt;&lt;p&gt;URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。&lt;/p&gt;
 &lt;p&gt;你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。&lt;/p&gt;
 &lt;p&gt;你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/04/19/URL%20Loading%20System/&t=URL Loading System[译]" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
@@ -118,7 +118,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#综述"><span class="toc-number">1.</span> <span class="toc-text">综述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#话题"><span class="toc-number">2.</span> <span class="toc-text">话题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本"><span class="toc-number">2.1.</span> <span class="toc-text">基本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求与响应"><span class="toc-number">2.2.</span> <span class="toc-text">请求与响应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上传"><span class="toc-number">2.3.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载"><span class="toc-number">2.4.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存行为"><span class="toc-number">2.5.</span> <span class="toc-text">缓存行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#身份验证和凭证"><span class="toc-number">2.6.</span> <span class="toc-text">身份验证和凭证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookies"><span class="toc-number">2.7.</span> <span class="toc-text">Cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误"><span class="toc-number">2.8.</span> <span class="toc-text">错误</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-number">1.</span> <span class="toc-text">综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#话题"><span class="toc-number">2.</span> <span class="toc-text">话题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本"><span class="toc-number">2.1.</span> <span class="toc-text">基本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求与响应"><span class="toc-number">2.2.</span> <span class="toc-text">请求与响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传"><span class="toc-number">2.3.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-number">2.4.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存行为"><span class="toc-number">2.5.</span> <span class="toc-text">缓存行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#身份验证和凭证"><span class="toc-number">2.5.1.</span> <span class="toc-text">身份验证和凭证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookies"><span class="toc-number">2.6.</span> <span class="toc-text">Cookies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误"><span class="toc-number">2.7.</span> <span class="toc-text">错误</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -167,7 +167,7 @@
 <p>:与URL交互并使用标准Internet协议与服务器通信。</p>
 <p>官方文档：<a href="https://developer.apple.com/documentation/foundation/url_loading_system?language=objc" target="_blank" rel="noopener">苹果文档</a></p>
 </blockquote>
-<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。</p>
 <p>你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。</p>
 <p>你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。</p>
 <a id="more"></a>
@@ -175,27 +175,27 @@
 <p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/30.png" alt></p>
 <p>每个会话都与一个 delegate 相关联，以接收定期更新（或错误）。默认 delegate 调用你提供的完成处理程序块。如果你选择提供自己的自定义 delegate，则不会调用此块。</p>
 <p>你可以将会话配置为在后台运行，以便在应用程序挂起时，系统可以代表它下载数据并唤醒应用以交付结果。</p>
-<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><p>配置并创建会话，然后使用它们创建URL任务。</p>
+<h2 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><p>配置并创建会话，然后使用它们创建URL任务。</p>
 <ul>
 <li>Fetching Website Data into Memory：通过从URL会话创建数据任务，将数据直接接收到内存中。</li>
 <li>NSURLSession：协调一组相关的网络数据传输任务的对象。</li>
 <li>NSURLSessionTask：在URL会话中执行一项任务，例如下载特定资源。</li>
 </ul>
-<h4 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h4><ul>
+<h3 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h3><ul>
 <li>NSURLRequest：与协议或URL方案无关的URL加载请求。</li>
 <li>NSURLResponse：与协议或URL方案无关的，对URL加载请求的响应相关联的元数据。</li>
 <li>NSHTTPURLResponse：与HTTP协议URL加载请求的响应关联的元数据。</li>
 </ul>
-<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><ul>
+<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><ul>
 <li>Uploading Data to a Website：将数据从你的应用发送到服务器。</li>
 <li>Uploading Streams of Data：将数据流发送到服务器。</li>
 </ul>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
 <li>Downloading Files from Websites：直接下载文件到文件系统。</li>
 <li>Pausing and Resuming Downloads：允许用户继续下载而无需重新开始。</li>
 <li>Downloading Files in the Background：创建在应用不活动时下载文件的任务。</li>
 </ul>
-<h4 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h4><ul>
+<h3 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h3><ul>
 <li>Accessing Cached Data：控制 URL 请求如何利用以前缓存的数据。</li>
 <li>CachedURLResponse：对URL请求的缓存响应。</li>
 <li>URLCache：将URL请求映射到缓存响应对象的对象。</li>
@@ -207,11 +207,11 @@
 <li>NSURLCredentialStorage：共享凭据缓存的管理器。</li>
 <li>NSURLProtectionSpace：服务器或服务器上需要认证的区域，通常描述为领域。</li>
 </ul>
-<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><ul>
+<h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><ul>
 <li>NSHTTPCookie：HTTP cookie的表示形式。</li>
 <li>NSHTTPCookieStorage：一个管理cookie存储的容器。</li>
 </ul>
-<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><ul>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><ul>
 <li>URLError：URL加载API返回的错误代码。</li>
 <li>URL Loading System Error Info Keys：从URL加载API生成的错误对象的用户信息字典中识别这些键。</li>
 </ul>
@@ -276,7 +276,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#综述"><span class="toc-number">1.</span> <span class="toc-text">综述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#话题"><span class="toc-number">2.</span> <span class="toc-text">话题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本"><span class="toc-number">2.1.</span> <span class="toc-text">基本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求与响应"><span class="toc-number">2.2.</span> <span class="toc-text">请求与响应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上传"><span class="toc-number">2.3.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载"><span class="toc-number">2.4.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存行为"><span class="toc-number">2.5.</span> <span class="toc-text">缓存行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#身份验证和凭证"><span class="toc-number">2.6.</span> <span class="toc-text">身份验证和凭证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookies"><span class="toc-number">2.7.</span> <span class="toc-text">Cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误"><span class="toc-number">2.8.</span> <span class="toc-text">错误</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-number">1.</span> <span class="toc-text">综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#话题"><span class="toc-number">2.</span> <span class="toc-text">话题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本"><span class="toc-number">2.1.</span> <span class="toc-text">基本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求与响应"><span class="toc-number">2.2.</span> <span class="toc-text">请求与响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传"><span class="toc-number">2.3.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-number">2.4.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存行为"><span class="toc-number">2.5.</span> <span class="toc-text">缓存行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#身份验证和凭证"><span class="toc-number">2.5.1.</span> <span class="toc-text">身份验证和凭证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookies"><span class="toc-number">2.6.</span> <span class="toc-text">Cookies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误"><span class="toc-number">2.7.</span> <span class="toc-text">错误</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -295,7 +295,7 @@
 &lt;p&gt;:与URL交互并使用标准Internet协议与服务器通信。&lt;/p&gt;
 &lt;p&gt;官方文档：&lt;a href=&#34;https://developer.apple.com/documentation/foundation/url_loading_system?language=objc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苹果文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;综述&#34;&gt;&lt;a href=&#34;#综述&#34; class=&#34;headerlink&#34; title=&#34;综述&#34;&gt;&lt;/a&gt;综述&lt;/h3&gt;&lt;p&gt;URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。&lt;/p&gt;
+&lt;h2 id=&#34;综述&#34;&gt;&lt;a href=&#34;#综述&#34; class=&#34;headerlink&#34; title=&#34;综述&#34;&gt;&lt;/a&gt;综述&lt;/h2&gt;&lt;p&gt;URL Loading System使用标准协议（例如https或你创建的自定义协议）提供对URL标识的资源的访问。加载是异步执行的，因此你的应用可以保持响应能力，并在数据或错误到达时处理它们。&lt;/p&gt;
 &lt;p&gt;你使用 URLSession 实例创建一个或多个 URLSessionTask 实例，这些 URLSessionTask 实例可以获取数据、下载文件或将数据和文件上传到服务器。要配置会话，请使用 URLSessionConfiguration 对象，该对象控制行为，例如如何使用缓存和 cookie，或者是否允许在蜂窝网络上进行连接。&lt;/p&gt;
 &lt;p&gt;你可以重复使用一个会话来创建任务。例如，网络浏览器可能有分开的会话供常规浏览和私人浏览使用，而私人会话不会缓存其数据。图1显示了具有这些配置的两个会话如何创建多个任务。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/04/19/URL%20Loading%20System/&t=URL Loading System[译]" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>

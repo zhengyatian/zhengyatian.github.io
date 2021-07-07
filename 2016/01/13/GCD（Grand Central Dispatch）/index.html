@@ -14,7 +14,7 @@
 <meta property="og:description" content="转载自 戴铭老师 文中较详细介绍GCD队列，各种GCD使用方法，实例如何使用Dispatch Source监听系统底层对象，分析不同锁的性能对比，实例GCD死锁情况。  文中的Demo在这里 https:&#x2F;&#x2F;github.com&#x2F;ming1016&#x2F;GCDDemo 对着文章试着来调demo体会更深哦，细细嚼消化好🤓">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-01-13T14:20:34.000Z">
-<meta property="article:modified_time" content="2020-06-02T08:39:27.033Z">
+<meta property="article:modified_time" content="2021-07-07T09:16:54.852Z">
 <meta property="article:author" content="YYLittleCat">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
@@ -163,8 +163,8 @@
 
 <blockquote>
 <p>官方文档：</p>
-<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/" target="_blank" rel="noopener">https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/</a></p>
-<p>GCD属于系统级的线程管理，在Dispatch queue中执行需要执行的任务性能非常的高。 GCD这块已经开源，地址<a href="http://libdispatch.macosforge.org" target="_blank" rel="noopener">http://libdispatch.macosforge.org</a>。</p>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/" target="_blank" rel="noopener">Docs</a></p>
+<p>GCD属于系统级的线程管理，在Dispatch queue中执行需要执行的任务性能非常的高。 GCD这块已经开源，<a href="http://libdispatch.macosforge.org" target="_blank" rel="noopener">地址</a>。</p>
 <p><strong>GCD中的FIFO（先进先出）队列称为dispatch queue，用来保证先进来的任务先得到执行。</strong></p>
 </blockquote>
 <h2 id="GCD概要"><a href="#GCD概要" class="headerlink" title="GCD概要"></a>GCD概要</h2><ol>
