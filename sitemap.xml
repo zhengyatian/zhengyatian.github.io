@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tommygirl.cn/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</loc>
+    
+    <lastmod>2021-07-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tommygirl.cn/2021/07/01/CentOS%20%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2021-07-07</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://tommygirl.cn/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</loc>
-    
-    <lastmod>2021-07-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tommygirl.cn/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</loc>
     
     <lastmod>2021-07-07</lastmod>
     
@@ -347,6 +347,13 @@
   </url>
   
   <url>
+    <loc>https://tommygirl.cn/tags/WebView/</loc>
+    <lastmod>2021-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tommygirl.cn/tags/Xcode/</loc>
     <lastmod>2021-07-07</lastmod>
     <changefreq>daily</changefreq>
@@ -361,7 +368,7 @@
   </url>
   
   <url>
-    <loc>https://tommygirl.cn/tags/WebView/</loc>
+    <loc>https://tommygirl.cn/tags/%E9%82%AE%E7%AE%B1/</loc>
     <lastmod>2021-07-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -369,13 +376,6 @@
   
   <url>
     <loc>https://tommygirl.cn/tags/%E7%9E%8E%E6%89%AF/</loc>
-    <lastmod>2021-07-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tommygirl.cn/tags/%E9%82%AE%E7%AE%B1/</loc>
     <lastmod>2021-07-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
