@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1Q84中的哲学</title>
-    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
-    <content><![CDATA[<ul>
-<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><p>灯台之下最黑暗。</p>
-</li>
-<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
-</li>
-<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS 上线 AppStore - App Store Connect 不显示最新上传的 ipa？</title>
     <url>/2019/08/19/App%20Store%20Connect/</url>
     <content><![CDATA[<p>最新upload的ipa，在Connect中不显示，以为是网络延迟，或者同步信息延迟。刷新了好久还是不出现，那就查收一下邮件吧，我收到了如下的邮件。。。</p>
@@ -40,6 +19,27 @@
 </div></div>]]></content>
       <tags>
         <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1Q84中的哲学</title>
+    <url>/2020/03/07/1Q84%20%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6/</url>
+    <content><![CDATA[<ul>
+<li>人被赋予希望，以此为燃料为目的度过人生。没有希望，人就活不下去。然而这和抛硬币相同。正面向上还是反面向上，只有等硬币落下来才能知道。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p>灯台之下最黑暗。</p>
+</li>
+<li><p>有光明的地方就必然有阴影，有阴影的地方就必然有光明。不存在没有光明的阴影，也不存在没有阴影的光明。</p>
+</li>
+<li><p>人并不是大限一到就溘然长逝的，而是先从内部缓缓地死去，最终迎来最后结算的日子。谁都逃脱不了。人必须为收下的东西支付代价。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -173,26 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages 404</title>
-    <url>/2017/10/02/GitHub%20Pages%20404/</url>
-    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
-<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
-<p>​        <a id="more"></a></p>
-<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
-<p>像我就是 ATommyGirl.github.io</p>
-<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
-<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
-<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GiTalk 404</title>
     <url>/2021/06/22/GiTalk-404/</url>
     <content><![CDATA[<p><a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">GiTalk</a> 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p>
@@ -216,6 +196,52 @@
 
 
 </div></div>]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo + GitHub Pages 404</title>
+    <url>/2017/10/02/GitHub%20Pages%20404/</url>
+    <content><![CDATA[<p>如何配置GitHub Pages网上资料很多，这里就不多说了，我们补充一个问题的解决方式。很多人都出会出现，Hexo项目传到 GitHub 的仓库后，访问 <code>username.github.io</code> 域名，结果是404</p>
+<p>我搜集到的解决办法大概有三个，希望能帮到你：</p>
+<p>​        <a id="more"></a></p>
+<h4 id="1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成："><a href="#1、Git-仓库的仓库名和-GitHub-Pages-的域名，按照GitHub的要求，配置成：" class="headerlink" title="1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成："></a>1、Git 仓库的仓库名和 GitHub Pages 的域名，按照GitHub的要求，配置成：</h4><p>&lt;github账号名&gt;.github.io</p>
+<p>像我就是 ATommyGirl.github.io</p>
+<h4 id="2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题"><a href="#2、检查-Hexo-站点的配置文件-condig-yml-中关于-Git-的设置是否有问题" class="headerlink" title="2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题"></a>2、检查 Hexo 站点的配置文件 _condig.yml 中关于 Git 的设置是否有问题</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:ATommyGirl/ATommyGirl.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>看下 repo 和 branch 是否写错了，如果你是从网上复制的这一端配置，顺便检查一下yml 格式是不是错了，多了一个空格之类的呀，哈哈哈。</p>
+<h4 id="3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题"><a href="#3、缺少-index-html-文件，或者说”首页没了”，这个是我当时遇到的问题" class="headerlink" title="3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题"></a>3、缺少 index.html 文件，或者说”首页没了”，这个是我当时遇到的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在站点目录下，Git Bash 中 执行</span></span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+
+<p>之后就生成 index.html 文件了，然后重新执行上传 <code>hexo clean</code> <code>hexo g -d</code> 试试，反正我的是可以了。我是做移动端开发的，web前端着实有点迷……也都是东拼西凑的资料。</p>
+<p>需要联系的，去 “关于(About)” 中找到我吧。</p>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
       <tags>
         <tag>7788</tag>
       </tags>
@@ -327,32 +353,6 @@
 </li>
 </ol>
 <p>PS: <a href="https://www.hansion.win/2020/04/13/hexo-bo-ke-deng-jing-tai-wang-ye-ti-jiao-bai-du-he-google-gu-ge-shou-lu/#toc-heading-8" target="_blank" rel="noopener">转载自Hansion</a>，按照博主的说明，基本上算是完成了，可以成功搜到一部分内容，有些搜到的标题很诡异，还在看~~</p>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
 ]]></content>
       <tags>
         <tag>7788</tag>
@@ -588,6 +588,32 @@
       </tags>
   </entry>
   <entry>
+    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
+    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
+    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
+<a id="more"></a>
+
+<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
+<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>WebView</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WKWebView 小结儿</title>
     <url>/2020/12/01/WKWebView%20%E5%B0%8F%E7%BB%93%E5%84%BF/</url>
     <content><![CDATA[<p>最近多个项目里因为手机 App 中 UIWebview 加载 前端页面 的性能问题，被”围攻”了两天。本来还想偷个懒儿，不升级，毕竟 App 不需要上线 AppStore，最终还是没逃过 WKWebView 渲染速度的诱惑，真香<del>~</del>啪啪。。</p>
@@ -671,51 +697,29 @@
       </tags>
   </entry>
   <entry>
-    <title>WKWebView 隐藏系统键盘的 inputAccessoryView</title>
-    <url>/2021/06/22/WKWebView-Keyboard-0/</url>
-    <content><![CDATA[<p>在学习 <code>WKWebView</code> 中键盘的弹出、隐藏时，碰巧看到了网友的一个需求是 隐藏 <code>inputAccessoryView</code>，虽然我并不需要这么高端的操作，也不懂前端的问题，但思路碰巧帮我解决了另一个问题。🤓</p>
-<a id="more"></a>
-
-<h4 id="1-声明一个类-用于置空-inputAccessoryView"><a href="#1-声明一个类-用于置空-inputAccessoryView" class="headerlink" title="1. 声明一个类 用于置空 inputAccessoryView"></a>1. 声明一个类 用于置空 <code>inputAccessoryView</code></h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">_NoInputAccessoryView</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">_NoInputAccessoryView</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)inputAccessoryView &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-实现如下方法，例如在-WKWebView-的控制器中"><a href="#2-实现如下方法，例如在-WKWebView-的控制器中" class="headerlink" title="2.实现如下方法，例如在 WKWebView 的控制器中"></a>2.实现如下方法，例如在 WKWebView 的控制器中</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeInputAccessoryViewFromWKWebView:(<span class="built_in">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *targetView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UIView</span> *view <span class="keyword">in</span> webView.scrollView.subviews) &#123;</span><br><span class="line">        <span class="keyword">if</span>([[view.class description] hasPrefix:<span class="string">@"WKContent"</span>]) &#123;</span><br><span class="line">            targetView = view;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!targetView) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *noInputAccessoryViewClassName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@_NoInputAccessoryView"</span>, targetView.class.superclass];</span><br><span class="line">    Class newClass = <span class="built_in">NSClassFromString</span>(noInputAccessoryViewClassName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(newClass == <span class="literal">nil</span>) &#123;</span><br><span class="line">        newClass = objc_allocateClassPair(targetView.class, [noInputAccessoryViewClassName cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(!newClass) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Method method = class_getInstanceMethod([_NoInputAccessoryView <span class="keyword">class</span>], <span class="keyword">@selector</span>(inputAccessoryView));</span><br><span class="line"></span><br><span class="line">        class_addMethod(newClass, <span class="keyword">@selector</span>(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));</span><br><span class="line"></span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    object_setClass(targetView, newClass);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-调用上面的方法，传入对应的-WebView"><a href="#3-调用上面的方法，传入对应的-WebView" class="headerlink" title="3.调用上面的方法，传入对应的 WebView"></a>3.调用上面的方法，传入对应的 WebView</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> removeInputAccessoryViewFromWKWebView:webView];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>PS：这样的确可以隐藏 <code>inputAccessoryView</code>，但是键盘的关闭就需要再单独处理一下了。😂🤓🤗</p>
-<p>PPS: <a href="https://stackoverflow.com/questions/32546394/hiding-keyboard-accessorybar-in-wkwebview" target="_blank" rel="noopener">原文链接</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>WebView</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Warning! PATH is not properly set up, &#39;/Users/***/.rvm/gems/ruby-2.4.0/bin&#39; is not at first place.</title>
     <url>/2018/12/27/Warning!PATH-is/</url>
     <content><![CDATA[<p>忽然有一天。。。使用 <code>cocoapods</code> 安装三方库不好使了，报了好长的错。。。</p>
 <a id="more"></a>
 
-<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/31.png" alt="error"></p>
+<p>前<br>方<br>有<br>超<br>长<br>图<br>片<br>，<br>慎<br>点<br>。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/031.png" alt="error"></p>
 <blockquote>
 <p>按照里面的提示去github搜索了cocoapods使用中的问题，多数都是说，重装gem。笔者不是很懂这些，gem，ruby，cocoapods，全都更新了一遍。依旧是这个问题。</p>
 </blockquote>
 <p>睡了一觉醒来后，笔者认真看了看错误提示，注意到这句：</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment">### Command</span></span><br><span class="line"></span><br><span class="line">/Users/我/.rvm/gems/ruby-<span class="number">2.4</span>.<span class="number">0</span>/bin/pod install</span><br></pre></td></tr></table></figure>
 
-<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/32.png" alt="rvm list"></p>
+<p>既然命令执行文件在这个路径下，可能是rvm出了问题，执行 <code>rvm list</code>查看ruby版本</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/32.png" alt="rvm list"></p>
 <p>注意到里面有个 <code>Warning！</code> 和几个建议的操作（做了也没用，是的，我试过了）😌</p>
 <blockquote>
 <p>Warning! PATH is not properly set up, ‘/Users/***/.rvm/gems/ruby-2.4.0/bin’ is not at first place.<br>仿佛是在说，ruby不在最初？首先？第一个位置？<br>总之某些东西被改了（但我真的没动）</p>
 </blockquote>
-<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/33.png" alt="rvm -h"></p>
-<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/34.png" alt="绿色走一波"></p>
+<p>本人脾气暴躁，所以想着，既然动了，那就暴力还原吧，执行 <code>rvm -h</code> 查看rvm 的神操作们</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/33.png" alt="rvm -h"></p>
+<p>注意到了图中的这几个命令：<code>rvm maintenance</code> rvm 的维护？于是乎试了一下<br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br><code>rvm reset</code><br>重要的 事情说五遍。<br>command里并没有什么输出，仿佛秘密做了一些事情，然后再试了下 <code>pod install</code> 就👌了。<br>看到了久违的绿色，放心了。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/34.png" alt="绿色走一波"></p>
 ]]></content>
       <tags>
         <tag>iOS</tag>
@@ -801,64 +805,6 @@
       </tags>
   </entry>
   <entry>
-    <title>iOS 动态修改状态栏风格</title>
-    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
-    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
-<ul>
-<li>UIStatusBarStyle 的样式</li>
-<li>改变状态栏文字颜色的方式</li>
-<li>状态栏的显示和隐藏</li>
-</ul>
-<a id="more"></a>
-
-<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
-
-<p>属性，默认为 <code>YES</code>。</p>
-<ul>
-<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
-<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
-</ul>
-<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
-<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
-<li>全局隐藏的话，很简单，直接改配置。</li>
-<li>部分页面隐藏，同上，重写~~</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iTerm 2 分屏切换</title>
-    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
-    <content><![CDATA[<ul>
-<li><code>⌘ + d</code>:  垂直分屏</li>
-<li><code>⌘ + shift + d</code>:  水平分屏</li>
-<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
-<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
-<li><code>⌘ + 数字</code>：切换标签页</li>
-<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
-<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
-<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
-</ul>
-<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
     <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
     <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
@@ -901,6 +847,45 @@
 </center>
 
 </div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 动态修改状态栏风格</title>
+    <url>/2021/01/20/iOS%20%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81%E6%A0%8F%E9%A3%8E%E6%A0%BC/</url>
+    <content><![CDATA[<p>App 中经常需要根据页面的风格改变电池栏文字的颜色，记录一下都是如何调整的。</p>
+<ul>
+<li>UIStatusBarStyle 的样式</li>
+<li>改变状态栏文字颜色的方式</li>
+<li>状态栏的显示和隐藏</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="UIStatusBarStyle-的样式"><a href="#UIStatusBarStyle-的样式" class="headerlink" title="UIStatusBarStyle 的样式"></a>UIStatusBarStyle 的样式</h4><p>iOS 13.0 中新增了暗黑模式，对应的状态栏风格也增加了一个 <code>darkContent</code>。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIStatusBarStyle</span> : <span class="title">Int</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">default</span> = <span class="number">0</span> <span class="comment">// Automatically chooses light or dark content based on the user interface style</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> lightContent = <span class="number">1</span> <span class="comment">// Light content, for use on dark backgrounds</span></span><br><span class="line">    <span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line">    <span class="keyword">case</span> darkContent = <span class="number">3</span> <span class="comment">// Dark content, for use on light backgrounds</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="改变状态栏文字的颜色"><a href="#改变状态栏文字的颜色" class="headerlink" title="改变状态栏文字的颜色"></a>改变状态栏文字的颜色</h4><p>是否可以在不同页面设置不同的风格，首先要配置好 <code>Info.plist</code> 中的 </p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="type">View</span> controller-based status bar appearance</span><br></pre></td></tr></table></figure>
+
+<p>属性，默认为 <code>YES</code>。</p>
+<ul>
+<li>如果整个应用只需要使用固定的风格，上述属性改为 <code>NO</code>。在应用配置或者代码中设定好风格即可。</li>
+<li>如果状态栏颜色需要视页面而定，上述属性改为 <code>YES</code>，并且重写控制器的 <code>preferredStatusBarStyle</code> 方法。</li>
+</ul>
+<p>对于需要调整 <code>ViewController</code> 风格的页面，我们重写它的 getter，这是一个 只读 的属性。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">UIStatusBarStyle</span>.lightContent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然如果导航控制器重写了这个方法，它的子控制器都会以 导航控制器 的为准。如果子控制器中有需要改变风格的，同样也需要自己实现这个方法。</p>
+<h4 id="状态栏的显示和隐藏"><a href="#状态栏的显示和隐藏" class="headerlink" title="状态栏的显示和隐藏"></a>状态栏的显示和隐藏</h4><ul>
+<li>全局隐藏的话，很简单，直接改配置。</li>
+<li>部分页面隐藏，同上，重写~~</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">var</span> prefersStatusBarHidden: <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
       <tags>
         <tag>iOS</tag>
       </tags>
@@ -954,6 +939,32 @@
       </tags>
   </entry>
   <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>去掉UIWebView底部的黑条</title>
     <url>/2018/12/13/%E5%8E%BB%E6%8E%89UIWebView%E5%BA%95%E9%83%A8%E7%9A%84%E9%BB%91%E6%9D%A1/</url>
     <content><![CDATA[<p>webview 在多次刷新内容后，正文的下面有一块莫名其妙的黑色区域，如图一，本以为是由于我改了“UIWebDocumentView” 的原因，看到这个属性改了一下，发现居然好了。。。<br><code>opaque 默认是YES</code><br>改为 <code>self.webView.opaque = NO;</code></p>
@@ -1004,51 +1015,22 @@
       </tags>
   </entry>
   <entry>
-    <title>昨天</title>
-    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
-    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
+    <title>iTerm 2 分屏切换</title>
+    <url>/2020/12/14/iTerm%202%20%E5%88%86%E5%B1%8F/</url>
+    <content><![CDATA[<ul>
+<li><code>⌘ + d</code>:  垂直分屏</li>
+<li><code>⌘ + shift + d</code>:  水平分屏</li>
+<li><code>⌘ + ]</code>和<code>⌘ + [</code> ：在最近使用的分屏直接切换</li>
+<li><code>⌘ + opt + 方向键</code>：切换到指定位置的分屏</li>
+<li><code>⌘ + 数字</code>：切换标签页</li>
+<li><code>⌘ + 方向键</code> ：按方向切换标签页</li>
+<li><code>shift + ⌘ + s</code>：保存当前窗口快照</li>
+<li><code>⌘ + opt + b</code>：快照回放，很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键。</li>
+</ul>
+<p>PS: 如果发现快捷键没起作用，可以看看是不是和系统或者其他软件的快捷键冲突了……</p>
 ]]></content>
       <tags>
-        <tag>我</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>由 Pod 导致的 File not found</title>
-    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
-    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
-<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/11.png" alt></p>
-<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Xcode</tag>
-        <tag>pod</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1068,6 +1050,28 @@
 ]]></content>
       <tags>
         <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>昨天</title>
+    <url>/2021/04/15/%E6%98%A8%E5%A4%A9/</url>
+    <content><![CDATA[<p>一个人从我们的世界里消失，可能需要三五天、七八个月、十年八年、甚至一生。但再次出现，只需要一秒，就这一秒。</p>
+]]></content>
+      <tags>
+        <tag>我</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>由 Pod 导致的 File not found</title>
+    <url>/2020/09/04/%E7%94%B1%20Pod%20%E5%AF%BC%E8%87%B4%E7%9A%84File%20not%20found/</url>
+    <content><![CDATA[<p>今天对一个 Pod 库做了小版本的升级，然后又回退到原来的版本，CocoaPods 就不乐意了， 一直报 <code>#import &lt;Masonry/Masonry.h&gt; file not found</code> 类似的错误，所有的 Pod 库都这样，着实让人头大。</p>
+<p>解决方法：<br> 点击 <code>YourProject -&gt; Project -&gt; 选中 YourProject -&gt; Info -&gt; Configurations -&gt;</code> 把对应的 <code>Debug</code> 和 <code>Release</code> 里的参数设为 <code>Pods-xxxxxx.Debug / Pods-xxxxxx.Release</code>（这些参数在未设置前应该是 None，可能 CocoaPods 在安装第三方库时没正确设置这个参数）。<br> 重新编译工程，应该能成功了。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/11.png" alt></p>
+<h6 id><a href="#" class="headerlink" title></a></h6>]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Xcode</tag>
+        <tag>pod</tag>
       </tags>
   </entry>
   <entry>
@@ -2726,11 +2730,6 @@
       </tags>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>我</title>
     <url>/about/index.html</url>
     <content><![CDATA[<h3 id="笔名：YYLittleCat"><a href="#笔名：YYLittleCat" class="headerlink" title="笔名：YYLittleCat"></a>笔名：YYLittleCat</h3><h3 id="法号：迷"><a href="#法号：迷" class="headerlink" title="法号：迷"></a>法号：迷</h3><h3 id="特点：漂亮"><a href="#特点：漂亮" class="headerlink" title="特点：漂亮"></a>特点：漂亮</h3><h3 id="爱好：周星驰的电影、柯南"><a href="#爱好：周星驰的电影、柯南" class="headerlink" title="爱好：周星驰的电影、柯南"></a>爱好：周星驰的电影、柯南</h3><h3 id="宠物：🐈、🐈、🐢"><a href="#宠物：🐈、🐈、🐢" class="headerlink" title="宠物：🐈、🐈、🐢"></a>宠物：🐈、🐈、🐢</h3><h3 id="职业：程序媛"><a href="#职业：程序媛" class="headerlink" title="职业：程序媛"></a>职业：程序媛</h3><h3 id="社交：欢迎文明交流"><a href="#社交：欢迎文明交流" class="headerlink" title="社交：欢迎文明交流"></a>社交：欢迎文明交流</h3><p>​    <img src="/about/index/lisence.jpg" alt></p>
@@ -2739,8 +2738,13 @@
 ]]></content>
   </entry>
   <entry>
-    <title>回忆</title>
-    <url>/gallery/index.html</url>
+    <title>search</title>
+    <url>/search/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -2778,8 +2782,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>search</title>
-    <url>/search/index.html</url>
+    <title>回忆</title>
+    <url>/gallery/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
