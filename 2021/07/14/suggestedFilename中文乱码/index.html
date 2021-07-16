@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="日常吐槽：  App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？…… 通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓…… 看到写  IOS  而不是 iOS 的人，血压又上升一格…… 想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS suggestedFilename 中文文件名乱码问题">
+<meta property="og:url" content="https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/index.html">
+<meta property="og:site_name" content="迷">
+<meta property="og:description" content="日常吐槽：  App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？…… 通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓…… 看到写  IOS  而不是 iOS 的人，血压又上升一格…… 想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/38.png">
+<meta property="article:published_time" content="2021-07-14T06:54:04.000Z">
+<meta property="article:modified_time" content="2021-07-16T07:57:25.214Z">
+<meta property="article:author" content="YYLittleCat">
+<meta property="article:tag" content="iOS, 网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/38.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/mini-icon.svg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>iOS suggestedFilename 中文文件名乱码问题</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2021/07/01/CentOS%20%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&text=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&is_video=false&description=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS suggestedFilename 中文文件名乱码问题&body=Check out this article: https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&name=iOS suggestedFilename 中文文件名乱码问题&description=&lt;p&gt;日常吐槽：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？……&lt;/p&gt;
+&lt;p&gt;通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓……&lt;/p&gt;
+&lt;p&gt;看到写  &lt;code&gt;IOS&lt;/code&gt;  而不是 &lt;code&gt;iOS&lt;/code&gt; 的人，血压又上升一格……&lt;/p&gt;
+&lt;p&gt;想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 ISO 开发的吗？” ，我当时心想这个公司不能去呀，HR 都这么不严谨，给我干 HR 好不好，拿来吧你……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;suggestedFilename&#34;&gt;&lt;a href=&#34;#suggestedFilename&#34; class=&#34;headerlink&#34; title=&#34;suggestedFilename&#34;&gt;&lt;/a&gt;suggestedFilename&lt;/h2&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&t=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#suggestedFilename"><span class="toc-number">1.</span> <span class="toc-text">suggestedFilename</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Content-Disposition"><span class="toc-number">2.</span> <span class="toc-text">Content-Disposition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作为主体的响应标题"><span class="toc-number">2.1.1.</span> <span class="toc-text">作为主体的响应标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作为多部分主体的-header"><span class="toc-number">2.1.2.</span> <span class="toc-text">作为多部分主体的 header</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-number">2.2.</span> <span class="toc-text">指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回归到问题"><span class="toc-number">3.</span> <span class="toc-text">回归到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSStringEncoding"><span class="toc-number">4.</span> <span class="toc-text">NSStringEncoding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Constants"><span class="toc-number">4.1.</span> <span class="toc-text">Constants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节序"><span class="toc-number">4.2.</span> <span class="toc-text">字节序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#端-endian-的起源"><span class="toc-number">4.2.1.</span> <span class="toc-text">端 (endian) 的起源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符集"><span class="toc-number">4.3.</span> <span class="toc-text">字符集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撞大运"><span class="toc-number">5.</span> <span class="toc-text">撞大运</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        iOS suggestedFilename 中文文件名乱码问题
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">YYLittleCat</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-07-14T06:54:04.000Z" itemprop="datePublished">2021-07-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS-%E7%BD%91%E7%BB%9C/" rel="tag">iOS, 网络</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>日常吐槽：</p>
+<blockquote>
+<p>App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？……</p>
+<p>通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓……</p>
+<p>看到写  <code>IOS</code>  而不是 <code>iOS</code> 的人，血压又上升一格……</p>
+<p>想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 ISO 开发的吗？” ，我当时心想这个公司不能去呀，HR 都这么不严谨，给我干 HR 好不好，拿来吧你……</p>
+</blockquote>
+<h2 id="suggestedFilename"><a href="#suggestedFilename" class="headerlink" title="suggestedFilename"></a>suggestedFilename</h2><a id="more"></a>
+
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *filename = task.response.suggestedFilename;</span><br></pre></td></tr></table></figure>
+
+<p>说回正题，下载附件的代码中我们是通过 <a href="https://tommygirl.cn/2018/04/20/NSURLResponse/">NSURLResponse</a> 的 <code>suggestedFilename</code> 获取服务端建议的一个文件名，但是得到的却是类似这样的乱码  <code>é��åº�å¸�å·¥ä¼¤æ�¥é��ä½�é�¢ä¼�é£�è¡¥å�©è´¹ã��äº¤é��é£�å®¿è´¹å®¡æ ¸ç»�ç®�è¡¨.xls</code> ，满脸问号是不是？？？？？？</p>
+<p>我们知道 <code>suggestedFilename</code> 来自 HTTP 响应的头部信息，只是苹果默认帮我们解析成了一个 <code>NSURLResponse</code> 对象， 乱码问题往往是字符的编码格式没有对应上，或者苹果并不知道应该按照哪个编码规则解析，把问题抛给了开发者自己处理。</p>
+<p>那奇怪的是，有的附件正常，有的附件就凌乱了。自然我们就想到比对一下两者 Header 的区别，是骡子是马拉出来溜溜~~</p>
+<p>下面是截取的几个与 Content 有关的信息：</p>
+<ul>
+<li>附件示例：测试素材 - 副本.docx 。文件名显示乱码。</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">NSHTTPURLResponse</span>: <span class="number">0x600003a44fa0</span>&gt; &#123; URL: https:<span class="comment">//wwww.www.www &#125; &#123; Status Code: 201, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Methods"</span> =     (</span><br><span class="line">        <span class="string">"POST,GET,PUT"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"form-data; name=\"attachment\"; filename=\"\U00e6\U00b5\U008b\U00e8\U00af\U0095\U00e7\U00b4\U00a0\U00e6\U009d\U0090 - \U00e5\U0089\U00af\U00e6\U009c\U00ac.docx\""</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Length"</span> =     (</span><br><span class="line">        <span class="number">19498</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/octet-stream;charset=UTF-8"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>附件示例：上海隐私条款.docx。文件名显示正常。</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">NSHTTPURLResponse</span>: <span class="number">0x600003d919a0</span>&gt; &#123; URL: https:<span class="comment">//wwww.www.www &#125; &#123; Status Code: 200, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Methods"</span> =     (</span><br><span class="line">        <span class="string">"GET, POST, OPTIONS, PUT, DELETE, HEAD, TRACE"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"inline; filename*=UTF-8''%E4%B8%8A%E7%A0%94%E7%A7%BB%E5%8A%A8%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE.docx"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Encoding"</span> =     (</span><br><span class="line">        gzip</span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/vnd.openxmlformats-officedocument.wordprocessingml.document"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Content-Disposition</code> 和 <code>Content-Type</code>  有点区别。之前我总是误以为 <code>Content-Type</code> 中的 <code>charset=UTF-8</code> 除了指定文件的编码格式，文件名也是由这个指定的。大错特错了~~</p>
+<p>第一次关注 <code>Content-Disposition</code> 。所以它到底是何方神圣呢？</p>
+<h2 id="Content-Disposition"><a href="#Content-Disposition" class="headerlink" title="Content-Disposition"></a>Content-Disposition</h2><blockquote>
+<p>在常规的 HTTP 应答中，<code>Content-Disposition</code>  属于响应头的一个属性，用于指示服务器响应给我们的内容容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。</p>
+</blockquote>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="作为主体的响应标题"><a href="#作为主体的响应标题" class="headerlink" title="作为主体的响应标题"></a>作为主体的响应标题</h4><p>HTTP 上下文中的第一个参数是 <code>inline</code>（默认值，表示它可以显示在网页内，或作为网页）或 <code>attachment</code>（表示它应该下载；大多数浏览器呈现“另存为”对话框，预先填入<code>filename</code>，如果参数的值存在的话。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: inline</span><br><span class="line">Content-Disposition: attachment</span><br><span class="line">Content-Disposition: attachment; filename=<span class="string">"filename.jpg"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="作为多部分主体的-header"><a href="#作为多部分主体的-header" class="headerlink" title="作为多部分主体的 header"></a>作为多部分主体的 header</h4><p>HTTP 上下文中的第一个参数总是<code>form-data</code>; 其他参数不区分大小写，并且有参数，在<code>&#39;=&#39;</code>符号后面使用带引号的字符串语法。多个参数用分号（<code>&#39;;&#39;</code>）分隔。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data</span><br><span class="line">Content-Disposition: form-data; name=<span class="string">"fieldName"</span></span><br><span class="line">Content-Disposition: form-data; name=<span class="string">"fieldName"</span>; filename=<span class="string">"filename.jpg"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p><code>name</code></p>
+<p>后面是一个表单字段名的字符串，每一个字段名会对应一个子部分。在同一个字段名对应多个文件的情况下（例如，带有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input#attr-multiple" target="_blank" rel="noopener"><code>multiple</code></a> 属性的 <code>&lt;input type=file&gt;</code> 元素），则多个子部分共用同一个字段名。如果 name 参数的值为 <code>&#39;_charset_&#39;</code> ，意味着这个子部分表示的不是一个 HTML 字段，而是在未明确指定字符集信息的情况下各部分使用的默认字符集。</p>
+</li>
+<li><p><code>filename</code></p>
+<p>后面是要传送的文件的初始名称的字符串。<strong>这个参数总是可选的，而且不能盲目使用</strong>：路径信息必须舍掉，同时要进行一定的转换以符合服务器文件系统规则。这个参数主要用来提供展示性信息。当与 <code>Content-Disposition: attachment</code> 一同使用的时候，它被用作”保存为”对话框中呈现给用户的默认文件名。</p>
+</li>
+<li><p><code>filename *</code></p>
+<p><code>filename</code> 和 <code>filename *</code> 两个参数的唯一区别在于，<code>filename *</code> 采用了<a href="https://tools.ietf.org/html/rfc5987" target="_blank" rel="noopener">RFC 5987</a> 中规定的编码方式。<code>filename</code> 和 <code>filename *</code> 同时出现的时候，应该优先采用  <code>filename *</code> ，假如二者都支持的话。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filename*=UTF<span class="number">-8</span><span class="string">''</span>testfile.docx</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>PS: <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="回归到问题"><a href="#回归到问题" class="headerlink" title="回归到问题"></a>回归到问题</h2><p>回归到我们前面的问题，一个指定的 <code>filename</code> ，一个指定的  <code>filename *</code> ，有问题吗？没有问题。前面说了，都是标准的。只不过后者告诉了我们文件名使用的编码，而且还是普遍的系统和浏览器都支持的 UTF-8。前者既没有指定编码，也不是 UTF-8。我们能骂后台吗？不能，但我还是在心里骂了一句。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//乱码</span></span><br><span class="line"><span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"form-data; name=\"attachment\"; filename=\"\U00e6\U00b5\U008b\U00e8\U00af\U0095\U00e7\U00b4\U00a0\U00e6\U009d\U0090 - \U00e5\U0089\U00af\U00e6\U009c\U00ac.docx\""</span></span><br><span class="line">    );</span><br><span class="line"><span class="comment">//正常</span></span><br><span class="line"><span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"inline; filename*=UTF-8''%E4%B8%8A%E7%A0%94%E7%A7%BB%E5%8A%A8%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE.docx"</span></span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+
+
+
+<p>与上面两种形式对应，解决办法也有两种：</p>
+<ol>
+<li>服务端把 <code>Content-Disposition</code> 中的文件名编码加上。</li>
+<li>iOS 自己单独解析一下 <code>suggestedFilename</code> 。</li>
+</ol>
+<p>我运气好，对接的业务方在服务端改了，态度还不错。那如果对方因客观原因改不了怎么办呢？采用方法2，但这个时候问题又来了，我们怎么知道用哪种编码来解析呢？</p>
+<p>说到编码，日常我也只是用 <code>NSUTF8StringEncoding</code> 比较多。UTF-8 有点类似于 Haffman 编码，它将 Unicode 编码为 00000000-0000007F 的字符，用单个字节来表示；00000080-000007FF 的字符用两个字节表示；00000800-0000FFFF 的字符用3字节表示。因为目前为止 Unicode-16 规范没有指定 FFFF 以上的字符，所以 UTF-8 最多是使用3个字节来表示一个字符。但理论上来说，UTF-8 最多需要用6字节表示一个字符？ 🤓</p>
+<h2 id="NSStringEncoding"><a href="#NSStringEncoding" class="headerlink" title="NSStringEncoding"></a>NSStringEncoding</h2><blockquote>
+<p>一组常量，NSString 可能用到的字符串编码。</p>
+</blockquote>
+<h3 id="Constants"><a href="#Constants" class="headerlink" title="Constants"></a>Constants</h3><table>
+<thead>
+<tr>
+<th>NSStringEncoding</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NSASCIIStringEncoding</td>
+<td>8 位字符内的严格 7 位 ASCII 编码；仅 ASCII 值 0…127。</td>
+</tr>
+<tr>
+<td>NSNEXTSTEPStringEncoding</td>
+<td>带有 NEXTSTEP 扩展的 8 位 ASCII 编码。</td>
+</tr>
+<tr>
+<td>NSJapaneseEUCStringEncoding</td>
+<td>日语文本的 8 位 EUC 编码。</td>
+</tr>
+<tr>
+<td>NSUTF8StringEncoding</td>
+<td>Unicode 字符的 8 位表示，适合由基于 ASCII 的系统传输或存储。</td>
+</tr>
+<tr>
+<td>NSISOLatin1StringEncoding</td>
+<td>8 位 ISO Latin 1 编码。又叫 ISO-8859-1 编码。</td>
+</tr>
+<tr>
+<td>NSSymbolStringEncoding</td>
+<td>8 位 Adobe 符号编码向量。</td>
+</tr>
+<tr>
+<td>NSNonLossyASCIIStringEncoding</td>
+<td>7 位详细 ASCII 表示所有 Unicode 字符。？？</td>
+</tr>
+<tr>
+<td>NSShiftJISStringEncoding</td>
+<td>日语文本的 8 位 Shift-JIS 编码。</td>
+</tr>
+<tr>
+<td>NSISOLatin2StringEncoding</td>
+<td>8 位 ISO Latin 2 编码。又叫 ISO-8859-2 编码。</td>
+</tr>
+<tr>
+<td>NSUnicodeStringEncoding</td>
+<td>字符串对象的规范 Unicode 编码。是一种２字节编码，能够提供65536个字符，如”A”的Unicode编码为6500，而BigEndianUnicode编码为0065</td>
+</tr>
+<tr>
+<td>NSWindowsCP1251StringEncoding</td>
+<td>Microsoft Windows 代码页 1251，编码 Cyrillic 字符；相当于 AdobeStandardCyrillic 字体编码。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1252StringEncoding</td>
+<td>Microsoft Windows 代码页 1252；相当于 WinLatin1。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1253StringEncoding</td>
+<td>Microsoft Windows 代码页 1253，编码希腊字符。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1254StringEncoding</td>
+<td>Microsoft Windows 代码页 1254，编码土耳其语字符。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1250StringEncoding</td>
+<td>Microsoft Windows 代码页 1250；相当于 WinLatin2。</td>
+</tr>
+<tr>
+<td>NSISO2022JPStringEncoding</td>
+<td>电子邮件的 ISO 2022 日语编码。GB 2312 遵从于 ISO 2022。</td>
+</tr>
+<tr>
+<td>NSMacOSRomanStringEncoding</td>
+<td>经典的 Macintosh 罗马编码。主要用于编码 <a href="https://zh.wikipedia.org/wiki/Classic_Mac_OS" target="_blank" rel="noopener">Classic Mac OS</a> 上的文字。</td>
+</tr>
+<tr>
+<td>NSUTF16StringEncoding</td>
+<td>16 位 UTF 编码。同 NSUnicodeStringEncoding。</td>
+</tr>
+<tr>
+<td>NSUTF16BigEndianStringEncoding</td>
+<td>指定字节序的 UTF-16 编码。字节序为大尾，也叫大端。</td>
+</tr>
+<tr>
+<td>NSUTF16LittleEndianStringEncoding</td>
+<td>指定字节序的 UTF-16 编码。字节序为小尾，也叫小端。</td>
+</tr>
+<tr>
+<td>NSUTF32StringEncoding</td>
+<td>32 位 UTF 编码。</td>
+</tr>
+<tr>
+<td>NSUTF32BigEndianStringEncoding</td>
+<td>指定字节序的 UTF-32 编码。字节序为大尾，也叫大端。</td>
+</tr>
+<tr>
+<td>NSUTF32LittleEndianStringEncoding</td>
+<td>指定字节序的 UTF-32 编码。字节序为小尾，也叫小端。</td>
+</tr>
+</tbody></table>
+<h3 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h3><blockquote>
+<p>对于整型、长整型等数据类型，Big-endian 认为第一个字节是最高位字节，即按照从低地址到高地址的顺序存放数据的高位字节到低位字节，称为大端、大尾；而 Little-endian 则相反，它认为第一个字节是最低位字节，按照从低地址到高地址的顺序存放据的低位字节到高位字节，称为小端、小尾。</p>
+</blockquote>
+<p>例如，假设从内存地址 0x0000 开始有以下数据： </p>
+<table>
+<thead>
+<tr>
+<th align="center">0x0000</th>
+<th align="center">0x0001</th>
+<th align="center">0x0002</th>
+<th align="center">0x0003</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0x12</td>
+<td align="center">0x34</td>
+<td align="center">0xab</td>
+<td align="center">0xcd</td>
+</tr>
+</tbody></table>
+<p>如果我们去读取一个地址为 0x0000 的四个字节变量，若字节序为 Big-endian，则读出结果为 0x1234abcd；若字节序为 Little-endian，则读出结果为 0xcdab3412。</p>
+<p>如果我们将 0x1234abcd 写入到以 0x0000 开始的内存中，则 Little-endian 和 Big-endian 模式的存放结果如下： </p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th align="center">0x0000</th>
+<th align="center">0x0001</th>
+<th align="center">0x0002</th>
+<th align="center">0x0003</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Big-endian</td>
+<td align="center">0x12</td>
+<td align="center">0x34</td>
+<td align="center">0xab</td>
+<td align="center">0xcd</td>
+</tr>
+<tr>
+<td>Little-endian</td>
+<td align="center">0xcd</td>
+<td align="center">0xab</td>
+<td align="center">0x34</td>
+<td align="center">0x12</td>
+</tr>
+</tbody></table>
+<h4 id="端-endian-的起源"><a href="#端-endian-的起源" class="headerlink" title="端 (endian) 的起源"></a>端 (endian) 的起源</h4><p>“<strong>endian</strong>”一词来源于十八世纪爱尔兰作家乔纳森·斯威夫特的小说《格列佛游记》。小说中，小人国为水煮蛋该从大的一端（Big-End）剥开还是小的一端（Little-End）剥开而争论，争论的双方分别被称为“大端派”和“小端派”。以下是1726年关于大小端之争历史的描述：</p>
+<blockquote>
+<p>我下面要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了。因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破鸡蛋较小的一端，违令者重罚。老百姓们对这项命令极其反感。历史告诉我们，由此曾经发生过6次叛乱，其中一个皇帝送了命，另一个丢了王位。这些叛乱大多都是由Blefuscu的国王大臣们煽动起来的。叛乱平息后，流亡的人总是逃到那个帝国去寻求避难。据估计，先后几次有11000人情愿受死也不肯去打破鸡蛋较小的一端。关于这一争端，曾出版过几百本大部著作，不过大端派的书一直是受禁的，法律也规定该派任何人不得做官。”</p>
+</blockquote>
+<p>觉得这个鸡蛋的故事很有意思，所以粘在这里了 😂。关于字节序的更多内容见 <a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F" target="_blank" rel="noopener">维基百科-字节序</a> ，很详细了。</p>
+<h3 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h3><p>关于字符集有些我也看不懂，百科上倒是解释的比较清楚。还有很多字符编码集：</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/38.png" alt></p>
+<h2 id="撞大运"><a href="#撞大运" class="headerlink" title="撞大运"></a>撞大运</h2><p>这么多种编码，iOS 解析的话，我们用哪一种呢？如果对接的业务少，可以和服务端约定好。如果对接的业务多，想兼容所有的”乱码”，我觉得只能撞大运了😂</p>
+<p>示例：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *fileName, *str;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *byte = <span class="literal">NULL</span>;</span><br><span class="line">fileName = [task.response suggestedFilename];</span><br><span class="line">byte = [fileName cStringUsingEncoding:<span class="built_in">NSISOLatin1StringEncoding</span>];</span><br><span class="line">str = [[<span class="built_in">NSString</span> alloc] initWithCString:byte encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br></pre></td></tr></table></figure>
+
+<p>在上面的示例中，如果指定的 <code>NSStringEncoding</code> 不匹配，str 会是 nil，所以我们可以利用 nil 来撞大运了，有毛病吗？可能有，哈哈 😂 </p>
+
+  </div>
+</article>
+
+
+    
+<div class="gitalk" id="gitalk-container"></div>
+<link rel="stylesheet" href="/gDark.css" media="screen" type="text/css"> 
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'c0fd3fecc668416852dc',
+    clientSecret: '5f849bbb22f9233b3fe19627c9eb28be39b721d1',
+    repo: 'YYBlogGiTalk',
+    owner: 'ATommyGirl',
+    admin: ['ATommyGirl'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+    
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#suggestedFilename"><span class="toc-number">1.</span> <span class="toc-text">suggestedFilename</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Content-Disposition"><span class="toc-number">2.</span> <span class="toc-text">Content-Disposition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作为主体的响应标题"><span class="toc-number">2.1.1.</span> <span class="toc-text">作为主体的响应标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作为多部分主体的-header"><span class="toc-number">2.1.2.</span> <span class="toc-text">作为多部分主体的 header</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-number">2.2.</span> <span class="toc-text">指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回归到问题"><span class="toc-number">3.</span> <span class="toc-text">回归到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSStringEncoding"><span class="toc-number">4.</span> <span class="toc-text">NSStringEncoding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Constants"><span class="toc-number">4.1.</span> <span class="toc-text">Constants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节序"><span class="toc-number">4.2.</span> <span class="toc-text">字节序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#端-endian-的起源"><span class="toc-number">4.2.1.</span> <span class="toc-text">端 (endian) 的起源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符集"><span class="toc-number">4.3.</span> <span class="toc-text">字符集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撞大运"><span class="toc-number">5.</span> <span class="toc-text">撞大运</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&text=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&is_video=false&description=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS suggestedFilename 中文文件名乱码问题&body=Check out this article: https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&title=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&name=iOS suggestedFilename 中文文件名乱码问题&description=&lt;p&gt;日常吐槽：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？……&lt;/p&gt;
+&lt;p&gt;通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓……&lt;/p&gt;
+&lt;p&gt;看到写  &lt;code&gt;IOS&lt;/code&gt;  而不是 &lt;code&gt;iOS&lt;/code&gt; 的人，血压又上升一格……&lt;/p&gt;
+&lt;p&gt;想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 ISO 开发的吗？” ，我当时心想这个公司不能去呀，HR 都这么不严谨，给我干 HR 好不好，拿来吧你……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;suggestedFilename&#34;&gt;&lt;a href=&#34;#suggestedFilename&#34; class=&#34;headerlink&#34; title=&#34;suggestedFilename&#34;&gt;&lt;/a&gt;suggestedFilename&lt;/h2&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tommygirl.cn/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/&t=iOS suggestedFilename 中文文件名乱码问题" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives">归档</a></li>
+         
+          <li><a href="/tags">标签</a></li>
+         
+          <li><a href="/about">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </nav> 
+  </div>
+  <div class="footer-right">
+      YYLittleCat
+      Copyright &copy;
+      
+      
+      2015-2021
+  </div>
+  <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">津ICP备2021005176号</a>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":300,"height":600,"vOffset":-100,"hOffset":50},"mobile":{"show":false},"log":false});</script></body>
+</html>

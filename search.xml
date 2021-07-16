@@ -221,32 +221,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 文字中如何插入图片</title>
-    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
-<a id="more"></a>
-
-<ul>
-<li><p><strong>设置站点配置_config.yml</strong>:</p>
-<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
-</li>
-<li><p><strong>安装插件</strong>:</p>
-<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
-</li>
-<li><p><strong>运行</strong>:</p>
-<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
-<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
-</li>
-<li><p><strong>添加图片</strong>:</p>
-<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>7788</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客等静态网页提交到谷歌和百度收录</title>
     <url>/2021/06/29/Hexo%E5%8D%9A%E5%AE%A2%E7%AD%89%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%8F%90%E4%BA%A4%E5%88%B0%E8%B0%B7%E6%AD%8C%E5%92%8C%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/</url>
     <content><![CDATA[<h2 id="什么是-站点地图-？"><a href="#什么是-站点地图-？" class="headerlink" title="什么是 站点地图 ？"></a>什么是 站点地图 ？</h2><blockquote>
@@ -359,6 +333,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 文字中如何插入图片</title>
+    <url>/2018/02/22/Hexo%E6%96%87%E5%AD%97%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在Hexo 的文章中加入图片，很简单的，来试试先：</p>
+<a id="more"></a>
+
+<ul>
+<li><p><strong>设置站点配置_config.yml</strong>:</p>
+<p>将 <code>post_asset_folder: false</code> 改为 <code>post_asset_folder: true</code></p>
+</li>
+<li><p><strong>安装插件</strong>:</p>
+<p> <code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+</li>
+<li><p><strong>运行</strong>:</p>
+<p> <code>hexo n &quot;XXXXXX&quot;</code></p>
+<p>生成 XXXXX.md 博文时就会在 <code>/source/_posts</code> 目录下生成 XXXXXX 的文件夹，将你想在XXXXX文章中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+</li>
+<li><p><strong>添加图片</strong>:</p>
+<p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，例如<code>![](1.png)</code></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>7788</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
+    <url>/2020/02/14/LaunchImage/</url>
+    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
+<a id="more"></a>
+
+<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/23.png" alt="LaunchImage Setting.png"></p>
+<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
+  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg" class width="200"></div>
+</center>
+
+</div></div>]]></content>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Inferred (Constraints) 和 Autoresizing Mask</title>
     <url>/2021/01/07/Inferred-Constraints-%E5%92%8C-Autoresizing-Mask/</url>
     <content><![CDATA[<p>很久没有写过UI了，前一阵更新完 Xcode 12.2 和 iOS 14.* 后，老项目和新项目都需要调整点页面布局的问题。在 Copy 或者 新建 View 后，切换使用的设备时布局没有自适应。以为约束没加上，但当我要去加约束的时候，发现已经无法操作了？！！！</p>
@@ -390,23 +407,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Command CompileAssetCatalog failed with a nonzero exit code</title>
-    <url>/2020/02/14/LaunchImage/</url>
-    <content><![CDATA[<p>几年前较老的工程 用 xcode 11 打开以后，debug报错，原因是  LaunchImage 文件没找到<br>如果遇到了同样的问题，可以检查下是否缺失了。</p>
-<a id="more"></a>
-
-<p>更新：<br>在 iOS 13 以后，LaunchImage 被废弃了，要求使用 LaunchScreen.storyboard。老项目里下图中的这个位置会默认指定的使用  LaunchImage，但文件中又没有，所以会报这个错误。删掉这里的配置就好了。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/23.png" alt="LaunchImage Setting.png"></p>
-<div contenteditable="plaintext-only"><div contenteditable="plaintext-only"><center>
-  <div style="display:inline-block;"><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/flag.jpeg" class width="200"></div>
-</center>
-
-</div></div>]]></content>
-      <tags>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac 下 IDEA 无法启动的问题</title>
     <url>/2019/01/24/Mac%E4%B8%8BIDEA%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>要使用IDEA，突然提示打不开，不要慌，问题不大，按照下面的步骤试试先？</p>
@@ -423,10 +423,56 @@
       </tags>
   </entry>
   <entry>
+    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
+    <url>/2018/04/19/NSURLRequest/</url>
+    <content><![CDATA[<h2 id="NSURLRequest"><a href="#NSURLRequest" class="headerlink" title="NSURLRequest"></a>NSURLRequest</h2><blockquote>
+<p>NSURLRequest /URLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
+</blockquote>
+<h3 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h3><blockquote>
+<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
+<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
+<p>httpbin 可以把我们请求时的信息，返回给我们</p>
+</blockquote>
+<a id="more"></a>
+
+<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
+<h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><h4 id="allHTTPHeaderFields"><a href="#allHTTPHeaderFields" class="headerlink" title="allHTTPHeaderFields"></a>allHTTPHeaderFields</h4><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
+
+<p>返回结果：</p>
+<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h3><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">HTTP 的一点儿小知识</a>。</p>
+<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; </span><br><span class="line">&#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2018 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="httpMethod"><a href="#httpMethod" class="headerlink" title="httpMethod"></a>httpMethod</h4><p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="httpBody"><a href="#httpBody" class="headerlink" title="httpBody"></a>httpBody</h4><p>一个 <code>NSData/Data</code> 类型的属性，用于添加参数，可以但不限于：</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> parameter = [<span class="string">"a"</span> : <span class="string">"1"</span>,</span><br><span class="line">                 <span class="string">"b"</span> : <span class="string">"2"</span>]</span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">try</span>? <span class="type">JSONSerialization</span>.data(withJSONObject: parameter, options: [])</span><br><span class="line">request.httpBody = data</span><br></pre></td></tr></table></figure>
+
+<h4 id="timeoutInterval"><a href="#timeoutInterval" class="headerlink" title="timeoutInterval"></a>timeoutInterval</h4><blockquote>
+<p> 超时时间</p>
+</blockquote>
+<h4 id="httpShouldHandleCookies"><a href="#httpShouldHandleCookies" class="headerlink" title="httpShouldHandleCookies"></a>httpShouldHandleCookies</h4><blockquote>
+<p>决定这个请求是否要使用cookie，默认为YES。</p>
+</blockquote>
+<p>常用到的就上面这几个属性，真实开发中我们很少会直接使用  <code>Request</code>  发送请求，往往依赖于三方框架，像 OC 的 <code>AFNetworking</code> 、swift 的 <code>Alamofire</code> 等等。</p>
+<h2 id="系列："><a href="#系列：" class="headerlink" title="系列："></a>系列：</h2><p><a href="https://tommygirl.cn/2018/04/19/URLLoadingSystem/">URL Loading System[译]</a></p>
+<p><a href="https://tommygirl.cn/2018/04/19/NSURLRequest/">NSURLRequest</a></p>
+<p><a href="https://tommygirl.cn/2018/04/20/NSURLResponse/">NSURLResponse</a></p>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>URL Loading System 之 NSURLResponse/URLResponse</title>
     <url>/2018/04/20/NSURLResponse/</url>
-    <content><![CDATA[<h2 id="NSURLResponse-URLResponse"><a href="#NSURLResponse-URLResponse" class="headerlink" title="NSURLResponse/URLResponse"></a>NSURLResponse/URLResponse</h2><blockquote>
-<p>NSURLResponse 类中存放请求的回执信息，在发送网络请求时，如果请求成功，首先会接收到服务端的回执信息，直接开始接收具体的返回数据。</p>
+    <content><![CDATA[<h2 id="NSURLResponse"><a href="#NSURLResponse" class="headerlink" title="NSURLResponse"></a>NSURLResponse</h2><blockquote>
+<p>NSURLResponse/URLResponse 类中存放请求的回执信息，在发送网络请求时，如果请求成功，首先会接收到服务端的回执信息，直接开始接收具体的返回数据。与协议或URL方案无关。</p>
 </blockquote>
 <p>主要有以下几个属性，并且都是<code>只读</code>的，因为是服务器帮我们指定的，所以一般我们是不能自定义这些属性的：</p>
 <h3 id="url"><a href="#url" class="headerlink" title="url"></a>url</h3><blockquote>
@@ -458,8 +504,8 @@
 
 
 
-<h2 id="NSHTTPURLResponse-HTTPURLResponse"><a href="#NSHTTPURLResponse-HTTPURLResponse" class="headerlink" title="NSHTTPURLResponse/HTTPURLResponse"></a>NSHTTPURLResponse/HTTPURLResponse</h2><blockquote>
-<p>NSHTTPURLResponse 是 NSURLResponse 的一个子类，如果是 HTTP 请求，请求回执会被封装为NSHTTPURLResponse 对象。</p>
+<h2 id="NSHTTPURLResponse"><a href="#NSHTTPURLResponse" class="headerlink" title="NSHTTPURLResponse"></a>NSHTTPURLResponse</h2><blockquote>
+<p>NSHTTPURLResponse/HTTPURLResponse 是 NSURLResponse 的一个子类，如果是 HTTP 请求，请求回执会被封装为 NSHTTPURLResponse 对象。</p>
 </blockquote>
 <p>除了有父类那些属性外，还扩展了几个属性：</p>
 <h3 id="statusCode"><a href="#statusCode" class="headerlink" title="statusCode"></a>statusCode</h3><blockquote>
@@ -475,59 +521,16 @@
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="keyword">var</span> allHeaderFields: [<span class="type">AnyHashable</span> : <span class="type">Any</span>] &#123; <span class="keyword">get</span> &#125;</span><br></pre></td></tr></table></figure>
 
 <p>示例：</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">(&lt;<span class="type">NSHTTPURLResponse</span>: <span class="number">0x60000154cd80</span>&gt; &#123; <span class="type">URL</span>: https:<span class="comment">//httpbin.org/get &#125; &#123; Status Code: 200, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Origin"</span> =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Length"</span> =     (</span><br><span class="line">        <span class="number">404</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/json"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="type">Date</span> =     (</span><br><span class="line">        <span class="string">"Thu, 08 Jul 2021 10:13:14 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="type">Server</span> =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"access-control-allow-credentials"</span> =     (</span><br><span class="line">        <span class="literal">true</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">(&lt;<span class="type">NSHTTPURLResponse</span>: <span class="number">0x60000154cd80</span>&gt; &#123; <span class="type">URL</span>: https:<span class="comment">//httpbin.org/get &#125; &#123; Status Code: 200, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Origin"</span> =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Length"</span> =     (</span><br><span class="line">        <span class="number">404</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/json"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="type">Date</span> =     (</span><br><span class="line">        <span class="string">"Thu, 08 Jul 2018 10:13:14 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="type">Server</span> =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"access-control-allow-credentials"</span> =     (</span><br><span class="line">        <span class="literal">true</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>iOS 的接口中，请求回执往往定义的是 <code>NSURLResponse</code> 类型，但是正如我们上面所说，如果是 HTTP 请求，请求回执会被封装为NSHTTPURLResponse 对象。像获取 <code>statusCode</code>  的时候就需要自己做一下类型转换。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>iOS 的接口中，请求回执往往定义的是 <code>NSURLResponse</code> 类型，但是正如我们上面所说，如果是 HTTP 请求，请求回执会被封装为 <code>NSHTTPURLResponse</code>  对象。像获取 <code>statusCode</code>  的时候就需要自己做一下类型转换。</p>
 <p>swift 中举例：</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="comment">//request success.</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="系列："><a href="#系列：" class="headerlink" title="系列："></a>系列：</h2><p><a href="https://tommygirl.cn/2018/04/19/URLLoadingSystem/">URL Loading System[译]</a></p>
-<p><a href="https://tommygirl.cn/2018/04/19/NSURLRequest/">NSURLRequest</a></p>
-<p><a href="https://tommygirl.cn/2018/04/20/NSURLResponse/">NSURLResponse</a></p>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>URL Loading System 之 NSURLRequest/URLRequest</title>
-    <url>/2018/04/19/NSURLRequest/</url>
-    <content><![CDATA[<h2 id="NSURLRequest-URLRequest"><a href="#NSURLRequest-URLRequest" class="headerlink" title="NSURLRequest/URLRequest"></a>NSURLRequest/URLRequest</h2><blockquote>
-<p>NSURLRequest 封装了请求的两个基本属性：要加载的URL和用于加载该请求的策略。通常用于 HTTP 和 HTTPS 请求，包括 HTTP 方法（<code>GET</code>，<code>POST</code>等）和 HTTP 标头。可变子类型是 NSMutableURLRequest 。</p>
-</blockquote>
-<h3 id="一个平平无奇的-GET-请求"><a href="#一个平平无奇的-GET-请求" class="headerlink" title="一个平平无奇的 GET 请求"></a>一个平平无奇的 GET 请求</h3><blockquote>
-<p>网络请求的测试，我们访问 httpbin 来进行，方便对比请求的响应</p>
-<p>官网：<a href="https://httpbin.org/" target="_blank" rel="noopener">https://httpbin.org/</a></p>
-<p>httpbin 可以把我们请求时的信息，返回给我们</p>
-</blockquote>
-<a id="more"></a>
-
-<p>PS: 在swift 中没有细分可变子类型了，<code>let</code> 声明的对象就是不可变，<code>var</code> 声明就是可变，那我们手动添加一个头部信息，看看效果。</p>
-<h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><h4 id="allHTTPHeaderFields"><a href="#allHTTPHeaderFields" class="headerlink" title="allHTTPHeaderFields"></a>allHTTPHeaderFields</h4><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>.<span class="keyword">init</span>(string: <span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>.<span class="keyword">init</span>(url: url!)</span><br><span class="line">request.setValue(<span class="string">"Tiantian"</span>, forHTTPHeaderField: <span class="string">"Tommy-Girl"</span>)</span><br><span class="line"><span class="built_in">print</span>(request.allHTTPHeaderFields ?? [:])</span><br><span class="line"><span class="comment">//请求怎么发出去呢？我们先使用苹果提供的单例尝试一下</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123; (data, response, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">//查看 response，我们打印出来可以看到一个 NSHTTPURLResponse 对象，以及部分头部信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Response:"</span>)</span><br><span class="line">    <span class="built_in">print</span>(response <span class="keyword">as</span> <span class="type">Any</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> statusCode = (response <span class="keyword">as</span>? <span class="type">HTTPURLResponse</span>)?.statusCode ?? -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> statusCode == <span class="number">200</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> object = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: [])</span><br><span class="line">            <span class="built_in">print</span>(object)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="built_in">print</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br></pre></td></tr></table></figure>
-
-<p>返回结果：</p>
-<p>我们刚刚添加了一个 名为 Tommy-Girl 值为 Tiantian 的头部信息，服务器已经收到，并且原封不动帮我们返回了。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">GET: </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"Accept"</span>: <span class="string">"*/*"</span>, </span><br><span class="line">    <span class="attr">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, br"</span>, </span><br><span class="line">    <span class="attr">"Accept-Language"</span>: <span class="string">"en-us"</span>, </span><br><span class="line">    <span class="attr">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="attr">"Tommy-Girl"</span>: <span class="string">"Tiantian"</span>, </span><br><span class="line">    <span class="attr">"User-Agent"</span>: <span class="string">"URLLoadingSystem/1 CFNetwork/1220.1 Darwin/19.6.0"</span>, </span><br><span class="line">    <span class="attr">"X-Amzn-Trace-Id"</span>: <span class="string">"Root=1-6094ffc6-18f7b8391c8bcc4049bc6beb"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">"origin"</span>: <span class="string">"*.*.*.*"</span>, </span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"https://httpbin.org/get"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="一个略显英俊的-POST-请求"><a href="#一个略显英俊的-POST-请求" class="headerlink" title="一个略显英俊的 POST 请求"></a>一个略显英俊的 POST 请求</h3><p>PS: GET 和 POST 请求的区别，以及各<code>Status Code</code> 的含义见另一篇文章<a href="https://atommygirl.github.io/2017/10/02/HTTP%20%E7%9A%84%E4%B8%80%E7%82%B9%E5%84%BF%E5%B0%8F%E7%9F%A5%E8%AF%86/#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">HTTP 的一点儿小知识</a>。</p>
-<p>如果上面的代码，我们直接把 URL 替换为只允许 POST 请求的服务，我们会收到一个 405 的code 码，405 一般表示请求方法不允许。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Response:</span><br><span class="line">Optional(&lt;NSHTTPURLResponse: 0x6000026150e0&gt; &#123; URL: https://httpbin.org/post &#125; </span><br><span class="line">&#123; Status Code: 405, Headers &#123;</span><br><span class="line">    "Access-Control-Allow-Origin" =     (</span><br><span class="line">        <span class="string">"*"</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Length" =     (</span><br><span class="line">        <span class="number">178</span></span><br><span class="line">    );</span><br><span class="line">    "Content-Type" =     (</span><br><span class="line">        <span class="string">"text/html"</span></span><br><span class="line">    );</span><br><span class="line">    Date =     (</span><br><span class="line">        <span class="string">"Fri, 07 May 2021 08:22:31 GMT"</span></span><br><span class="line">    );</span><br><span class="line">    Server =     (</span><br><span class="line">        <span class="string">"gunicorn/19.9.0"</span></span><br><span class="line">    );</span><br><span class="line">    "access-control-allow-credentials" =     (</span><br><span class="line">        true</span><br><span class="line">    );</span><br><span class="line">    allow =     (</span><br><span class="line">        <span class="string">"POST, OPTIONS"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="httpMethod"><a href="#httpMethod" class="headerlink" title="httpMethod"></a>httpMethod</h4><p>那怎么发送一个 POST 请求呢？很简单，<code>URLRequest</code> 有一个 <code>httpMethod</code> 属性，指定对应的方法名即可</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="httpBody"><a href="#httpBody" class="headerlink" title="httpBody"></a>httpBody</h4><p>一个 <code>NSData/Data</code> 类型的属性，用于添加参数，可以但不限于：</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> parameter = [<span class="string">"a"</span> : <span class="string">"1"</span>,</span><br><span class="line">                 <span class="string">"b"</span> : <span class="string">"2"</span>]</span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">try</span>? <span class="type">JSONSerialization</span>.data(withJSONObject: parameter, options: [])</span><br><span class="line">request.httpBody = data</span><br></pre></td></tr></table></figure>
-
-<h4 id="timeoutInterval"><a href="#timeoutInterval" class="headerlink" title="timeoutInterval"></a>timeoutInterval</h4><blockquote>
-<p> 超时时间</p>
-</blockquote>
-<p>常用到的就上面这几个属性，真实开发中我们很少会直接使用  <code>Request</code>  发送请求，往往依赖于三方框架，像 OC 的 <code>AFNetworking</code> 、swift 的 <code>Alamofire</code> 等等。</p>
 <h2 id="系列："><a href="#系列：" class="headerlink" title="系列："></a>系列：</h2><p><a href="https://tommygirl.cn/2018/04/19/URLLoadingSystem/">URL Loading System[译]</a></p>
 <p><a href="https://tommygirl.cn/2018/04/19/NSURLRequest/">NSURLRequest</a></p>
 <p><a href="https://tommygirl.cn/2018/04/20/NSURLResponse/">NSURLResponse</a></p>
@@ -995,6 +998,32 @@
       </tags>
   </entry>
   <entry>
+    <title>乌龙 之 我吐了</title>
+    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
+    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
+<p>乌龙就这样开始了：</p>
+<a id="more"></a>
+
+<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
+<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
+<p>于是我也</p>
+<blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>就好了。。。。。</p>
+<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
+<p>我吐了真的是<del>~</del></p>
+<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
+]]></content>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iOS上线 AppStore - 打包、upload 时遇到的问题</title>
     <url>/2019/08/19/%E4%B8%8A%E7%BA%BF%20AppStore/</url>
     <content><![CDATA[<p>iOS打包上线遇到的问题记录和解决办法：</p>
@@ -1047,32 +1076,6 @@
 </div></div>]]></content>
       <tags>
         <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>乌龙 之 我吐了</title>
-    <url>/2020/06/02/%E4%B9%8C%E9%BE%99-%E6%88%91%E5%90%90%E4%BA%86/</url>
-    <content><![CDATA[<p>之前用的 hexo 主题作者不维护了，所以换了个洋气的<del>~</del></p>
-<p>乌龙就这样开始了：</p>
-<a id="more"></a>
-
-<p>文章里的代码块，明明设置了语言objective-c，可是高亮却怎么都不起作用，鼓捣了一通hljs，其实hexo 默认的就是hljs，我还跑去给人主题作者留了言。。。</p>
-<p>搜索了半天大家都是怎么设置高亮的，我发现发表意见的人中，偶有几个是同行，抛开设置语言的方式，他们给代码设置的语言都是 <strong>objc</strong></p>
-<p>于是我也</p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">​```objc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>就好了。。。。。</p>
-<p><strong>objective-c</strong>改为<strong>objc</strong> 。。。。。。就好了。。。。。。</p>
-<p>我吐了真的是<del>~</del></p>
-<p>PS：使用的md编辑器是Typora，我看人家有个语言的选项是 objective-c，我就选了。。。。。秀逗了。。。。。。</p>
-<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/9.png" alt="图一"></p>
-]]></content>
-      <tags>
-        <tag>瞎扯</tag>
       </tags>
   </entry>
   <entry>
@@ -1813,6 +1816,355 @@
       </tags>
   </entry>
   <entry>
+    <title>iOS suggestedFilename 中文文件名乱码问题</title>
+    <url>/2021/07/14/suggestedFilename%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<p>日常吐槽：</p>
+<blockquote>
+<p>App 中有个下载附件的功能，预览附件的时候会显示文件名字。但有个人艾特我说，安卓的没问题，IOS 的不行，文件名显示乱码，就问你尴不尴尬？……</p>
+<p>通常有人提 Bug 咱都虚心接受，但只要说了 安卓没问题 ，血压立马上升一格。有事儿说事儿，别提安卓……</p>
+<p>看到写  <code>IOS</code>  而不是 <code>iOS</code> 的人，血压又上升一格……</p>
+<p>想起来苹果开发最火的那几年，我接到过一个 HR 的电话，”请问您是做 ISO 开发的吗？” ，我当时心想这个公司不能去呀，HR 都这么不严谨，给我干 HR 好不好，拿来吧你……</p>
+</blockquote>
+<h2 id="suggestedFilename"><a href="#suggestedFilename" class="headerlink" title="suggestedFilename"></a>suggestedFilename</h2><a id="more"></a>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *filename = task.response.suggestedFilename;</span><br></pre></td></tr></table></figure>
+
+<p>说回正题，下载附件的代码中我们是通过 <a href="https://tommygirl.cn/2018/04/20/NSURLResponse/">NSURLResponse</a> 的 <code>suggestedFilename</code> 获取服务端建议的一个文件名，但是得到的却是类似这样的乱码  <code>é��åº�å¸�å·¥ä¼¤æ�¥é��ä½�é�¢ä¼�é£�è¡¥å�©è´¹ã��äº¤é��é£�å®¿è´¹å®¡æ ¸ç»�ç®�è¡¨.xls</code> ，满脸问号是不是？？？？？？</p>
+<p>我们知道 <code>suggestedFilename</code> 来自 HTTP 响应的头部信息，只是苹果默认帮我们解析成了一个 <code>NSURLResponse</code> 对象， 乱码问题往往是字符的编码格式没有对应上，或者苹果并不知道应该按照哪个编码规则解析，把问题抛给了开发者自己处理。</p>
+<p>那奇怪的是，有的附件正常，有的附件就凌乱了。自然我们就想到比对一下两者 Header 的区别，是骡子是马拉出来溜溜~~</p>
+<p>下面是截取的几个与 Content 有关的信息：</p>
+<ul>
+<li>附件示例：测试素材 - 副本.docx 。文件名显示乱码。</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">NSHTTPURLResponse</span>: <span class="number">0x600003a44fa0</span>&gt; &#123; URL: https:<span class="comment">//wwww.www.www &#125; &#123; Status Code: 201, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Methods"</span> =     (</span><br><span class="line">        <span class="string">"POST,GET,PUT"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"form-data; name=\"attachment\"; filename=\"\U00e6\U00b5\U008b\U00e8\U00af\U0095\U00e7\U00b4\U00a0\U00e6\U009d\U0090 - \U00e5\U0089\U00af\U00e6\U009c\U00ac.docx\""</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Length"</span> =     (</span><br><span class="line">        <span class="number">19498</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/octet-stream;charset=UTF-8"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>附件示例：上海隐私条款.docx。文件名显示正常。</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">NSHTTPURLResponse</span>: <span class="number">0x600003d919a0</span>&gt; &#123; URL: https:<span class="comment">//wwww.www.www &#125; &#123; Status Code: 200, Headers &#123;</span></span><br><span class="line">    <span class="string">"Access-Control-Allow-Methods"</span> =     (</span><br><span class="line">        <span class="string">"GET, POST, OPTIONS, PUT, DELETE, HEAD, TRACE"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"inline; filename*=UTF-8''%E4%B8%8A%E7%A0%94%E7%A7%BB%E5%8A%A8%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE.docx"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Encoding"</span> =     (</span><br><span class="line">        gzip</span><br><span class="line">    );</span><br><span class="line">    <span class="string">"Content-Type"</span> =     (</span><br><span class="line">        <span class="string">"application/vnd.openxmlformats-officedocument.wordprocessingml.document"</span></span><br><span class="line">    );</span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Content-Disposition</code> 和 <code>Content-Type</code>  有点区别。之前我总是误以为 <code>Content-Type</code> 中的 <code>charset=UTF-8</code> 除了指定文件的编码格式，文件名也是由这个指定的。大错特错了~~</p>
+<p>第一次关注 <code>Content-Disposition</code> 。所以它到底是何方神圣呢？</p>
+<h2 id="Content-Disposition"><a href="#Content-Disposition" class="headerlink" title="Content-Disposition"></a>Content-Disposition</h2><blockquote>
+<p>在常规的 HTTP 应答中，<code>Content-Disposition</code>  属于响应头的一个属性，用于指示服务器响应给我们的内容容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。</p>
+</blockquote>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="作为主体的响应标题"><a href="#作为主体的响应标题" class="headerlink" title="作为主体的响应标题"></a>作为主体的响应标题</h4><p>HTTP 上下文中的第一个参数是 <code>inline</code>（默认值，表示它可以显示在网页内，或作为网页）或 <code>attachment</code>（表示它应该下载；大多数浏览器呈现“另存为”对话框，预先填入<code>filename</code>，如果参数的值存在的话。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Content-Disposition: inline</span><br><span class="line">Content-Disposition: attachment</span><br><span class="line">Content-Disposition: attachment; filename=<span class="string">"filename.jpg"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="作为多部分主体的-header"><a href="#作为多部分主体的-header" class="headerlink" title="作为多部分主体的 header"></a>作为多部分主体的 header</h4><p>HTTP 上下文中的第一个参数总是<code>form-data</code>; 其他参数不区分大小写，并且有参数，在<code>&#39;=&#39;</code>符号后面使用带引号的字符串语法。多个参数用分号（<code>&#39;;&#39;</code>）分隔。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Content-Disposition: form-data</span><br><span class="line">Content-Disposition: form-data; name=<span class="string">"fieldName"</span></span><br><span class="line">Content-Disposition: form-data; name=<span class="string">"fieldName"</span>; filename=<span class="string">"filename.jpg"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p><code>name</code></p>
+<p>后面是一个表单字段名的字符串，每一个字段名会对应一个子部分。在同一个字段名对应多个文件的情况下（例如，带有 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input#attr-multiple" target="_blank" rel="noopener"><code>multiple</code></a> 属性的 <code>&lt;input type=file&gt;</code> 元素），则多个子部分共用同一个字段名。如果 name 参数的值为 <code>&#39;_charset_&#39;</code> ，意味着这个子部分表示的不是一个 HTML 字段，而是在未明确指定字符集信息的情况下各部分使用的默认字符集。</p>
+</li>
+<li><p><code>filename</code></p>
+<p>后面是要传送的文件的初始名称的字符串。<strong>这个参数总是可选的，而且不能盲目使用</strong>：路径信息必须舍掉，同时要进行一定的转换以符合服务器文件系统规则。这个参数主要用来提供展示性信息。当与 <code>Content-Disposition: attachment</code> 一同使用的时候，它被用作”保存为”对话框中呈现给用户的默认文件名。</p>
+</li>
+<li><p><code>filename *</code></p>
+<p><code>filename</code> 和 <code>filename *</code> 两个参数的唯一区别在于，<code>filename *</code> 采用了<a href="https://tools.ietf.org/html/rfc5987" target="_blank" rel="noopener">RFC 5987</a> 中规定的编码方式。<code>filename</code> 和 <code>filename *</code> 同时出现的时候，应该优先采用  <code>filename *</code> ，假如二者都支持的话。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">filename*=UTF<span class="number">-8</span><span class="string">''</span>testfile.docx</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>PS: <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="回归到问题"><a href="#回归到问题" class="headerlink" title="回归到问题"></a>回归到问题</h2><p>回归到我们前面的问题，一个指定的 <code>filename</code> ，一个指定的  <code>filename *</code> ，有问题吗？没有问题。前面说了，都是标准的。只不过后者告诉了我们文件名使用的编码，而且还是普遍的系统和浏览器都支持的 UTF-8。前者既没有指定编码，也不是 UTF-8。我们能骂后台吗？不能，但我还是在心里骂了一句。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//乱码</span></span><br><span class="line"><span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"form-data; name=\"attachment\"; filename=\"\U00e6\U00b5\U008b\U00e8\U00af\U0095\U00e7\U00b4\U00a0\U00e6\U009d\U0090 - \U00e5\U0089\U00af\U00e6\U009c\U00ac.docx\""</span></span><br><span class="line">    );</span><br><span class="line"><span class="comment">//正常</span></span><br><span class="line"><span class="string">"Content-Disposition"</span> =     (</span><br><span class="line">        <span class="string">"inline; filename*=UTF-8''%E4%B8%8A%E7%A0%94%E7%A7%BB%E5%8A%A8%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE.docx"</span></span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+
+
+
+<p>与上面两种形式对应，解决办法也有两种：</p>
+<ol>
+<li>服务端把 <code>Content-Disposition</code> 中的文件名编码加上。</li>
+<li>iOS 自己单独解析一下 <code>suggestedFilename</code> 。</li>
+</ol>
+<p>我运气好，对接的业务方在服务端改了，态度还不错。那如果对方因客观原因改不了怎么办呢？采用方法2，但这个时候问题又来了，我们怎么知道用哪种编码来解析呢？</p>
+<p>说到编码，日常我也只是用 <code>NSUTF8StringEncoding</code> 比较多。UTF-8 有点类似于 Haffman 编码，它将 Unicode 编码为 00000000-0000007F 的字符，用单个字节来表示；00000080-000007FF 的字符用两个字节表示；00000800-0000FFFF 的字符用3字节表示。因为目前为止 Unicode-16 规范没有指定 FFFF 以上的字符，所以 UTF-8 最多是使用3个字节来表示一个字符。但理论上来说，UTF-8 最多需要用6字节表示一个字符？ 🤓</p>
+<h2 id="NSStringEncoding"><a href="#NSStringEncoding" class="headerlink" title="NSStringEncoding"></a>NSStringEncoding</h2><blockquote>
+<p>一组常量，NSString 可能用到的字符串编码。</p>
+</blockquote>
+<h3 id="Constants"><a href="#Constants" class="headerlink" title="Constants"></a>Constants</h3><table>
+<thead>
+<tr>
+<th>NSStringEncoding</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NSASCIIStringEncoding</td>
+<td>8 位字符内的严格 7 位 ASCII 编码；仅 ASCII 值 0…127。</td>
+</tr>
+<tr>
+<td>NSNEXTSTEPStringEncoding</td>
+<td>带有 NEXTSTEP 扩展的 8 位 ASCII 编码。</td>
+</tr>
+<tr>
+<td>NSJapaneseEUCStringEncoding</td>
+<td>日语文本的 8 位 EUC 编码。</td>
+</tr>
+<tr>
+<td>NSUTF8StringEncoding</td>
+<td>Unicode 字符的 8 位表示，适合由基于 ASCII 的系统传输或存储。</td>
+</tr>
+<tr>
+<td>NSISOLatin1StringEncoding</td>
+<td>8 位 ISO Latin 1 编码。又叫 ISO-8859-1 编码。</td>
+</tr>
+<tr>
+<td>NSSymbolStringEncoding</td>
+<td>8 位 Adobe 符号编码向量。</td>
+</tr>
+<tr>
+<td>NSNonLossyASCIIStringEncoding</td>
+<td>7 位详细 ASCII 表示所有 Unicode 字符。？？</td>
+</tr>
+<tr>
+<td>NSShiftJISStringEncoding</td>
+<td>日语文本的 8 位 Shift-JIS 编码。</td>
+</tr>
+<tr>
+<td>NSISOLatin2StringEncoding</td>
+<td>8 位 ISO Latin 2 编码。又叫 ISO-8859-2 编码。</td>
+</tr>
+<tr>
+<td>NSUnicodeStringEncoding</td>
+<td>字符串对象的规范 Unicode 编码。是一种２字节编码，能够提供65536个字符，如”A”的Unicode编码为6500，而BigEndianUnicode编码为0065</td>
+</tr>
+<tr>
+<td>NSWindowsCP1251StringEncoding</td>
+<td>Microsoft Windows 代码页 1251，编码 Cyrillic 字符；相当于 AdobeStandardCyrillic 字体编码。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1252StringEncoding</td>
+<td>Microsoft Windows 代码页 1252；相当于 WinLatin1。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1253StringEncoding</td>
+<td>Microsoft Windows 代码页 1253，编码希腊字符。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1254StringEncoding</td>
+<td>Microsoft Windows 代码页 1254，编码土耳其语字符。</td>
+</tr>
+<tr>
+<td>NSWindowsCP1250StringEncoding</td>
+<td>Microsoft Windows 代码页 1250；相当于 WinLatin2。</td>
+</tr>
+<tr>
+<td>NSISO2022JPStringEncoding</td>
+<td>电子邮件的 ISO 2022 日语编码。GB 2312 遵从于 ISO 2022。</td>
+</tr>
+<tr>
+<td>NSMacOSRomanStringEncoding</td>
+<td>经典的 Macintosh 罗马编码。主要用于编码 <a href="https://zh.wikipedia.org/wiki/Classic_Mac_OS" target="_blank" rel="noopener">Classic Mac OS</a> 上的文字。</td>
+</tr>
+<tr>
+<td>NSUTF16StringEncoding</td>
+<td>16 位 UTF 编码。同 NSUnicodeStringEncoding。</td>
+</tr>
+<tr>
+<td>NSUTF16BigEndianStringEncoding</td>
+<td>指定字节序的 UTF-16 编码。字节序为大尾，也叫大端。</td>
+</tr>
+<tr>
+<td>NSUTF16LittleEndianStringEncoding</td>
+<td>指定字节序的 UTF-16 编码。字节序为小尾，也叫小端。</td>
+</tr>
+<tr>
+<td>NSUTF32StringEncoding</td>
+<td>32 位 UTF 编码。</td>
+</tr>
+<tr>
+<td>NSUTF32BigEndianStringEncoding</td>
+<td>指定字节序的 UTF-32 编码。字节序为大尾，也叫大端。</td>
+</tr>
+<tr>
+<td>NSUTF32LittleEndianStringEncoding</td>
+<td>指定字节序的 UTF-32 编码。字节序为小尾，也叫小端。</td>
+</tr>
+</tbody></table>
+<h3 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h3><blockquote>
+<p>对于整型、长整型等数据类型，Big-endian 认为第一个字节是最高位字节，即按照从低地址到高地址的顺序存放数据的高位字节到低位字节，称为大端、大尾；而 Little-endian 则相反，它认为第一个字节是最低位字节，按照从低地址到高地址的顺序存放据的低位字节到高位字节，称为小端、小尾。</p>
+</blockquote>
+<p>例如，假设从内存地址 0x0000 开始有以下数据： </p>
+<table>
+<thead>
+<tr>
+<th align="center">0x0000</th>
+<th align="center">0x0001</th>
+<th align="center">0x0002</th>
+<th align="center">0x0003</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0x12</td>
+<td align="center">0x34</td>
+<td align="center">0xab</td>
+<td align="center">0xcd</td>
+</tr>
+</tbody></table>
+<p>如果我们去读取一个地址为 0x0000 的四个字节变量，若字节序为 Big-endian，则读出结果为 0x1234abcd；若字节序为 Little-endian，则读出结果为 0xcdab3412。</p>
+<p>如果我们将 0x1234abcd 写入到以 0x0000 开始的内存中，则 Little-endian 和 Big-endian 模式的存放结果如下： </p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th align="center">0x0000</th>
+<th align="center">0x0001</th>
+<th align="center">0x0002</th>
+<th align="center">0x0003</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Big-endian</td>
+<td align="center">0x12</td>
+<td align="center">0x34</td>
+<td align="center">0xab</td>
+<td align="center">0xcd</td>
+</tr>
+<tr>
+<td>Little-endian</td>
+<td align="center">0xcd</td>
+<td align="center">0xab</td>
+<td align="center">0x34</td>
+<td align="center">0x12</td>
+</tr>
+</tbody></table>
+<h4 id="端-endian-的起源"><a href="#端-endian-的起源" class="headerlink" title="端 (endian) 的起源"></a>端 (endian) 的起源</h4><p>“<strong>endian</strong>”一词来源于十八世纪爱尔兰作家乔纳森·斯威夫特的小说《格列佛游记》。小说中，小人国为水煮蛋该从大的一端（Big-End）剥开还是小的一端（Little-End）剥开而争论，争论的双方分别被称为“大端派”和“小端派”。以下是1726年关于大小端之争历史的描述：</p>
+<blockquote>
+<p>我下面要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了。因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破鸡蛋较小的一端，违令者重罚。老百姓们对这项命令极其反感。历史告诉我们，由此曾经发生过6次叛乱，其中一个皇帝送了命，另一个丢了王位。这些叛乱大多都是由Blefuscu的国王大臣们煽动起来的。叛乱平息后，流亡的人总是逃到那个帝国去寻求避难。据估计，先后几次有11000人情愿受死也不肯去打破鸡蛋较小的一端。关于这一争端，曾出版过几百本大部著作，不过大端派的书一直是受禁的，法律也规定该派任何人不得做官。”</p>
+</blockquote>
+<p>觉得这个鸡蛋的故事很有意思，所以粘在这里了 😂。关于字节序的更多内容见 <a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F" target="_blank" rel="noopener">维基百科-字节序</a> ，很详细了。</p>
+<h3 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h3><p>关于字符集有些我也看不懂，百科上倒是解释的比较清楚。还有很多字符编码集：</p>
+<p><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/38.png" alt></p>
+<h2 id="撞大运"><a href="#撞大运" class="headerlink" title="撞大运"></a>撞大运</h2><p>这么多种编码，iOS 解析的话，我们用哪一种呢？如果对接的业务少，可以和服务端约定好。如果对接的业务多，想兼容所有的”乱码”，我觉得只能撞大运了😂</p>
+<p>示例：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *fileName, *str;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *byte = <span class="literal">NULL</span>;</span><br><span class="line">fileName = [task.response suggestedFilename];</span><br><span class="line">byte = [fileName cStringUsingEncoding:<span class="built_in">NSISOLatin1StringEncoding</span>];</span><br><span class="line">str = [[<span class="built_in">NSString</span> alloc] initWithCString:byte encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br></pre></td></tr></table></figure>
+
+<p>在上面的示例中，如果指定的 <code>NSStringEncoding</code> 不匹配，str 会是 nil，所以我们可以利用 nil 来撞大运了，有毛病吗？可能有，哈哈 😂 </p>
+]]></content>
+      <tags>
+        <tag>iOS, 网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mailcore 2  iOS  之一 IMAP</title>
+    <url>/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/</url>
+    <content><![CDATA[<p>公司开发oa中的邮箱，资源限制，最后iOS开发采用的mailcore2-ios框架。研究的不深，只当做个分享，口条不好，凑合看吧。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我直接用的cocoapods，非常方便，只是资源包大了一点，耐心等待就好了，其他方式没试过。<br><code>pod &#39;mailcore2-ios&#39;</code></p>
+<p><a href="https://github.com/MailCore/mailcore2" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2</a> 官方，有问题提issue，开发者会很热心回答的。</p>
+<a id="more"></a>
+
+<h2 id="更新-纠错日志"><a href="#更新-纠错日志" class="headerlink" title="更新/纠错日志"></a>更新/纠错日志</h2><ul>
+<li>2018-12-11 纠错：IMAP-4.单封邮件获取和处理.根据uid获取单封邮件 有误，<code>range的范围应该是（uid, 0），而不是(uid, 1)，这样获取到的是两封</code>，脑子秀逗了。</li>
+<li>2018-12-11 更新：创建草稿邮件</li>
+<li>2018-12-12 更新：SMTP协议</li>
+</ul>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>个人比较喜欢imap协议，功能比较丰富，不过用mailcore搞起来似乎费劲了一点，我也只是实现了一些基本功能，高级的还在研究。</p>
+<p>计划分享一下下面几项🤗🤗🤗🤗🤗</p>
+<ul>
+<li>IMAP<ul>
+<li>登录</li>
+<li>文件夹列表、命名空间</li>
+<li>邮件列表拉取</li>
+<li>邮件列表中单封邮件内容获取和处理</li>
+<li>邮件的各种标记添加</li>
+<li>删除邮件</li>
+<li>附件和html内容解析</li>
+<li>草稿箱邮件创建</li>
+</ul>
+</li>
+<li>POP</li>
+<li>SMTP<ul>
+<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/" target="_blank" rel="noopener">mailcore2-ios  之二 SMTP</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h3><h4 id="1-登录"><a href="#1-登录" class="headerlink" title="1.登录"></a>1.登录</h4><p>首先设置账号信息，也就是创建session；然后校验；</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.imapSession.hostname = session.imapHost; <span class="comment">//imap.xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.username = session.username; <span class="comment">//littlecat@xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.password = session.password; <span class="comment">//password</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.port     = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)session.imapPort;<span class="comment">//143、993</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.connectionType = session.imapIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;<span class="comment">//取决于你的邮件服务器是不是SSL的；</span></span><br></pre></td></tr></table></figure>
+
+<p>校验信息：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPOperation *checkOp = [session checkAccountOperation];<span class="comment">//这里的session就是配置帐号信息的session</span></span><br><span class="line">[checkOp start:^(<span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">     <span class="built_in">NSLog</span>(<span class="string">@"finished checking account."</span>);</span><br><span class="line">     <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">         complete(<span class="literal">nil</span>);</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         err(error);</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"error loading account: %@"</span>, [error userInfo][<span class="string">@"NSLocalizedDescription"</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-获取文件夹目录"><a href="#2-获取文件夹目录" class="headerlink" title="2.获取文件夹目录"></a>2.获取文件夹目录</h4><p>命名空间：它这里有个namespace，对于<code>中文名称</code>的📂名称，需要通过<code>命名空间</code>来解析，<code>不然很可能是👇这种乱码</code>：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是当时解析网易邮箱的乱码，找原因找了好久😭😭😭，在一篇博客上看到的解决办法。</span></span><br><span class="line">INBOX</span><br><span class="line">&amp;g0l6P3ux-</span><br><span class="line">&amp;XfJT0ZAB-</span><br><span class="line">&amp;XfJSIJZk-</span><br><span class="line">&amp;V4NXPpCuTvY-</span><br><span class="line">&amp;dcVr0mWHTvZZOQ-</span><br><span class="line">&amp;Xn9USpCuTvY-</span><br><span class="line">&amp;i6KWBZCuTvY-</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+
+<p>先把正确的放出来，找回点走下去的信心💔💔💗💖…</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">INBOX</span><br><span class="line">草稿箱</span><br><span class="line">已发送</span><br><span class="line">已删除</span><br><span class="line">垃圾邮件</span><br><span class="line">病毒文件夹</span><br><span class="line">广告邮件</span><br><span class="line">订阅邮件</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
+
+<p>因为<code>某些邮箱的session莫名其妙没有自带默认的命名空间</code>，我采取的笨办法是先去获取一下namespace，不过嘛，，，居然获取到的也时有时无😱😱😱😱😱</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPSession *session = [MMIMAPTool getSession];</span><br><span class="line">MCOIMAPFetchNamespaceOperation * op = [session fetchNamespaceOperation];</span><br><span class="line">[op start:^(<span class="built_in">NSError</span> * __<span class="keyword">nullable</span> error, <span class="built_in">NSDictionary</span> * namespaces) &#123;</span><br><span class="line">     MCOIMAPNamespace * namespace = (session.defaultNamespace != <span class="literal">nil</span>) ? session.defaultNamespace : [namespaces objectForKey:MCOIMAPNamespacePersonal];</span><br><span class="line">    <span class="keyword">if</span> (!namespace) &#123;</span><br><span class="line">        <span class="comment">//没有命名空间，很可能文件夹的名字解析出来是乱码，这个看个人怎么处理吧；</span></span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果拿到了namespace，可以安心获取folderlist了</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<p>关键的一句：<code>NSString *folername = [namespace componentsFromPath:f.path][0];</code></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPFetchFoldersOperation * ops = [session fetchAllFoldersOperation];</span><br><span class="line">[ops start:^(<span class="built_in">NSError</span> * error,<span class="built_in">NSArray</span> *folders) &#123;</span><br><span class="line">   <span class="keyword">if</span> (error) &#123;</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">NSMutableDictionary</span> *dic = [<span class="built_in">NSMutableDictionary</span> dictionary];</span><br><span class="line">   <span class="keyword">for</span> (MCOIMAPFolder *f <span class="keyword">in</span> folders) &#123;</span><br><span class="line">      <span class="built_in">NSString</span> *folername = [namespace componentsFromPath:f.path][<span class="number">0</span>];</span><br><span class="line">      [dic setValue:f.path forKey:folername];</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="comment">//继续其他处理；</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<p>获取某个文件夹的mail数目等信息</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPFolderInfoOperation *folderInfo = [session folderInfoOperation:foldername];</span><br><span class="line"></span><br><span class="line">[folderInfo start:^(<span class="built_in">NSError</span> *error, MCOIMAPFolderInfo *info) &#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;    </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">     &#125;</span><br><span class="line">    complete(info.messageCount);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-拉取某个文件夹邮件列表"><a href="#3-拉取某个文件夹邮件列表" class="headerlink" title="3.拉取某个文件夹邮件列表"></a>3.拉取某个文件夹邮件列表</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的kind我觉得是需要拉取的内容们，我是几乎大部分都down了，可以看情况自己选择；</span></span><br><span class="line"><span class="comment">//拉取范围，（0，UINT64_MAX）就是都拉取了，我是10条10条的来的。</span></span><br><span class="line">MCOIMAPMessagesRequestKind requestKind = (MCOIMAPMessagesRequestKind)</span><br><span class="line">(MCOIMAPMessagesRequestKindHeaders |</span><br><span class="line"> MCOIMAPMessagesRequestKindStructure |</span><br><span class="line"> MCOIMAPMessagesRequestKindInternalDate|</span><br><span class="line"> MCOIMAPMessagesRequestKindHeaderSubject |</span><br><span class="line"> MCOIMAPMessagesRequestKindFlags);</span><br><span class="line"></span><br><span class="line">MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];<span class="comment">//range控制拉取的邮件的范围，UINT64_MAX</span></span><br><span class="line">MCOIMAPFetchMessagesOperation *op = [session fetchMessagesOperationWithFolder:foldername requestKind:requestKind uids:uids];</span><br><span class="line">[op start:^(<span class="built_in">NSError</span> * _Nullable error, <span class="built_in">NSArray</span> * _Nullable messages, MCOIndexSet * _Nullable vanishedMessages) &#123;</span><br><span class="line">     <span class="built_in">NSMutableArray</span> *listArr = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">     <span class="built_in">NSInteger</span> count = messages.count;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i ++) &#123;</span><br><span class="line">            MCOIMAPMessage *msg = messages[i];</span><br><span class="line">            <span class="comment">//一堆属性，自己摘取吧，大多是header里的，为了显示邮件列表，邮件内容是另外单独获取的，存储也只是存储了列表；</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//又拍了一次顺序，好像有点蠢🙄🙄🙄🙄🙄。。。我是根据uid排序的，目前还没发现乱序什么的</span></span><br><span class="line">    <span class="built_in">NSSortDescriptor</span> *sortDescriptor = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"uid"</span> ascending:<span class="literal">NO</span>];</span><br><span class="line">    [listArr sortUsingDescriptors:[<span class="built_in">NSArray</span> arrayWithObject:sortDescriptor]];</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<p>还有另外一个方法，但是实在没太搞懂里面的number参数，文档里说sequence number不能排序用，所以我没选择这个方法，主要是没懂👺👺👺👺👺👺👺</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Returns an operation to fetch messages by (sequence) number.</span></span><br><span class="line">- (MCOIMAPFetchMessagesOperation *) fetchMessagesByNumberOperationWithFolder:(<span class="built_in">NSString</span> *)folder requestKind:(MCOIMAPMessagesRequestKind)requestKind numbers:(MCOIndexSet *)numbers;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-单封邮件获取和处理"><a href="#4-单封邮件获取和处理" class="headerlink" title="4.单封邮件获取和处理"></a>4.单封邮件获取和处理</h4><ul>
+<li><p>根据uid获取单封邮件</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//和获取邮件列表一样，不过range的长度是0；</span></span><br><span class="line">MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(uid, <span class="number">0</span>)];</span><br><span class="line"><span class="comment">//之前写错了，range长度应该是0，而不是1；</span></span><br><span class="line"><span class="comment">//MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 1)];</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取邮件纯文本内容（不包括html样式等）</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="comment">//这里是在上一步获取单个邮件的回调内进行的</span></span><br><span class="line">     <span class="comment">//这个方法是自动把文本中的空行之类的去掉了，也有不去掉和可选是否去掉的方法</span></span><br><span class="line">        MCOIMAPMessage *msg = [<span class="comment">//上一步的message];</span></span><br><span class="line">        MCOIMAPMessageRenderingOperation *  messageRenderingOperation = [session plainTextBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">        [messageRenderingOperation start:^(<span class="built_in">NSString</span> * plainTextBodyString,<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">            <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">                complete(plainTextBodyString, msg);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"fetch plain text error:%@"</span>,error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">文档里注释的不能再清楚了，自己查阅吧😈😈😈😈😈</span><br><span class="line"><span class="comment">//Returns an operation to render the plain text version of a message.</span></span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextRenderingOperationWithMessage:(MCOIMAPMessage *)message folder:(<span class="built_in">NSString</span> *)folder;</span><br><span class="line"><span class="comment">// All end of line will be removed and white spaces cleaned up if requested.</span></span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextBodyRenderingOperationWithMessage:(MCOIMAPMessage *)message folder:(<span class="built_in">NSString</span> *)folder stripWhitespace:(<span class="built_in">BOOL</span>)stripWhitespace;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取html内容，放在一个webview中显示基本内容应该没问题了<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPMessage *msg = [同样是上一步的message];</span><br><span class="line">MCOIMAPMessageRenderingOperation *  messageRenderingOperation = [session htmlBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">[messageRenderingOperation start:^(<span class="built_in">NSString</span> * _Nullable htmlString, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">     <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">         complete(htmlString, msg);</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"fetch plain text error:%@"</span>,error);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h4 id="5-添加各种标记"><a href="#5-添加各种标记" class="headerlink" title="5.添加各种标记"></a>5.添加各种标记</h4><p>已读未读，小红旗标记等等。需要注意的是，<code>“kind”区分是添加标记还是移除标记</code>，例如已读“MCOMessageFlagSeen”标记，移除就成了未读，<code>没有“unseen”之类的。。。</code></p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setFlagged:(<span class="built_in">BOOL</span>)flagged message:(<span class="built_in">NSInteger</span>)uid folder:(<span class="built_in">NSString</span> *)folder &#123;</span><br><span class="line">    MCOIMAPSession *session = <span class="comment">//imap session；</span></span><br><span class="line">    MCOIndexSet *uids = [MCOIndexSet indexSetWithIndex:uid];</span><br><span class="line">    MCOIMAPOperation *op = [session storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                             uids:uids</span><br><span class="line">                                                             kind:(flagged ? MCOIMAPStoreFlagsRequestKindSet : MCOIMAPStoreFlagsRequestKindRemove)</span><br><span class="line">                                                            flags:MCOMessageFlagFlagged];</span><br><span class="line">    [op start:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"store star flag 's error: %@"</span>,error);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果要批量设置标记，uids可以通过range来创建</span></span><br><span class="line">    MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-删除邮件"><a href="#6-删除邮件" class="headerlink" title="6.删除邮件"></a>6.删除邮件</h4><p>为什么先说的标记那部分，因为删除邮件也是添加“delete”标记。这里需要做一个区分，<code>要删除的邮件是不是在 “已删除/草稿箱” 这两个文件夹</code>。</p>
+<p>主要操作有三个：</p>
+<ul>
+<li>1、copy一份到“已删除”</li>
+<li>2、设置删除标记</li>
+<li>3、执行擦除expunge操作</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//**如果是不在已删除，草稿箱，执行1、2、3</span></span><br><span class="line"><span class="comment">//**如果在，只执行2、3</span></span><br><span class="line">    <span class="keyword">if</span> (![folder isEqualToString:deleteFolder] &amp;&amp; ![folder isEqualToString:draftFolder]) &#123;</span><br><span class="line">        <span class="comment">//copy 一份到已删除</span></span><br><span class="line">        MCOIMAPCopyMessagesOperation *op = [imapSession copyMessagesOperationWithFolder:folder</span><br><span class="line">                                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                              destFolder:deleteFolder];</span><br><span class="line">        [op start:^(<span class="built_in">NSError</span> *error, <span class="built_in">NSDictionary</span> *uidMapping) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"Error copy message to folder:%@"</span>, error);</span><br><span class="line">            [<span class="keyword">self</span> unturnedDelete:uid folder:folder];</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        [<span class="keyword">self</span> unturnedDelete:uid folder:folder];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)unturnedDelete:(<span class="built_in">NSInteger</span>)uid folder:(<span class="built_in">NSString</span> *)folder </span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先添加删除flags</span></span><br><span class="line">    MCOIMAPOperation * op2 = [imapSession storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                    kind:MCOIMAPStoreFlagsRequestKindSet</span><br><span class="line">                                                                                   flags:MCOMessageFlagDeleted];</span><br><span class="line">    [op2 start:^(<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">        <span class="comment">//添加成功之后对当前文件夹进行expunge操作</span></span><br><span class="line">        MCOIMAPOperation *deleteOp = [imapSession expungeOperation:folder];</span><br><span class="line">        [deleteOp start:^(<span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">            <span class="keyword">if</span>(error) &#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"Error expunging folder:%@"</span>, error);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"Successfully expunged folder"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-附件处理和html内容解析"><a href="#7-附件处理和html内容解析" class="headerlink" title="7.附件处理和html内容解析"></a>7.附件处理和html内容解析</h4><ul>
+<li><p>官方demo<br><a href="https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test</a><br>github上他们有写一个demo，我直接用了里面两个类，messageView又自己加了些乱七八糟的逻辑。protocol方便解析的，具体讲解后续更新。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/24.png" alt></p>
+</li>
+<li><p>MCOHTMLRendererIMAPDelegate<br>这个协议里面，提供了可以自主解析附件、图片、html内容，以及简单给定html展示样式的方法。先贴出header、正文、附件，我自己写的一个简单展示模板吧，内容处理这块东西太多了，整理一下再继续更新。<br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForAttachment.html</a><br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMessage.html</a><br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMainHeader.html</a></p>
+</li>
+</ul>
+<h4 id="8-创建草稿箱邮件"><a href="#8-创建草稿箱邮件" class="headerlink" title="8.创建草稿箱邮件"></a>8.创建草稿箱邮件</h4><p>​     “append” 拼接的概念，往一个文件夹内添加邮件；</p>
+<ul>
+<li>1、新建一封新邮件(SMTP中讲创建邮件)</li>
+<li>2、获取你的草稿箱文件夹名称</li>
+<li>3、执行append操作<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的data就是新建的邮件；</span></span><br><span class="line">- (<span class="keyword">void</span>)createDraft:(<span class="built_in">NSData</span> *)data block:(<span class="keyword">void</span>(^)(<span class="keyword">bool</span> success, uint32_t uid, <span class="built_in">NSString</span> *folder))block</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!imapSession ) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSString</span> *folder = <span class="string">@"Drafts"</span> <span class="comment">//草稿箱 ,或者是你邮箱服务器解析到的草稿箱文件夹名称；</span></span><br><span class="line"></span><br><span class="line">    MCOIMAPAppendMessageOperation *op = [imapSession appendMessageOperationWithFolder:folder messageData:data flags:MCOMessageFlagDraft];</span><br><span class="line">    [op start:^(<span class="built_in">NSError</span> *error, uint32_t createdUID) &#123;</span><br><span class="line">        <span class="comment">//do your operation;</span></span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"create Draft message :%@"</span>,@(createdUID));</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>iOS</tag>
+        <tag>邮箱</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 迁移至云服务的记录</title>
     <url>/2021/06/30/%E4%BA%91%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<blockquote>
@@ -1980,115 +2332,6 @@
         <tag>Mac</tag>
         <tag>网络</tag>
         <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mailcore 2  iOS  之一 IMAP</title>
-    <url>/2018/02/02/mailcore2-iOS%E4%B9%8B%E4%B8%80IMAP/</url>
-    <content><![CDATA[<p>公司开发oa中的邮箱，资源限制，最后iOS开发采用的mailcore2-ios框架。研究的不深，只当做个分享，口条不好，凑合看吧。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我直接用的cocoapods，非常方便，只是资源包大了一点，耐心等待就好了，其他方式没试过。<br><code>pod &#39;mailcore2-ios&#39;</code></p>
-<p><a href="https://github.com/MailCore/mailcore2" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2</a> 官方，有问题提issue，开发者会很热心回答的。</p>
-<a id="more"></a>
-
-<h2 id="更新-纠错日志"><a href="#更新-纠错日志" class="headerlink" title="更新/纠错日志"></a>更新/纠错日志</h2><ul>
-<li>2018-12-11 纠错：IMAP-4.单封邮件获取和处理.根据uid获取单封邮件 有误，<code>range的范围应该是（uid, 0），而不是(uid, 1)，这样获取到的是两封</code>，脑子秀逗了。</li>
-<li>2018-12-11 更新：创建草稿邮件</li>
-<li>2018-12-12 更新：SMTP协议</li>
-</ul>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>个人比较喜欢imap协议，功能比较丰富，不过用mailcore搞起来似乎费劲了一点，我也只是实现了一些基本功能，高级的还在研究。</p>
-<p>计划分享一下下面几项🤗🤗🤗🤗🤗</p>
-<ul>
-<li>IMAP<ul>
-<li>登录</li>
-<li>文件夹列表、命名空间</li>
-<li>邮件列表拉取</li>
-<li>邮件列表中单封邮件内容获取和处理</li>
-<li>邮件的各种标记添加</li>
-<li>删除邮件</li>
-<li>附件和html内容解析</li>
-<li>草稿箱邮件创建</li>
-</ul>
-</li>
-<li>POP</li>
-<li>SMTP<ul>
-<li>见<a href="https://ATommyGirl.github.io/2018/12/12/mailcore2-iOS之二SMTP/" target="_blank" rel="noopener">mailcore2-ios  之二 SMTP</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h3><h4 id="1-登录"><a href="#1-登录" class="headerlink" title="1.登录"></a>1.登录</h4><p>首先设置账号信息，也就是创建session；然后校验；</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span>.imapSession.hostname = session.imapHost; <span class="comment">//imap.xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.username = session.username; <span class="comment">//littlecat@xxx.com.cn</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.password = session.password; <span class="comment">//password</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.port     = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)session.imapPort;<span class="comment">//143、993</span></span><br><span class="line"><span class="keyword">self</span>.imapSession.connectionType = session.imapIsSSL ? MCOConnectionTypeTLS: MCOConnectionTypeClear;<span class="comment">//取决于你的邮件服务器是不是SSL的；</span></span><br></pre></td></tr></table></figure>
-
-<p>校验信息：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPOperation *checkOp = [session checkAccountOperation];<span class="comment">//这里的session就是配置帐号信息的session</span></span><br><span class="line">[checkOp start:^(<span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">     <span class="built_in">NSLog</span>(<span class="string">@"finished checking account."</span>);</span><br><span class="line">     <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">         complete(<span class="literal">nil</span>);</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         err(error);</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"error loading account: %@"</span>, [error userInfo][<span class="string">@"NSLocalizedDescription"</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-获取文件夹目录"><a href="#2-获取文件夹目录" class="headerlink" title="2.获取文件夹目录"></a>2.获取文件夹目录</h4><p>命名空间：它这里有个namespace，对于<code>中文名称</code>的📂名称，需要通过<code>命名空间</code>来解析，<code>不然很可能是👇这种乱码</code>：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是当时解析网易邮箱的乱码，找原因找了好久😭😭😭，在一篇博客上看到的解决办法。</span></span><br><span class="line">INBOX</span><br><span class="line">&amp;g0l6P3ux-</span><br><span class="line">&amp;XfJT0ZAB-</span><br><span class="line">&amp;XfJSIJZk-</span><br><span class="line">&amp;V4NXPpCuTvY-</span><br><span class="line">&amp;dcVr0mWHTvZZOQ-</span><br><span class="line">&amp;Xn9USpCuTvY-</span><br><span class="line">&amp;i6KWBZCuTvY-</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
-
-<p>先把正确的放出来，找回点走下去的信心💔💔💗💖…</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">INBOX</span><br><span class="line">草稿箱</span><br><span class="line">已发送</span><br><span class="line">已删除</span><br><span class="line">垃圾邮件</span><br><span class="line">病毒文件夹</span><br><span class="line">广告邮件</span><br><span class="line">订阅邮件</span><br><span class="line">Deleted Messages</span><br><span class="line">Archive</span><br><span class="line">Junk</span><br></pre></td></tr></table></figure>
-
-<p>因为<code>某些邮箱的session莫名其妙没有自带默认的命名空间</code>，我采取的笨办法是先去获取一下namespace，不过嘛，，，居然获取到的也时有时无😱😱😱😱😱</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPSession *session = [MMIMAPTool getSession];</span><br><span class="line">MCOIMAPFetchNamespaceOperation * op = [session fetchNamespaceOperation];</span><br><span class="line">[op start:^(<span class="built_in">NSError</span> * __<span class="keyword">nullable</span> error, <span class="built_in">NSDictionary</span> * namespaces) &#123;</span><br><span class="line">     MCOIMAPNamespace * namespace = (session.defaultNamespace != <span class="literal">nil</span>) ? session.defaultNamespace : [namespaces objectForKey:MCOIMAPNamespacePersonal];</span><br><span class="line">    <span class="keyword">if</span> (!namespace) &#123;</span><br><span class="line">        <span class="comment">//没有命名空间，很可能文件夹的名字解析出来是乱码，这个看个人怎么处理吧；</span></span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果拿到了namespace，可以安心获取folderlist了</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<p>关键的一句：<code>NSString *folername = [namespace componentsFromPath:f.path][0];</code></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPFetchFoldersOperation * ops = [session fetchAllFoldersOperation];</span><br><span class="line">[ops start:^(<span class="built_in">NSError</span> * error,<span class="built_in">NSArray</span> *folders) &#123;</span><br><span class="line">   <span class="keyword">if</span> (error) &#123;</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">NSMutableDictionary</span> *dic = [<span class="built_in">NSMutableDictionary</span> dictionary];</span><br><span class="line">   <span class="keyword">for</span> (MCOIMAPFolder *f <span class="keyword">in</span> folders) &#123;</span><br><span class="line">      <span class="built_in">NSString</span> *folername = [namespace componentsFromPath:f.path][<span class="number">0</span>];</span><br><span class="line">      [dic setValue:f.path forKey:folername];</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="comment">//继续其他处理；</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<p>获取某个文件夹的mail数目等信息</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPFolderInfoOperation *folderInfo = [session folderInfoOperation:foldername];</span><br><span class="line"></span><br><span class="line">[folderInfo start:^(<span class="built_in">NSError</span> *error, MCOIMAPFolderInfo *info) &#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;    </span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">     &#125;</span><br><span class="line">    complete(info.messageCount);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-拉取某个文件夹邮件列表"><a href="#3-拉取某个文件夹邮件列表" class="headerlink" title="3.拉取某个文件夹邮件列表"></a>3.拉取某个文件夹邮件列表</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的kind我觉得是需要拉取的内容们，我是几乎大部分都down了，可以看情况自己选择；</span></span><br><span class="line"><span class="comment">//拉取范围，（0，UINT64_MAX）就是都拉取了，我是10条10条的来的。</span></span><br><span class="line">MCOIMAPMessagesRequestKind requestKind = (MCOIMAPMessagesRequestKind)</span><br><span class="line">(MCOIMAPMessagesRequestKindHeaders |</span><br><span class="line"> MCOIMAPMessagesRequestKindStructure |</span><br><span class="line"> MCOIMAPMessagesRequestKindInternalDate|</span><br><span class="line"> MCOIMAPMessagesRequestKindHeaderSubject |</span><br><span class="line"> MCOIMAPMessagesRequestKindFlags);</span><br><span class="line"></span><br><span class="line">MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];<span class="comment">//range控制拉取的邮件的范围，UINT64_MAX</span></span><br><span class="line">MCOIMAPFetchMessagesOperation *op = [session fetchMessagesOperationWithFolder:foldername requestKind:requestKind uids:uids];</span><br><span class="line">[op start:^(<span class="built_in">NSError</span> * _Nullable error, <span class="built_in">NSArray</span> * _Nullable messages, MCOIndexSet * _Nullable vanishedMessages) &#123;</span><br><span class="line">     <span class="built_in">NSMutableArray</span> *listArr = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">     <span class="built_in">NSInteger</span> count = messages.count;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i ++) &#123;</span><br><span class="line">            MCOIMAPMessage *msg = messages[i];</span><br><span class="line">            <span class="comment">//一堆属性，自己摘取吧，大多是header里的，为了显示邮件列表，邮件内容是另外单独获取的，存储也只是存储了列表；</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//又拍了一次顺序，好像有点蠢🙄🙄🙄🙄🙄。。。我是根据uid排序的，目前还没发现乱序什么的</span></span><br><span class="line">    <span class="built_in">NSSortDescriptor</span> *sortDescriptor = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"uid"</span> ascending:<span class="literal">NO</span>];</span><br><span class="line">    [listArr sortUsingDescriptors:[<span class="built_in">NSArray</span> arrayWithObject:sortDescriptor]];</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-<p>还有另外一个方法，但是实在没太搞懂里面的number参数，文档里说sequence number不能排序用，所以我没选择这个方法，主要是没懂👺👺👺👺👺👺👺</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Returns an operation to fetch messages by (sequence) number.</span></span><br><span class="line">- (MCOIMAPFetchMessagesOperation *) fetchMessagesByNumberOperationWithFolder:(<span class="built_in">NSString</span> *)folder requestKind:(MCOIMAPMessagesRequestKind)requestKind numbers:(MCOIndexSet *)numbers;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-单封邮件获取和处理"><a href="#4-单封邮件获取和处理" class="headerlink" title="4.单封邮件获取和处理"></a>4.单封邮件获取和处理</h4><ul>
-<li><p>根据uid获取单封邮件</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//和获取邮件列表一样，不过range的长度是0；</span></span><br><span class="line">MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(uid, <span class="number">0</span>)];</span><br><span class="line"><span class="comment">//之前写错了，range长度应该是0，而不是1；</span></span><br><span class="line"><span class="comment">//MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(uid, 1)];</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取邮件纯文本内容（不包括html样式等）</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="comment">//这里是在上一步获取单个邮件的回调内进行的</span></span><br><span class="line">     <span class="comment">//这个方法是自动把文本中的空行之类的去掉了，也有不去掉和可选是否去掉的方法</span></span><br><span class="line">        MCOIMAPMessage *msg = [<span class="comment">//上一步的message];</span></span><br><span class="line">        MCOIMAPMessageRenderingOperation *  messageRenderingOperation = [session plainTextBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">        [messageRenderingOperation start:^(<span class="built_in">NSString</span> * plainTextBodyString,<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">            <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">                complete(plainTextBodyString, msg);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"fetch plain text error:%@"</span>,error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">文档里注释的不能再清楚了，自己查阅吧😈😈😈😈😈</span><br><span class="line"><span class="comment">//Returns an operation to render the plain text version of a message.</span></span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextRenderingOperationWithMessage:(MCOIMAPMessage *)message folder:(<span class="built_in">NSString</span> *)folder;</span><br><span class="line"><span class="comment">// All end of line will be removed and white spaces cleaned up if requested.</span></span><br><span class="line">- (MCOIMAPMessageRenderingOperation *) plainTextBodyRenderingOperationWithMessage:(MCOIMAPMessage *)message folder:(<span class="built_in">NSString</span> *)folder stripWhitespace:(<span class="built_in">BOOL</span>)stripWhitespace;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取html内容，放在一个webview中显示基本内容应该没问题了<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">MCOIMAPMessage *msg = [同样是上一步的message];</span><br><span class="line">MCOIMAPMessageRenderingOperation *  messageRenderingOperation = [session htmlBodyRenderingOperationWithMessage:msg folder:foldername];</span><br><span class="line">[messageRenderingOperation start:^(<span class="built_in">NSString</span> * _Nullable htmlString, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">     <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">         complete(htmlString, msg);</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"fetch plain text error:%@"</span>,error);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h4 id="5-添加各种标记"><a href="#5-添加各种标记" class="headerlink" title="5.添加各种标记"></a>5.添加各种标记</h4><p>已读未读，小红旗标记等等。需要注意的是，<code>“kind”区分是添加标记还是移除标记</code>，例如已读“MCOMessageFlagSeen”标记，移除就成了未读，<code>没有“unseen”之类的。。。</code></p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setFlagged:(<span class="built_in">BOOL</span>)flagged message:(<span class="built_in">NSInteger</span>)uid folder:(<span class="built_in">NSString</span> *)folder &#123;</span><br><span class="line">    MCOIMAPSession *session = <span class="comment">//imap session；</span></span><br><span class="line">    MCOIndexSet *uids = [MCOIndexSet indexSetWithIndex:uid];</span><br><span class="line">    MCOIMAPOperation *op = [session storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                             uids:uids</span><br><span class="line">                                                             kind:(flagged ? MCOIMAPStoreFlagsRequestKindSet : MCOIMAPStoreFlagsRequestKindRemove)</span><br><span class="line">                                                            flags:MCOMessageFlagFlagged];</span><br><span class="line">    [op start:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"store star flag 's error: %@"</span>,error);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果要批量设置标记，uids可以通过range来创建</span></span><br><span class="line">    MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(range.location, range.length)];</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-删除邮件"><a href="#6-删除邮件" class="headerlink" title="6.删除邮件"></a>6.删除邮件</h4><p>为什么先说的标记那部分，因为删除邮件也是添加“delete”标记。这里需要做一个区分，<code>要删除的邮件是不是在 “已删除/草稿箱” 这两个文件夹</code>。</p>
-<p>主要操作有三个：</p>
-<ul>
-<li>1、copy一份到“已删除”</li>
-<li>2、设置删除标记</li>
-<li>3、执行擦除expunge操作</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//**如果是不在已删除，草稿箱，执行1、2、3</span></span><br><span class="line"><span class="comment">//**如果在，只执行2、3</span></span><br><span class="line">    <span class="keyword">if</span> (![folder isEqualToString:deleteFolder] &amp;&amp; ![folder isEqualToString:draftFolder]) &#123;</span><br><span class="line">        <span class="comment">//copy 一份到已删除</span></span><br><span class="line">        MCOIMAPCopyMessagesOperation *op = [imapSession copyMessagesOperationWithFolder:folder</span><br><span class="line">                                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                              destFolder:deleteFolder];</span><br><span class="line">        [op start:^(<span class="built_in">NSError</span> *error, <span class="built_in">NSDictionary</span> *uidMapping) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"Error copy message to folder:%@"</span>, error);</span><br><span class="line">            [<span class="keyword">self</span> unturnedDelete:uid folder:folder];</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        [<span class="keyword">self</span> unturnedDelete:uid folder:folder];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)unturnedDelete:(<span class="built_in">NSInteger</span>)uid folder:(<span class="built_in">NSString</span> *)folder </span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先添加删除flags</span></span><br><span class="line">    MCOIMAPOperation * op2 = [imapSession storeFlagsOperationWithFolder:folder</span><br><span class="line">                                                                                    uids:[MCOIndexSet indexSetWithIndex:uid]</span><br><span class="line">                                                                                    kind:MCOIMAPStoreFlagsRequestKindSet</span><br><span class="line">                                                                                   flags:MCOMessageFlagDeleted];</span><br><span class="line">    [op2 start:^(<span class="built_in">NSError</span> * error) &#123;</span><br><span class="line">        <span class="comment">//添加成功之后对当前文件夹进行expunge操作</span></span><br><span class="line">        MCOIMAPOperation *deleteOp = [imapSession expungeOperation:folder];</span><br><span class="line">        [deleteOp start:^(<span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">            <span class="keyword">if</span>(error) &#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"Error expunging folder:%@"</span>, error);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"Successfully expunged folder"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-附件处理和html内容解析"><a href="#7-附件处理和html内容解析" class="headerlink" title="7.附件处理和html内容解析"></a>7.附件处理和html内容解析</h4><ul>
-<li><p>官方demo<br><a href="https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test" target="_blank" rel="noopener">https://github.com/MailCore/mailcore2/tree/master/example/ios/iOS%20UI%20Test/iOS%20UI%20Test</a><br>github上他们有写一个demo，我直接用了里面两个类，messageView又自己加了些乱七八糟的逻辑。protocol方便解析的，具体讲解后续更新。<br><img src="https://yyblog-images-1258406742.cos.ap-beijing.myqcloud.com/24.png" alt></p>
-</li>
-<li><p>MCOHTMLRendererIMAPDelegate<br>这个协议里面，提供了可以自主解析附件、图片、html内容，以及简单给定html展示样式的方法。先贴出header、正文、附件，我自己写的一个简单展示模板吧，内容处理这块东西太多了，整理一下再继续更新。<br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForAttachment.html</a><br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMessage.html</a><br><a href="https://github.com/ATommyGirl/TemplateForMailCore2" target="_blank" rel="noopener">TemplateForMainHeader.html</a></p>
-</li>
-</ul>
-<h4 id="8-创建草稿箱邮件"><a href="#8-创建草稿箱邮件" class="headerlink" title="8.创建草稿箱邮件"></a>8.创建草稿箱邮件</h4><p>​     “append” 拼接的概念，往一个文件夹内添加邮件；</p>
-<ul>
-<li>1、新建一封新邮件(SMTP中讲创建邮件)</li>
-<li>2、获取你的草稿箱文件夹名称</li>
-<li>3、执行append操作<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的data就是新建的邮件；</span></span><br><span class="line">- (<span class="keyword">void</span>)createDraft:(<span class="built_in">NSData</span> *)data block:(<span class="keyword">void</span>(^)(<span class="keyword">bool</span> success, uint32_t uid, <span class="built_in">NSString</span> *folder))block</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!imapSession ) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSString</span> *folder = <span class="string">@"Drafts"</span> <span class="comment">//草稿箱 ,或者是你邮箱服务器解析到的草稿箱文件夹名称；</span></span><br><span class="line"></span><br><span class="line">    MCOIMAPAppendMessageOperation *op = [imapSession appendMessageOperationWithFolder:folder messageData:data flags:MCOMessageFlagDraft];</span><br><span class="line">    [op start:^(<span class="built_in">NSError</span> *error, uint32_t createdUID) &#123;</span><br><span class="line">        <span class="comment">//do your operation;</span></span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"create Draft message :%@"</span>,@(createdUID));</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>iOS</tag>
-        <tag>邮箱</tag>
       </tags>
   </entry>
   <entry>
